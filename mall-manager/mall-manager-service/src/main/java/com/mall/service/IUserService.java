@@ -1,4 +1,4 @@
-package com.mall.service.test;
+package com.mall.service;
 
 
 

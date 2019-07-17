@@ -3,7 +3,7 @@ package com.mall.service.impl;
 
 import com.mall.service.BsOrder;
 import com.mall.service.IOrderDao;
-import com.mall.service.test.IOrderService;
+import com.mall.service.IOrderService;
 
 import java.util.List;
 

@@ -95,7 +95,7 @@
                     </ul>
                 </li>
                 <li class="drop cart-wrapper"><a href="#"></a>
-                    <a href="mycart.jsp">我的购物车</a>
+                    <a href="/car.do">我的购物车</a>
                 </li>
                 <li class="drop">
                     <a href="orderlist.jsp">我的订单</a>

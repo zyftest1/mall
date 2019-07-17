@@ -3,7 +3,7 @@ package com.mall.service.impl;
 
 import com.mall.service.BsUserAccount;
 import com.mall.service.IUserDao;
-import com.mall.service.test.IUserService;
+import com.mall.service.IUserService;
 
 import java.sql.SQLException;
 import java.util.List;

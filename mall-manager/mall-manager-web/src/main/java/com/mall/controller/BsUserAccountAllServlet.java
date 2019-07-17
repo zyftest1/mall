@@ -2,7 +2,7 @@ package com.mall.controller;
 
 import com.mall.service.BsUserAccount;
 import com.mall.service.impl.IUserServiceImpl;
-import com.mall.service.test.IUserService;
+import com.mall.service.IUserService;
 import com.utils.MyUTF;
 import com.wf.captcha.utils.CaptchaUtil;
 
@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.List;
 
 /**

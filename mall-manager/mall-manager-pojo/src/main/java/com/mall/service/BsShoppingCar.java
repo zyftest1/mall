@@ -17,6 +17,9 @@ public class BsShoppingCar {
     private String addID;
     private String address;
 
+    public BsShoppingCar() {
+    }
+
     public BsShoppingCar(String carID, int ID, String bsName, String sID, double price, int quantity, String color, String size, String describe, Date date, String picture, String addID, String address) {
         this.carID = carID;
         this.ID = ID;
@@ -105,8 +108,8 @@ public class BsShoppingCar {
         this.describe = describe;
     }
 
-    public Date getDate() {
-        return date;
+    public java.sql.Date getDate() {
+        return (java.sql.Date) date;
     }
 
     public void setDate(Date date) {

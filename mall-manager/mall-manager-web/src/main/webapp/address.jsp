@@ -36,6 +36,7 @@
 		<meta name="og:image:width" content="">
 		<meta name="og:image:height" content="">
 
+		<link rel="stylesheet" type="text/css" href="pc\css\base.css?1607170150.25">
 		<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml">
 		<link rel="icon" href="pic/_o/46/c2/7545d5f20d276e84af0f034b0287_92_94.cf.png" type="image/x-icon">
 
@@ -145,51 +146,64 @@
 			})();
 		</script>
 
-		<div id="header" class="J_sitenav header_2015" data-ptp="_head">
-			<div class="wrap clearfix">
-				<!-- 顶通 -->
-				<a href="index.jsp" class="home fl">美丽说首页</a>
-				<ul class="header_top">
-					<li class="s1 has_icon user_meta">
-						<a rel="nofollow" href="javascript:;">
-							阿猫来了 </a>
-						<i class="icon_delta"></i>
-						<ol class="ext_mode" id="menu_personal">
-							<li class="s2">
-								<a target="_blank" rel="nofollow" href="=setPersonal.jsp">个人设置</a>
-							</li>
-							<li class="s2">
-								<a rel="nofollow" href="login.jsp">退出</a>
-							</li>
-						</ol>
-					</li>
-
-					<li class="s1 has_icon has_line user_fav ">
-						<a rel="nofollow" href="javascript:;">我的收藏</a>
-						<i class="icon_delta"></i>
-						<ul class="ext_mode">
-							<li class="s2">
-								<a target="_blank" rel="nofollow" href="mylike.jsp">收藏的商品</a>
-							</li>
-							<li class="s2">
-								<a target="_blank" rel="nofollow" href="mylikestore.jsp">收藏的小店</a>
-							</li>
-							<li class="s2">
-								<a target="_blank" rel="nofollow" href="footprint.jsp">浏览足迹</a>
-							</li>
+		<div id="com-topbar">
+	<div class="inner">
+		<ul>
+			<li class="drop">
+				<c:choose>
+					<c:when test="${sessionScope.bsUserAccount != null}">
+						<img class="face" src="new1\v1\bdefaultavatar\03.jpg">
+						${sessionScope.bsUserAccount.bsName}
+						<a href="#"></a>
+						<ul class="down" style="width: 100px">
+							<li>
+								<a href="setPersonal.jsp">账号与安全</a></li>
+							<li>
+								<a href="login.jsp">退出</a></li>
 						</ul>
+					</c:when>
+				</c:choose>
+				<c:choose>
+					<c:when test="${sessionScope.bsUserAccount == null}">
+						<img class="face" src="new1\v1\bdefaultavatar\03.jpg">
+						<a href="/login.jsp">请登录</a>
+					</c:when>
+				</c:choose>
+			</li>
+			<li class="drop">
+				&nbsp;&nbsp;&nbsp;&nbsp;我的收藏
+				<ul class="down" style="width: 100px">
+					<li>
+						<a href="mylike.jsp" >收藏宝贝</a>
 					</li>
-
-					<li class="s1 myorder has_line">
-						<a href="/order.do?_method=orderTotal" target="_blank" class="text display_u" ref="nofollow">我的订单</a>
-					</li>
-
-					<li class="s1 has_line has_icon ">
-						<a href="#" ref="nofollow" target="_blank" class="text display_u">商家后台</a>
+					<li>
+						<a href="mylikestore.jsp">收藏店铺</a>
 					</li>
 				</ul>
-			</div>
-		</div>
+			</li>
+			<li class="drop cart-wrapper"><a href="#"></a>
+				<a href="/car.do">我的购物车</a>
+			</li>
+			<li class="drop">
+				<a href="orderlist.jsp">我的订单</a>
+			</li>
+			<li class="drop">帮助中心
+				<ul class="down" style="width: 100px">
+					<li>
+						<a href="noviceGuide.jsp">新手指南</a></li>
+					<li>
+						<a href="serviceEnsure.jsp">服务保障</a></>
+					<li>
+						<a href="helpCommon.jsp">常见问题</a></li>
+					<li>
+						<a href="shoppingHelp.jsp">购物帮助</a></li>
+				</ul>
+			</li>
+			<li class="drop"><a href="#"></a>
+				<a href="#" class="last">进入后台</a></li>
+		</ul>
+	</div>
+</div>
 		<!-- 中间区域 -->
 		<div class="g-header clearfix">
 			<div class="g-header-in wrap clearfix">

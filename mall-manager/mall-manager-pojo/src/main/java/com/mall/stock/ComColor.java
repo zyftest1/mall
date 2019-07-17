@@ -1,4 +1,4 @@
-package com.mall;
+package com.mall.stock;
 
 public class ComColor {
     private String color_id;

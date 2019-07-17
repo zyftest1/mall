@@ -1,7 +1,11 @@
-package com.mall.controller;
+package com.mall.controller.stock;
 
-import com.mall.*;
-import com.mall.impl.*;
+
+import com.mall.stock.*;
+import com.mall.impl.stock.ComColorDaoImpl;
+import com.mall.impl.stock.ComModityDaoImpl;
+import com.mall.impl.stock.ComSizeDaoImpl;
+import com.mall.impl.stock.WareHouseDaoImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

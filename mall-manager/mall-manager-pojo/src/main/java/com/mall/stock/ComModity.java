@@ -1,4 +1,4 @@
-package com.mall;
+package com.mall.stock;
 
 public class ComModity {
     private String c_id;

@@ -1,6 +1,5 @@
-package com.mall;
+package com.mall.stock;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface IComStockDao {

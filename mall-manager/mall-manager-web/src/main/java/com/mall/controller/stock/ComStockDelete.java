@@ -1,7 +1,7 @@
-package com.mall.controller;
+package com.mall.controller.stock;
 
 import com.mall.IComStockService;
-import com.mall.impl.ComStockServiceImpl;
+import com.mall.impl.stock.ComStockServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

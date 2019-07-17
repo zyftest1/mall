@@ -1,5 +1,7 @@
 package com.mall;
 
+import com.mall.stock.ComStock;
+
 import java.util.List;
 
 public interface IComStockService {

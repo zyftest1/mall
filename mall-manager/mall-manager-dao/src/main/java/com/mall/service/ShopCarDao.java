@@ -5,6 +5,6 @@ import java.util.List;
 
 public interface ShopCarDao {
     public List<BsShoppingCar> selectShoppingCar(String ID) throws SQLException;
-    void deleteShoppingCar(String carNumber);
-    void updateShoppingCar(BsShoppingCar sCar) throws SQLException;
+    public void deleteShoppingCar(String carNumber);
+    public void updateShoppingCar(BsShoppingCar sCar) throws SQLException;
 }

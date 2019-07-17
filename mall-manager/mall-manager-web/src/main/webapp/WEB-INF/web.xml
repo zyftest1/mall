@@ -4,4 +4,8 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+<!--    <servlet>-->
+<!--        <servlet-name>BsLoginServlet</servlet-name>-->
+<!--        <servlet-class>com.mall.controller.BsLoginServlet</servlet-class>-->
+<!--    </servlet>-->
 </web-app>

@@ -1,5 +1,11 @@
 package com.mall.service;
 
+import java.util.List;
+
 public interface IUserService {
-    public BsUserAccount findBsUserAccountByName(String bsName);
+    BsUserAccount findBsUserAccountByName(String bsName);
+
+    void addBsUserAccount(BsUserAccount bsUserAccount);
+
+    List<String> findBsUserAccountColumnListAll();
 }

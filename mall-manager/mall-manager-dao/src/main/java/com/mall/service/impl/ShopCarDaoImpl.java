@@ -3,55 +3,86 @@ package com.mall.service.impl;
 import com.mall.service.BsShoppingCar;
 import com.mall.service.ShopCarDao;
 import com.utils.JdbcUtils;
+import com.utils.JdbcUtils_C3P0;
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.ResultSetHandler;
+import org.apache.commons.dbutils.StatementConfiguration;
+import org.apache.commons.dbutils.handlers.ArrayListHandler;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+
+import static com.utils.JdbcUtils.*;
 
 public class ShopCarDaoImpl implements ShopCarDao {
 
     @Override
     public List<BsShoppingCar> selectShoppingCar(String ID) {
-        Connection con = null;
-        PreparedStatement stmt = null;
-        ResultSet res = null;
-        List<BsShoppingCar> slist = null;
-        BsShoppingCar bCar;
+        List<BsShoppingCar> sList = new ArrayList<>();
+        BsShoppingCar bCar = new BsShoppingCar();
+        QueryRunner run = new QueryRunner(JdbcUtils_C3P0.getDataSource());
+        String sql = "select * from bs_shopping_car where user_id ="+ID;
         try {
-            con = JdbcUtils.getConnection();
-            String sql = String.format("select * from bs_shopping_car c where c.carID = '%s'", ID);
-            stmt = con.prepareStatement(sql);
-            res = stmt.executeQuery();
-            while(res.next()) {
-                bCar = new BsShoppingCar();
-                bCar.setCarID(res.getString("car_id"));
-                bCar.setID(res.getInt("user_id"));
-                bCar.setBsName(res.getString("user_name"));
-                bCar.setsID(res.getString("s_id"));
-                bCar.setPrice(res.getDouble("price"));
-                bCar.setQuantity(res.getInt("quantity"));
-                bCar.setColor(res.getString("color"));
-                bCar.setSize(res.getString("size"));
-                bCar.setDescribe(res.getString("car_describe"));
-                bCar.setDate(res.getDate("car_date"));
-                bCar.setPicture(res.getString("car_picture"));
-                bCar.setAddID(res.getString("add_id"));
-                bCar.setAddress(res.getString("address"));
-                slist.add(bCar);
-            }
+            run.query(sql, new ResultSetHandler<List<BsShoppingCar>>() {
+                @Override
+                public List<BsShoppingCar> handle(ResultSet rs) throws SQLException {
+                    while (rs.next()) {
+                        bCar.setCarID(rs.getString("car_id"));
+                        bCar.setID(rs.getInt("user_id"));
+                        bCar.setBsName(rs.getString("user_name"));
+                        bCar.setsID(rs.getString("s_id"));
+                        bCar.setPrice(rs.getDouble("price"));
+                        bCar.setQuantity(rs.getInt("quantity"));
+                        bCar.setColor(rs.getString("color"));
+                        bCar.setSize(rs.getString("size"));
+                        bCar.setDescribe(rs.getString("car_describe"));
+                        bCar.setDate(rs.getDate("car_date"));
+                        bCar.setPicture(rs.getString("car_picture"));
+                        bCar.setAddID(rs.getString("add_id"));
+                        bCar.setAddress(rs.getString("address"));
+                        sList.add(bCar);
+                    }
+
+                    return sList;
+                }
+            });
+
+//            stmt = con.prepareStatement(sql);
+//            res = stmt.executeQuery();
+//            while(res.next()) {
+//                bCar = new BsShoppingCar();
+//                bCar.setCarID(res.getString("car_id"));
+//                bCar.setID(res.getInt("user_id"));
+//                bCar.setBsName(res.getString("user_name"));
+//                bCar.setsID(res.getString("s_id"));
+//                bCar.setPrice(res.getDouble("price"));
+//                bCar.setQuantity(res.getInt("quantity"));
+//                bCar.setColor(res.getString("color"));
+//                bCar.setSize(res.getString("size"));
+//                bCar.setDescribe(res.getString("car_describe"));
+//                bCar.setDate(res.getDate("car_date"));
+//                bCar.setPicture(res.getString("car_picture"));
+//                bCar.setAddID(res.getString("add_id"));
+//                bCar.setAddress(res.getString("address"));
+//                slist.add(bCar);
+//            }
+//            BsShoppingCar[] car = new BsShoppingCar[finalList.size()];
+//            finalList.toArray(car);
+//            sList = java.util.Arrays.asList(car);
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtils.releaseSource(res, stmt, con);
         }
-        return slist;
+        return sList;
     }
 
     @Override
     public void deleteShoppingCar(String carNumber) {
-        Connection con = JdbcUtils.getConnection();
+        Connection con = getConnection();
         String sql="delete from bs_shopping_car where car_id=?";
         PreparedStatement stmt=null;
         try {
@@ -61,13 +92,13 @@ public class ShopCarDaoImpl implements ShopCarDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            JdbcUtils.releaseSource(null, stmt, con);
+            releaseSource(null, stmt, con);
         }
     }
 
     @Override
     public void updateShoppingCar(BsShoppingCar sCar) throws SQLException {
-        try (Connection conn = JdbcUtils.getConnection()) {
+        try (Connection conn = getConnection()) {
             PreparedStatement stmt = null;
             String sql = "update bs_shopping_car set car_id=?,user_id=?,user_name=?,s_id=?,price=?,quantity=?,color=?,size=?,car_describe=?,car_date=?,car_picture=?,add_id=?,address=?";
             try {
@@ -89,7 +120,7 @@ public class ShopCarDaoImpl implements ShopCarDao {
             } catch (SQLException e) {
                 e.printStackTrace();
             } finally {
-                JdbcUtils.releaseSource(null, stmt, conn);
+                releaseSource(null, stmt, conn);
             }
         }
     }

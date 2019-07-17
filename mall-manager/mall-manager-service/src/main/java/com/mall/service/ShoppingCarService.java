@@ -4,5 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface ShoppingCarService {
-    List<BsShoppingCar> getShoppingCar(String ID) throws SQLException;
+    public List<BsShoppingCar> getShopCar(String ID) throws SQLException;
+    public void deletaShopCar(String carNumber);
+    public void updateShopCar(BsShoppingCar bsCar) throws SQLException;
 }

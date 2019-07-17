@@ -45,6 +45,7 @@ public class addComServlet extends HttpServlet {
         req.setAttribute("types",scomTypes);
         req.setAttribute("mats",bScomMaterials);
         req.setAttribute("brands",bScomBrands);
+        req.getRequestDispatcher("/addCom.jsp").forward(req,resp);
 
         Date date = new Date();
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd");
@@ -62,10 +63,11 @@ public class addComServlet extends HttpServlet {
         commodity.setC_date(dateFormat.format(date));
         commodity.setC_describe(desc);
         commodity.setEdition("2019夏季新款");
+
+        string = commodity.toString();
         bScommunityService.insertCom(commodity);
 
 
-        req.getRequestDispatcher("/addCom.jsp").forward(req,resp);
 
 
     }
@@ -90,7 +92,8 @@ public class addComServlet extends HttpServlet {
         commodity.setC_date(dateFormat.format(date));
         commodity.setEdition("2019夏季新款");
         commodity.setC_describe("desc");
-        bScommunityService.insertCom(commodity);
+//        bScommunityService.insertCom(commodity);
 
+        System.out.println(string);
     }
 }

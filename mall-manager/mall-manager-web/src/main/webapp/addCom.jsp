@@ -18,13 +18,13 @@
     <p>
         商品ID<br />
 
-        <input type="text" name = "id"  formmethod="get" placeholder="请输入商品ID" autofocus="autofocus" />
+        <input type="text" name = "id" placeholder="请输入商品ID" autofocus="autofocus" />
         <br />
         类型<br />
         <select name="ctype" >
             <c:forEach items="${types}" var="type">
 
-                <option>${type.type_describe}</option>
+                <option value=${type.type_ID}>${type.type_ID}</option>
             </c:forEach>
 
         </select>
@@ -33,7 +33,7 @@
         <select name="cmat" >
             <c:forEach items="${mats}" var="mat">
 
-                <option>${mat.cloth}</option>
+                <option value=${mat.mat_ID}>${mat.cloth}</option>
             </c:forEach>
 
         </select>
@@ -42,7 +42,7 @@
         <select name="cbrand" >
             <c:forEach items="${brands}" var="brand">
 
-                <option>${brand.brand_describe}</option>
+                <option value=${brand.brand_ID}>${brand.brand_describe}</option>
             </c:forEach>
 
         </select>
@@ -54,7 +54,7 @@
         详情:
     </p>
 
-    <textarea name="describe" rows="20" cols="80">
+    <textarea name="describe"  rows="20" cols="80">
 		输入商品描述
 				</textarea>
     <br />

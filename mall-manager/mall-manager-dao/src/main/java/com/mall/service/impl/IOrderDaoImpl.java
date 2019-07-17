@@ -25,7 +25,7 @@ public class IOrderDaoImpl implements IOrderDao {
                 @Override
                 public BsOrder handle(ResultSet rs) throws SQLException {
                     while(rs.next()) {
-                        BsOrder bsOrder=new BsOrder();
+                        BsOrder bsOrder = new BsOrder();
                         bsOrder.setoID(rs.getString("o_id"));
                         bsOrder.setoName(rs.getString("o_name"));
                         bsOrder.setoAddress(rs.getString("o_address"));

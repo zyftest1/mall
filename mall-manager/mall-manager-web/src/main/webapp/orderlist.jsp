@@ -227,7 +227,7 @@
 							</li>
 							<li> <a class="menu_pcenter" href="footprint.jsp#"> 我的足迹 <em class="little-triangle"></em><em class="little-triangle-hover"></em>
 								</a> </li>
-							<li> <a class="menu_pcenter" href="address.jsp#"> 收货地址 <em class="little-triangle"></em><em class="little-triangle-hover"></em>
+							<li> <a class="menu_pcenter" href="/address.do"> 收货地址 <em class="little-triangle"></em><em class="little-triangle-hover"></em>
 								</a> </li>
 							<li> <a class="disable-a">账号管理</a>
 								<ul>

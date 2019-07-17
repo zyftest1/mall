@@ -133,15 +133,6 @@
 					</a>
 				</div>
 			</div>
-			<div class="nav_main_box">
-				<ul class="nav_main">
-					<li class="all">全部商品
-						<div class="attr_box">
-							<ul class="sec_attr"> </ul>
-						</div>
-					</li>
-				</ul>
-			</div>
 		</div>
 		<div class="settings">
 			<div class="pcenter_navBar">

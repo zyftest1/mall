@@ -14,7 +14,7 @@ public class IStockDaoImpl implements IStockDao {
     public String selectGoodsNameById(String id) {
         QueryRunner qr=new QueryRunner(JdbcUtils_C3P0.getDataSource());
         String sql="select s_describe from bs_com_stock where s_id=?";
-        BsComStock stock=new BsComStock();
+        BsComStock stock = new BsComStock();
         try {
             qr.query(sql, new ResultSetHandler<BsComStock>() {
 

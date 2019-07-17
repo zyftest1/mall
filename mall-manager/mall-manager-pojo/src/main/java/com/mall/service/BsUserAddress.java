@@ -1,13 +1,16 @@
 package com.mall.service;
 
 public class BsUserAddress {
-    private String addID;
+    private int addID;
     private int ID;
     private String address;
     private String name;
     private String tel;
 
-    public BsUserAddress(String addID, int ID, String address, String name, String tel) {
+    public BsUserAddress() {
+    }
+
+    public BsUserAddress(int addID, int ID, String address, String name, String tel) {
         this.addID = addID;
         this.ID = ID;
         this.address = address;
@@ -15,11 +18,11 @@ public class BsUserAddress {
         this.tel = tel;
     }
 
-    public String getAddID() {
+    public int getAddID() {
         return addID;
     }
 
-    public void setAddID(String addID) {
+    public void setAddID(int addID) {
         this.addID = addID;
     }
 

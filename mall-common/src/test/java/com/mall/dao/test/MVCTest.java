@@ -1,3 +1,5 @@
+package com.mall.dao.test;
+
 import com.utils.JdbcUtils;
 import com.utils.JdbcUtils_C3P0;
 import org.junit.Test;

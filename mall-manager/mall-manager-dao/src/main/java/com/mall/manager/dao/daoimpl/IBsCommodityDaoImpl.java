@@ -20,7 +20,8 @@ public class IBsCommodityDaoImpl implements IBsCommodityDao {
                 "values(?,?,?,?,?,?,?)";
 
         try {
-            qr.insert(sql,new BeanHandler<BSCommodity>(BSCommodity.class));
+            qr.update(sql,commodity.getC_id(),commodity.getType_id(),commodity.getMat_ID(),commodity.getBrand_ID(),commodity.getEdition()
+            ,commodity.getC_date(),commodity.getC_describe());
         } catch (SQLException e) {
             e.printStackTrace();
         }

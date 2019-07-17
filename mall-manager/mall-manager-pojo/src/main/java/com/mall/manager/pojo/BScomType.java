@@ -1,6 +1,9 @@
 package com.mall.manager.pojo;
 
 public class BScomType {
+    public BScomType() {
+    }
+
     private String type_ID;
     private String type_describe;
     private String style;

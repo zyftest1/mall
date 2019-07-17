@@ -244,12 +244,12 @@
     </build>
     <distributionManagement>
         <repository>
-            <user_id>releases</user_id>
+            <id>releases</id>
             <name>releases</name>
             <url>http://localhost:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
-            <user_id>snapshots</user_id>
+            <id>snapshots</id>
             <name>snapshots</name>
             <url>http://localhost:8081/repository/maven-snapshots/</url>
         </snapshotRepository>

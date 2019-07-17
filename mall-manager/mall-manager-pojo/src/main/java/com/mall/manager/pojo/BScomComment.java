@@ -1,6 +1,9 @@
 package com.mall.manager.pojo;
 
 public class BScomComment {
+    public BScomComment() {
+    }
+
     private String com_ID;
     private int user_id;
     private String user_name;

@@ -37,6 +37,7 @@ public class comServlet extends HttpServlet {
         req.setAttribute("bsCommodities",bsCommodities);
         req.getRequestDispatcher("/com.jsp").forward(req,resp);
 
+
     }
 
 
@@ -46,9 +47,9 @@ public class comServlet extends HttpServlet {
         BSCommodity commodity = bScommunityService.selectCombyIDserv("52110302");
         IBsComTypeDao comTypeDao = new IBsComTypeDaoImpl();
         System.out.println(comTypeDao.selectbByid("5202").toString());
-//        for (BSCommodity c :bsCommodities){
-//            System.out.println(c.toString());
-//        }
+        for (BSCommodity c :bsCommodities){
+            System.out.println(c.toString());
+        }
     }
 
 }

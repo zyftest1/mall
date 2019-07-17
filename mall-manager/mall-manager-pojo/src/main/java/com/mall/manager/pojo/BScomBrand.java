@@ -1,6 +1,9 @@
 package com.mall.manager.pojo;
 
 public class BScomBrand {
+    public BScomBrand() {
+    }
+
     private String brand_ID;
     private String brand_describe;
     private String pictureurl;

@@ -1,6 +1,9 @@
 package com.mall.manager.pojo;
 
 public class BSCommodity {
+
+    public BSCommodity(){}
+
     private String c_id;
     private String type_id;
     private String mat_ID;

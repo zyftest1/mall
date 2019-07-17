@@ -1,6 +1,9 @@
 package com.mall.manager.pojo;
 
 public class BScomMaterial {
+    public BScomMaterial() {
+    }
+
     private String mat_ID;
     private String cloth;
     private String origin;

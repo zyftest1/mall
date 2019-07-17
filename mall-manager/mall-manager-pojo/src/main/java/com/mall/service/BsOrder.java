@@ -15,6 +15,9 @@ public class BsOrder {
     private int quantity;
     private Date oDate;
 
+    public BsOrder() {
+    }
+
     public BsOrder(String oID, String oName, String oAddress, String oTel, int schID, int ID, String tel, String sID, double price, int quantity, Date oDate) {
         this.oID = oID;
         this.oName = oName;

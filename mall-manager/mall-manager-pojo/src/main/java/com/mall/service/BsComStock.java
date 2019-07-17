@@ -11,6 +11,9 @@ public class BsComStock {
     private String describe;
     private String picID;
 
+    public BsComStock() {
+    }
+
     public BsComStock(String sID, String cID, String colorID, String size, int stock, int wareID, double price, String describe, String picID) {
         this.sID = sID;
         this.cID = cID;

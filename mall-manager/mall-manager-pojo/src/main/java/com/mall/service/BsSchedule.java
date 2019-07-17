@@ -5,6 +5,9 @@ public class BsSchedule {
     private String state;
     private String describe;
 
+    public BsSchedule() {
+    }
+
     public BsSchedule(int schID, String state, String describe) {
         this.schID = schID;
         this.state = state;

@@ -165,7 +165,7 @@
 							<!-- <em class="little-triangle"></em> <em class="little-triangle-hover"></em> --></a>
 						<ul>
 							<li>
-								<a class="" href="orderlist.jsp">全部订单</a>
+								<a class="" href="/order.do?_method=orderTotal">全部订单</a>
 							</li>
 							<li>
 								<a class="" href="order_unshipped.jsp#">待付款</a>

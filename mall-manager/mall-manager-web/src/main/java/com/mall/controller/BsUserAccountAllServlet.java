@@ -1,8 +1,8 @@
 package com.mall.controller;
 
 import com.mall.service.BsUserAccount;
-import com.mall.service.IUserService;
 import com.mall.service.impl.IUserServiceImpl;
+import com.mall.service.test.IUserService;
 import com.utils.MyUTF;
 import com.wf.captcha.utils.CaptchaUtil;
 

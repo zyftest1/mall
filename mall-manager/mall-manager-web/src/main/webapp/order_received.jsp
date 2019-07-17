@@ -207,20 +207,22 @@
 				<div id="navListWrap">
 					<div class="doota_nav mu_nav_wrap">
 						<ul class="doota_ul">
-							<li><a class="menu_order disable-a"> 我的订单 </a>
-								<ul class="mu_nav_item">
-									<li> <a href="orderlist.jsp#&amp;_uk=sr67mlrhfousumpjbc6n7bdg82rvnyapglqybeg6">全部订单</a> </li>
-									
-									<li > <a href="order_unshipped.jsp#&amp;_uk=sr67mlrhfousumpjbc6n7bdg82rvnyapglqybeg6"> 待收货 <i id="unReceivedOrder"
-											 class="mu_nav_count"><i class="mu_nav_count_arw"></i></i> </a> </li>
-									<li class="c"> <a href="order_received.jsp#&amp;_uk=sr67mlrhfousumpjbc6n7bdg82rvnyapglqybeg6"> 待评价 <i id="waitingRateOrder"
-											 class="mu_nav_count"><i class="mu_nav_count_arw"></i></i> </a> </li>
-									<li> <a href="order_DELETED.jsp#&amp;_uk=sr67mlrhfousumpjbc6n7bdg82rvnyapglqybeg6"> 退货退款 <i class="mu_nav_count"><i
-												 class="mu_nav_count_arw"></i></i> </a> </li>
+                            <li><a class="menu_order disable-a"> 我的订单 </a>
+                                <ul class="mu_nav_item">
+                                    <li> <a href="/order.do?_method=orderTotal">全部订单</a> </li>
 
-								</ul>
-							</li>
-							<li><a class="disable-a">优惠特权</a>
+                                    <li > <a href="/order.do?_method=orderUnreceive"> 待收货 <i id="unReceivedOrder" class="mu_nav_count"><i class="mu_nav_count_arw"></i></i> </a> </li>
+                                    <li class="c">
+										<a href="/order.do?_method=waitEvaluate"> 待评价
+											<i id="waitingRateOrder" class="mu_nav_count">
+												<i class="mu_nav_count_arw"></i></i> </a> </li>
+                                    <li> <a href="order_DELETED.jsp#&amp;_uk=sr67mlrhfousumpjbc6n7bdg82rvnyapglqybeg6"> 退货退款 <i class="mu_nav_count"><i
+                                            class="mu_nav_count_arw"></i></i> </a> </li>
+
+                                </ul>
+                                </li>
+
+                            <li><a class="disable-a">优惠特权</a>
 								<ul>
 									<li><a class="menu_coupon_plat" href="coupon.jsp#?pages=1&coupon_type=1&status=0">平台优惠券</a></li>
 									<li><a class="menu_coupon_shop" href="coupon.jsp#?pages=1&coupon_type=2&status=0">店铺优惠券</a></li>
@@ -250,17 +252,26 @@
 				<div class="mu_content_wrap">
 					<div class="order-title">
 						<ul class="order-title-column clearfix">
-							<li class="goods">商品</li>
-							<li class="price">单价(元)</li>
-							<li class="quantity">数量</li>
-							<li class="aftersale">售后</li>
-							<li class="total">实付款(元)</li>
-							<li class="status">交易状态</li>
-							<li class="other">操作</li>
+                            <li class="goods">商品</li>
+                            <li class="price">单价(元)</li>
+                            <li class="quantity">数量</li>
+                            <li class="aftersale">总价</li>
+                            <%--							<li class="total">实付款(元)</li>--%>
+                            <li class="status">交易状态</li>
+                            <%--							<li class="other">操作</li>--%>
 						</ul>
 					</div>
 
 					<div id="orderWrap">
+                        <c:forEach items="${requestScope.orders}" var="order">
+                            <ul class="order-title-column clearfix">
+                                <li class="goods">${order.goodsName}</li>
+                                <li class="price">${order.singlePrice}</li>
+                                <li class="quantity">${order.goodsNum}</li>
+                                <li class="aftersale">${order.totalPrice}</li>
+                                <li class="status">${order.state}</li>
+                            </ul>
+                        </c:forEach>
 
 					</div>
 				</div>
@@ -310,6 +321,8 @@
 
 
 		<script type="text/javascript" src="js\index.js-417ef0a2.js"></script>
+
+<%--		<script type="text/javascript" src="js\index.js-800cd574.js"></script>--%>
 
 	</body>
 

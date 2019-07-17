@@ -139,7 +139,7 @@
 									 href="mycart.jsp" target="_blank">查看购物车</a> </p>
 							</div>
 						</li>
-						<li> <a href="orderlist.jsp" target="_blank"><em class="order"></em>我的订单</a> </li>
+						<li> <a href="/order.do?_method=orderTotal" target="_blank"><em class="order"></em>我的订单</a> </li>
 						<li class="drop"> <a target="_blank">帮助中心<em class="arrow"></em></a>
 							<ul class="down">
 							

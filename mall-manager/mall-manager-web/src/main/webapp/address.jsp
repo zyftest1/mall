@@ -166,7 +166,7 @@
 					</li>
 
 					<li class="s1 myorder has_line">
-						<a href="orderlist.jsp" target="_blank" class="text display_u" ref="nofollow">我的订单</a>
+						<a href="/order.do?_method=orderTotal" target="_blank" class="text display_u" ref="nofollow">我的订单</a>
 					</li>
 
 					<li class="s1 has_line has_icon ">

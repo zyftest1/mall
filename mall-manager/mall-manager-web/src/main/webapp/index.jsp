@@ -127,12 +127,18 @@
                     <span class="active">宝贝</span>
                     <span>店铺</span></div>
                 <div class="search-box">
-                    <input type="text" class="search-txt">
-                    <span class="search-btn"></span>
-                    <div class="suggest-box"></div>
+                    <form action="/goods.do">
+                        <input type="text" class="search-txt" name="goodsNameInput">
+                        <%--								<a href="/goods.do">--%>
+                        <%--									<input type="button" value="" class="search-btn">--%>
+                        <%--								</a>--%>
+                        <input type="submit" class="search-btn">
+                        <div class="suggest-box"></div>
+                    </form>
                 </div>
                 <div class="hotword"></div>
             </div>
+
         </div>
     </div>
     <div class="nav_main_box">
@@ -1668,5 +1674,4 @@
     fml.iLoad();
 </script>
 </body>
-
 </html>

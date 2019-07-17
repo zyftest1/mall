@@ -104,8 +104,15 @@
 						 alt=""> </a> <a href="" class="sublogo"> </a>
 					<div class="search">
 						<div class="search-tab"> <span class="active">宝贝</span><span>店铺</span> </div>
-						<div class="search-box"> <input type="text" class="search-txt"> <span class="search-btn"></span>
+						<div class="search-box">
+							<form action="/goods.do">
+								<input type="text" class="search-txt" name="goodsNameInput">
+<%--								<a href="/goods.do">--%>
+<%--									<input type="button" value="" class="search-btn">--%>
+<%--								</a>--%>
+								<input type="submit" class="search-btn">
 							<div class="suggest-box"></div>
+							</form>
 						</div>
 						<div class="hotword"> </div>
 					</div> <a class="spread" href="" target="_blank"> <img src="p2\160804\1rp_49cgihk50031c69jjk51ilkjk4950_210x157.gif">

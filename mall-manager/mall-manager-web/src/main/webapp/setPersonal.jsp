@@ -1018,7 +1018,11 @@
 							<!-- <em class="little-triangle"></em> <em class="little-triangle-hover"></em> --></a>
 						<ul>
 							<li>
+<<<<<<< HEAD
 								<a class="" href="orderlist.jsp">全部订单</a>
+=======
+								<a class="" href="/order.do?_method=orderTotal">全部订单</a>
+>>>>>>> 362cfdbe3d68a8894ce2032001cc764c225d748a
 							</li>
 							<li>
 								<a class="" href="order_unshipped.jsp#">待付款</a>

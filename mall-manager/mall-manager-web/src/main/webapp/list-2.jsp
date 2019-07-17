@@ -111,8 +111,15 @@
 						 alt=""> </a> <a href="" class="sublogo"> </a>
 					<div class="search">
 						<div class="search-tab"> <span class="active">宝贝</span><span>店铺</span> </div>
-						<div class="search-box"> <input type="text" class="search-txt"> <span class="search-btn"></span>
-							<div class="suggest-box"></div>
+						<div class="search-box">
+							<form action="/goods.do">
+								<input type="text" class="search-txt" name="goodsNameInput">
+								<%--								<a href="/goods.do">--%>
+								<%--									<input type="button" value="" class="search-btn">--%>
+								<%--								</a>--%>
+								<input type="submit" class="search-btn">
+								<div class="suggest-box"></div>
+							</form>
 						</div>
 						<div class="hotword"> </div>
 					</div> <a class="spread" href="" target="_blank"> <img src="p2\160804\1rp_49cgihk50031c69jjk51ilkjk4950_210x157.gif">
@@ -750,8 +757,24 @@
 					<!-- <div class="checkBoxWrap">			<div class="checkInfo">				<span></span>				金币抵现			</div>			<!-- <input type="checkbox"> -->
 					<!-- </div> -->
 				</div>
+<%--				<%String imgUrl=(String)request.getAttribute("imgUrl");%>--%>
 				<div class="product">
 					<ul class="clearfix product-ul" id="product-ul">
+						<c:forEach items="${requestScope.goods}" var="good">
+							<li class="product-list fl">
+								<div class="img-size"> <a class="img-link" target="_blank" href="shopdetail.jsp#?1gl82bc?acm=2.ms.2_4.0.12380.yUhpUbBxJQ1.t_0"
+														  style="background:url(${good.imgUrl}) no-repeat center center;background-size:cover;"></a>
+								</div>
+								<div class="product-info clearfix">
+									<div class="price fl"><em class="price-u">¥</em><span class="price-n">${good.price}</span></div>
+									<div class="fav fr"><em class="fav-i"></em> <span class="fav-n">1231</span> </div>
+								</div>
+								<div></div>
+								<div class="product-logo"> <img src="b7\avatar\160520\1y0mpt_ie4tqodbgrrdcnlbhazdambqgqyde_50x54.jpg"> </div> <a
+									class="text-link" target="_blank" href="shopdetail.jsp#?1gl82bc?acm=2.ms.2_4.0.12380.yUhpUbBxJQ1.t_0">
+								${good.goodsName}</a>
+							</li>
+						</c:forEach>
 						<li class="product-list fl">
 							<div class="img-size"> <a class="img-link" target="_blank" href="shopdetail.jsp#?1gl82bc?acm=2.ms.2_4.0.12380.yUhpUbBxJQ1.t_0"
 								 style="background:url(http://s2.mogucdn.com/p1/160724/801510422_ifqtentbgbrwimtghezdambqgyyde_640x960.jpg_224x340.jpg) no-repeat center center;background-size:cover;"></a>

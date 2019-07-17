@@ -983,6 +983,12 @@
 							<li>
 								<a class="" href="order_DELETED.jsp#" target="_blank">退款退货</a>
 							</li>
+<<<<<<< HEAD
+=======
+							<li>
+								<a class="" href="order_DELETED.jsp#" target="_blank">订单回收站</a>
+							</li>
+>>>>>>> 362cfdbe3d68a8894ce2032001cc764c225d748a
 						</ul>
 					</li>
 					<li>
@@ -1038,31 +1044,26 @@
 			</div>
 			<div class="settings_box"> <strong class="settings_title">用户密码</strong>
 				<fieldset class="setPersonal">
-					<form id="setPasswordForm" method="post" onsubmit="return false" action="/BsUserAccount.do?_method=select">
-						<div class="form-list" id="old-form">
-							<label class="account-label" >当前密码</label> <input style="display:none">
-							<!-- for disable autocomplete on chrome -->
-							<input autocomplete="off" class="l_ipt" id="old_password" name="old_password" type="password" value="">
-							<strong style="display:none;"></strong>
+					<form id="setPasswordForm" method="post" onsubmit="return false" action="">
+						<div class="form-list" id="old-form"> <label class="account-label" for="old_password">当前密码</label> <input style="display:none">
+							<!-- for disable autocomplete on chrome --><input autocomplete="off" class="l_ipt" id="old_password" name="old_password"
+							 type="password" value=""> <strong style="display:none;"></strong>
 							<!-- <a id="forget"><strong>忘记密码？</strong></a> -->
 						</div>
-						<div class="form-list">
-							<label class="account-label" for="new_password">新密码</label> <input style="display:none">
-							<!-- for disable autocomplete on chrome -->
-							<input autocomplete="off" class="l_ipt" id="new_password" name="new_password" type="password" value=""> <strong></strong> </div>
+						<div class="form-list"> <label class="account-label" for="new_password">新密码</label> <input style="display:none">
+							<!-- for disable autocomplete on chrome --><input autocomplete="off" class="l_ipt" id="new_password" name="new_password"
+							 type="password" value=""> <strong></strong> </div>
 						<div class="pw_safe none_f"> <span class="txt">安全程度</span>
 							<div class="pw_strength pw_weak pw_medium pw_strong">
 								<div class="pw_bar"></div>
-								<div class="pw_letter">
-									<span class="strength_l">低</span> <span class="strength_m">中</span> <span class="strength_h">强</span>
+								<div class="pw_letter"> <span class="strength_l">低</span> <span class="strength_m">中</span> <span class="strength_h">强</span>
 								</div>
 							</div>
 						</div>
 						<div class="form-list"> <label class="account-label" for="confirm_password">确认密码</label> <input style="display:none">
-							<!-- for disable autocomplete on chrome -->
-							<input autocomplete="off" class="l_ipt" id="confirm_password" name="confirm_password"
-							 type="password" value=""> <strong class="setPasswordErrorMessageLine"></strong> </div>
-						<input type="submit" value="确 认" id="submit" class="ext_submit"> <span class="submit_error"></span>
+							<!-- for disable autocomplete on chrome --><input autocomplete="off" class="l_ipt" id="confirm_password" name="confirm_password"
+							 type="password" value=""> <strong class="setPasswordErrorMessageLine"></strong> </div> <input type="submit"
+						 value="确 认" id="submit" class="ext_submit"> <span class="submit_error"></span>
 					</form>
 				</fieldset>
 			</div>

@@ -1,4 +1,4 @@
-package com.mall;
+package com.mall.manager.pojo;
 
 public class Student {
     private String name;

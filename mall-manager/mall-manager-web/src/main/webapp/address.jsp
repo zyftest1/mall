@@ -1,7 +1,20 @@
-﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+﻿<%@ page import="java.util.List" %>
+<%@ page import="com.mall.service.BsUserAddress" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 
 	<head>
+
+        <style type="text/css">
+			table{
+				width: 100%;
+				text-align: center;
+                border-style:solid;
+                border-color:#DFDFDF;
+			}
+		</style>
 		<script type="text/javascript">
 			window.__trace__headstart = +new Date;
 			window.__server__startTime = 1471567425065 || +new Date;
@@ -94,7 +107,11 @@
 	</head>
 
 	<body>
-		<script type="text/javascript">
+<%--	<%--%>
+<%--		List<BsUserAddress> bsUserAddressList = (List<BsUserAddress>)request.getAttribute("bsUserAddressList");--%>
+<%--	%>--%>
+
+	<script type="text/javascript">
 			/**
 			 ** for layout 960
 			 **/
@@ -164,7 +181,7 @@
 					</li>
 
 					<li class="s1 myorder has_line">
-						<a href="/order.do?_method=orderTotal" target="_blank" class="text display_u" ref="nofollow">我的订单</a>
+						<a href="orderlist.jsp" target="_blank" class="text display_u" ref="nofollow">我的订单</a>
 					</li>
 
 					<li class="s1 has_line has_icon ">
@@ -204,45 +221,77 @@
 				<div class="mu_content_wrap">
 					<div class="addr_right topay" isaddress='true' topaycount="">
 						<h2 class="addr_title">地址管理</h2>
-						<div class="addr_edit" id="J_s_addr_edit">
-							<div class="add_new_addr clearfix"><span id="J_saddAddress">+添加地址</span></div>
-							<div class="addressbox_warp">
-								<div class="addressbox" id="J_sAddrWrap"></div>
-								<!-- <div class="addressbox addressfirst addresslist" action="/trade/address/addfororder">
-                        </div> -->
-							</div>
-							<div class="addr_section default" aid="2117639690">
-								<ul class="clearfix">
-									<li class="name">阿茂</li>
-									<li class="addr" data-province="北京" data-city="北京市" data-area="宣武区" data-street="魏善庄镇11号">
-										北京北京市宣武区魏善庄镇11号 </li>
-									<li class="zcode">000000</li>
-									<li class="mobile">13737301354</li>
-									<li class="oper">
-										<a href="javascript:;" class="J_default">默认地址</a>
-										<a href="javascript:;" class="edit">编辑</a>
-										<a href="javascript:;" class="del nobd">删除</a>
-									</li>
-									<li class="enaddr"></li>
-								</ul>
-							</div>
-							<div class="addr_section " aid="2117639656">
-								<ul class="clearfix">
-									<li class="name">阿茂</li>
-									<li class="addr" data-province="北京" data-city="北京市" data-area="朝阳区" data-street="王各庄村南1000米">
-										北京北京市朝阳区王各庄村南1000米 </li>
-									<li class="zcode">000000</li>
-									<li class="mobile">13737301354</li>
-									<li class="oper">
-										<a href="javascript:;" class="J_default">设为默认</a>
-										<a href="javascript:;" class="edit">编辑</a>
-										<a href="javascript:;" class="del nobd">删除</a>
-									</li>
-									<li class="enaddr"></li>
-								</ul>
-							</div>
+                        <a href="/add.do" class="addr_title" role="button">+添加</a>
+						<div>
+							<form method="post" action="/address.do">
+								<table class="table" border="1px">
+									<thead>
+									<tr>
+										<th>地址</th>
+										<th>姓名</th>
+										<th>电话</th>
+										<th colspan="2">操作</th>
+									</tr>
+									</thead>
+									<tbody>
+									<c:forEach items="${bsUserAddressList}" var="BsUserAddress">
+									<tr>
+										<td>${BsUserAddress.address}</td>
+										<td>${BsUserAddress.name}</td>
+										<td>${BsUserAddress.tel}</td>
+										<td><a href="/update.do?addID=${BsUserAddress.addID}">修改</a></td>
+										<td><a href="/delete.do?addID=${BsUserAddress.addID}">删除</a></td>
+									</tr>
+									</c:forEach>
+									</tbody>
+								</table>
+							</form>
 						</div>
-					</div>
+
+
+
+
+<%--						<div class="addr_edit" id="J_s_addr_edit">--%>
+<%--							<div class="add_new_addr clearfix"><span id="J_saddAddress">+添加地址</span></div>--%>
+<%--							<div class="addressbox_warp">--%>
+<%--								<div class="addressbox" id="J_sAddrWrap"></div>--%>
+<%--								<!-- <div class="addressbox addressfirst addresslist" action="/trade/address/addfororder">--%>
+<%--                        </div> -->--%>
+<%--							</div>--%>
+<%--							<div class="addr_section default" aid="2117639690">--%>
+<%--								<form action="" method="post">--%>
+<%--								<ul class="clearfix">--%>
+<%--									<li class="name">阿茂</li>--%>
+<%--									<li class="addr" data-province="北京" data-city="北京市" data-area="宣武区" data-street="魏善庄镇11号">--%>
+<%--										北京北京市宣武区魏善庄镇11号 </li>--%>
+<%--									<li class="zcode">000000</li>--%>
+<%--									<li class="mobile">13737301354</li>--%>
+<%--									<li class="oper">--%>
+<%--										<a href="javascript:;" class="J_default">默认地址</a>--%>
+<%--										<a href="javascript:;" class="edit">编辑</a>--%>
+<%--										<a href="javascript:;" class="del nobd">删除</a>--%>
+<%--									</li>--%>
+<%--									<li class="enaddr"></li>--%>
+<%--								</ul>--%>
+<%--								</form>--%>
+<%--							</div>--%>
+<%--							<div class="addr_section " aid="2117639656">--%>
+<%--								<ul class="clearfix">--%>
+<%--									<li class="name">阿茂</li>--%>
+<%--									<li class="addr" data-province="北京" data-city="北京市" data-area="朝阳区" data-street="王各庄村南1000米">--%>
+<%--										北京北京市朝阳区王各庄村南1000米 </li>--%>
+<%--									<li class="zcode">000000</li>--%>
+<%--									<li class="mobile">13737301354</li>--%>
+<%--									<li class="oper">--%>
+<%--										<a href="javascript:;" class="J_default">设为默认</a>--%>
+<%--										<a href="javascript:;" class="edit">编辑</a>--%>
+<%--										<a href="javascript:;" class="del nobd">删除</a>--%>
+<%--									</li>--%>
+<%--									<li class="enaddr"></li>--%>
+<%--								</ul>--%>
+<%--							</div>--%>
+<%--						</div>--%>
+<%--					</div>--%>
 
 				</div>
 			</div>

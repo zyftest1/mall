@@ -1,8 +1,4 @@
-<%@ page import="java.util.List" %>
-<%@ page import="com.mall.BsOrder" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page isELIgnored="false"%>
 <html>
 
 	<head>
@@ -144,15 +140,15 @@
 						<ul class="doota_ul">
 							<li><a class="menu_order disable-a"> 我的订单 </a>
 								<ul class="mu_nav_item">
-									<li class="c"> <a href="/order.do?_method=orderTotal">全部订单</a> </li>
+									<li class="c"> <a href="orderlist.jsp#&amp;_uk=ovb9anh6i9cpejlxniyfzqfffuawhojpjslezjdh">全部订单</a> </li>
 									
-									<li> <a href="/order.do?_method=orderUnreceive"> 待收货 <i id="unReceivedOrder"
+									<li> <a href="order_unshipped.jsp#&amp;_uk=ovb9anh6i9cpejlxniyfzqfffuawhojpjslezjdh"> 待收货 <i id="unReceivedOrder"
 											 class="mu_nav_count"><i class="mu_nav_count_arw"></i></i> </a> </li>
-									<li> <a href="/order.do?_method=waitEvaluate"> 待评价 <i id="waitingRateOrder"
+									<li> <a href="order_received.jsp#&amp;_uk=ovb9anh6i9cpejlxniyfzqfffuawhojpjslezjdh"> 待评价 <i id="waitingRateOrder"
 											 class="mu_nav_count"><i class="mu_nav_count_arw"></i></i> </a> </li>
-									<li> <a href="order_DELETED.jsp"> 退货退款 <i class="mu_nav_count"><i
+									<li> <a href="order_DELETED.jsp#&amp;_uk=ovb9anh6i9cpejlxniyfzqfffuawhojpjslezjdh"> 退货退款 <i class="mu_nav_count"><i
 												 class="mu_nav_count_arw"></i></i> </a> </li> <!-- 新增，stage=8 回收站订单 -->
-									<li> <a href="order_DELETED.jsp"> 订单回收站 <i id="recyleOrder"
+									<li> <a href="order_DELETED.jsp#&amp;_uk=ovb9anh6i9cpejlxniyfzqfffuawhojpjslezjdh"> 订单回收站 <i id="recyleOrder"
 											 class="mu_nav_count"><i class="mu_nav_count_arw"></i></i> </a> </li>
 								</ul>
 							</li>
@@ -164,8 +160,10 @@
 							</li>
 							<li> <a class="menu_pcenter" href="footprint.jsp#"> 我的足迹 <em class="little-triangle"></em><em class="little-triangle-hover"></em>
 								</a> </li>
-							<li> <a class="menu_pcenter" href="address.jsp#"> 收货地址 <em class="little-triangle"></em><em class="little-triangle-hover"></em>
-								</a> </li>
+							<li>
+								<a class="menu_pcenter" href="/address.do" >收货地址 <em class="little-triangle"></em><em class="little-triangle-hover"></em>
+								</a>
+							</li>
 							<li> <a class="disable-a">账号管理</a>
 								<ul>
 									<li><a href="setPersonal.jsp">我的信息</a></li>
@@ -189,23 +187,15 @@
 							<li class="goods">商品</li>
 							<li class="price">单价(元)</li>
 							<li class="quantity">数量</li>
-							<li class="aftersale">总价</li>
-<%--							<li class="total">实付款(元)</li>--%>
+							<li class="aftersale">售后</li>
+							<li class="total">实付款(元)</li>
 							<li class="status">交易状态</li>
-<%--							<li class="other">操作</li>--%>
+							<li class="other">操作</li>
 						</ul>
 					</div>
+
 					<div id="orderWrap">
 
-						<c:forEach items="${requestScope.orders}" var="order">
-							<ul class="order-title-column clearfix">
-								<li class="goods">${order.goodsName}</li>
-								<li class="price">${order.singlePrice}</li>
-								<li class="quantity">${order.goodsNum}</li>
-								<li class="aftersale">${order.totalPrice}</li>
-								<li class="status">${order.state}</li>
-							</ul>
-						</c:forEach>
 					</div>
 				</div>
 			</div>
@@ -255,7 +245,7 @@
 
 		<script type="text/javascript" src="js\index.js-417ef0a2.js"></script>
 
-<%--		<script type="text/javascript" src="js\index.js-800cd574.js"></script>--%>
+		<script type="text/javascript" src="js\index.js-800cd574.js"></script>
 
 	</body>
 

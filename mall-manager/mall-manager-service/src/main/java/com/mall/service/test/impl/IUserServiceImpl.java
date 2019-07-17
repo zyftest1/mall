@@ -1,8 +1,8 @@
-package com.mall.service.impl;
+package com.mall.service.test.impl;
 
-import com.mall.service.BsUserAccount;
-import com.mall.service.IUserDao;
-import com.mall.service.IUserService;
+import com.mall.BsUserAccount;
+import com.mall.service.test.IUserDao;
+import com.mall.service.test.IUserService;
 
 public class IUserServiceImpl implements IUserService {
     @Override

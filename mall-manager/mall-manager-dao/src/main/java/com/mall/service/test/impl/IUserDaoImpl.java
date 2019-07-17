@@ -1,15 +1,11 @@
-package com.mall.service.impl;
+package com.mall.service.test.impl;
 
-
-import com.mall.service.BsUserAccount;
-import com.mall.service.IUserDao;
-import com.utils.JdbcUtils;
+import com.mall.BsUserAccount;
+import com.mall.service.test.IUserDao;
 import com.utils.JdbcUtils_C3P0;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

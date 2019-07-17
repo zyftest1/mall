@@ -1,8 +1,8 @@
 package com.mall.controller;
 
-import com.mall.service.BsUserAccount;
-import com.mall.service.IUserService;
-import com.mall.service.impl.IUserServiceImpl;
+import com.mall.BsUserAccount;
+import com.mall.service.test.IUserService;
+import com.mall.service.test.impl.IUserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

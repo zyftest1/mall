@@ -29,6 +29,8 @@ public class addComServlet extends HttpServlet {
     @Override
     @Test
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+
         BScommunityService bScommunityService = new BScommunityServImpl();
         IBsComTypeDao comTypeDao = new IBsComTypeDaoImpl();
         IBsComMarerialDao marerialDao = new IBsComMarerialDaoImpl();

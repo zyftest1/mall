@@ -24,7 +24,7 @@
         <select name="ctype" >
             <c:forEach items="${types}" var="type">
 
-                <option value=${type.type_ID}>${type.type_ID}</option>
+                <option value=${type.type_ID}>${type.type_describe}</option>
             </c:forEach>
 
         </select>

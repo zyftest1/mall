@@ -41,7 +41,7 @@
             <td class="center"><%=bs.getUser_name()%></td>
             <td class="center"><%=bs.getCs_content()%></td>
             <td class="center"><%=bs.getCs_ID()%></td>
-            <td class="center"><a href="/selectCustomerById.do?user_ID=<%=bs.getUser_ID()%>&cs_ID=<%=bs.getCs_ID()%>&cs_content=<%=bs.getCs_content()%>&user_name=<%=bs.getUser_name()%>" class="inline-block" title="回复">回复</a>
+            <td class="center"><a href="/selectCustomerById.do?user_ID=<%=bs.getUser_ID()%>" class="inline-block" title="回复">回复</a>
 <%--                <a class="inline-block" title="移除"><img src="images/icon_drop.gif"></a>--%></td>
             <%}%>
         </tr>

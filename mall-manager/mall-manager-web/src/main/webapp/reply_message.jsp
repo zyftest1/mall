@@ -17,24 +17,27 @@
     <script src="js/public.js"></script>
 </head>
 <body>
+<%
+    BS_customer_Service bs = (BS_customer_Service) request.getAttribute("cust");
+%>
 <div class="wrap">
     <div class="page-title">
         <span class="modular fl"><i class="user"></i><em>管理员回复</em></span>
     </div>
-    <%
-        BS_customer_Service bs = (BS_customer_Service) request.getAttribute("cust");
-    %>
+
     <form action="/customerModify.do?user_ID=<%=bs.getUser_ID()%>" METHOD="post">
     <tr>
+
         用户昵称: <th class="R-userTitle"><%=bs.getUser_name()%></th><br/>
         用户评论: <th class="R-userCont"><%=bs.getCs_content()%></th><br/>
-        管理员回复:<input type="text" size="20px" name="user_address" value="<%=bs.getCs_ID()%>"><br/>
+        管理员回复:<input type="text" size="20px" name="cs_ID" value="<%=bs.getCs_ID()%>"><br/>
 
     <hr>
 
         <input type="submit" value="回复 " class="tdBtn" style="margin:8px 0;">
-    </form>
+
     </tr>
+    </form>
 </div>
 </body>
 </html>

@@ -3,6 +3,7 @@ package com.mall.controller;
 import com.mall.BS_customer_Service;
 import com.mall.service.CustomerService;
 import com.mall.service.impl.CustomerServiceImpl;
+import org.omg.PortableInterceptor.INACTIVE;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,23 +18,38 @@ public class CustomerModifyServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CustomerService sdfd = new CustomerServiceImpl();
-        BS_customer_Service sd = new BS_customer_Service();
+//        SelectCustomerByID sdz=new SelectCustomerByID();
+        BS_customer_Service sd = null;
         req.setCharacterEncoding("UTF-8");
+        String id = req.getParameter("user_ID");
         String sdv = req.getParameter("cs_ID");
-        String aff = req.getParameter("cs_date");
-        String faf=req.getParameter("cs_content");
-        String df = req.getParameter("user_name");
-        Integer id=Integer.parseInt(req.getParameter("user_ID"));
+//        String aff = req.getParameter("cs_date");
+//        String faf=req.getParameter("cs_content");
+//        String df = req.getParameter("user_name");
+//        Integer id=Integer.parseInt(req.getParameter("user_ID"));
+        try {
+            sd=sdfd.queryListById(Integer.parseInt(id));
+            System.out.println(id);
+            System.out.println(sdv);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         sd.setCs_ID(sdv);
-        sd.setUser_ID(id);
-        sd.setCs_content(faf);
-        sd.setUser_name(df);
+//        sd.setUser_ID(Integer.parseInt(id));
+//        sd.setCs_content(faf);
+//        sd.setUser_name(df);
         try {
             sdfd.modifyList(sd);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(sd);
+        try {
+            System.out.println(sd);
+            System.out.println(sdfd.queryListById(Integer.parseInt(id)));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         req.getRequestDispatcher("/customerRedirect.do").forward(req,resp);
     }
 

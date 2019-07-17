@@ -14,11 +14,14 @@ import java.sql.SQLException;
 
 @WebServlet({"/selectCustomerById.do"})
 public class SelectCustomerByID extends HttpServlet {
+
+    BS_customer_Service emplist = null;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CustomerService Service = new CustomerServiceImpl();
         String nom = req.getParameter("user_ID");
-        BS_customer_Service emplist = null;
+
         try {
             emplist = Service.queryListById(Integer.parseInt(nom));
         } catch (SQLException e) {

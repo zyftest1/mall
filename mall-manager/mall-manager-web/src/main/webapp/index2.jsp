@@ -27,16 +27,16 @@
 <%--         </li>--%>
 
 <%--          <li class="menu-list-title">--%>
-<%--          <span>商品管理</span>--%>
-<%--           <i>◢</i>--%>
+          <span>订单管理</span>
+           <i>◢</i>
 <%--         </li>--%>
-<%--         <li>--%>
-<%--          <ul class="menu-children">--%>
+         <li>
+          <ul style="color:#192118">
 <%--     <li><a href="#" title="商品列表" target="mainCont">商品列表</a></li>--%>
-<%--       <li><a href="#" title="商品分类" target="mainCont">商品分类</a></li>--%>
+       <li style="color:#192118"><a href="/order.do" title="订单查询" target="mainCont">订单查询</a></li>
 <%--        <li><a href="#" title="商品分类" target="mainCont">商品下架</a></li>--%>
-<%--     </ul>--%>
-<%--     </li>--%>
+     </ul>
+     </li>
 
 
             <span>用户管理</span>
@@ -45,7 +45,7 @@
 <li>
 <%--<%for(BS_user_account bs : bs_){%>--%>
 
-            <ul >
+            <ul style="color:#192118">
                 <li style="color:#192118"><a href="/emp.do?_method=seleceAll" title="用户列表" target="">用户列表</a></li>
 
                 <li style="color:#192118"><a href="/customerRedirect.do" title="用户留言" target="">用户留言</a></li>

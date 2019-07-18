@@ -29,6 +29,7 @@
 
     <script> curl = {apiName: 'require'}; var MOGU = {}; var MoGu = {};</script>
 
+    <link rel="stylesheet" type="text/css" href="pc\css\base.css?1607170150.25">
 
     <link href="css\pkg-shop-header.css-ff44f5d7.css" rel="stylesheet" type="text/css">
 
@@ -138,9 +139,63 @@
         }
     })();
 </script>
-<div class="mgj_rightbar" data-ptp="_sidebar"></div>
-<div id="header" class="J_sitenav header_2015" data-ptp="_head">
-    <div class="wrap clearfix"></div>
+<div id="com-topbar">
+    <div class="inner">
+        <ul>
+            <li class="drop">
+                <c:choose>
+                    <c:when test="${sessionScope.bsUserAccount != null}">
+                        <img class="face" src="new1\v1\bdefaultavatar\03.jpg">
+                        ${sessionScope.bsUserAccount.bsName}
+                        <a href="#"></a>
+                        <ul class="down" style="width: 100px">
+                            <li>
+                                <a href="setPersonal.jsp">账号与安全</a></li>
+                            <li>
+                                <a href="login.jsp">退出</a></li>
+                        </ul>
+                    </c:when>
+                </c:choose>
+                <c:choose>
+                    <c:when test="${sessionScope.bsUserAccount == null}">
+                        <img class="face" src="new1\v1\bdefaultavatar\03.jpg">
+                        <a href="/login.jsp">请登录</a>
+                    </c:when>
+                </c:choose>
+            </li>
+            <li class="drop">
+                &nbsp;&nbsp;&nbsp;&nbsp;我的收藏
+                <ul class="down" style="width: 100px">
+                    <li>
+                        <a href="mylike.jsp" >收藏宝贝</a>
+                    </li>
+                    <li>
+                        <a href="mylikestore.jsp">收藏店铺</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="drop cart-wrapper"><a href="#"></a>
+                <a href="/car.do">我的购物车</a>
+            </li>
+            <li class="drop">
+                <a href="orderlist.jsp">我的订单</a>
+            </li>
+            <li class="drop">帮助中心
+                <ul class="down" style="width: 100px">
+                    <li>
+                        <a href="noviceGuide.jsp">新手指南</a></li>
+                    <li>
+                        <a href="serviceEnsure.jsp">服务保障</a></>
+                    <li>
+                        <a href="helpCommon.jsp">常见问题</a></li>
+                    <li>
+                        <a href="shoppingHelp.jsp">购物帮助</a></li>
+                </ul>
+            </li>
+            <li class="drop"><a href="#"></a>
+                <a href="#" class="last">进入后台</a></li>
+        </ul>
+    </div>
 </div>
 
 <style>

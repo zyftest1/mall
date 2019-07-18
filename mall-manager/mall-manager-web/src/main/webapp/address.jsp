@@ -169,7 +169,9 @@
 						<a href="/login.jsp">请登录</a>
 					</c:when>
 				</c:choose>
+				<input name="bsName" hidden="hidden" value="${sessionScope.bsUserAccount.bsName}">
 			</li>
+
 			<li class="drop">
 				&nbsp;&nbsp;&nbsp;&nbsp;我的收藏
 				<ul class="down" style="width: 100px">
@@ -235,9 +237,10 @@
 				<div class="mu_content_wrap">
 					<div class="addr_right topay" isaddress='true' topaycount="">
 						<h2 class="addr_title">地址管理</h2>
-                        <a href="/add.do" class="addr_title" role="button">+添加</a>
+                        <a href="/bsAddress.do?_method=add" class="addr_title" role="button">添加</a>
+
 						<div>
-							<form method="post" action="/address.do">
+							<form method="post" action="/bsAddress.do?_method=address">
 								<table class="table" border="1px">
 									<thead>
 									<tr>
@@ -253,8 +256,8 @@
 										<td>${BsUserAddress.address}</td>
 										<td>${BsUserAddress.name}</td>
 										<td>${BsUserAddress.tel}</td>
-										<td><a href="/update.do?addID=${BsUserAddress.addID}">修改</a></td>
-										<td><a href="/delete.do?addID=${BsUserAddress.addID}">删除</a></td>
+										<td><a href="/bsAddress.do?_method=update&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}">修改</a></td>
+										<td><a href="/bsAddress.do?_method=delete&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}">删除</a></td>
 									</tr>
 									</c:forEach>
 									</tbody>

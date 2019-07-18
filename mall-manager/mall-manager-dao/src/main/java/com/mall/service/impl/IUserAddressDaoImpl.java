@@ -17,7 +17,7 @@ import java.util.List;
 public class IUserAddressDaoImpl implements IUserAddressDao {
 
     @Override
-    public List<BsUserAddress> selectBsUserAddressByName(String name) {
+    public List<BsUserAddress> selectBsUserAddressByUserId(int ID) {
 //        QueryRunner qr = new QueryRunner(JdbcUtils_C3P0.getDataSource());
 //        String sql="select receiving_address,receiving_name,receiving_tel from bs_user_address where user_id = ?";
 //        List<BsUserAddress> bsUserAddressList = null;
@@ -45,12 +45,12 @@ public class IUserAddressDaoImpl implements IUserAddressDao {
 
         Connection conn = JdbcUtils.getConnection();
 //        String sql="select receiving_address,receiving_name,receiving_tel from bs_user_address where user_id = ?";
-        String sql = "select * from bs_user_address where receiving_name = ?";
+        String sql = "select * from bs_user_address where user_id = ?";
         PreparedStatement pstmt = null;
         ResultSet res=null;
         try {
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1,name);
+            pstmt.setInt(1,ID);
             res = pstmt.executeQuery();
             List<BsUserAddress> bsUserAddressList = new ArrayList<BsUserAddress>();
             while (res.next()){
@@ -112,7 +112,7 @@ public class IUserAddressDaoImpl implements IUserAddressDao {
         String sql = "insert into bs_user_address(user_id,receiving_address,receiving_name,receiving_tel) values(?,?,?,?)";
 
         try {
-            qr.update(sql,100021,bsUserAddress.getAddress(),bsUserAddress.getName(),bsUserAddress.getTel());
+            qr.update(sql,bsUserAddress.getID(),bsUserAddress.getAddress(),bsUserAddress.getName(),bsUserAddress.getTel());
         } catch (SQLException e) {
             e.printStackTrace();
         }

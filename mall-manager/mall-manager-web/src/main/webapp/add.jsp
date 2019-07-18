@@ -52,6 +52,7 @@
                         <a href="/login.jsp">请登录</a>
                     </c:when>
                 </c:choose>
+                <input name="bsName" hidden="hidden" value="${sessionScope.bsUserAccount.bsName}">
             </li>
             <li class="drop">
                 &nbsp;&nbsp;&nbsp;&nbsp;我的收藏
@@ -93,7 +94,8 @@
 <%--          电话<input type="text" name="tel"><br>--%>
 <%--          <input type="submit"value="保存"><input type="reset" value="重置">--%>
 <%--      </form>--%>
-<form class="form-horizontal" method="post" action="/save.do">
+<form class="form-horizontal" method="post" action="/bsAddress.do?_method=save">
+    <input hidden="hidden" value="${sessionScope.bsUserAccount.ID}" name="userId">
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">地址</label>
         <div class="col-sm-10">
@@ -101,9 +103,9 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="inputPassword3" class="col-sm-2 control-label">姓名</label>
+        <label for="inputPassword3" class="col-sm-2 control-label">收件人</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" name="name" id="inputPassword3" placeholder="姓名">
+            <input type="text" class="form-control" name="name" id="inputPassword3" placeholder="收件人">
         </div>
     </div>
     <div class="form-group">

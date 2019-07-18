@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IUserAddressDao {
 //查询 由用户姓名
-    public List<BsUserAddress> selectBsUserAddressByName(String name);
+    public List<BsUserAddress> selectBsUserAddressByUserId(int ID);
    // 查询 由addID
     public BsUserAddress selestBsUserAddressByAddID(int addID);
 //新增

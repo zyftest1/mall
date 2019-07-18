@@ -418,6 +418,19 @@
                                     </div>
                                 </div>
 
+                                <c:choose>
+                                    <c:when test="${sessionScope.bsUserAccount.bsName != null}">
+                                        <div class="goods-buy clearfix">
+                                            <!-- <a href="javascript:;" id="J_BuyNow" class="fl mr10 buy-btn buy-now">立刻购买</a> -->
+                                            <a href=""  class="fl mr10 buy-btn buy-now">立刻购买</a>
+                                            <input type="hidden" value="nodapei" >
+
+                                            <!-- <a href="javascript:;" id="J_BuyCart" class="fl mr10 buy-cart buy-btn">加入购物车</a> -->
+                                            <a href="" class="fl mr10 buy-cart buy-btn">加入购物车</a>
+
+                                        </div>
+                                    </c:when>
+                                </c:choose>
                                 <div class="goods-buy clearfix">
                                     <!-- <a href="javascript:;" id="J_BuyNow" class="fl mr10 buy-btn buy-now">立刻购买</a> -->
 									 <a href="login.jsp" id="J_BuyNow" class="fl mr10 buy-btn buy-now">立刻购买</a>

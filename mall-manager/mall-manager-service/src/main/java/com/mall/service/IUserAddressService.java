@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface IUserAddressService {
 //查询
-    public List<BsUserAddress> findBsUserAddressByName(String name);
+    public List<BsUserAddress> findBsUserAddressByUserId(int id);
 
     public BsUserAddress findBsUserAddressByAddID(int addID);
 //新增

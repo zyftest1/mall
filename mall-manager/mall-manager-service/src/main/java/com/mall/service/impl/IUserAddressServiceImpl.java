@@ -10,10 +10,10 @@ import java.util.List;
 
 public class IUserAddressServiceImpl implements IUserAddressService {
     @Override
-    public List<BsUserAddress> findBsUserAddressByName(String name) {
+    public List<BsUserAddress> findBsUserAddressByUserId(int id) {
         IUserAddressDao iUserAddressDao = new IUserAddressDaoImpl();
         List<BsUserAddress> bsUserAddressList = new ArrayList<BsUserAddress>();
-        bsUserAddressList = iUserAddressDao.selectBsUserAddressByName(name);
+        bsUserAddressList = iUserAddressDao.selectBsUserAddressByUserId(id);
         return bsUserAddressList;
     }
 

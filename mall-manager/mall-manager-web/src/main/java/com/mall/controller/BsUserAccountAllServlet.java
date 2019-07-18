@@ -1,6 +1,9 @@
 package com.mall.controller;
 
 import com.mall.service.BsUserAccount;
+import com.mall.service.BsUserAddress;
+import com.mall.service.IUserAddressService;
+import com.mall.service.impl.IUserAddressServiceImpl;
 import com.mall.service.impl.IUserServiceImpl;
 import com.mall.service.IUserService;
 import com.utils.MyUTF;
@@ -50,9 +53,9 @@ public class BsUserAccountAllServlet extends HttpServlet {
             case "login":
                 login(request,response);
                 break;
-
         }
     }
+
 
     private void codeImg(HttpServletRequest request, HttpServletResponse response) throws IOException {
         CaptchaUtil.outPng(request, response);

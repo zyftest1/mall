@@ -16,6 +16,7 @@
             margin: 100px;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="pc\css\base.css?1607170150.25">
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -27,7 +28,65 @@
 
 </head>
 <body>
-
+<div id="com-topbar">
+    <div class="inner">
+        <ul>
+            <li class="drop">
+                <c:choose>
+                    <c:when test="${sessionScope.bsUserAccount != null}">
+                        <img class="face" src="new1\v1\bdefaultavatar\03.jpg">
+                        ${sessionScope.bsUserAccount.bsName}
+                        <a href="#"></a>
+                        <ul class="down" style="width: 100px">
+                            <li>
+                                <a href="setPersonal.jsp">账号与安全</a></li>
+                            <li>
+                                <a href="login.jsp">退出</a></li>
+                        </ul>
+                    </c:when>
+                </c:choose>
+                <c:choose>
+                    <c:when test="${sessionScope.bsUserAccount == null}">
+                        <img class="face" src="new1\v1\bdefaultavatar\03.jpg">
+                        <a href="/login.jsp">请登录</a>
+                    </c:when>
+                </c:choose>
+                <input name="bsName" hidden="hidden" value="${sessionScope.bsUserAccount.bsName}">
+            </li>
+            <li class="drop">
+                &nbsp;&nbsp;&nbsp;&nbsp;我的收藏
+                <ul class="down" style="width: 100px">
+                    <li>
+                        <a href="mylike.jsp" >收藏宝贝</a>
+                    </li>
+                    <li>
+                        <a href="mylikestore.jsp">收藏店铺</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="drop cart-wrapper"><a href="#"></a>
+                <a href="/car.do">我的购物车</a>
+            </li>
+            <li class="drop">
+                <a href="orderlist.jsp">我的订单</a>
+            </li>
+            <li class="drop">帮助中心
+                <ul class="down" style="width: 100px">
+                    <li>
+                        <a href="noviceGuide.jsp">新手指南</a></li>
+                    <li>
+                        <a href="serviceEnsure.jsp">服务保障</a></>
+                    <li>
+                        <a href="helpCommon.jsp">常见问题</a></li>
+                    <li>
+                        <a href="shoppingHelp.jsp">购物帮助</a></li>
+                </ul>
+            </li>
+            <li class="drop"><a href="#"></a>
+                <a href="#" class="last">进入后台</a></li>
+        </ul>
+    </div>
+</div>
 <%--<form method="post" action="/up.do?${bsUserAddress.addID}" >--%>
 <%--    地址<input type="text" name="address" value="${bsUserAddress.address}"><br>--%>
 <%--    姓名<input type="text" name="name" value="${bsUserAddress.name}"><br>--%>
@@ -35,7 +94,7 @@
 <%--    <input type="submit"value="保存"><input type="reset" value="重置">--%>
 <%--</form>--%>
 
-<form class="form-horizontal" method="post" action="/up.do">
+<form class="form-horizontal" method="post" action="/bsAddress.do?_method=up&id=${sessionScope.bsUserAccount.ID}">
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">地址</label>
         <div class="col-sm-10">

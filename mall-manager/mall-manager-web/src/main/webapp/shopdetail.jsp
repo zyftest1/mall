@@ -268,7 +268,7 @@
 
                     <div class="fl goods-info goods-info-tuan-pre" id="J_GoodsInfo">
                         <div class="info-box">
-                            <h1 class="goods-title"><span itemprop="name">夏季韩版修身荷叶袖连衣裙</span></h1>
+                            <h1 class="goods-title"><span itemprop="name">${requestScope.goods.describe}</span></h1>
 
                             <div class="goods-prowrap goods-main">
 
@@ -296,7 +296,7 @@
 
                                         <dt class="property-type property-type-now"> 现价 ：</dt>
                                         <dd class="property-cont property-cont-now fl">
-                                            <span id="J_NowPrice" class="price" style="color: #333333">¥139.00</span>
+                                            <span id="J_NowPrice" class="price" style="color: #333333">${requestScope.goods.price}</span>
                                             <em class="pre-price-desc">（特卖价 ¥110.97）</em>
                                         </dd>
 
@@ -434,7 +434,7 @@
 
 
                             <button class="middle">
-                                <img id="J_BigImg" src="http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_f1d98337_s0_468_468.jpg" data-main="http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_f1d98337_s0_468_468.jpg" alt="雪纺裙,收腰,淑女,夏季新品,系带" width="400">
+                                <img id="J_BigImg" src="${requestScope.goods.showPicture}" data-main="http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_f1d98337_s0_468_468.jpg" alt="雪纺裙,收腰,淑女,夏季新品,系带" width="400">
                             </button>
                         </div>
 
@@ -784,7 +784,7 @@
             sellerId: '115knefy',
             main: {
                 originPrice: '¥213.00',
-                nowPrice: '¥139.00',
+                // nowPrice: '¥139.00',
                 topImages:  ["http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg","http://d01.res.meilishuo.net/pic/_o/19/02/3fc8317debdf1c029d53250857ce_640_832.c1.jpg","http://d01.res.meilishuo.net/pic/_o/8a/7c/c56f09839371795e708cee311c54_640_832.c1.jpg","http://d01.res.meilishuo.net/pic/_o/78/e4/a3fb01808f98c3b4c0b8f9cdbb87_640_832.c1.jpg","http://d01.res.meilishuo.net/pic/_o/6a/2a/31914503ff77f00005bb147787f4_640_832.c1.jpg"]       },
             attribute:  [{"styleId":1,"nowprice":13900,"xdSkuId":"1ecja84","stock":11,"price":21300,"style":"白色","stockId":"1ecja84","img":"http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg","sizeId":100,"size":"S","currency":"￥"},{"styleId":1,"nowprice":13900,"xdSkuId":"1ecja88","stock":8,"price":21300,"style":"白色","stockId":"1ecja88","img":"http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg","sizeId":101,"size":"M","currency":"￥"},{"styleId":1,"nowprice":13900,"xdSkuId":"1ecja8c","stock":14,"price":21300,"style":"白色","stockId":"1ecja8c","img":"http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg","sizeId":102,"size":"L","currency":"￥"}] ,
             listBanner:  {} ,

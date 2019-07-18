@@ -4,7 +4,6 @@ import com.mall.service.BsUserAccount;
 import com.mall.service.impl.IUserServiceImpl;
 import com.mall.service.IUserService;
 import com.utils.MyUTF;
-import com.wf.captcha.utils.CaptchaUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -55,7 +54,7 @@ public class BsUserAccountAllServlet extends HttpServlet {
     }
 
     private void codeImg(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        CaptchaUtil.outPng(request, response);
+//        CaptchaUtil.outPng(request, response);
     }
 
 

@@ -10,6 +10,15 @@ public class BsComStock {
     private double price;
     private String describe;
     private String picID;
+    private String showPicture;
+
+    public String getShowPicture() {
+        return showPicture;
+    }
+
+    public void setShowPicture(String showPicture) {
+        this.showPicture = showPicture;
+    }
 
     public BsComStock() {
     }
@@ -33,11 +42,12 @@ public class BsComStock {
                 ", cID='" + cID + '\'' +
                 ", colorID='" + colorID + '\'' +
                 ", size='" + size + '\'' +
-                ", stock='" + stock + '\'' +
-                ", wareID='" + wareID + '\'' +
-                ", price='" + price + '\'' +
+                ", stock=" + stock +
+                ", wareID=" + wareID +
+                ", price=" + price +
                 ", describe='" + describe + '\'' +
                 ", picID='" + picID + '\'' +
+                ", showPicture='" + showPicture + '\'' +
                 '}';
     }
 

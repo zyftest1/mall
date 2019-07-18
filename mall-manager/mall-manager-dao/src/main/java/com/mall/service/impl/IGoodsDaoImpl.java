@@ -1,6 +1,7 @@
 package com.mall.service.impl;
 
 import com.mall.Goods;
+import com.mall.service.BsComStock;
 import com.mall.service.IGoodsDao;
 import com.utils.JdbcUtils_C3P0;
 import org.apache.commons.dbutils.QueryRunner;
@@ -13,21 +14,24 @@ import java.util.List;
 
 public class IGoodsDaoImpl implements IGoodsDao {
     @Override
-    public List<Goods> selectGoodsByLike(String name) {
+    public List<BsComStock> selectGoodsByLike(String name) {
         QueryRunner qr=new QueryRunner(JdbcUtils_C3P0.getDataSource());
-        String sql="select * from goods where goodsName like '%"+name+"%'";
-        List<Goods> orders=new ArrayList<>();
+        String sql="select * from bs_com_stock where s_describe like '%"+name+"%'";
+        List<BsComStock> orders=new ArrayList<>();
         try {
 //            orders=qr.query(sql, new BeanListHandler<BsOrder>(BsOrder.class),uid);
-            qr.query(sql, new ResultSetHandler<Goods>() {
+            qr.query(sql, new ResultSetHandler<BsComStock>() {
 
                 @Override
-                public Goods handle(ResultSet rs) throws SQLException {
+                public BsComStock handle(ResultSet rs) throws SQLException {
                     while(rs.next()) {
-                        Goods goods=new Goods();
-                        goods.setGoodsName(rs.getString("goodsName"));
-                        goods.setPrice(rs.getDouble("price"));
-                        goods.setImgUrl(rs.getString("imgUrl"));
+                        BsComStock goods=new BsComStock();
+                        goods.setDescribe(rs.getString("s_describe"));
+                        goods.setPrice(rs.getDouble("s_price"));
+                        goods.setShowPicture(rs.getString("show_picture"));
+                        goods.setSize(rs.getString("size"));
+                        goods.setsID(rs.getString("s_id"));
+                        goods.setStock(rs.getInt("stock"));
                         orders.add(goods);
                     }
                     return null;

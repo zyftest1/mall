@@ -108,7 +108,7 @@
                     <a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
                 </li>
                 <li class="drop">
-                    <a href="orderlist.jsp">我的订单</a>
+                    <a href="order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">我的订单</a>
                 </li>
                 <li class="drop">帮助中心
                     <ul class="down" style="width: 100px">
@@ -129,7 +129,7 @@
     </div>
     <div id="com-search">
         <div class="inner">
-            <a href="index.jsp" class="logo">
+            <a href="index.do" class="logo">
                 <img src="pic/bs-logo.png" ></a>
             <a href="" class="sublogo"></a>
             <div class="search">

@@ -43,4 +43,35 @@ public class IGoodsDaoImpl implements IGoodsDao {
         }
         return orders;
     }
+
+    @Override
+    public List<BsComStock> selectGoodsAll(String name) {
+        QueryRunner qr=new QueryRunner(JdbcUtils_C3P0.getDataSource());
+        String sql="select * from bs_com_stock";
+        List<BsComStock> orders=new ArrayList<>();
+        try {
+//            orders=qr.query(sql, new BeanListHandler<BsOrder>(BsOrder.class),uid);
+            qr.query(sql, new ResultSetHandler<BsComStock>() {
+
+                @Override
+                public BsComStock handle(ResultSet rs) throws SQLException {
+                    while(rs.next()) {
+                        BsComStock goods=new BsComStock();
+                        goods.setDescribe(rs.getString("s_describe"));
+                        goods.setPrice(rs.getDouble("s_price"));
+                        goods.setShowPicture(rs.getString("show_picture"));
+                        goods.setSize(rs.getString("size"));
+                        goods.setsID(rs.getString("s_id"));
+                        goods.setStock(rs.getInt("stock"));
+                        orders.add(goods);
+                    }
+                    return null;
+                }
+
+            });
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return orders;
+    }
 }

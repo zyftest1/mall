@@ -43,7 +43,7 @@
             <i>◢</i>
 
 <li>
-<%for(BS_user_account bs : bs_){%>
+<%--<%for(BS_user_account bs : bs_){%>--%>
 
             <ul >
                 <li style="color:#192118"><a href="/emp.do?_method=seleceAll" title="用户列表" target="">用户列表</a></li>
@@ -51,7 +51,7 @@
                 <li style="color:#192118"><a href="/customerRedirect.do" title="用户留言" target="">用户留言</a></li>
             </ul>
 
-<%}%>
+<%--<%}%>--%>
 <%--    </ul>--%>
 <%--</div>--%>
 </li>

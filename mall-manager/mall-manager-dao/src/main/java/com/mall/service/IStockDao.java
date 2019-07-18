@@ -20,4 +20,6 @@ public interface IStockDao {
 
     //根据c_id查询出某一种类所有商品
     public List<BsComStock> selectGoodsByCID(String c_id);
+
+    public BsComStock selectGoodsByCIDAndSize(String c_id,String size);
 }

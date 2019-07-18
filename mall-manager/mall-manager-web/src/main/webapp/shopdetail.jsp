@@ -2,6 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
     <script type="text/javascript">
@@ -75,6 +76,24 @@
             }
         })();
     </script>
+    <style type="text/css">
+        #size {
+            margin-left: 50px;
+            /*font:18px  arial, sans-serif;*/
+            /*!*设置文字大小和字体样式 *!*/
+        }
+        /*#size, #menu li {*/
+        /*    list-style:none; !* 将默认的列表符号去掉 *!*/
+        /*}*/
+        /*#size li {*/
+        /*    margin-left: 30px;*/
+        /*    float: left; !* 往左浮动 *!*/
+        /*}*/
+        /*#size li a:hover {*/
+        /*    background:#146C9C; !* 变换背景色 *!*/
+        /*    color:#fff; !* 变换文字颜色 *!*/
+        /*}*/
+    </style>
 </head>
 <body>
 
@@ -293,9 +312,9 @@
                                 <dl class="clearfix event-box">
                                     <dd style="background: url(http://s2.mogucdn.com/p1/160329/upload_ifrtan3egaytmojzg4zdambqhayde_540x68.png) 0 0 no-repeat;">
                                         <span class="event-time-text">距品牌特卖开抢仅剩：</span>
-          <span class="event-time-left" id="J_CountDown" cut-time="442">
-              <span class="d">0</span>天<span class="h">0</span>小时<span class="m">0</span>分<span class="s">0</span>秒
-          </span>
+                                          <span class="event-time-left" id="J_CountDown" cut-time="442">
+                                              <span class="d">0</span>天<span class="h">0</span>小时<span class="m">0</span>分<span class="s">0</span>秒
+                                          </span>
                                     </dd>
                                 </dl>
 
@@ -304,7 +323,7 @@
                                     <dl class="clearfix property-box">
                                         <dt class="property-type property-type-origin">价格：</dt>
                                         <dd class="property-cont property-cont-origin">
-                                            <span id="J_OriginPrice" class="price">¥213.00</span>
+                                            <span id="J_OriginPrice" class="price"><fmt:formatNumber value="${requestScope.goods.price*3}" type="currency" pattern="￥.00"/></span>
                                         </dd>
                                     </dl>
 
@@ -315,18 +334,12 @@
                                         <dt class="property-type property-type-now"> 现价 ：</dt>
                                         <dd class="property-cont property-cont-now fl">
                                             <span id="J_NowPrice" class="price" style="color: #333333">${requestScope.goods.price}</span>
-                                            <em class="pre-price-desc">（特卖价 ¥110.97）</em>
+                                            <em class="pre-price-desc">（特卖价 <fmt:formatNumber value="${requestScope.goods.price*0.8}" type="currency" pattern="￥.00"/>）</em>
                                         </dd>
 
                                         <dd class="property-extra fr">
-    <span class="mr10">评价：
-      <span class="num">
-         57       </span>
-    </span>
-    <span>累计销量：
-      <span class="num J_SaleNum">
-         193       </span>
-    </span>
+                                            <span class="mr10">评价：<span class="num">57</span></span>
+                                            <span>累计销量：<span class="num J_SaleNum">193</span></span>
                                         </dd>
                                     </dl>
 
@@ -358,9 +371,11 @@
 
                                         <dl class="size clearfix">
                                             <dt>尺码：</dt>
-                                            <dd>
-                                                <ol class="J_SizeList size-list clearfix"></ol>
-                                            </dd>
+                                            <input id="size" type="radio" name="radiobutton" value="radiobutton" > X
+                                            <input type="radio" name="radiobutton" value="radiobutton" checked> M
+                                            <input type="radio" name="radiobutton" value="radiobutton"> L
+                                            <input type="radio" name="radiobutton" value="radiobutton"> XL
+                                            <input type="radio" name="radiobutton" value="radiobutton"> XXL
                                         </dl>
 
                                         <dl class="clearfix">
@@ -371,7 +386,7 @@
                                                     <input class="num-input" type="text" value="1">
                                                     <span class="num-add "></span>
                                                 </div>
-                                                <div class="J_GoodsStock goods-stock fl">库存33件</div>
+                                                <div class=" goods-stock fl">库存${requestScope.goods.stock}件</div>
                                                 <div class="J_GoodsStockTip goods-stock-tip fl">您所填写的商品数量超过库存！</div>
                                             </dd>
                                         </dl>
@@ -385,11 +400,11 @@
                                     <c:when test="${sessionScope.bsUserAccount.bsName != null}">
                                         <div class="goods-buy clearfix">
                                             <!-- <a href="javascript:;" id="J_BuyNow" class="fl mr10 buy-btn buy-now">立刻购买</a> -->
-                                            <a href=""  class="fl mr10 buy-btn buy-now">立刻购买</a>
+                                            <a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}"  class="fl mr10 buy-btn buy-now">立刻购买</a>
                                             <input type="hidden" value="nodapei" >
 
                                             <!-- <a href="javascript:;" id="J_BuyCart" class="fl mr10 buy-cart buy-btn">加入购物车</a> -->
-                                            <a href="" class="fl mr10 buy-cart buy-btn">加入购物车</a>
+                                            <a href="/car.do?_method=addCar&id=${sessionScope.bsUserAccount.ID}" class="fl mr10 buy-cart buy-btn">加入购物车</a>
 
                                         </div>
                                     </c:when>
@@ -404,6 +419,7 @@
 
                                 </div>
                             </div>
+
                             <div class="goods-social clearfix">
 
                                 <div class=" fav  item" goodsid="0" tradeitemid="1fxighu" tid="0"><b></b><span class="fav-num">2081</span></div>
@@ -411,7 +427,6 @@
                                 <div class="share item">
                                     <b></b>分享
                                     <div class="share-w clearfix">
-
                                         <a target="_blank" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=shopdetail.jsp#?1fxighu&title=又有一款充满仙气的裙子贡献给菇凉们了~这款裙裙是采用雪纺面料的，亲自试穿过，面料特别舒服，清清凉凉的，然后有里衬，也不会透，夏日穿特别合适！荷叶袖的设计，手臂有肉肉的菇凉也不用担心了~&pics=http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_468x468.jpg" class="forqzone" title="关注QQ空间" rel="nofollow"></a>
                                         <a target="_blank" href="http://widget.renren.com/dialog/share?resourceUrl=shopdetail.jsp#?1fxighu&title=又有一款充满仙气的裙子贡献给菇凉们了~这款裙裙是采用雪纺面料的，亲自试穿过，面料特别舒服，清清凉凉的，然后有里衬，也不会透，夏日穿特别合适！荷叶袖的设计，手臂有肉肉的菇凉也不用担心了~&thumbnail_url=http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_468x468.jpg" class="forrenren" title="关注人人" rel="nofollow"></a>
                                         <a target="_blank" href="http://service.weibo.com/share/share.php?url=shopdetail.jsp#?1fxighu&title=又有一款充满仙气的裙子贡献给菇凉们了~这款裙裙是采用雪纺面料的，亲自试穿过，面料特别舒服，清清凉凉的，然后有里衬，也不会透，夏日穿特别合适！荷叶袖的设计，手臂有肉肉的菇凉也不用担心了~&pic=http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_468x468.jpg" class="forsina" title="关注sina" rel="nofollow"></a>
@@ -426,51 +441,35 @@
                                 <div class="extra-services">
                                     <div class="fl clearfix label">服务承诺：</div>
                                     <ul class="fl clearfix list">
-                                        <li class="item">
-                                                                                                                                <span class="link">
-                    <img src="http://s2.mogucdn.com/p1/150923/upload_ieztcoldmvsdmztdgmzdambqgyyde_24x24.png" width="24" height="24">
-                    退货补运费
-                </span>
+                                        <li class="item"><span class="link">
+                                            <img src="http://s2.mogucdn.com/p1/150923/upload_ieztcoldmvsdmztdgmzdambqgyyde_24x24.png" width="24" height="24">退货补运费</span>
                                         </li>
-                                        <li class="item">
-                                                                                                                                <span class="link">
-                    <img src="http://s2.mogucdn.com/p1/150923/upload_ieywiobrmfsdmztdgmzdambqmeyde_24x24.png" width="24" height="24">
-                    7天无理由退货
-                </span>
+                                        <li class="item"><span class="link">
+                                            <img src="http://s2.mogucdn.com/p1/150923/upload_ieywiobrmfsdmztdgmzdambqmeyde_24x24.png" width="24" height="24">7天无理由退货</span>
                                         </li>
-                                        <li class="item">
-                                                                                                                                <span class="link">
-                    <img src="http://s2.mogucdn.com/p1/160618/upload_ie4dqzjrmqzdoojthezdambqgiyde_24x27.png" width="24" height="24">
-                    先行赔付
-                </span>
+                                        <li class="item"><span class="link">
+                                            <img src="http://s2.mogucdn.com/p1/160618/upload_ie4dqzjrmqzdoojthezdambqgiyde_24x27.png" width="24" height="24">先行赔付</span>
                                         </li>
-                                        <li class="item">
-                                                                                                                                <span class="link">
-                    <img src="http://s2.mogucdn.com/p1/150923/upload_iezgeolcmnsdmztdgmzdambqmmyde_24x24.png" width="24" height="24">
-                    72小时发货
-                </span>
+                                        <li class="item"><span class="link">
+                                            <img src="http://s2.mogucdn.com/p1/150923/upload_iezgeolcmnsdmztdgmzdambqmmyde_24x24.png" width="24" height="24">72小时发货</span>
                                         </li>
                                     </ul>
                                 </div>
-
                                 <div class="extra-pay">
                                     <div class="fl clearfix label">支付方式：</div>
                                     <div class="fl list list-nomaibei"></div>
                                 </div>
-                            </div>    </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="fl goods-topimg" id="J_GoodsImg">
-
                         <div class="big-img">
-
-
                             <button class="middle">
                                 <img id="J_BigImg" src="${requestScope.goods.showPicture}" data-main="http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_f1d98337_s0_468_468.jpg" alt="雪纺裙,收腰,淑女,夏季新品,系带" width="400">
                             </button>
                         </div>
-
-
-                    </div>        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="primary-slide">
@@ -539,9 +538,9 @@
                                         <ul class="clearfix">
                                             <li class="score">
                                                 <span class="comment-star"><b style="width: 77px;"></b></span>
-                    <span class="numbox">
-                        <b class="num-v">4.88</b><span class="num-s">分</span>
-                    </span>
+                                                <span class="numbox">
+                                                    <b class="num-v">4.88</b><span class="num-s">分</span>
+                                                </span>
                                             </li>
 
                                             <li>

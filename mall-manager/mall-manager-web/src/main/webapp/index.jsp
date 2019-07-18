@@ -92,6 +92,7 @@
                             <a href="/login.jsp">请登录</a>
                         </c:when>
                     </c:choose>
+
                 </li>
                 <li class="drop">
                     &nbsp;&nbsp;&nbsp;&nbsp;我的收藏

@@ -226,6 +226,7 @@
 			<div class="logo logo-cart"></div>
 		</div>
 	</div>
+
 	<div class="mydesign">
 
 		<table class="table table-bordered">

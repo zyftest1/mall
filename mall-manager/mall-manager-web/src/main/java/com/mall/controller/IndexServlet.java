@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 首页图片访问数据库
+ */
 @WebServlet("/index.do")
 public class IndexServlet extends HttpServlet {
     @Override

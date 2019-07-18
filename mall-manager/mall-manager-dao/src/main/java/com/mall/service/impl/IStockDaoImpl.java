@@ -173,4 +173,32 @@ public class IStockDaoImpl implements IStockDao {
         }
         return stock;
     }
+
+    @Override
+    public BsComStock selectGoodsByCIDAndSize(String c_id,String size) {
+        QueryRunner qr=new QueryRunner(JdbcUtils_C3P0.getDataSource());
+        String sql="select * from bs_com_stock where c_id=? and size=?";
+        BsComStock bsComStock = new BsComStock();
+        try {
+            qr.query(sql, new ResultSetHandler<BsComStock>() {
+
+                @Override
+                public BsComStock handle(ResultSet rs) throws SQLException {
+                    while(rs.next()) {
+                        bsComStock.setsID(rs.getString("s_id"));
+                        bsComStock.setDescribe(rs.getString("s_describe"));
+                        bsComStock.setPrice(rs.getDouble("s_price"));
+                        bsComStock.setShowPicture(rs.getString("show_picture"));
+                        bsComStock.setSize(rs.getString("size"));
+                        bsComStock.setcID(rs.getString("c_id"));
+                        bsComStock.setStock(rs.getInt("stock"));
+                    }
+                    return null;
+                }
+            },c_id,size);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return bsComStock;
+    }
 }

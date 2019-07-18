@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * 将商品信息传到购买界面
+ */
 @WebServlet("/index2car.do")
 public class IndexToCarServlet extends HttpServlet {
     @Override
@@ -22,8 +25,30 @@ public class IndexToCarServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         IStockDao stockDao=new IStockDaoImpl();
         String s_id=request.getParameter("sID");
-        BsComStock bsComStock=stockDao.selectOneGoodsById(s_id);
+        BsComStock bsComStock = stockDao.selectOneGoodsById(s_id);
+        System.out.println(bsComStock);
+        String cID = bsComStock.getcID();
+        String size1 = "S";
+        String size2 = "M";
+        String size3 = "L";
+        String size4 = "XL";
+        String size5 = "XXL";
+
+        BsComStock bsComStockS = stockDao.selectGoodsByCIDAndSize(cID,size1);
+        BsComStock bsComStockM = stockDao.selectGoodsByCIDAndSize(cID,size2);
+        BsComStock bsComStockL = stockDao.selectGoodsByCIDAndSize(cID,size3);
+        BsComStock bsComStockXL = stockDao.selectGoodsByCIDAndSize(cID,size4);
+        BsComStock bsComStockXXL = stockDao.selectGoodsByCIDAndSize(cID,size5);
+
+
         request.setAttribute("goods",bsComStock);
+        request.setAttribute("bsComStockS",bsComStockS);
+        request.setAttribute("bsComStockM",bsComStockM);
+        request.setAttribute("bsComStockL",bsComStockL);
+        request.setAttribute("bsComStockXL",bsComStockXL);
+        request.setAttribute("bsComStockXXL",bsComStockXXL);
+
+
         request.getRequestDispatcher("/shopdetail.jsp").forward(request,response);
     }
 }

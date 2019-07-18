@@ -73,8 +73,11 @@ public class ShoppingCarServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         response.setCharacterEncoding("utf-8");
-
+        if (request.getParameter("id").equals("")){
+            request.getRequestDispatcher("/mycart.jsp").forward(request, response);
+        }
         int id = Integer.parseInt(request.getParameter("id").trim());
+        System.out.println(id);
         ShoppingCarService car = new ShpopingCarServiceImpl();
 
         List<BsShoppingCar> bsShoppingCarList = car.getShopCar(id);

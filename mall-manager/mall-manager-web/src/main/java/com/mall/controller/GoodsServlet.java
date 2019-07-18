@@ -17,6 +17,9 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.List;
 
+/**
+ * 模糊查询
+ */
 @WebServlet("/goods.do")
 public class GoodsServlet extends HttpServlet {
     @Override

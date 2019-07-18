@@ -167,67 +167,7 @@
     </div>
 </div>
 <!-- 店铺公共头部-店铺信息 start -->
-<div class="shop-header">
-    <div class="header clearfix">
-        <div class="user-info fl">
-            <a href="shop.jsp#110fni1q" class="avatar" title="爱丽缇旗舰店">
 
-                <img class="face fl" src="http://d01.res.meilishuo.net/pic/_o/f7/40/968fc99f2f5812ffdffde483183a_200_200.ch.jpg_5f179ba6_s0_100_100.jpg">
-            </a>
-            <div class="shop-name fl">
-                <div class="name-wrap clearfix">
-                    <a href="shop.jsp#110fni1q" class="name fl" title="爱丽缇旗舰店">爱丽缇旗舰店</a>
-                    <p class="mark">
-                        <img src="http://s2.mogucdn.com/p1/160512/upload_ie4dcyjwha3tgyjxhazdambqgiyde_60x30.png">
-                    </p>
-                </div>
-                <!-- 评分信息 -->
-                <div class="shop-score J-show-shop-score">
-                    <p>
-                        <span class="s-cat">描述<b class="low">4.76</b></span>
-                        <span class="s-cat">价格<b class="low">4.77</b></span>
-                        <span class="s-cat">质量<b>4.77</b></span>
-                        <span class="s-cat">服务<b class="low">4.77</b></span>
-                    </p>
-                    <!-- 下拉列表 -->
-                    <div class="shop-info clearfix"></div>
-                </div>
-            </div>
-            <div class="shop-action fl">
-                <a class="J-shop-follow shop-follow header-icons fl  shop-followed " rel="nofollow" href="javascript:;" data-shopid="110fni1q">
-                    已收藏                     </a>
-                <a href="javascript:;" class="chart fl clearfix">
-                    <div class="mlstalk_widget_btn kefu fl" style="cursor:pointer" data-style="widget4" data-toid="1256898643" data-tid="4170704471" data-shopid="110fni1q">联系客服</div> 
-                </a>
-            </div>
-            <div class="icon-show-score J-show-shop-score"></div>
-            <div class="line-right fr"></div>
-        </div>
-        <div class="shop-search">
-            <div id="nav_search_form" class="top_nav_search">
-                <form target="_blank" action="http://www.meilishuo.com/search" method="get" id="top_nav_form">
-                    <div class="text-wrap clearfix">
-                        <input type="text" id="J_SearchKey" class="text ts_txt" autocomplete="off" name="searchKey" placeholder="输入你想要的商品..." data-tel="search_book" data-def="" def-v=""><a href="javascript:;" data-baseurl="shop.jsp#110fni1q" id="J_SearchInShop" class="search-inshop">搜本店</a><input type="submit" class="submit-btn" value="搜全站">
-                    </div>
-                    <input type="hidden" name="filter" value="goods" id="select_type">
-                </form>
-                <div class="top_search_hint"></div>
-            </div>
-        </div>
-
-        <div class="shop-search-list seatch_type_msearch ts_type fl" id="seach_type">
-            <div class="search-list-box fl">
-                <p class="no-tip tip_none">暂无相关热门关键词</p>
-                <ul class="search-tip search_tip"></ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- 店铺公共头部-店铺信息 end -->
-
-<input type="hidden" id="shopId" value="110fni1q">
-<input type="hidden" id="shopBaseUrl" value="shop.jsp#">
-<input type="hidden" id="shopBaseUrlSec" value="shop.jsp#110fni1q">
 
 
 
@@ -236,7 +176,30 @@
     <div class="mod_list clearfix">
         <div class="mod_item w1200" data-id="4634908" data-width="1200" data-type="topBanner" data-title="$commonTopBanner.layoutname">
             <div class="mod_cont topbanner">
-                <a class="shop_bg_img" href="shop.jsp#110fni1q" data-src="http://imgtest-dl.meiliworks.com/pic/_o/28/ce/2f023f9e3022e39950807e7e2170_2000_120.c5.jpg" style="background: url(http://imgtest-dl.meiliworks.com/pic/_o/28/ce/2f023f9e3022e39950807e7e2170_2000_120.c5.jpg) center no-repeat"></a>
+                <div id="com-search">
+                    <div class="inner">
+                        <a href="index.jsp" class="logo">
+                            <img src="pic/bs-logo.png" ></a>
+                        <a href="" class="sublogo"></a>
+                        <div class="search">
+                            <div class="search-tab">
+                                <span class="active">宝贝</span>
+                                <span>店铺</span></div>
+                            <div class="search-box">
+                                <form action="/goods.do">
+                                    <input type="text" class="search-txt" name="goodsNameInput">
+                                    <%--								<a href="/goods.do">--%>
+                                    <%--									<input type="button" value="" class="search-btn">--%>
+                                    <%--								</a>--%>
+                                    <input type="submit" class="search-btn">
+                                    <div class="suggest-box"></div>
+                                </form>
+                            </div>
+                            <div class="hotword"></div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -323,7 +286,7 @@
 
                     <div class="fl goods-info goods-info-tuan-pre" id="J_GoodsInfo">
                         <div class="info-box">
-                            <h1 class="goods-title"><span itemprop="name">夏季韩版修身荷叶袖连衣裙</span></h1>
+                            <h1 class="goods-title"><span itemprop="name">${requestScope.goods.describe}</span></h1>
 
                             <div class="goods-prowrap goods-main">
 
@@ -351,7 +314,7 @@
 
                                         <dt class="property-type property-type-now"> 现价 ：</dt>
                                         <dd class="property-cont property-cont-now fl">
-                                            <span id="J_NowPrice" class="price" style="color: #333333">¥139.00</span>
+                                            <span id="J_NowPrice" class="price" style="color: #333333">${requestScope.goods.price}</span>
                                             <em class="pre-price-desc">（特卖价 ¥110.97）</em>
                                         </dd>
 
@@ -502,7 +465,7 @@
 
 
                             <button class="middle">
-                                <img id="J_BigImg" src="http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_f1d98337_s0_468_468.jpg" data-main="http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_f1d98337_s0_468_468.jpg" alt="雪纺裙,收腰,淑女,夏季新品,系带" width="400">
+                                <img id="J_BigImg" src="${requestScope.goods.showPicture}" data-main="http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_f1d98337_s0_468_468.jpg" alt="雪纺裙,收腰,淑女,夏季新品,系带" width="400">
                             </button>
                         </div>
 
@@ -834,7 +797,7 @@
             sellerId: '115knefy',
             main: {
                 originPrice: '¥213.00',
-                nowPrice: '¥139.00',
+                // nowPrice: '¥139.00',
                 topImages:  ["http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg","http://d01.res.meilishuo.net/pic/_o/19/02/3fc8317debdf1c029d53250857ce_640_832.c1.jpg","http://d01.res.meilishuo.net/pic/_o/8a/7c/c56f09839371795e708cee311c54_640_832.c1.jpg","http://d01.res.meilishuo.net/pic/_o/78/e4/a3fb01808f98c3b4c0b8f9cdbb87_640_832.c1.jpg","http://d01.res.meilishuo.net/pic/_o/6a/2a/31914503ff77f00005bb147787f4_640_832.c1.jpg"]       },
             attribute:  [{"styleId":1,"nowprice":13900,"xdSkuId":"1ecja84","stock":11,"price":21300,"style":"白色","stockId":"1ecja84","img":"http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg","sizeId":100,"size":"S","currency":"￥"},{"styleId":1,"nowprice":13900,"xdSkuId":"1ecja88","stock":8,"price":21300,"style":"白色","stockId":"1ecja88","img":"http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg","sizeId":101,"size":"M","currency":"￥"},{"styleId":1,"nowprice":13900,"xdSkuId":"1ecja8c","stock":14,"price":21300,"style":"白色","stockId":"1ecja8c","img":"http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg","sizeId":102,"size":"L","currency":"￥"}] ,
             listBanner:  {} ,

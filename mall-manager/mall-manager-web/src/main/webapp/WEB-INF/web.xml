@@ -3,4 +3,12 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
+<!--    <servlet>-->
+<!--        <servlet-name>indexServlet</servlet-name>-->
+<!--        <servlet-class>com.mall.controller.IndexServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>indexServlet</servlet-name>-->
+<!--        <url-pattern>/</url-pattern>-->
+<!--    </servlet-mapping>-->
 </web-app>

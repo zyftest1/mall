@@ -198,112 +198,35 @@
     </div>
 </div>
 
-<style>
-    .innerwrap{  margin-right: -30px;  }
-    .media_screen_960 { min-width: 960px; }
-
-    .promotionTopNavContainer { height: 50px; overflow: hidden; display: none;}
-    .promotionTopNavContainer a { display: block; width: 86px; height: 50px; overflow: hidden;}
-    .promotionTopNavContainer a.first { width: 168px; }
-
-    /** screnn-960 **/
-    .media_screen_960 .promotionTopNavContainer .first{ width: 153px!important; }
-    .media_screen_960 .promotionTopNavContainer a { width: 66px; }
-    .media_screen_960 .promotionTopNavContainer a.last {width: 80px;}
-    .wrap { position: relative;}
-</style>
-
-<div class="promotionTopNavContainer"></div>
-
-<script type="text/template" class="topnavPromotionTpl">
-    <div class="wrap">
-        <div class="innerwrap clearfix">
-            {{~it:item:index}}
-            <a class="fl {{?index===0}}first{{??index===it.length-1}}last{{?}}" href="{{=item.link || 'javascript:;'}}" target="_blank" style="background:url({{=item.image}}) no-repeat center center"></a>
-            {{~}}
-        </div>
-    </div>
-</script>
-
-
-
-<!-- 店铺公共头部-店铺信息 start -->
-<div class="shop-header">
-    <div class="header clearfix">
-        <div class="user-info fl">
-            <a href="shop.jsp#110fni1q" class="avatar" title="爱丽缇旗舰店"><img class="face fl" src="http://d01.res.meilishuo.net/pic/_o/f7/40/968fc99f2f5812ffdffde483183a_200_200.ch.jpg_5f179ba6_s6_100_100.jpg"></a>
-            <div class="shop-name fl">
-                <div class="name-wrap clearfix">
-                    <a href="shop.jsp#110fni1q" class="name fl" title="爱丽缇旗舰店">爱丽缇旗舰店</a>
-                    <p class="mark">
-                        <a href="">
-                            <img src="http://s2.mogucdn.com/p1/160512/upload_ie4dcyjwha3tgyjxhazdambqgiyde_60x30.png" alt="店铺认证">
-                        </a>
-                    </p>
-                </div>
-                <!-- 评分信息 -->
-                <div class="shop-score J-show-shop-score">
-
-
-                    <p>
-                        <span class="s-cat">描述<b class="low">4.76</b></span>
-                        <span class="s-cat">质量<b>4.77</b></span>
-                        <span class="s-cat">价格<b class="low">4.77</b></span>
-                        <span class="s-cat">服务<b class="low">4.77</b></span>
-                    </p>
-
-                    <!-- 下拉列表 -->
-                    <div class="shop-info clearfix"></div>
-                </div>
-            </div>
-            <div class="shop-action fl">
-                <a class="J-shop-follow shop-follow header-icons fl  shop-followed " rel="nofollow" href="javascript:;" data-shopid="110fni1q">
-                    已收藏                     </a>
-                <a href="javascript:;" class="chart fl clearfix">
-                    <div class="mlstalk_widget_btn" data-shopid="110fni1q" data-tid="" data-toid="1256898643">联系客服</div>
-                </a>
-            </div>
-            <div class="icon-show-score J-show-shop-score"></div>
-            <div class="line-right fr"></div>
-        </div>
-        <div class="shop-search">
-            <div id="nav_search_form" class="top_nav_search">
-                <form target="_blank" action="/search/" method="get" id="top_nav_forms">
-                    <div class="text-wrap clearfix">
-                        <input type="text" id="J_SearchKey" class="text ts_txt" autocomplete="off" name="q" placeholder="输入你想要的商品..."><a href="javascript:;" data-baseurl="shop.jsp#110fni1q" id="J_SearchInShop" class="search-inshop">搜本店</a><input type="submit" class="submit-btn" id="search-main" value="搜全站">
-                    </div>
-                    <input type="hidden" name="t" value="bao" id="select_type">
-                </form>
-                <div class="top_search_hint"></div>
-            </div>
-        </div>
-
-        <div class="shop-search-list seatch_type_msearch ts_type fl" id="seach_type">
-            <div class="search-list-box fl">
-                <p class="no-tip tip_none">暂无相关热门关键词</p>
-                <ul class="search-tip search_tip"></ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-<input type="hidden" id="shopBaseUrlSec" value="shop.jsp#110fni1q">
-<!-- 店铺公共头部-店铺信息 end -->
-<input type="hidden" id="shopId" value="110fni1q">
-<input type="hidden" id="shopBaseUrl" value="http://shop.mogujie.com/110fni1q">
-
-
-
-
-
-
 <!-- topBanner -->
 <div class="ovbox mod_topBanner">
     <div class="mod_list clearfix">
         <div class="mod_item w1200" data-id="4634908" data-width="1200" data-type="topBanner" data-title="$commonTopBanner.layoutname">
             <div class="mod_cont topbanner">
-                <a class="shop_bg_img_mls" href="shop.jsp#110fni1q" data-src="http://imgtest-dl.meiliworks.com/pic/_o/28/ce/2f023f9e3022e39950807e7e2170_2000_120.c5.jpg" style="background: url(http://imgtest-dl.meiliworks.com/pic/_o/28/ce/2f023f9e3022e39950807e7e2170_2000_120.c5.jpg) center no-repeat"></a>
+                <div id="com-search">
+                    <div class="inner">
+                        <a href="index.jsp" class="logo">
+                            <img src="pic/bs-logo.png" ></a>
+                        <a href="" class="sublogo"></a>
+                        <div class="search">
+                            <div class="search-tab">
+                                <span class="active">宝贝</span>
+                                <span>店铺</span></div>
+                            <div class="search-box">
+                                <form action="/goods.do">
+                                    <input type="text" class="search-txt" name="goodsNameInput">
+                                    <%--								<a href="/goods.do">--%>
+                                    <%--									<input type="button" value="" class="search-btn">--%>
+                                    <%--								</a>--%>
+                                    <input type="submit" class="search-btn">
+                                    <div class="suggest-box"></div>
+                                </form>
+                            </div>
+                            <div class="hotword"></div>
+                        </div>
 
+                    </div>
+                </div>
             </div>
         </div>
     </div>

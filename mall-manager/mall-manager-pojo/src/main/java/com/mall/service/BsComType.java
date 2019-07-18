@@ -5,6 +5,9 @@ public class BsComType {
     private String describe;
     private String style;
 
+    public BsComType() {
+    }
+
     public BsComType(String typeID, String describe, String style) {
         this.typeID = typeID;
         this.describe = describe;

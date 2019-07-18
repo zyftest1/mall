@@ -154,7 +154,7 @@
 						<c:forEach items="${requestScope.goods}" var="good">
 							<li class="product-list fl">
 								<div class="img-size"> <a class="img-link" target="_blank" href="shopdetail.jsp#?1gl82bc?acm=2.ms.2_4.0.12380.yUhpUbBxJQ1.t_0"
-														  style="background:url(${good.imgUrl}) no-repeat center center;background-size:cover;"></a>
+														  style="background:url(${good.showPicture}) no-repeat center center;background-size:cover;"></a>
 								</div>
 								<div class="product-info clearfix">
 									<div class="price fl"><em class="price-u">¥</em><span class="price-n">${good.price}</span></div>
@@ -163,7 +163,7 @@
 								<div></div>
 								<div class="product-logo"> <img src="b7\avatar\160520\1y0mpt_ie4tqodbgrrdcnlbhazdambqgqyde_50x54.jpg"> </div> <a
 									class="text-link" target="_blank" href="shopdetail.jsp#?1gl82bc?acm=2.ms.2_4.0.12380.yUhpUbBxJQ1.t_0">
-								${good.goodsName}</a>
+								${good.describe}</a>
 							</li>
 						</c:forEach>
 						<li class="product-list fl">

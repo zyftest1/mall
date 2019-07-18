@@ -12,7 +12,7 @@ import java.util.List;
 public class ShpopingCarServiceImpl implements ShoppingCarService {
 
     @Override
-    public List<BsShoppingCar> getShopCar(String ID) throws SQLException {
+    public List<BsShoppingCar> getShopCar(int ID) throws SQLException {
         ShopCarDao carDao = new ShopCarDaoImpl();
         List<BsShoppingCar> carList = new ArrayList<>();
         carList = carDao.selectShoppingCar(ID);
@@ -20,14 +20,14 @@ public class ShpopingCarServiceImpl implements ShoppingCarService {
     }
 
     @Override
-    public void deletaShopCar(String carNumber) {
+    public void deletaShopCar(int carID) {
         ShopCarDao carDao = new ShopCarDaoImpl();
-        carDao.deleteShoppingCar(carNumber);
+        carDao.deleteShoppingCar(carID);
     }
 
     @Override
-    public void updateShopCar(BsShoppingCar bsCar) throws SQLException {
+    public void insertShopCar(BsShoppingCar bsCar) throws SQLException {
         ShopCarDao carDao = new ShopCarDaoImpl();
-        carDao.updateShoppingCar(bsCar);
+        carDao.insertShoppingCar(bsCar);
     }
 }

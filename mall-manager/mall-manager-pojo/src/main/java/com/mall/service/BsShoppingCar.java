@@ -3,7 +3,7 @@ package com.mall.service;
 import java.util.Date;
 
 public class BsShoppingCar {
-    private String carID;
+    private int carID;
     private int ID;
     private String bsName;
     private String sID;
@@ -20,7 +20,7 @@ public class BsShoppingCar {
     public BsShoppingCar() {
     }
 
-    public BsShoppingCar(String carID, int ID, String bsName, String sID, double price, int quantity, String color, String size, String describe, Date date, String picture, String addID, String address) {
+    public BsShoppingCar(int carID, int ID, String bsName, String sID, double price, int quantity, String color, String size, String describe, Date date, String picture, String addID, String address) {
         this.carID = carID;
         this.ID = ID;
         this.bsName = bsName;
@@ -36,11 +36,11 @@ public class BsShoppingCar {
         this.address = address;
     }
 
-    public String getCarID() {
+    public int getCarID() {
         return carID;
     }
 
-    public void setCarID(String carID) {
+    public void setCarID(int carID) {
         this.carID = carID;
     }
 

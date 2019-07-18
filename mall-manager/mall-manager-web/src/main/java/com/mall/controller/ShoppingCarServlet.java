@@ -3,54 +3,86 @@ package com.mall.controller;
 import com.mall.service.BsShoppingCar;
 import com.mall.service.ShoppingCarService;
 import com.mall.service.impl.ShpopingCarServiceImpl;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
+
 @WebServlet("/car.do")
 public class ShoppingCarServlet extends HttpServlet {
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
-        ShoppingCarService car = new ShpopingCarServiceImpl();
-        List<BsShoppingCar> cList = null;
-        try {
-            cList = car.getShopCar("100001");
-
-        } catch (SQLException e) {
-            e.printStackTrace();
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String fun = request.getParameter("_method");
+        switch (fun){
+            case "showList":
+                try {
+                    showList(request,response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case "deleteCar":
+                try {
+                    deleteCar(request,response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case "addCar":
+                try {
+                    addCar(request,response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                break;
         }
-        req.getSession().setAttribute("cList", cList);
-
-        req.getRequestDispatcher("/mycart.jsp").forward(req, resp);
-
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
-//        String method = req.getParameter("_method");
-//        switch (method) {
-//            case "cList" :
-//                showList(req, resp);
-//                showList(req, resp);
-//                break;
-//            case "":
-//                break;
-//
-//        }
+    private void addCar(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+        response.setCharacterEncoding("utf-8");
 
+        ShoppingCarService car = new ShpopingCarServiceImpl();
+        BsShoppingCar c = null;
+        car.insertShopCar(c);
+        request.getRequestDispatcher("/shopdetail.jsp").forward(request, response);
     }
-//展示购物列表
-//    public void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        request.setAttribute("cList",cList);
-//        request.getRequestDispatcher("/mycart.jsp").forward(request, response);
-//
-//    }
+
+    private void deleteCar(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, SQLException {
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+        response.setCharacterEncoding("utf-8");
+
+        int carID = Integer.parseInt(request.getParameter("carID"));
+        int id = Integer.parseInt(request.getParameter("id"));
+        ShoppingCarService car = new ShpopingCarServiceImpl();
+        car.deletaShopCar(carID);
+
+        List<BsShoppingCar> bsShoppingCarList = car.getShopCar(id);
+        request.getSession().setAttribute("bsShoppingCarList", bsShoppingCarList);
+        request.getRequestDispatcher("/mycart.jsp").forward(request, response);
+    }
+
+    private void showList(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException, ServletException {
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+        response.setCharacterEncoding("utf-8");
+
+        int id = Integer.parseInt(request.getParameter("id").trim());
+        ShoppingCarService car = new ShpopingCarServiceImpl();
+
+        List<BsShoppingCar> bsShoppingCarList = car.getShopCar(id);
+        request.getSession().setAttribute("bsShoppingCarList", bsShoppingCarList);
+        request.getRequestDispatcher("/mycart.jsp").forward(request, response);
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
+    }
 }

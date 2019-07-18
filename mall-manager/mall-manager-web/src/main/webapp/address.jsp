@@ -146,7 +146,7 @@
 			})();
 		</script>
 
-		<div id="com-topbar">
+<div id="com-topbar">
 	<div class="inner">
 		<ul>
 			<li class="drop">
@@ -159,7 +159,7 @@
 							<li>
 								<a href="setPersonal.jsp">账号与安全</a></li>
 							<li>
-								<a href="login.jsp">退出</a></li>
+								<a href="exit.jsp" target="_top">退出</a></li>
 						</ul>
 					</c:when>
 				</c:choose>
@@ -169,9 +169,7 @@
 						<a href="/login.jsp">请登录</a>
 					</c:when>
 				</c:choose>
-				<input name="bsName" hidden="hidden" value="${sessionScope.bsUserAccount.bsName}">
 			</li>
-
 			<li class="drop">
 				&nbsp;&nbsp;&nbsp;&nbsp;我的收藏
 				<ul class="down" style="width: 100px">
@@ -184,7 +182,7 @@
 				</ul>
 			</li>
 			<li class="drop cart-wrapper"><a href="#"></a>
-				<a href="/car.do">我的购物车</a>
+				<a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
 			</li>
 			<li class="drop">
 				<a href="orderlist.jsp">我的订单</a>
@@ -206,12 +204,31 @@
 		</ul>
 	</div>
 </div>
-		<!-- 中间区域 -->
-		<div class="g-header clearfix">
-			<div class="g-header-in wrap clearfix">
-				<div class="logo logo-cart"></div>
+<div id="com-search">
+	<div class="inner">
+		<a href="index.jsp" class="logo">
+			<img src="pic/bs-logo.png" ></a>
+		<a href="" class="sublogo"></a>
+		<div class="search">
+			<div class="search-tab">
+				<span class="active">宝贝</span>
+				<span>店铺</span></div>
+			<div class="search-box">
+				<form action="/goods.do">
+					<input type="text" class="search-txt" name="goodsNameInput">
+					<%--								<a href="/goods.do">--%>
+					<%--									<input type="button" value="" class="search-btn">--%>
+					<%--								</a>--%>
+					<input type="submit" class="search-btn">
+					<div class="suggest-box"></div>
+				</form>
 			</div>
+			<div class="hotword"></div>
 		</div>
+
+	</div>
+</div>
+
 
 		<style type="text/css">
 			#body {

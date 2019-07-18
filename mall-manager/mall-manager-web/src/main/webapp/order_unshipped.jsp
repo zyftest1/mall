@@ -117,7 +117,6 @@
 		})();
 	</script>
 
-	<div class="mgj_rightbar" data-ptp="_sidebar"></div>
 	<div id="com-topbar">
 		<div class="inner">
 			<ul>
@@ -131,7 +130,7 @@
 								<li>
 									<a href="setPersonal.jsp">账号与安全</a></li>
 								<li>
-									<a href="login.jsp">退出</a></li>
+									<a href="exit.jsp" target="_top">退出</a></li>
 							</ul>
 						</c:when>
 					</c:choose>
@@ -141,7 +140,6 @@
 							<a href="/login.jsp">请登录</a>
 						</c:when>
 					</c:choose>
-
 				</li>
 				<li class="drop">
 					&nbsp;&nbsp;&nbsp;&nbsp;我的收藏
@@ -155,7 +153,7 @@
 					</ul>
 				</li>
 				<li class="drop cart-wrapper"><a href="#"></a>
-					<a href="mycart.jsp">我的购物车</a>
+					<a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
 				</li>
 				<li class="drop">
 					<a href="orderlist.jsp">我的订单</a>
@@ -173,36 +171,32 @@
 					</ul>
 				</li>
 				<li class="drop"><a href="#"></a>
-					<a href="#" class="last">商家后台</a></li>
+					<a href="#" class="last">进入后台</a></li>
 			</ul>
 		</div>
 	</div>
-	<div class="header_mid clearfix">
-		<div class="wrap">
-			<a href="index.jsp" class="logo"><img src="/pic/bs-logo.png"></a>
-			<div class="normal-search-content">
-				<div class="top_nav_search" id="nav_search_form">
-					<!--搜索框 -->
-					<div class="search_inner_box clearfix">
-						<div class="selectbox" data-v="1">
-							<span class="selected">搜商品</span>
-							<ol>
-								<li class="current" data-index="goods"><a href="#">商品</a></li>
-								<li data-index="shop"><a href="#">店铺</a></li>
-							</ol>
-						</div>
-						<form action="http://www.meilishuo.com/search" method="get" id="top_nav_form">
-							<input type="text" data-tel="search_book" name="searchKey" class="ts_txt fl" data-def="" value="" autocomplete="off"
-								   def-v="">
-							<input type="submit" value="搜  索" class="ts_btn">
-							<input type="hidden" name="filter" value="goods" id="select_type">
-						</form>
-						<div class="top_search_hint"></div>
-					</div>
-
-					<div class="ts_hotwords"></div>
+	<div id="com-search">
+		<div class="inner">
+			<a href="index.jsp" class="logo">
+				<img src="pic/bs-logo.png" ></a>
+			<a href="" class="sublogo"></a>
+			<div class="search">
+				<div class="search-tab">
+					<span class="active">宝贝</span>
+					<span>店铺</span></div>
+				<div class="search-box">
+					<form action="/goods.do">
+						<input type="text" class="search-txt" name="goodsNameInput">
+						<%--								<a href="/goods.do">--%>
+						<%--									<input type="button" value="" class="search-btn">--%>
+						<%--								</a>--%>
+						<input type="submit" class="search-btn">
+						<div class="suggest-box"></div>
+					</form>
 				</div>
+				<div class="hotword"></div>
 			</div>
+
 		</div>
 	</div>
 

@@ -121,7 +121,7 @@
                             <li>
                                 <a href="setPersonal.jsp">账号与安全</a></li>
                             <li>
-                                <a href="login.jsp">退出</a></li>
+                                <a href="exit.jsp" target="_top">退出</a></li>
                         </ul>
                     </c:when>
                 </c:choose>
@@ -144,7 +144,7 @@
                 </ul>
             </li>
             <li class="drop cart-wrapper"><a href="#"></a>
-                <a href="/car.do">我的购物车</a>
+                <a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
             </li>
             <li class="drop">
                 <a href="orderlist.jsp">我的订单</a>

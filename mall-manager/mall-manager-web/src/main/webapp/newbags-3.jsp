@@ -30,7 +30,7 @@
     <title>本季包包新品</title>
     <meta name="description" content="美丽说, 只做正确流行款. 独家冠名《奔跑吧兄弟》! 平台聚集强大的资深时尚买手团队, 每日推出正确新款, 传授最权威的穿衣经验, 全方位解读搭配技巧, 打造当季最前沿的正确流行款!">
     <meta name="keywords" content="美丽说,衣服,鞋子,包包,配饰,家居,美妆,搭配,团购">
-
+    <link rel="stylesheet" type="text/css" href="pc\css\base.css?1607170150.25">
     <link rel="stylesheet" type="text/css" href="css\product.css$1471486195.css" media="all"><link rel="stylesheet" type="text/css" href="css\base.css?1604111018.1463028059" media="all"><link rel="stylesheet" href="new1\v1\fxihe\4ca212cfc3a85ff40525521ff0f7510f\A1f7679b27a2000402.css"><script type="text/javascript">PTP_PARAMS={"c_action":"cube%40%40newbags0818pc","ptp_cnt_a":"1","time":"1471486198000","ptp_cnt_b":"_mf1_840_12596"}</script>
 
     <link rel="apple-touch-icon-precomposed" href="css\images\custom_icon_precomposed.png">
@@ -54,7 +54,7 @@
                             <li>
                                 <a href="setPersonal.jsp">账号与安全</a></li>
                             <li>
-                                <a href="login.jsp">退出</a></li>
+                                <a href="exit.jsp" target="_top">退出</a></li>
                         </ul>
                     </c:when>
                 </c:choose>
@@ -64,7 +64,6 @@
                         <a href="/login.jsp">请登录</a>
                     </c:when>
                 </c:choose>
-
             </li>
             <li class="drop">
                 &nbsp;&nbsp;&nbsp;&nbsp;我的收藏
@@ -78,7 +77,7 @@
                 </ul>
             </li>
             <li class="drop cart-wrapper"><a href="#"></a>
-                <a href="mycart.jsp">我的购物车</a>
+                <a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
             </li>
             <li class="drop">
                 <a href="orderlist.jsp">我的订单</a>
@@ -96,11 +95,34 @@
                 </ul>
             </li>
             <li class="drop"><a href="#"></a>
-                <a href="#" class="last">商家后台</a></li>
+                <a href="#" class="last">进入后台</a></li>
         </ul>
     </div>
 </div>
-<div id="search" style="height:120px;"></div>
+<div id="com-search">
+    <div class="inner">
+        <a href="index.jsp" class="logo">
+            <img src="pic/bs-logo.png" ></a>
+        <a href="" class="sublogo"></a>
+        <div class="search">
+            <div class="search-tab">
+                <span class="active">宝贝</span>
+                <span>店铺</span></div>
+            <div class="search-box">
+                <form action="/goods.do">
+                    <input type="text" class="search-txt" name="goodsNameInput">
+                    <%--								<a href="/goods.do">--%>
+                    <%--									<input type="button" value="" class="search-btn">--%>
+                    <%--								</a>--%>
+                    <input type="submit" class="search-btn">
+                    <div class="suggest-box"></div>
+                </form>
+            </div>
+            <div class="hotword"></div>
+        </div>
+
+    </div>
+</div>
 <div id="nav" style="height:50px;"></div>
 
 <div id="global-sidebar"></div>

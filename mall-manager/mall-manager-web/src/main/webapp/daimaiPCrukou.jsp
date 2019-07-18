@@ -38,15 +38,95 @@
 		</script>
 
 		<link rel="apple-touch-icon-precomposed" href="css\images\custom_icon_precomposed.png">
-
+		<link rel="stylesheet" type="text/css" href="pc\css\base-6.css?1607191228.25">
 		<script src="js\pkg-cube-mls-datalazy.js$24.js"></script>
 		<link rel="icon" href="new1\v1\bmisc\015428832599fabeef6cfeebd7788926\176719579831.ico">
 	</head>
 
 	<body>
 
-		<div id="topbar" style="height:31px;"></div>
-		<div id="search" style="height:120px;"></div>
+	<div id="com-topbar">
+		<div class="inner">
+			<ul>
+				<li class="drop">
+					<c:choose>
+						<c:when test="${sessionScope.bsUserAccount != null}">
+							<img class="face" src="new1\v1\bdefaultavatar\03.jpg">
+							${sessionScope.bsUserAccount.bsName}
+							<a href="#"></a>
+							<ul class="down" style="width: 100px">
+								<li>
+									<a href="setPersonal.jsp">账号与安全</a></li>
+								<li>
+									<a href="exit.jsp" target="_top">退出</a></li>
+							</ul>
+						</c:when>
+					</c:choose>
+					<c:choose>
+						<c:when test="${sessionScope.bsUserAccount == null}">
+							<img class="face" src="new1\v1\bdefaultavatar\03.jpg">
+							<a href="/login.jsp">请登录</a>
+						</c:when>
+					</c:choose>
+				</li>
+				<li class="drop">
+					&nbsp;&nbsp;&nbsp;&nbsp;我的收藏
+					<ul class="down" style="width: 100px">
+						<li>
+							<a href="mylike.jsp" >收藏宝贝</a>
+						</li>
+						<li>
+							<a href="mylikestore.jsp">收藏店铺</a>
+						</li>
+					</ul>
+				</li>
+				<li class="drop cart-wrapper"><a href="#"></a>
+					<a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
+				</li>
+				<li class="drop">
+					<a href="orderlist.jsp">我的订单</a>
+				</li>
+				<li class="drop">帮助中心
+					<ul class="down" style="width: 100px">
+						<li>
+							<a href="noviceGuide.jsp">新手指南</a></li>
+						<li>
+							<a href="serviceEnsure.jsp">服务保障</a></>
+						<li>
+							<a href="helpCommon.jsp">常见问题</a></li>
+						<li>
+							<a href="shoppingHelp.jsp">购物帮助</a></li>
+					</ul>
+				</li>
+				<li class="drop"><a href="#"></a>
+					<a href="#" class="last">进入后台</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="com-search">
+		<div class="inner">
+			<a href="index.jsp" class="logo">
+				<img src="pic/bs-logo.png" ></a>
+			<a href="" class="sublogo"></a>
+			<div class="search">
+				<div class="search-tab">
+					<span class="active">宝贝</span>
+					<span>店铺</span></div>
+				<div class="search-box">
+					<form action="/goods.do">
+						<input type="text" class="search-txt" name="goodsNameInput">
+						<%--								<a href="/goods.do">--%>
+						<%--									<input type="button" value="" class="search-btn">--%>
+						<%--								</a>--%>
+						<input type="submit" class="search-btn">
+						<div class="suggest-box"></div>
+					</form>
+				</div>
+				<div class="hotword"></div>
+			</div>
+
+		</div>
+	</div>
 		<div id="nav" style="height:50px;"></div>
 
 		<div id="global-sidebar"></div>

@@ -50,7 +50,12 @@ public class OrderServlet extends HttpServlet {
     //展示全部订单
     public void orderTotalServlet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         IOrderDao orderService=new IOrderDaoImpl();
-        List<BsOrder> orderList=orderService.selectAllOrderByUid(100002);
+        String id=request.getParameter("id");
+        int uid=-1;
+        if(!id.equals("")){
+            uid=Integer.parseInt(id);
+        }
+        List<BsOrder> orderList=orderService.selectAllOrderByUid(uid);
         IStockDao stockDao=new IStockDaoImpl();
         IScheduleDao scheduleDao=new IScheduleDaoImpl();
         Map map=new HashMap();
@@ -74,7 +79,12 @@ public class OrderServlet extends HttpServlet {
     //待收货订单
     public void orderUnreceiveServlet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         IOrderDao orderService=new IOrderDaoImpl();
-        List<BsOrder> orderList=orderService.selectUnreceiveOrderByUid(100002);
+        String id=request.getParameter("id");
+        int uid=-1;
+        if(!id.equals("")){
+            uid=Integer.parseInt(id);
+        }
+        List<BsOrder> orderList=orderService.selectUnreceiveOrderByUid(uid);
         IStockDao stockDao=new IStockDaoImpl();
         IScheduleDao scheduleDao=new IScheduleDaoImpl();
         Map map=new HashMap();
@@ -98,7 +108,12 @@ public class OrderServlet extends HttpServlet {
     //待评价订单
     public void waitEvaluateServlet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         IOrderDao orderService=new IOrderDaoImpl();
-        List<BsOrder> orderList=orderService.selectUnEvaluateOrderByUid(100002);
+        String id=request.getParameter("id");
+        int uid=-1;
+        if(!id.equals("")){
+            uid=Integer.parseInt(id);
+        }
+        List<BsOrder> orderList=orderService.selectUnEvaluateOrderByUid(uid);
         IStockDao stockDao=new IStockDaoImpl();
         IScheduleDao scheduleDao=new IScheduleDaoImpl();
         Map map=new HashMap();

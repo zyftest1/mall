@@ -176,7 +176,7 @@
 	</div>
 	<div id="com-search">
 		<div class="inner">
-			<a href="index.jsp" class="logo">
+			<a href="index.do" class="logo">
 				<img src="pic/bs-logo.png" ></a>
 			<a href="" class="sublogo"></a>
 			<div class="search">
@@ -208,16 +208,16 @@
 								<a class="menu_order disable-a"> 我的订单 </a>
 								<ul class="mu_nav_item">
 									<li>
-										<a href="/order.do?_method=orderTotal">全部订单</a>
+										<a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">全部订单</a>
 									</li>
 
 									<li >
-										<a href="/order.do?_method=orderUnreceive"> 待收货 <i id="unReceivedOrder"
+										<a href="/order.do?_method=orderUnreceive&id=${sessionScope.bsUserAccount.ID}"> 待收货 <i id="unReceivedOrder"
 											 class="mu_nav_count"><i class="mu_nav_count_arw"></i></i>
 										</a>
 									</li>
 									<li>
-										<a href="order_received.jsp"> 待评价 <i id="waitingRateOrder"
+										<a href="/order.do?_method=waitEvaluate&id=${sessionScope.bsUserAccount.ID}"> 待评价 <i id="waitingRateOrder"
 											 class="mu_nav_count"><i class="mu_nav_count_arw"></i></i>
 										</a>
 									</li>

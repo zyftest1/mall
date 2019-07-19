@@ -162,7 +162,7 @@ public class BsUserAccountAllServlet extends HttpServlet {
             bsUserAccount.setBsName(bsName);
             request.getSession().setAttribute("bsUserAccount",bsUserAccount);
 //            System.out.println(bsUserAccount.getBsName()+"--"+bsUserAccount.getID());
-            request.getRequestDispatcher("/index.jsp").forward(request,response);
+            request.getRequestDispatcher("/index.do").forward(request,response);
         }else {
             request.setAttribute("message","用户名或密码有误,请重新输入!");
             request.getRequestDispatcher("/login.jsp").forward(request,response);

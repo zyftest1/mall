@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,7 +29,13 @@ public class GoodsServlet extends HttpServlet {
         String goodsName= request.getParameter("goodsNameInput");
 //        goodsName = new String(goodsName.getBytes("ISO-8859-1"),"utf-8");
         System.out.println("goodsName:"+goodsName);
-        List<BsComStock> goodsList= goodsDao.selectGoodsByLike(goodsName);
+        List<BsComStock> goodsList=new ArrayList<>();
+        if(goodsName.trim().equals("")){
+            goodsList=goodsDao.selectGoodsAll(goodsName);
+        }else {
+            goodsList = goodsDao.selectGoodsByLike(goodsName);
+        }
+
         System.out.println("goodsList:"+goodsList);
         request.setAttribute("goods",goodsList);
 

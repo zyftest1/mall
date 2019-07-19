@@ -196,7 +196,7 @@
             <div class="mod_cont topbanner">
                 <div id="com-search">
                     <div class="inner">
-                        <a href="index.jsp" class="logo">
+                        <a href="index.do" class="logo">
                             <img src="pic/bs-logo.png" ></a>
                         <a href="" class="sublogo"></a>
                         <div class="search">

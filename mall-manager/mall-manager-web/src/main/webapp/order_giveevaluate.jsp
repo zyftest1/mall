@@ -33,6 +33,15 @@
 
 	<script type="text/javascript" src="js\pkg-pc-base.js-beb518b8.js"></script>
 
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 	<style type="text/css">
 		.logo img{
 			float: left;
@@ -157,7 +166,7 @@
 					<li>
 						<a href="noviceGuide.jsp">新手指南</a></li>
 					<li>
-						<a href="serviceEnsure.jsp">服务保障</a></li>
+						<a href="serviceEnsure.jsp">服务保障</a></>
 					<li>
 						<a href="helpCommon.jsp">常见问题</a></li>
 					<li>
@@ -244,26 +253,35 @@
 				<div class="mu_content_wrap">
 					<div class="order-title">
 						<ul class="order-title-column clearfix">
-							<li class="goods">商品</li>
-							<li class="price">单价(元)</li>
-							<li class="quantity">数量</li>
-							<li class="aftersale">总价</li>
-<%--							<li class="total">实付款(元)</li>--%>
-							<li class="status">交易状态</li>
-<%--							<li class="other">操作</li>--%>
+							<li class="goods">评论</li>
+<%--							<li class="price">单价(元)</li>--%>
+<%--							<li class="quantity">数量</li>--%>
+<%--							<li class="aftersale">总价</li>--%>
+<%--&lt;%&ndash;							<li class="total">实付款(元)</li>&ndash;%&gt;--%>
+<%--							<li class="status">交易状态</li>--%>
+<%--&lt;%&ndash;							<li class="other">操作</li>&ndash;%&gt;--%>
 						</ul>
 					</div>
 					<div id="orderWrap">
 
-						<c:forEach items="${requestScope.orders}" var="order">
-							<ul class="order-title-column clearfix">
-								<li class="goods"><a href="index2car.do?sID=${order.sid}">${order.goodsName}</a></li>
-								<li class="price">${order.singlePrice}</li>
-								<li class="quantity">${order.goodsNum}</li>
-								<li class="aftersale">${order.totalPrice}</li>
-								<li class="status">${order.state}</li>
-							</ul>
-						</c:forEach>
+<%--						<c:forEach items="${requestScope.orders}" var="order">--%>
+<%--							<ul class="order-title-column clearfix">--%>
+<%--								<li class="goods">${order.goodsName}</li>--%>
+<%--								<li class="price">${order.singlePrice}</li>--%>
+<%--								<li class="quantity">${order.goodsNum}</li>--%>
+<%--								<li class="aftersale">${order.totalPrice}</li>--%>
+<%--								<li class="status">${order.state}</li>--%>
+<%--							</ul>--%>
+<%--						</c:forEach>--%>
+						<form class="form-group" action="/confrimEvaluate.do?oid=${oid}&id=${requestScope.id}&sid=${sid}" method="post">
+<%--							<c:out value="${requestScope.oid}"></c:out>--%>
+<%--							<c:out value="${requestScope.id}"></c:out>--%>
+							<input type="text" class="form-control" name="evaluateContent"/>
+							<br>
+							<button type="submit" class="btn btn-success">提交</button>
+							<button type="reset" class="btn btn-primary">重置</button>
+						</form>
+
 					</div>
 				</div>
 			</div>

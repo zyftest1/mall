@@ -31,6 +31,7 @@ public class IGoodsDaoImpl implements IGoodsDao {
                         goods.setShowPicture(rs.getString("show_picture"));
                         goods.setSize(rs.getString("size"));
                         goods.setsID(rs.getString("s_id"));
+                        goods.setcID(rs.getString("c_id"));
                         goods.setStock(rs.getInt("stock"));
                         goods.setcID(rs.getString("c_id"));
                         orders.add(goods);
@@ -63,6 +64,7 @@ public class IGoodsDaoImpl implements IGoodsDao {
                         goods.setShowPicture(rs.getString("show_picture"));
                         goods.setSize(rs.getString("size"));
                         goods.setsID(rs.getString("s_id"));
+                        goods.setcID(rs.getString("c_id"));
                         goods.setStock(rs.getInt("stock"));
                         goods.setcID(rs.getString("c_id"));
 

@@ -41,6 +41,13 @@ public class ShoppingCarServlet extends HttpServlet {
                     e.printStackTrace();
                 }
                 break;
+            case "tocar":
+                try {
+                    tocar(request, response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                break;
             case "stock":
                 try {
                     stock(request, response);
@@ -49,6 +56,40 @@ public class ShoppingCarServlet extends HttpServlet {
                 }
                 break;
         }
+    }
+
+    private void tocar(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+        response.setCharacterEncoding("utf-8");
+
+        if (request.getParameter("id").equals("")) {
+            request.getRequestDispatcher("/mycart.jsp").forward(request, response);
+        }
+        BsUserAccount bsUserAccount = (BsUserAccount) request.getSession().getAttribute("bsUserAccount");
+        BsComStock bsComStock = (BsComStock) request.getSession().getAttribute("bsComStock");
+        BsShoppingCar bsShoppingCar = new BsShoppingCar();
+        System.out.println(bsComStock);
+        bsShoppingCar.setID(bsUserAccount.getID());
+        bsShoppingCar.setBsName(bsUserAccount.getBsName());
+        bsShoppingCar.setsID(bsComStock.getsID());
+        bsShoppingCar.setPrice(bsComStock.getPrice());
+        bsShoppingCar.setColor(bsComStock.getColorID());
+        bsShoppingCar.setSize(bsComStock.getSize());
+        bsShoppingCar.setDescribe(bsComStock.getDescribe());
+        bsShoppingCar.setPicture(bsComStock.getShowPicture());
+
+        ShoppingCarService car1 = new ShpopingCarServiceImpl();
+        car1.insertShopCar(bsShoppingCar);
+
+
+        int id = Integer.parseInt(request.getParameter("id").trim());
+        System.out.println(id);
+        ShoppingCarService car = new ShpopingCarServiceImpl();
+
+        List<BsShoppingCar> bsShoppingCarList = car.getShopCar(id);
+        request.getSession().setAttribute("bsShoppingCarList", bsShoppingCarList);
+        request.getRequestDispatcher("/mycart.jsp").forward(request, response);
     }
 
     private void stock(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException, ServletException {
@@ -165,22 +206,6 @@ public class ShoppingCarServlet extends HttpServlet {
             if (request.getParameter("id").equals("")) {
                 request.getRequestDispatcher("/mycart.jsp").forward(request, response);
             }
-            BsUserAccount bsUserAccount = (BsUserAccount) request.getSession().getAttribute("bsUserAccount");
-            BsComStock bsComStock = (BsComStock) request.getSession().getAttribute("bsComStock");
-            BsShoppingCar bsShoppingCar = new BsShoppingCar();
-            System.out.println(bsComStock);
-            bsShoppingCar.setID(bsUserAccount.getID());
-            bsShoppingCar.setBsName(bsUserAccount.getBsName());
-            bsShoppingCar.setsID(bsComStock.getsID());
-            bsShoppingCar.setPrice(bsComStock.getPrice());
-            bsShoppingCar.setColor(bsComStock.getColorID());
-            bsShoppingCar.setSize(bsComStock.getSize());
-            bsShoppingCar.setDescribe(bsComStock.getDescribe());
-            bsShoppingCar.setPicture(bsComStock.getShowPicture());
-
-            ShoppingCarService car1 = new ShpopingCarServiceImpl();
-            car1.insertShopCar(bsShoppingCar);
-
 
             int id = Integer.parseInt(request.getParameter("id").trim());
             System.out.println(id);

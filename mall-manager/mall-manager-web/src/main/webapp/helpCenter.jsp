@@ -10,7 +10,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>美丽说-白领的全球导购</title>
+		<title>Beauty Show-白领的全球导购</title>
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<link rel="dns-prefetch" href="http://s.meilishuo.net/">
@@ -93,7 +93,7 @@
 							<a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
 						</li>
 						<li class="drop">
-							<a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">我的订单</a>
+							<a href="orderlist.jsp">我的订单</a>
 						</li>
 						<li class="drop">帮助中心
 							<ul class="down" style="width: 100px">
@@ -114,7 +114,7 @@
 			</div>
 			<div id="com-search">
 				<div class="inner">
-					<a href="index.do" class="logo">
+					<a href="index.jsp" class="logo">
 						<img src="pic/bs-logo.png" ></a>
 					<a href="" class="sublogo"></a>
 					<div class="search">
@@ -127,7 +127,7 @@
 								<%--								<a href="/goods.do">--%>
 								<%--									<input type="button" value="" class="search-btn">--%>
 								<%--								</a>--%>
-								<input type="submit" class="search-btn">
+								<input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none" >
 								<div class="suggest-box"></div>
 							</form>
 						</div>
@@ -142,7 +142,7 @@
 				<div class="rightNav_1">
 					<ul>
 						<li>
-							<a href="#h_01">> 美丽说是什么？ </a>
+							<a href="#h_01">> Beauty Show是什么？ </a>
 						</li>
 						<li>
 							<a href="#h_02">> 什么是收藏，如何收藏？ </a>
@@ -152,14 +152,14 @@
 				<div class="content">
 					<h2>商家后台</h2>
 					<div class="help_con">
-						<h3 id="h_01">一、美丽说是什么？</h3>
+						<h3 id="h_01">一、Beauty Show是什么？</h3>
 						<div class="desc">
-							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">美丽说是2000万MM一起修炼变美的时尚购物分享社区，扮靓达人和数百万买家聚集在这里，推荐优质宝贝，交流时尚趋势，分享网购经验，为你推荐衣服、找差价、回答你关于搭配与护肤的各种问题。网购挑衣服，先来美丽说。</span></span>
+							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">Beauty Show是2000万MM一起修炼变美的时尚购物分享社区，扮靓达人和数百万买家聚集在这里，推荐优质宝贝，交流时尚趋势，分享网购经验，为你推荐衣服、找差价、回答你关于搭配与护肤的各种问题。网购挑衣服，先来Beauty Show。</span></span>
 							</p>
 
-							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">美丽说为你提供时尚且便捷的网购体验，在这里：<br>
+							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">Beauty Show为你提供时尚且便捷的网购体验，在这里：<br>
 										潮流单品一览无遗----囊括网友分享的优质商品，潮流榜单让你迅速了解当下网络热卖。<br>
-										钟情宝贝存入囊中----在这里你可以将喜欢的宝贝收进自己美丽说独有的收藏夹。</span></span>
+										钟情宝贝存入囊中----在这里你可以将喜欢的宝贝收进自己Beauty Show独有的收藏夹。</span></span>
 							</p>
 						</div>
 						<h3 id="h_02">二、什么是收藏，如何收藏？</h3>
@@ -183,13 +183,13 @@
 							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px"><strong>3</strong><strong>，查看收藏</strong></span></span>
 							</p>
 
-							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">登录美丽说➡点击页面右上方工具栏中&ldquo;我的收藏&rdquo;➡查看收藏</span></span>
+							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">登录Beauty Show➡点击页面右上方工具栏中&ldquo;我的收藏&rdquo;➡查看收藏</span></span>
 							</p>
 
 							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px"><strong>4，取消收藏</strong></span></span>
 							</p>
 
-							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">1）取消宝贝收藏：进入宝贝详情➡点击立即购买下方的红桃心（也可登陆美丽说app，进入收藏页面，直接删除收藏的宝贝）</span></span>
+							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">1）取消宝贝收藏：进入宝贝详情➡点击立即购买下方的红桃心（也可登陆Beauty Showapp，进入收藏页面，直接删除收藏的宝贝）</span></span>
 							</p>
 
 							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">2）取消店铺收藏：进入商品详情页或店铺首页➡点击页面左上方&ldquo;已收藏&rdquo;按钮</span></span>
@@ -233,7 +233,7 @@
 				<div class="flist">
 					<h4>关于我们</h4>
 					<div>
-						<a href="aboutus.jsp" target="_blank">关于美丽说</a>
+						<a href="aboutus.jsp" target="_blank">关于Beauty Show</a>
 					</div>
 					<div>
 						<a href="contactus.jsp" target="_blank">联系我们</a>
@@ -256,11 +256,11 @@
 					</div>
 				</div>
 				<div class="flist service">
-					<h4>美丽说微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png"
-					 alt="美丽说服务号二维码">
+					<h4>Beauty Show微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png"
+					 alt="Beauty Show服务号二维码">
 				</div>
 				<div class="flist last" style="float:left;">
-					<h4>美丽说客户端下载</h4>
+					<h4>Beauty Show客户端下载</h4>
 					<p style="background:none; margin-top:0px;" class="client"> <img class="qrcode" src="p2\160802\7e_74j23d2a5f5j3bj31h70375gbeec1_100x100.png">
 					</p>
 				</div>

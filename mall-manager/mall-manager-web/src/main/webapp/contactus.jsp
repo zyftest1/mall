@@ -10,9 +10,9 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>联系我们-美丽说</title>
-		<meta name="description" content="美丽说，专注时尚新款发布。海量新款每日上新，每周五新款大促火热进行中！旗下海淘品牌“HIGO”挑选全球时尚好货，满足你全方位的时尚购物体验！">
-		<meta name="keywords" content="美丽说,higo,衣服,鞋子,包包,配饰,家居,美妆,搭配,团购,美丽说higo">
+		<title>联系我们-Beauty Show</title>
+		<meta name="description" content="Beauty Show，专注时尚新款发布。海量新款每日上新，每周五新款大促火热进行中！旗下海淘品牌“HIGO”挑选全球时尚好货，满足你全方位的时尚购物体验！">
+		<meta name="keywords" content="Beauty Show,higo,衣服,鞋子,包包,配饰,家居,美妆,搭配,团购,Beauty Showhigo">
 		<link rel="dns-prefetch" href="http://s.meilishuo.net/">
 		<link rel="dns-prefetch" href="http://i.meilishuo.net/">
 		<link rel="dns-prefetch" href="http://d01.res.meilishuo.net/">
@@ -93,14 +93,14 @@
 							<a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
 						</li>
 						<li class="drop">
-							<a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">我的订单</a>
+							<a href="orderlist.jsp">我的订单</a>
 						</li>
 						<li class="drop">帮助中心
 							<ul class="down" style="width: 100px">
 								<li>
 									<a href="noviceGuide.jsp">新手指南</a></li>
 								<li>
-									<a href="serviceEnsure.jsp">服务保障</a></>
+									<a href="serviceEnsure.jsp">服务保障</a></li>
 								<li>
 									<a href="helpCommon.jsp">常见问题</a></li>
 								<li>
@@ -114,7 +114,7 @@
 			</div>
 			<div id="com-search">
 				<div class="inner">
-					<a href="index.do" class="logo">
+					<a href="index.jsp" class="logo">
 						<img src="pic/bs-logo.png" ></a>
 					<a href="" class="sublogo"></a>
 					<div class="search">
@@ -127,7 +127,7 @@
 								<%--								<a href="/goods.do">--%>
 								<%--									<input type="button" value="" class="search-btn">--%>
 								<%--								</a>--%>
-								<input type="submit" class="search-btn">
+								<input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none" >
 								<div class="suggest-box"></div>
 							</form>
 						</div>
@@ -139,7 +139,7 @@
 		</div>
 		<div class="aboutus-wrap">
 			<div class="leftNav">
-				<h3> <a class="" href="/aboutus/index?sl=h3">关于美丽说</a> </h3>
+				<h3> <a class="" href="/aboutus/index?sl=h3">关于Beauty Show</a> </h3>
 				<ul>
 					<li>
 						<a class="" href="/aboutus/index?11">公司简介</a>
@@ -161,7 +161,7 @@
 			<div class="content contactus">
 				<h2>联系我们</h2>
 				<h3>公司全称</h3>
-				<p>美丽说(北京)网络科技有限公司</p>
+				<p>Beauty Show(北京)网络科技有限公司</p>
 				<h3>公司地址</h3>
 				<p>北京总部：北京市朝阳区望京SOHO-T3-B座27层</p>
 				<p>杭州公司：浙江省杭州市西湖区古墩路99号浙商财富中心一号楼</p>
@@ -227,7 +227,7 @@
 				<div class="flist">
 					<h4>关于我们</h4>
 					<div>
-						<a href="aboutus.jsp" target="_blank">关于美丽说</a>
+						<a href="aboutus.jsp" target="_blank">关于Beauty Show</a>
 					</div>
 					<div>
 						<a href="contactus.jsp" target="_blank">联系我们</a>
@@ -250,11 +250,11 @@
 					</div>
 				</div>
 				<div class="flist service">
-					<h4>美丽说微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png"
-					 alt="美丽说服务号二维码">
+					<h4>Beauty Show微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png"
+					 alt="Beauty Show服务号二维码">
 				</div>
 				<div class="flist last" style="float:left;">
-					<h4>美丽说客户端下载</h4>
+					<h4>Beauty Show客户端下载</h4>
 					<p style="background:none; margin-top:0px;" class="client"> <img class="qrcode" src="p2\160802\7e_74j23d2a5f5j3bj31h70375gbeec1_100x100.png">
 					</p>
 				</div>

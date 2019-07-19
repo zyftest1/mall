@@ -10,9 +10,9 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>阿猫来了的设置_美丽说</title>
-		<meta name="description" content="美丽说, 只做正确流行款. 独家冠名《奔跑吧兄弟》! 平台聚集强大的资深时尚买手团队, 每日推出正确新款, 传授最权威的穿衣经验, 全方位解读搭配技巧, 打造当季最前沿的正确流行款!">
-		<meta name="keywords" content="美丽说,higo,衣服,鞋子,包包,配饰,家居,美妆,搭配,团购,美丽说higo">
+		<title>阿猫来了的设置_Beauty Show</title>
+		<meta name="description" content="Beauty Show, 只做正确流行款. 独家冠名《奔跑吧兄弟》! 平台聚集强大的资深时尚买手团队, 每日推出正确新款, 传授最权威的穿衣经验, 全方位解读搭配技巧, 打造当季最前沿的正确流行款!">
+		<meta name="keywords" content="Beauty Show,higo,衣服,鞋子,包包,配饰,家居,美妆,搭配,团购,Beauty Showhigo">
 		<link rel="dns-prefetch" href="http://s.meilishuo.net/">
 		<link rel="dns-prefetch" href="http://i.meilishuo.net/">
 		<link rel="dns-prefetch" href="http://d01.res.meilishuo.net/">
@@ -97,14 +97,14 @@
 							<a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
 						</li>
 						<li class="drop">
-							<a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">我的订单</a>
+							<a href="orderlist.jsp">我的订单</a>
 						</li>
 						<li class="drop">帮助中心
 							<ul class="down" style="width: 100px">
 								<li>
 									<a href="noviceGuide.jsp">新手指南</a></li>
 								<li>
-									<a href="serviceEnsure.jsp">服务保障</a></>
+									<a href="serviceEnsure.jsp">服务保障</a></li>
 								<li>
 									<a href="helpCommon.jsp">常见问题</a></li>
 								<li>
@@ -118,7 +118,7 @@
 			</div>
 			<div id="com-search">
 				<div class="inner">
-					<a href="index.do" class="logo">
+					<a href="index.jsp" class="logo">
 						<img src="pic/bs-logo.png" ></a>
 					<a href="" class="sublogo"></a>
 					<div class="search">
@@ -131,7 +131,7 @@
 								<%--								<a href="/goods.do">--%>
 								<%--									<input type="button" value="" class="search-btn">--%>
 								<%--								</a>--%>
-								<input type="submit" class="search-btn">
+								<input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none" >
 								<div class="suggest-box"></div>
 							</form>
 						</div>
@@ -199,7 +199,7 @@
 						</a>
 					</li>
 					<li>
-						<a class="menu_order" href="address.jsp#"> 收货地址 <em class="little-triangle"></em> <em class="little-triangle-hover"></em>
+						<a class="menu_order" href="/bsAddress.do?_method=address&userId=${sessionScope.bsUserAccount.ID}&receiveName=${sessionScope.bsUserAccount.bsName}"> 收货地址 <em class="little-triangle"></em> <em class="little-triangle-hover"></em>
 						</a>
 					</li>
 					<!-- <li> <a class="disable-a">退款维权</a> <ul> <li><a class="menu_refund" href="undefined/refund/list/">我的投诉</a></li> <li><a class="menu_complain" href="undefined/complainnew/list/">我的举报</a></li> </ul> </li> -->
@@ -268,7 +268,7 @@
 					<div class="bie-info">
 						<p> 说明： </p>
 						<p> 1.修改绑定手机后，原手机号将不能用于登录。您可以使用更换后的手机号进行登录。 </p>
-						<p> 2.若因手机号丢失无法进行验证，请联系美丽说客服。 </p>
+						<p> 2.若因手机号丢失无法进行验证，请联系Beauty Show客服。 </p>
 					</div>
 				</fieldset>
 			</div>
@@ -334,7 +334,7 @@
 				<div class="flist">
 					<h4>关于我们</h4>
 					<div>
-						<a href="aboutus.jsp" target="_blank">关于美丽说</a>
+						<a href="aboutus.jsp" target="_blank">关于Beauty Show</a>
 					</div>
 					<div>
 						<a href="contactus.jsp" target="_blank">联系我们</a>
@@ -357,11 +357,11 @@
 					</div>
 				</div>
 				<div class="flist service">
-					<h4>美丽说微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png"
-					 alt="美丽说服务号二维码">
+					<h4>Beauty Show微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png"
+					 alt="Beauty Show服务号二维码">
 				</div>
 				<div class="flist last" style="float:left;">
-					<h4>美丽说客户端下载</h4>
+					<h4>Beauty Show客户端下载</h4>
 					<p style="background:none; margin-top:0px;" class="client"> <img class="qrcode" src="p2\160802\7e_74j23d2a5f5j3bj31h70375gbeec1_100x100.png">
 					</p>
 				</div>

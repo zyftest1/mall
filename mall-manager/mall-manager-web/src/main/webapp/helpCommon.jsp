@@ -10,7 +10,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>美丽说-白领的全球导购</title>
+		<title>Beauty Show-白领的全球导购</title>
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<link rel="dns-prefetch" href="http://s.meilishuo.net/">
@@ -93,14 +93,14 @@
 							<a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
 						</li>
 						<li class="drop">
-							<a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">我的订单</a>
+							<a href="orderlist.jsp">我的订单</a>
 						</li>
 						<li class="drop">帮助中心
 							<ul class="down" style="width: 100px">
 								<li>
 									<a href="noviceGuide.jsp">新手指南</a></li>
 								<li>
-									<a href="serviceEnsure.jsp">服务保障</a></>
+									<a href="serviceEnsure.jsp">服务保障</a></li>
 								<li>
 									<a href="helpCommon.jsp">常见问题</a></li>
 								<li>
@@ -114,7 +114,7 @@
 			</div>
 			<div id="com-search">
 				<div class="inner">
-					<a href="index.do" class="logo">
+					<a href="index.jsp" class="logo">
 						<img src="pic/bs-logo.png" ></a>
 					<a href="" class="sublogo"></a>
 					<div class="search">
@@ -127,7 +127,7 @@
 								<%--								<a href="/goods.do">--%>
 								<%--									<input type="button" value="" class="search-btn">--%>
 								<%--								</a>--%>
-								<input type="submit" class="search-btn">
+								<input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none" >
 								<div class="suggest-box"></div>
 							</form>
 						</div>
@@ -148,7 +148,7 @@
 
 							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">1.
 										如何查看物流信息？<br>
-										登录美丽说，在页面右上方点击&ldquo;我的订单&rdquo;进入订单列表页，点击对应订单中的&ldquo;查看物流&rdquo;，可查看发货时间、物流公司、快递单号以及物流跟踪信息。<br>
+										登录Beauty Show，在页面右上方点击&ldquo;我的订单&rdquo;进入订单列表页，点击对应订单中的&ldquo;查看物流&rdquo;，可查看发货时间、物流公司、快递单号以及物流跟踪信息。<br>
 										2. 物流信息查询不到？<br>
 										物流信息以快递官网查询结果为准，如订单发货后长时间没有物流信息，您可联系店铺客服核实或致电4000-800-577咨询。</span></span>
 							</p>
@@ -172,9 +172,9 @@
 
 							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">（二）付款类问题<br>
 										1.是否支持货到付款？<br>
-										目前在美丽说购买商品，均为在线支付，暂不支持货到付款，请您谅解。<br>
+										目前在Beauty Show购买商品，均为在线支付，暂不支持货到付款，请您谅解。<br>
 										2.不确定是否付款成功，要怎么查询？<br>
-										登录美丽说，点击页面右上方&ldquo;我的订单&rdquo;，在订单列表页有一栏交易状态显示，如果显示&ldquo;待付款&rdquo;就表示该订单还未进行支付。<br>
+										登录Beauty Show，点击页面右上方&ldquo;我的订单&rdquo;，在订单列表页有一栏交易状态显示，如果显示&ldquo;待付款&rdquo;就表示该订单还未进行支付。<br>
 										3.支付不成功的原因有哪些？<br>
 										（1）您的银行卡尚未开通网上银行支付功能，建议您到当地营业厅开通网上银行；<br>
 										（2）所用银行卡超出该银行支持地域范围，请您更换银行卡试试；<br>
@@ -217,7 +217,7 @@
 							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">不同支付方式，退款到账时间不同：</span></span>
 							</p>
 
-							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">（1）美丽说钱包支付和白付美支付：实时到账</span></span>
+							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">（1）Beauty Show钱包支付和白付美支付：实时到账</span></span>
 							</p>
 
 							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">（2）银行卡支付：1-3个工作日内退至银行，具体到账时间以银行为准，最晚不超过15个工作日</span></span>
@@ -267,25 +267,25 @@
 										3.退货补贴运费如何补贴？</span></span>
 							</p>
 
-							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">在提供&ldquo;退货补运费&rdquo;服务的店铺购买商品，发起退货并且填写退货物流单号的买家，在卖家确认收到退货后48小时内，可获得现金补贴，补贴金额直接发放至对应的美丽说钱包账户。补贴规则：买卖双方同省或者同为江浙沪的可获得平台补贴5元，此外（含港、澳、台）赔付10元，跨境物流不享受补贴。同一订单多件商品发起多次退货，仅可获得一次补贴；同一商家多个订单多款货物集中退货，一个物流单号可获补贴一次。</span></span>
+							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">在提供&ldquo;退货补运费&rdquo;服务的店铺购买商品，发起退货并且填写退货物流单号的买家，在卖家确认收到退货后48小时内，可获得现金补贴，补贴金额直接发放至对应的Beauty Show钱包账户。补贴规则：买卖双方同省或者同为江浙沪的可获得平台补贴5元，此外（含港、澳、台）赔付10元，跨境物流不享受补贴。同一订单多件商品发起多次退货，仅可获得一次补贴；同一商家多个订单多款货物集中退货，一个物流单号可获补贴一次。</span></span>
 							</p>
 
 							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">（四）购物类问题<br>
 										1.订单提交成功后，还可以修改订单信息吗？<br>
 										很抱歉，订单一旦提交后将无法修改，请您取消订单重新购买。<br>
 										2.商品包装是否有保证？<br>
-										所发商品由商家打包，如您在收到商品时发现包装有破损或是其它方面的问题，请直接联系美丽说客服处理。</span></span>
+										所发商品由商家打包，如您在收到商品时发现包装有破损或是其它方面的问题，请直接联系Beauty Show客服处理。</span></span>
 							</p>
 
 							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">3.购物提供发票吗？</span></span>
 							</p>
 
-							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">美丽说未强制要求卖家提供发票，建议您在购买前与卖家确认是否可以提供发票。</span></span>
+							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">Beauty Show未强制要求卖家提供发票，建议您在购买前与卖家确认是否可以提供发票。</span></span>
 							</p>
 
 							<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">（五）客诉热线<br>
-										美丽说努力为爱美丽们营造无忧、快乐购物的环境，期望买卖双方自愿、友好的进行交易合作。但如果爱美丽们在购物过程中遇到任何问题，都可以联系美丽说客服，我们会每天9:00-22:00为您守候，帮助您解决问题。<br>
-										美丽说客服联系方式：4000-800-577</span></span>
+										Beauty Show努力为爱美丽们营造无忧、快乐购物的环境，期望买卖双方自愿、友好的进行交易合作。但如果爱美丽们在购物过程中遇到任何问题，都可以联系Beauty Show客服，我们会每天9:00-22:00为您守候，帮助您解决问题。<br>
+										Beauty Show客服联系方式：4000-800-577</span></span>
 							</p>
 
 							<p style="font-size: 14px; line-height: 2;">&nbsp;</p>
@@ -326,7 +326,7 @@
 				<div class="flist">
 					<h4>关于我们</h4>
 					<div>
-						<a href="aboutus.jsp" target="_blank">关于美丽说</a>
+						<a href="aboutus.jsp" target="_blank">关于Beauty Show</a>
 					</div>
 					<div>
 						<a href="contactus.jsp" target="_blank">联系我们</a>
@@ -349,11 +349,11 @@
 					</div>
 				</div>
 				<div class="flist service">
-					<h4>美丽说微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png"
-					 alt="美丽说服务号二维码">
+					<h4>Beauty Show微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png"
+					 alt="Beauty Show服务号二维码">
 				</div>
 				<div class="flist last" style="float:left;">
-					<h4>美丽说客户端下载</h4>
+					<h4>Beauty Show客户端下载</h4>
 					<p style="background:none; margin-top:0px;" class="client"> <img class="qrcode" src="p2\160802\7e_74j23d2a5f5j3bj31h70375gbeec1_100x100.png">
 					</p>
 				</div>

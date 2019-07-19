@@ -21,8 +21,8 @@
      <meta name="chinaz-site-verification" content="500e4417-e595-40ac-98da-dec66c97a9e5" /> -->
 
     <title>品牌好货 官网直邮</title>
-    <meta name="description" content="美丽说, 只做正确流行款. 独家冠名《奔跑吧兄弟》! 平台聚集强大的资深时尚买手团队, 每日推出正确新款, 传授最权威的穿衣经验, 全方位解读搭配技巧, 打造当季最前沿的正确流行款!">
-    <meta name="keywords" content="美丽说,衣服,鞋子,包包,配饰,家居,美妆,搭配,团购">
+    <meta name="description" content="Beauty Show, 只做正确流行款. 独家冠名《奔跑吧兄弟》! 平台聚集强大的资深时尚买手团队, 每日推出正确新款, 传授最权威的穿衣经验, 全方位解读搭配技巧, 打造当季最前沿的正确流行款!">
+    <meta name="keywords" content="Beauty Show,衣服,鞋子,包包,配饰,家居,美妆,搭配,团购">
 
     <link rel="stylesheet" type="text/css" href="css\product.css$1471365287.css" media="all"><link rel="stylesheet" type="text/css" href="css\base.css?1604111018.1463028059" media="all"><link rel="stylesheet" href="new1\v1\fxihe\7844debb80fb9f01eb12b7f502b8a119\A11fe848b6a2000802.css"><script type="text/javascript">PTP_PARAMS={"c_action":"cube%40%40daimaiPCrukou","ptp_cnt_a":"1","time":"1471365290000","ptp_cnt_b":"_mf1_840_7835"}</script>
 
@@ -73,7 +73,7 @@
                 <a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
             </li>
             <li class="drop">
-                <a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">我的订单</a>
+                <a href="orderlist.jsp">我的订单</a>
             </li>
             <li class="drop">帮助中心
                 <ul class="down" style="width: 100px">
@@ -94,7 +94,7 @@
 </div>
 <div id="com-search">
     <div class="inner">
-        <a href="index.do" class="logo">
+        <a href="index.jsp" class="logo">
             <img src="pic/bs-logo.png" ></a>
         <a href="" class="sublogo"></a>
         <div class="search">
@@ -107,7 +107,7 @@
                     <%--								<a href="/goods.do">--%>
                     <%--									<input type="button" value="" class="search-btn">--%>
                     <%--								</a>--%>
-                    <input type="submit" class="search-btn">
+                    <input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none" >
                     <div class="suggest-box"></div>
                 </form>
             </div>

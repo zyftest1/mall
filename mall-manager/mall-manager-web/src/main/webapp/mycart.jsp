@@ -179,14 +179,14 @@
 				<a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
 			</li>
 			<li class="drop">
-				<a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">我的订单</a>
+				<a href="orderlist.jsp">我的订单</a>
 			</li>
 			<li class="drop">帮助中心
 				<ul class="down" style="width: 100px">
 					<li>
 						<a href="noviceGuide.jsp">新手指南</a></li>
 					<li>
-						<a href="serviceEnsure.jsp">服务保障</a></>
+						<a href="serviceEnsure.jsp">服务保障</a></li>
 					<li>
 						<a href="helpCommon.jsp">常见问题</a></li>
 					<li>
@@ -217,18 +217,18 @@
 							3                <span class="md_process_tip">支付</span>
 						</i>
 						<i class="md_process_i md_process_i4">
-							<img src="//www.mogujie.com/img/pay/right.png" width="23" height="23" alt="">
+                            4
 							<span class="md_process_tip">完成</span>
 						</i>
 					</div>
 				</div>
 			</div>
-			<div class="logo logo-cart"></div>
+
 		</div>
 	</div>
 	<div class="mydesign">
 
-		<table class="table table-bordered">
+		<table class="table table-hover">
 			<thead>
 			<th class="thdesign"><p align="center">商品图片</p></th>
 			<th class="thdesign"><p align="center">商品描述</p></th>
@@ -257,7 +257,7 @@
 
 <div class="meilili">
 	<p title="mofa015027">
-		<a href="index.jsp" target="_blank">美丽说</a>
+		<a href="index.jsp" target="_blank">Beauty Show</a>
 		© 2016 Meilishuo.com,All Rights Reserved.
 	</p>
 	<div class="icons">

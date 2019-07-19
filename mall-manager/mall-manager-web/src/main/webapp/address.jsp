@@ -24,7 +24,7 @@
 		<meta http-equiv="Cache-Control" content="no-transform ">
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>美丽说 - 收货地址</title>
+		<title>Beauty Show - 收货地址</title>
 		<meta name="keywords" content="蘑菇街,mogujie,买手,买手街,网购">
 		<meta name="description" content="蘑菇街-中国最大的女性电子商务平台，精选款式美、质量优、价格合理的衣服、鞋子、箱包、配饰和美妆等潮流商品。让8000万女性会员在这里享受购物乐趣，发现时尚精品，分享消费体验。">
 		<meta name="copyright" content="meilishuo.com">
@@ -105,6 +105,13 @@
 				}
 			})();
 		</script>
+		<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<style type="text/css">
+			table{
+
+			}
+		</style>
 	</head>
 
 	<body>
@@ -185,14 +192,14 @@
 				<a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
 			</li>
 			<li class="drop">
-				<a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">我的订单</a>
+				<a href="orderlist.jsp">我的订单</a>
 			</li>
 			<li class="drop">帮助中心
 				<ul class="down" style="width: 100px">
 					<li>
 						<a href="noviceGuide.jsp">新手指南</a></li>
 					<li>
-						<a href="serviceEnsure.jsp">服务保障</a></>
+						<a href="serviceEnsure.jsp">服务保障</a></li>
 					<li>
 						<a href="helpCommon.jsp">常见问题</a></li>
 					<li>
@@ -206,7 +213,7 @@
 </div>
 <div id="com-search">
 	<div class="inner">
-		<a href="index.do" class="logo">
+		<a href="index.jsp" class="logo">
 			<img src="pic/bs-logo.png" ></a>
 		<a href="" class="sublogo"></a>
 		<div class="search">
@@ -219,7 +226,7 @@
 					<%--								<a href="/goods.do">--%>
 					<%--									<input type="button" value="" class="search-btn">--%>
 					<%--								</a>--%>
-					<input type="submit" class="search-btn">
+					<input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none" >
 					<div class="suggest-box"></div>
 				</form>
 			</div>
@@ -246,6 +253,7 @@
 				width: 100%;
 			}
 		</style>
+
 		<div id="body">
 			<div class="mu_wrap clearfix">
 				<div class="mu_nav_wrap">
@@ -258,13 +266,13 @@
 
 						<div>
 							<form method="post" action="/bsAddress.do?_method=address">
-								<table class="table" border="1px">
+								<table class="table table-hover" border="1px" >
 									<thead>
 									<tr>
-										<th>地址</th>
-										<th>姓名</th>
-										<th>电话</th>
-										<th colspan="2">操作</th>
+										<th><p align="center">地址</p></th>
+										<th><p align="center">姓名</p></th>
+										<th><p align="center">电话</p></th>
+										<th colspan="2"><p align="center">操作</p></th>
 									</tr>
 									</thead>
 									<tbody>
@@ -331,11 +339,12 @@
 			</div>
 			<input type="hidden" value="mls" id="sourceForm">
 		</div>
+		</div>
 
 		<div class="foot J_footertimer" data-ptp="_foot" data-svrtime="$!service_time">
 			<div class="wrap foot_wrap clearfix">
 				<div class="foot_info" style="width:290px">
-					<a rel="nofollow" class="info_logo" href="index.jsp"></a>
+
 					<div class="info_text">
 						<p>营业执照注册号：
 							<a rel="nofollow" href="http://s6.mogucdn.com/pic/140924/8qc9_ieydgn3emqztszbxmmytambqmmyde_1502x2246.jpg" target="_blank">110108013011072</a>
@@ -390,7 +399,8 @@
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript" src="js\page-myorder-list.js$ead98e0e_1471519499.js"></script>
+
+			<script type="text/javascript" src="js\page-myorder-list.js$ead98e0e_1471519499.js"></script>
 		<script type="text/javascript" src="js\woodpecker.0.3.0.js$a39334f1_1458802962.js"></script>
 
 	</body>

@@ -14,9 +14,10 @@
 <head>
     <title>添加</title>
     <style type="text/css">
-       form{
-           margin: 100px;
+        .form-horizontal{
+           margin-left:249px;
        }
+
     </style>
     <link rel="stylesheet" type="text/css" href="pc\css\base.css?1607170150.25">
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
@@ -68,14 +69,14 @@
                 <a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
             </li>
             <li class="drop">
-                <a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">我的订单</a>
+                <a href="orderlist.jsp">我的订单</a>
             </li>
             <li class="drop">帮助中心
                 <ul class="down" style="width: 100px">
                     <li>
                         <a href="noviceGuide.jsp">新手指南</a></li>
                     <li>
-                        <a href="serviceEnsure.jsp">服务保障</a></>
+                        <a href="serviceEnsure.jsp">服务保障</a></li>
                     <li>
                         <a href="helpCommon.jsp">常见问题</a></li>
                     <li>
@@ -89,7 +90,7 @@
 </div>
 <div id="com-search">
     <div class="inner">
-        <a href="index.do" class="logo">
+        <a href="index.jsp" class="logo">
             <img src="pic/bs-logo.png" ></a>
         <a href="" class="sublogo"></a>
         <div class="search">
@@ -102,7 +103,7 @@
                     <%--								<a href="/goods.do">--%>
                     <%--									<input type="button" value="" class="search-btn">--%>
                     <%--								</a>--%>
-                    <input type="submit" class="search-btn">
+                    <input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none" >
                     <div class="suggest-box"></div>
                 </form>
             </div>
@@ -117,33 +118,36 @@
 <%--          电话<input type="text" name="tel"><br>--%>
 <%--          <input type="submit"value="保存"><input type="reset" value="重置">--%>
 <%--      </form>--%>
-<form class="form-horizontal" method="post" action="/bsAddress.do?_method=save">
-    <input hidden="hidden" value="${sessionScope.bsUserAccount.ID}" name="userId">
-    <div class="form-group">
-        <label for="inputEmail3" class="col-sm-2 control-label">地址</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="address" id="inputEmail3" placeholder="地址">
+<div class="zhong" style="margin: 0px auto">
+    <form class="form-horizontal" method="post" action="/bsAddress.do?_method=save">
+        <input hidden="hidden" value="${sessionScope.bsUserAccount.ID}" name="userId">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">地址</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="address" id="inputEmail3" placeholder="地址">
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="inputPassword3" class="col-sm-2 control-label">收件人</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="name" id="inputPassword3" placeholder="收件人">
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">收件人</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="name" id="inputPassword3" placeholder="收件人">
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="inputPassword3" class="col-sm-2 control-label">电话</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="tel" id="inputPassword" placeholder="电话">
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">电话</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="tel" id="inputPassword" placeholder="电话">
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">保存</button>
-            <button type="reset" class="btn btn-default">重置</button>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default" style="margin-left: 150px">保存</button>
+                <button type="reset" class="btn btn-default" style="margin-left: 100px">重置</button>
+            </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
+
 
 </body>
 </html>

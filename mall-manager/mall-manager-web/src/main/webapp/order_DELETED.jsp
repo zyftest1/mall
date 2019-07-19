@@ -14,9 +14,9 @@
 		<meta http-equiv="Cache-Control" content="no-transform ">
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>订单列表_美丽说</title>
-		<meta name="keywords" content="美丽说,meilishuo,买手,买手街,网购">
-		<meta name="description" content="美丽说-中国最大的女性电子商务平台，精选款式美、质量优、价格合理的衣服、鞋子、箱包、配饰和美妆等潮流商品。让8000万女性会员在这里享受购物乐趣，发现时尚精品，分享消费体验。">
+		<title>订单列表_Beauty Show</title>
+		<meta name="keywords" content="Beauty Show,meilishuo,买手,买手街,网购">
+		<meta name="description" content="Beauty Show-中国最大的女性电子商务平台，精选款式美、质量优、价格合理的衣服、鞋子、箱包、配饰和美妆等潮流商品。让8000万女性会员在这里享受购物乐趣，发现时尚精品，分享消费体验。">
 		<meta name="copyright" content="meilishuo.com">
 
 		<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml">
@@ -155,14 +155,14 @@
 					<a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
 				</li>
 				<li class="drop">
-					<a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">我的订单</a>
+					<a href="orderlist.jsp">我的订单</a>
 				</li>
 				<li class="drop">帮助中心
 					<ul class="down" style="width: 100px">
 						<li>
 							<a href="noviceGuide.jsp">新手指南</a></li>
 						<li>
-							<a href="serviceEnsure.jsp">服务保障</a></>
+							<a href="serviceEnsure.jsp">服务保障</a></li>
 						<li>
 							<a href="helpCommon.jsp">常见问题</a></li>
 						<li>
@@ -176,7 +176,7 @@
 	</div>
 	<div id="com-search">
 		<div class="inner">
-			<a href="index.do" class="logo">
+			<a href="index.jsp" class="logo">
 				<img src="pic/bs-logo.png" ></a>
 			<a href="" class="sublogo"></a>
 			<div class="search">
@@ -189,7 +189,7 @@
 						<%--								<a href="/goods.do">--%>
 						<%--									<input type="button" value="" class="search-btn">--%>
 						<%--								</a>--%>
-						<input type="submit" class="search-btn">
+						<input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none" >
 						<div class="suggest-box"></div>
 					</form>
 				</div>
@@ -208,16 +208,16 @@
 								<a class="menu_order disable-a"> 我的订单 </a>
 								<ul class="mu_nav_item">
 									<li>
-										<a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">全部订单</a>
+										<a href="/order.do?_method=orderTotal">全部订单</a>
 									</li>
 
 									<li >
-										<a href="/order.do?_method=orderUnreceive&id=${sessionScope.bsUserAccount.ID}"> 待收货 <i id="unReceivedOrder"
+										<a href="/order.do?_method=orderUnreceive"> 待收货 <i id="unReceivedOrder"
 											 class="mu_nav_count"><i class="mu_nav_count_arw"></i></i>
 										</a>
 									</li>
 									<li>
-										<a href="/order.do?_method=waitEvaluate&id=${sessionScope.bsUserAccount.ID}"> 待评价 <i id="waitingRateOrder"
+										<a href="order_received.jsp"> 待评价 <i id="waitingRateOrder"
 											 class="mu_nav_count"><i class="mu_nav_count_arw"></i></i>
 										</a>
 									</li>
@@ -245,7 +245,7 @@
 								</a>
 							</li>
 							<li>
-								<a class="menu_pcenter" href="address.jsp#"> 收货地址 <em class="little-triangle"></em><em class="little-triangle-hover"></em>
+								<a class="menu_pcenter" href="/bsAddress.do?_method=address&userId=${sessionScope.bsUserAccount.ID}&receiveName=${sessionScope.bsUserAccount.bsName}"> 收货地址 <em class="little-triangle"></em><em class="little-triangle-hover"></em>
 								</a>
 							</li>
 							<li>
@@ -311,7 +311,7 @@
 		<div class="foot J_footertimer" data-ptp="_foot" data-svrtime="">
 			<div class="wrap foot_wrap clearfix">
 				<div class="foot_info">
-					<a rel="nofollow" class="info_logo" href="index.jsp"></a>
+
 					<div class="info_text">
 						<p>营业执照注册号：
 							<a rel="nofollow" href="http://s6.mogucdn.com/pic/140924/8qc9_ieydgn3emqztszbxmmytambqmmyde_1502x2246.jpg"

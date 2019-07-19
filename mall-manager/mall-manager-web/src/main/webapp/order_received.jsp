@@ -15,9 +15,9 @@
 		<meta http-equiv="Cache-Control" content="no-transform ">
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>订单列表_美丽说</title>
-		<meta name="keywords" content="美丽说,meilishuo,买手,买手街,网购">
-		<meta name="description" content="美丽说-中国最大的女性电子商务平台，精选款式美、质量优、价格合理的衣服、鞋子、箱包、配饰和美妆等潮流商品。让8000万女性会员在这里享受购物乐趣，发现时尚精品，分享消费体验。">
+		<title>订单列表_Beauty Show</title>
+		<meta name="keywords" content="Beauty Show,meilishuo,买手,买手街,网购">
+		<meta name="description" content="Beauty Show-中国最大的女性电子商务平台，精选款式美、质量优、价格合理的衣服、鞋子、箱包、配饰和美妆等潮流商品。让8000万女性会员在这里享受购物乐趣，发现时尚精品，分享消费体验。">
 		<meta name="copyright" content="meilishuo.com">
 
 
@@ -151,7 +151,7 @@
 					<a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
 				</li>
 				<li class="drop">
-					<a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">我的订单</a>
+					<a href="orderlist.jsp">我的订单</a>
 				</li>
 				<li class="drop">帮助中心
 					<ul class="down" style="width: 100px">
@@ -172,7 +172,7 @@
 	</div>
 	<div id="com-search">
 		<div class="inner">
-			<a href="index.do" class="logo">
+			<a href="index.jsp" class="logo">
 				<img src="pic/bs-logo.png" ></a>
 			<a href="" class="sublogo"></a>
 			<div class="search">
@@ -185,7 +185,7 @@
 						<%--								<a href="/goods.do">--%>
 						<%--									<input type="button" value="" class="search-btn">--%>
 						<%--								</a>--%>
-						<input type="submit" class="search-btn">
+						<input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none" >
 						<div class="suggest-box"></div>
 					</form>
 				</div>
@@ -202,11 +202,11 @@
 						<ul class="doota_ul">
                             <li><a class="menu_order disable-a"> 我的订单 </a>
                                 <ul class="mu_nav_item">
-                                    <li> <a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">全部订单</a> </li>
+                                    <li> <a href="/order.do?_method=orderTotal">全部订单</a> </li>
 
-                                    <li class="c"> <a href="/order.do?_method=orderUnreceive&id=${sessionScope.bsUserAccount.ID}"> 待收货 <i id="unReceivedOrder" class="mu_nav_count"><i class="mu_nav_count_arw"></i></i> </a> </li>
-                                    <li >
-										<a href="/order.do?_method=waitEvaluate&id=${sessionScope.bsUserAccount.ID}"> 待评价
+                                    <li > <a href="/order.do?_method=orderUnreceive"> 待收货 <i id="unReceivedOrder" class="mu_nav_count"><i class="mu_nav_count_arw"></i></i> </a> </li>
+                                    <li class="c">
+										<a href="/order.do?_method=waitEvaluate"> 待评价
 											<i id="waitingRateOrder" class="mu_nav_count">
 												<i class="mu_nav_count_arw"></i></i> </a> </li>
                                     <li> <a href="order_DELETED.jsp#&amp;_uk=sr67mlrhfousumpjbc6n7bdg82rvnyapglqybeg6"> 退货退款 <i class="mu_nav_count"><i
@@ -223,7 +223,7 @@
 							</li>
 							<li> <a class="menu_pcenter" href="footprint.jsp#"> 我的足迹 <em class="little-triangle"></em><em class="little-triangle-hover"></em>
 								</a> </li>
-							<li> <a class="menu_pcenter" href="address.jsp#"> 收货地址 <em class="little-triangle"></em><em class="little-triangle-hover"></em>
+							<li> <a class="menu_pcenter" href="/bsAddress.do?_method=address&userId=${sessionScope.bsUserAccount.ID}&receiveName=${sessionScope.bsUserAccount.bsName}"> 收货地址 <em class="little-triangle"></em><em class="little-triangle-hover"></em>
 								</a> </li>
 							<li> <a class="disable-a">账号管理</a>
 								<ul>
@@ -252,20 +252,17 @@
                             <%--							<li class="total">实付款(元)</li>--%>
                             <li class="status">交易状态</li>
                             <%--							<li class="other">操作</li>--%>
-							<li class="status">确认收货</li>
 						</ul>
 					</div>
 
 					<div id="orderWrap">
                         <c:forEach items="${requestScope.orders}" var="order">
                             <ul class="order-title-column clearfix">
-								<li class="goods"><a href="index2car.do?sID=${order.sid}">${order.goodsName}</a></li>
-<%--								<c:out value="${order.sid}"></c:out>--%>
+                                <li class="goods">${order.goodsName}</li>
                                 <li class="price">${order.singlePrice}</li>
                                 <li class="quantity">${order.goodsNum}</li>
                                 <li class="aftersale">${order.totalPrice}</li>
                                 <li class="status">${order.state}</li>
-								<li class="status"><a href="/confirm.do?oid=${order.oid}&id=${sessionScope.bsUserAccount.ID}"  style="color: #FF3366">确认</a></li>
                             </ul>
                         </c:forEach>
 
@@ -277,7 +274,7 @@
 		<div class="foot J_footertimer" data-ptp="_foot" data-svrtime="">
 			<div class="wrap foot_wrap clearfix">
 				<div class="foot_info">
-					<a rel="nofollow" class="info_logo" href="index.jsp"></a>
+
 					<div class="info_text">
 						<p>营业执照注册号：<a rel="nofollow" href="http://s6.mogucdn.com/pic/140924/8qc9_ieydgn3emqztszbxmmytambqmmyde_1502x2246.jpg"
 							 target="_blank">110108013011072</a></p>

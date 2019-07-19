@@ -12,8 +12,8 @@
 <head>
     <title>修改</title>
     <style type="text/css">
-        form{
-            margin: 100px;
+        .form-horizontal{
+            margin-left:249px;
         }
     </style>
     <link rel="stylesheet" type="text/css" href="pc\css\base.css?1607170150.25">
@@ -67,7 +67,7 @@
                 <a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
             </li>
             <li class="drop">
-                <a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">我的订单</a>
+                <a href="orderlist.jsp">我的订单</a>
             </li>
             <li class="drop">帮助中心
                 <ul class="down" style="width: 100px">
@@ -86,9 +86,10 @@
         </ul>
     </div>
 </div>
+
 <div id="com-search">
     <div class="inner">
-        <a href="index.do" class="logo">
+        <a href="index.jsp" class="logo">
             <img src="pic/bs-logo.png" ></a>
         <a href="" class="sublogo"></a>
         <div class="search">
@@ -101,7 +102,7 @@
                     <%--								<a href="/goods.do">--%>
                     <%--									<input type="button" value="" class="search-btn">--%>
                     <%--								</a>--%>
-                    <input type="submit" class="search-btn">
+                    <input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none" >
                     <div class="suggest-box"></div>
                 </form>
             </div>
@@ -110,6 +111,7 @@
 
     </div>
 </div>
+
 <%--<form method="post" action="/up.do?${bsUserAddress.addID}" >--%>
 <%--    地址<input type="text" name="address" value="${bsUserAddress.address}"><br>--%>
 <%--    姓名<input type="text" name="name" value="${bsUserAddress.name}"><br>--%>
@@ -120,27 +122,27 @@
 <form class="form-horizontal" method="post" action="/bsAddress.do?_method=up&id=${sessionScope.bsUserAccount.ID}">
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">地址</label>
-        <div class="col-sm-10">
+        <div class="col-sm-6">
             <input type="text" value="${bsUserAddress.address}" class="form-control" name="address" id="inputEmail3" placeholder="地址">
         </div>
     </div>
     <div class="form-group">
         <label for="inputPassword3" class="col-sm-2 control-label">姓名</label>
-        <div class="col-sm-10">
+        <div class="col-sm-6">
             <input type="text" value="${bsUserAddress.name}" class="form-control" name="name" id="inputPassword3" placeholder="姓名">
         </div>
     </div>
     <div class="form-group">
         <label for="inputPassword3" class="col-sm-2 control-label">电话</label>
-        <div class="col-sm-10">
+        <div class="col-sm-6">
             <input type="text" value="${bsUserAddress.tel}" class="form-control" name="tel" id="inputPassword" placeholder="电话">
             <input type="hidden" value="${bsUserAddress.addID}" name="addID" >
         </div>
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">保存</button>
-            <button type="reset" class="btn btn-default">重置</button>
+            <button type="submit" class="btn btn-default"  style="margin-left: 150px">保存</button>
+            <button type="reset" class="btn btn-default" style="margin-left: 100px">重置</button>
         </div>
     </div>
 </form>

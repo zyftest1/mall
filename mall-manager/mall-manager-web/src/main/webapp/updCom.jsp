@@ -1,24 +1,25 @@
 <%--
   Created by IntelliJ IDEA.
   User: zjc
-  Date: 2019/7/16
-  Time: 21:44
+  Date: 2019/7/18
+  Time: 9:20
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>商品添加</title>
+    <title>修改商品</title>
 </head>
+
 <body>
-<h3>商品添加</h3>
-<form action="addCom.do" method="post">
+<h3>商品修改</h3>
+<form action="/updCom.do" method="post">
     <p>
         商品ID<br />
-
-        <input type="text" name = "id" placeholder="请输入商品ID" autofocus="autofocus" />
+        <input type="text" name = "id" value="${id}" readonly="readonly" autofocus="autofocus" />
+        <br />
         <br />
         类型<br />
         <select name="ctype" >
@@ -54,7 +55,7 @@
         详情:
     </p>
 
-    <textarea name="describe"  rows="20" cols="80" placeholder="输入商品描述"></textarea>
+    <textarea name="describe"  rows="20" cols="80" placeholder="输入商品描述">${desc}</textarea>
     <br />
     <p>
         <input type="submit" value="提交"/>
@@ -63,6 +64,7 @@
     </p>
 
 </form>
+
 
 
 </body>

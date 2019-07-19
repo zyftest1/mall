@@ -33,7 +33,7 @@
                 <th>款式</th>
                 <th>创建日期</th>
                 <th>商品描述</th>
-                <th>操作</th>
+                <th colspan="2">操作</th>
 
             </tr>
             </thead>
@@ -53,38 +53,45 @@
 
         <tbody>
 
-        <c:forEach items="${bsCommodities}" var="com">
-            <tr>
-                <td>${com.c_id}</td>
-                <td>${com.type_id}</td>
-                <td>${com.mat_ID}</td>
-                <td>${com.brand_ID}</td>
-                <td>${com.edition}</td>
-                <td>${com.c_date}</td>
-                <td>${com.c_describe}</td>
-                <td>
-                    <span class="modular fr"><a href="" class="pt-link-btn">删除</a></span>
-                    <span class="modular fr"><a href="" class="pt-link-btn">修改</a></span>
-                </td>
-            </tr>
-        </c:forEach>
+        <c:choose>
+            <c:when test="${not empty requestScope.pageBean.list}">
+                <c:forEach items="${requestScope.pageBean.list}" var="com">
+                    <tr>
+                        <td>${com.c_id}</td>
+                        <td>${com.type_id}</td>
+                        <td>${com.mat_ID}</td>
+                        <td>${com.brand_ID}</td>
+                        <td>${com.edition}</td>
+                        <td>${com.c_date}</td>
+                        <td>${com.c_describe}</td>
+                        <td><span ><a href="/updCom?c_id=${com.c_id}" class="pt-link-btn">修改</a></span></td>
+                        <td><span ><a href="/delCom.do?c_id=${com.c_id}" class="pt-link-btn" >删除</a></span></td>
+                    </tr>
+                </c:forEach>
+            </c:when>
+                <c:otherwise>
+                    <tr>
+                        <td colspan="8">对不起，没有你要找的数据</td>
+                    </tr>
+                </c:otherwise>
+            </c:choose>
+
         </tbody>
         </table>
     </form>
-
     <!-- BatchOperation -->
     <div style="overflow:hidden">
         <!-- Operation -->
         <div class="BatchOperation fl">
-            <input type="checkbox" user_id="del">
-            <label for="del" class="btnStyle middle">全选</label>
-            <input type="button" value="批量删除" class="btnStyle">
+
         </div>
         <!-- turn page -->
         <div class="turnPage center fr">
-            <a>第一页</a>
-            <a>1</a>
-            <a>最后一页</a>
+            <a href="${pageContext.request.contextPath }/selectAll.do?currentPage=1">首页</a>
+            <a href="${pageContext.request.contextPath }/selectAll.do?currentPage=${requestScope.pageBean.currentPage - 1}">上一页</a>
+            <a href="${pageContext.request.contextPath }/selectAll.do?currentPage=${requestScope.pageBean.currentPage + 1}">下一页</a>
+            <a href="${pageContext.request.contextPath }/selectAll.do?currentPage=${requestScope.pageBean.totalPage}">末页</a>
+
         </div>
     </div>
 </div>

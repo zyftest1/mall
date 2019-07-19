@@ -35,7 +35,7 @@
         </li>
         <li>
         <ul class="menu-children">
-                <li><a href="/selectAll.do" title="商品列表" target="mainCont">商品信息</a></li>
+                <li><a href="/selectAll.do?_method=selectAll" title="商品列表" target="mainCont">商品信息</a></li>
 <%--            <li><a href="product_list.html" title="商品列表" target="mainCont">spu信息</a></li>--%>
                 <li><a href="sku.jsp" title="商品分类" target="mainCont">库存信息</a></li>
 <%--                <li><a href="recycle_bin.html" title="商品分类" target="mainCont">商品回收站</a></li>--%>

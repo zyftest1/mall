@@ -2,7 +2,7 @@ package com.mall.impl.stock;
 
 import com.mall.stock.IWareHouseDao;
 import com.mall.stock.WareHouse;
-import com.utils.JdbcUtils;
+import com.utils.JdbcUtils_C3P0;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
@@ -23,7 +23,7 @@ public class WareHouseDaoImpl implements IWareHouseDao {
 
     @Override
     public List<WareHouse> selectAll() {
-        QueryRunner qr=new QueryRunner(JdbcUtils.getDs());
+        QueryRunner qr=new QueryRunner(JdbcUtils_C3P0.getDataSource());
         String sql="select * from bs_warehouse";
         List<WareHouse> wareHouseList=null;
         try {

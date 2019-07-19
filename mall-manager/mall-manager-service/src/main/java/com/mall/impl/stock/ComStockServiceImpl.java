@@ -3,6 +3,7 @@ package com.mall.impl.stock;
 import com.mall.stock.ComStock;
 import com.mall.stock.IComStockDao;
 import com.mall.IComStockService;
+import com.mall.stock.PageBean;
 
 import java.util.List;
 
@@ -35,10 +36,10 @@ public class ComStockServiceImpl implements IComStockService {
     }
 
     @Override
-    public List<ComStock> findAll() {
+    public void getAll(PageBean<ComStock> pageBean) {
         IComStockDao dao=new ComStockDaoImpl();
-        List<ComStock> comStockList = dao.selectAll();
-
-        return comStockList;
+        dao.selectAll(pageBean);
     }
+
+
 }

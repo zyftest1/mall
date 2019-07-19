@@ -6,11 +6,11 @@ public interface IComColorDao {
     //增加商品颜色信息
     public void insertColor(ComColor comcolor);
     //删除商品颜色信息
-    public void deleteComColorById(String colorID);
+    public void deleteComColorById(String color_id);
     //修改商品颜色信息
     public void updateComColor(ComColor comcolor);
     //查询商品颜色信息
     public List<ComColor> selectAll();
     //根据条件查询商品颜色信息
-    public ComColor selectColorById(String colorID);
+    public ComColor selectColorById(String color_id);
 }

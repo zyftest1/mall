@@ -2,7 +2,7 @@ package com.mall.impl.stock;
 
 import com.mall.stock.ComSize;
 import com.mall.stock.IComSizeDao;
-import com.utils.JdbcUtils;
+import com.utils.JdbcUtils_C3P0;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
@@ -12,7 +12,7 @@ import java.util.List;
 public class ComSizeDaoImpl implements IComSizeDao {
     @Override
     public List<ComSize> selectAll() {
-        QueryRunner qr=new QueryRunner(JdbcUtils.getDs());
+        QueryRunner qr=new QueryRunner(JdbcUtils_C3P0.getDataSource());
         String sql="select * from bs_com_size";
         List<ComSize> comSizeList=null;
         try {

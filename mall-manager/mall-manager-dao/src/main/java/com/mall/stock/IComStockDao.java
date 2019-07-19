@@ -10,8 +10,10 @@ public interface IComStockDao {
     //修改库存信息
     public void updateComStock(ComStock comtock);
     //查询所有的库存信息
-    public List<ComStock> selectAll();
+    public void selectAll(PageBean<ComStock> pageBean);
     //根据条件查询库存信息
     public ComStock selectComStockById(String s_id);
+    //查询总记录数
+    public int getTotalCount();
 
 }

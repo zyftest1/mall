@@ -1,6 +1,7 @@
 package com.mall;
 
 import com.mall.stock.ComStock;
+import com.mall.stock.PageBean;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ public interface IComStockService {
     public void modifyComStock(ComStock comstock);
     //查询库存信息（根据条件）
     public  ComStock  findComStock(String s_id);
-    //查询所有的库存信息
-    public List<ComStock> findAll();
+   //分页查询
+    public void getAll(PageBean<ComStock> pageBean);
 
 }

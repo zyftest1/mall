@@ -1,11 +1,9 @@
 package com.mall.controller.stock;
 
 
+import com.mall.IComStockService;
+import com.mall.impl.stock.*;
 import com.mall.stock.*;
-import com.mall.impl.stock.ComColorDaoImpl;
-import com.mall.impl.stock.ComModityDaoImpl;
-import com.mall.impl.stock.ComSizeDaoImpl;
-import com.mall.impl.stock.WareHouseDaoImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,17 +26,15 @@ public class ComStockInsert extends HttpServlet {
         IWareHouseDao dao2=new WareHouseDaoImpl();
         List<WareHouse> wareHouseList=dao2.selectAll();
 
+
         IComModityDao dao3=new ComModityDaoImpl();
         List<ComModity> comModityList=dao3.selectAll();
-
-
 
         req.setAttribute("comSizeList",comSizeList);
         req.setAttribute("comColorList",comColorList);
         req.setAttribute("wareHouseList",wareHouseList);
         req.setAttribute("comModityList",comModityList);
-
-        req.getRequestDispatcher("/add.jsp").forward(req,resp);
+        req.getRequestDispatcher("add.jsp").forward(req,resp);
     }
 
     @Override

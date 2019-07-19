@@ -24,7 +24,7 @@ public class ComStockModify extends HttpServlet {
         size=new String(size.getBytes("iso-8859-1"),"utf-8");
         int stock=Integer.valueOf(req.getParameter("stock"));
         int ware_id=Integer.valueOf(req.getParameter("ware_id"));
-        int price=Integer.valueOf(req.getParameter("price"));
+        int price=Integer.valueOf(req.getParameter("s_price"));
         String s_describe=req.getParameter("s_describe");
         s_describe=new String(s_describe.getBytes("iso-8859-1"),"utf-8");
 

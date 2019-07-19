@@ -1,6 +1,9 @@
 package com.mall.stock;
 
-public class ComStock {
+import java.io.Serializable;
+
+public class ComStock implements Serializable {
+    private static final long serialVersionUID = -8535778739754609087L;
     private String s_id;
     private String c_id;
     private String color_id;

@@ -18,11 +18,6 @@ import java.io.IOException;
 public class IndexToCarServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         IStockDao stockDao=new IStockDaoImpl();
         String s_id=request.getParameter("sID");
         BsComStock bsComStock = stockDao.selectOneGoodsById(s_id);
@@ -41,14 +36,21 @@ public class IndexToCarServlet extends HttpServlet {
         BsComStock bsComStockXXL = stockDao.selectGoodsByCIDAndSize(cID,size5);
 
 
-        request.setAttribute("goods",bsComStock);
-        request.setAttribute("bsComStockS",bsComStockS);
-        request.setAttribute("bsComStockM",bsComStockM);
-        request.setAttribute("bsComStockL",bsComStockL);
-        request.setAttribute("bsComStockXL",bsComStockXL);
-        request.setAttribute("bsComStockXXL",bsComStockXXL);
+        request.getSession().setAttribute("goods",bsComStock);
+        request.getSession().setAttribute("bsComStockS",bsComStockS);
+        request.getSession().setAttribute("bsComStockM",bsComStockM);
+        request.getSession().setAttribute("bsComStockL",bsComStockL);
+        request.getSession().setAttribute("bsComStockXL",bsComStockXL);
+        request.getSession().setAttribute("bsComStockXXL",bsComStockXXL);
 
 
         request.getRequestDispatcher("/shopdetail.jsp").forward(request,response);
+
+
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
     }
 }

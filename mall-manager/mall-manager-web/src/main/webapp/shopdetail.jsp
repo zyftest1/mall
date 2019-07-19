@@ -86,7 +86,7 @@
                 var ss = $(this).val();
                 $.post({
                     url:"/car.do?_method=stock",
-                    data:{cID:"${requestScope.goods.cID}",size:ss},
+                    data:{cID:"${sessionScope.goods.cID}",size:ss},
                     dataType:"text",
                     // beforeSend:function(){
                     //     alert("请求发送之前执行");
@@ -146,14 +146,41 @@
             })
         });
     </script>
-    <script type="text/javascript">
-        function addCart() {
-            if(!$("#sizeStockS").is(":hidden")) {
-                
-            }
-            $('#select_modelid').is(':hidden')
-        }
-    </script>
+<%--    <script type="text/javascript">--%>
+<%--        $(function(){--%>
+<%--            $("#add2cart").click(function(){--%>
+<%--                alert("------------")--%>
+<%--                if($('#sizeStockS').is(':show')){--%>
+<%--                    location.href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockS}";--%>
+<%--                    alert("---------")--%>
+<%--                }else if($('#sizeStockM').is(':visible')){--%>
+<%--                    location.href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockM}";--%>
+<%--                }else if($('#sizeStockL').is(':visible')){--%>
+<%--                    location.href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockL}";--%>
+<%--                }else if($('#sizeStockXL').is(':visible')){--%>
+<%--                    location.href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockXL}";--%>
+<%--                }else if($('#sizeStockXXL').is(':visible')){--%>
+<%--                    location.href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockXXL}";--%>
+<%--                }--%>
+<%--            })--%>
+<%--        });--%>
+<%--        $(function(){--%>
+<%--            $("#tocar").click(function(){--%>
+<%--                alert("------------")--%>
+<%--                if($('#sizeStockS').is(':visible')){--%>
+<%--                    location.href="/car.do?_method=showList&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockS}";--%>
+<%--                }else if($('#sizeStockM').is(':visible')){--%>
+<%--                    location.href="/car.do?_method=showList&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockM}";--%>
+<%--                }else if($('#sizeStockL').is(':visible')){--%>
+<%--                    location.href="/car.do?_method=showList&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockL}";--%>
+<%--                }else if($('#sizeStockXL').is(':visible')){--%>
+<%--                    location.href="/car.do?_method=showList&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockXL}";--%>
+<%--                }else if($('#sizeStockXXL').is(':visible')){--%>
+<%--                    location.href="/car.do?_method=showList&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockXXL}";--%>
+<%--                }--%>
+<%--            })--%>
+<%--        });--%>
+<%--    </script>--%>
 
 <style type="text/css">
     #sizes {
@@ -166,17 +193,7 @@
         width: 130px;
         height: 100px;
     }
-    /*#size, #menu li {*/
-    /*    list-style:none; !* 将默认的列表符号去掉 *!*/
-    /*}*/
-    /*#size li {*/
-    /*    margin-left: 30px;*/
-    /*    float: left; !* 往左浮动 *!*/
-    /*}*/
-    /*#size li a:hover {*/
-    /*    background:#146C9C; !* 变换背景色 *!*/
-    /*    color:#fff; !* 变换文字颜色 *!*/
-    /*}*/
+
 </style>
 </head>
 <body>
@@ -389,7 +406,7 @@
 
                     <div class="fl goods-info goods-info-tuan-pre" id="J_GoodsInfo">
                         <div class="info-box">
-                            <h1 class="goods-title"><span itemprop="name">${requestScope.goods.describe}</span></h1>
+                            <h1 class="goods-title"><span itemprop="name">${sessionScope.goods.describe}</span></h1>
 
                             <div class="goods-prowrap goods-main">
 
@@ -407,7 +424,7 @@
                                     <dl class="clearfix property-box">
                                         <dt class="property-type property-type-origin">价格：</dt>
                                         <dd class="property-cont property-cont-origin">
-                                            <span id="J_OriginPrice" class="price"><fmt:formatNumber value="${requestScope.goods.price*3}" type="currency" pattern="￥.00"/></span>
+                                            <span id="J_OriginPrice" class="price"><fmt:formatNumber value="${sessionScope.goods.price*3}" type="currency" pattern="￥.00"/></span>
                                         </dd>
                                     </dl>
 
@@ -417,8 +434,8 @@
 
                                         <dt class="property-type property-type-now"> 现价 ：</dt>
                                         <dd class="property-cont property-cont-now fl">
-                                            <span id="J_NowPrice" class="price" name="bsComStockPrice" style="color: #333333">${requestScope.goods.price}</span>
-                                            <em class="pre-price-desc">（特卖价 <fmt:formatNumber value="${requestScope.goods.price*0.8}" type="currency" pattern="￥.00"/>）</em>
+                                            <span id="J_NowPrice" class="price" name="bsComStockPrice" style="color: #333333">${sessionScope.goods.price}</span>
+                                            <em class="pre-price-desc">（特卖价 <fmt:formatNumber value="${sessionScope.goods.price*0.8}" type="currency" pattern="￥.00"/>）</em>
                                         </dd>
 
                                         <dd class="property-extra fr">
@@ -474,7 +491,7 @@
                                                 </div>
                                                 <div class=" goods-stock fl">
                                                     库存
-                                                    <span id="sizeStock" hidden="hidden">${requestScope.goods.stock}</span>
+                                                    <span id="sizeStock" hidden="hidden">${sessionScope.goods.stock}</span>
                                                     <span id="sizeStockS" hidden="hidden">${sessionScope.bsComStockS.stock}</span>
                                                     <span id="sizeStockM" hidden="hidden">${sessionScope.bsComStockM.stock}</span>
                                                     <span id="sizeStockL" hidden="hidden">${sessionScope.bsComStockL.stock}</span>
@@ -493,27 +510,33 @@
                                     <c:when test="${sessionScope.bsUserAccount.bsName != null}">
                                         <div class="goods-buy clearfix">
                                             <!-- <a href="javascript:;" id="J_BuyNow" class="fl mr10 buy-btn buy-now">立刻购买</a> -->
-                                            <a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}"  class="fl mr10 buy-btn buy-now" >立刻购买</a>
+                                            <a href="/car.do?_method=addCar" id="tocar"  class="fl mr10 buy-btn buy-now" >立刻购买</a>
                                             <input type="hidden" value="nodapei" >
 
-                                            <c:if test="${!$('#sizeStockS').is('hidden')}">
-                                                <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockS}" class="fl mr10 buy-cart buy-btn" onclick="addCart">加入购物车</a>
-                                            </c:if>
-                                            <c:if test="${!$('#sizeStockM').is('hidden')}">
-                                                <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockM}" class="fl mr10 buy-cart buy-btn" onclick="addCart">加入购物车</a>
-                                            </c:if>
-                                            <c:if test="${!$('#sizeStockL').is('hidden')}">
-                                                <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockL}" class="fl mr10 buy-cart buy-btn" onclick="addCart">加入购物车</a>
-                                            </c:if>
-                                            <c:if test="${!$('#sizeStockXL').is('hidden')}">
-                                                <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockX}" class="fl mr10 buy-cart buy-btn" onclick="addCart">加入购物车</a>
-                                            </c:if>
-                                            <c:if test="${!$('#sizeStockXXL').is('hidden')}">
-                                                <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockXXL}" class="fl mr10 buy-cart buy-btn" onclick="addCart">加入购物车</a>
-                                            </c:if>
+                                            <a id="add2cart" href="/car.do?_method=showList" class="fl mr10 buy-cart buy-btn">加入购物车</a>
+
+
+<%--                                            <c:if test="$('#sizeStockS').is(':visible')">--%>
+<%--                                                <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockS}" class="fl mr10 buy-cart buy-btn">加入购物车</a>--%>
+<%--                                            </c:if>--%>
+<%--                                            <c:if test="$('#sizeStockM').is(':visible')">--%>
+<%--                                                <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockM}" class="fl mr10 buy-cart buy-btn">加入购物车</a>--%>
+<%--                                            </c:if>--%>
+<%--                                            <c:if test="$('#sizeStockL').is(':visible')">--%>
+<%--                                                <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockL}" class="fl mr10 buy-cart buy-btn" >加入购物车</a>--%>
+<%--                                            </c:if>--%>
+<%--                                            <c:if test="$('#sizeStockXL').is(':visible')">--%>
+<%--                                                <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockX}" class="fl mr10 buy-cart buy-btn" >加入购物车</a>--%>
+<%--                                            </c:if>--%>
+<%--                                            <c:if test="$('#sizeStockXXL').is(':visible')" >--%>
+<%--                                                <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockXXL}" class="fl mr10 buy-cart buy-btn">加入购物车</a>--%>
+<%--                                            </c:if>--%>
+<%--                                            <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${requestScope.goods}" class="fl mr10 buy-cart buy-btn">加入购物车</a>--%>
+
                                         </div>
                                     </c:when>
                                 </c:choose>
+
                                 <c:choose>
                                     <c:when test="${sessionScope.bsUserAccount.bsName == null}">
                                         <div class="goods-buy clearfix">
@@ -572,7 +595,7 @@
                     <div class="fl goods-topimg" id="J_GoodsImg">
                         <div class="big-img">
                             <button class="middle">
-                                <img id="J_BigImg" src="${requestScope.goods.showPicture}" data-main="http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_f1d98337_s0_468_468.jpg" alt="雪纺裙,收腰,淑女,夏季新品,系带" width="400">
+                                <img id="J_BigImg" src="${sessionScope.goods.showPicture}" data-main="http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_f1d98337_s0_468_468.jpg" alt="雪纺裙,收腰,淑女,夏季新品,系带" width="400">
                             </button>
                         </div>
                     </div>

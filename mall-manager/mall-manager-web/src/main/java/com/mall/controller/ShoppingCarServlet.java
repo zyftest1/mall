@@ -126,7 +126,7 @@ public class ShoppingCarServlet extends HttpServlet {
             response.setContentType("text/html;charset=utf-8");
             response.setCharacterEncoding("utf-8");
             BsUserAccount bsUserAccount = (BsUserAccount) request.getSession().getAttribute("bsUserAccount");
-            BsComStock bsComStock = (BsComStock) request.getAttribute("bsComStock");
+            BsComStock bsComStock = (BsComStock) request.getSession().getAttribute("bsComStock");
             ShoppingCarService car = new ShpopingCarServiceImpl();
 
             BsShoppingCar bsShoppingCar = new BsShoppingCar();
@@ -166,9 +166,9 @@ public class ShoppingCarServlet extends HttpServlet {
                 request.getRequestDispatcher("/mycart.jsp").forward(request, response);
             }
             BsUserAccount bsUserAccount = (BsUserAccount) request.getSession().getAttribute("bsUserAccount");
-            BsComStock bsComStock = (BsComStock) request.getAttribute("bsComStock");
+            BsComStock bsComStock = (BsComStock) request.getSession().getAttribute("bsComStock");
             BsShoppingCar bsShoppingCar = new BsShoppingCar();
-
+            System.out.println(bsComStock);
             bsShoppingCar.setID(bsUserAccount.getID());
             bsShoppingCar.setBsName(bsUserAccount.getBsName());
             bsShoppingCar.setsID(bsComStock.getsID());

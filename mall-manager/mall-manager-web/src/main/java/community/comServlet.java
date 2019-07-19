@@ -1,3 +1,5 @@
+package community;
+
 import com.mall.common.utils.PageBean;
 import com.mall.manager.dao.IBsComBrandDao;
 import com.mall.manager.dao.IBsComMarerialDao;

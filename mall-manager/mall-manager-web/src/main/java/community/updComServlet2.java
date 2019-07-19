@@ -1,3 +1,5 @@
+package community;
+
 import com.mall.manager.pojo.BSCommodity;
 import com.mall.manager.service.BScommunityService;
 import com.mall.manager.service.servImpl.BScommunityServImpl;

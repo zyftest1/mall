@@ -1,3 +1,5 @@
+package community;
+
 import com.mall.manager.dao.IBsComBrandDao;
 import com.mall.manager.dao.IBsCommodityDao;
 import com.mall.manager.dao.daoimpl.IBsComBrandDaoImpl;

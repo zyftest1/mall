@@ -18,7 +18,7 @@ public class OrderServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         OrderService ordService = new OrderService_Impl();
-        List<BS_order> empList = null;//查询所有list，赋值给emplist
+        List<BS_order> empList = null;     //查询所有list，赋值给emplist
         try {
             empList = ordService.queryAll();
         } catch (SQLException e) {

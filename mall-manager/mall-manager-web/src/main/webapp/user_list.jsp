@@ -12,9 +12,9 @@
 <head>
     <title>用户列表</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<%--    <link href="style/adminStyle.css" rel="stylesheet" type="text/css">--%>
-<%--    <script src="js/jquery.js"></script>--%>
-<%--    <script src="js/public.js"></script>--%>
+    <link href="style/adminStyle.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.js"></script>
+    <script src="js/public.js"></script>
 </head>
 <body>
 <%
@@ -27,7 +27,7 @@
         <span class="modular fl"><i class="user"></i><em>用户列表</em></span>
     </div>
 
-
+    <table class="list-style Interlaced">
     <tbody border="1px">
         <thead>
             <th>编号</th>
@@ -57,7 +57,7 @@
         </tr>
         <%}%>
       </tbody>
-
+    </table>
 
 </table>
 

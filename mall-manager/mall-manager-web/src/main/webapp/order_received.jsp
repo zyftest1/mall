@@ -158,7 +158,7 @@
 						<li>
 							<a href="noviceGuide.jsp">新手指南</a></li>
 						<li>
-							<a href="serviceEnsure.jsp">服务保障</a></>
+							<a href="serviceEnsure.jsp">服务保障</a></li>
 						<li>
 							<a href="helpCommon.jsp">常见问题</a></li>
 						<li>
@@ -260,7 +260,7 @@
                         <c:forEach items="${requestScope.orders}" var="order">
                             <ul class="order-title-column clearfix">
 								<li class="goods"><a href="index2car.do?sID=${order.sid}">${order.goodsName}</a></li>
-								<c:out value="${order.sid}"></c:out>
+<%--								<c:out value="${order.sid}"></c:out>--%>
                                 <li class="price">${order.singlePrice}</li>
                                 <li class="quantity">${order.goodsNum}</li>
                                 <li class="aftersale">${order.totalPrice}</li>

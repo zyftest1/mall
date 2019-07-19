@@ -5,7 +5,7 @@ import com.mall.stock.IComStockDao;
 import com.mall.IComStockService;
 import com.mall.stock.PageBean;
 
-import java.util.List;
+
 
 public class ComStockServiceImpl implements IComStockService {
     @Override

@@ -81,6 +81,11 @@
 <style type="text/css">
     /********** 以下代码是兼容美丽说图片留白问题 **********/
     /* 图墙商品 */
+    a.logo{
+        padding-left: 100px;
+        width: 130px;
+        height: 100px;
+    }
     .mls-wrap .shop-feed .list .item .mls-item{
         text-align: center;
     }
@@ -139,6 +144,7 @@
         }
     })();
 </script>
+
 <div id="com-topbar">
     <div class="inner">
         <ul>
@@ -185,7 +191,7 @@
                     <li>
                         <a href="noviceGuide.jsp">新手指南</a></li>
                     <li>
-                        <a href="serviceEnsure.jsp">服务保障</a></>
+                        <a href="serviceEnsure.jsp">服务保障</a></li>
                     <li>
                         <a href="helpCommon.jsp">常见问题</a></li>
                     <li>
@@ -205,9 +211,9 @@
             <div class="mod_cont topbanner">
                 <div id="com-search">
                     <div class="inner">
-                        <a href="index.do" class="logo">
+                        <a href="index.jsp" class="logo">
                             <img src="pic/bs-logo.png" ></a>
-                        <a href="" class="sublogo"></a>
+
                         <div class="search">
                             <div class="search-tab">
                                 <span class="active">宝贝</span>
@@ -341,7 +347,7 @@
 <div class="foot J_footertimer" data-ptp="_foot" data-svrtime="">
     <div class="wrap foot_wrap clearfix">
         <div class="foot_info">
-            <a rel="nofollow" class="info_logo" href="http://www.mogujie.com"></a>
+
             <div class="info_text">
                 <p>营业执照注册号：<a rel="nofollow" href="http://s16.mogucdn.com/p1/160525/upload_ifrdimtcgeztgzdchazdambqmeyde_2480x3508.jpg" target="_blank">330106000129004</a></p>
                 <p>增值电信业务经营许可证：<a rel="nofollow" target="_blank" href="http://s18.mogucdn.com/p1/160623/upload_ifqwiyrtmjrtimzvhezdambqgyyde_600x852.jpg">浙B2-20110349</a></p>
@@ -362,10 +368,10 @@
                 <dd><a rel="nofollow" href="contactus.jsp" target="_blank">联系我们</a></dd>
             </dl>
             <dl class="link_consumer">
-				<dt>消费者</dt>
-				<dd><a rel="nofollow" href="noviceGuide.jsp" target="_blank">新手指南</a></dd>
-				<dd><a rel="nofollow" href="serviceEnsure.jsp" target="_blank">服务保障</a></dd>
-			</dl>
+                <dt>消费者</dt>
+                <dd><a rel="nofollow" href="noviceGuide.jsp" target="_blank">新手指南</a></dd>
+                <dd><a rel="nofollow" href="serviceEnsure.jsp" target="_blank">服务保障</a></dd>
+            </dl>
             <dl class="link_business">
                 <dt>商家</dt>
                 <dd><a rel="nofollow" href="businessEnter.jsp" target="_blank">商家入驻</a></dd>

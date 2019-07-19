@@ -2,6 +2,7 @@ package com.mall.service.impl;
 
 import com.mall.service.BsShoppingCar;
 import com.mall.service.ShopCarDao;
+import com.utils.DateFormat;
 import com.utils.JdbcUtils;
 import com.utils.JdbcUtils_C3P0;
 import org.apache.commons.dbutils.QueryRunner;
@@ -74,8 +75,8 @@ public class ShopCarDaoImpl implements ShopCarDao {
     @Override
     public void insertShoppingCar(BsShoppingCar sCar) throws SQLException {
         QueryRunner run = new QueryRunner(JdbcUtils_C3P0.getDataSource());
-        String sql = "insert into bs_shopping_car(car_id,user_id,user_name,s_id,price,quantity,color,size,car_describe,car_date,car_picture,add_id,address) values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        Object[] params = {sCar.getCarID(), sCar.getID(), sCar.getBsName(), sCar.getsID(), sCar.getPrice(), sCar.getQuantity(), sCar.getColor(), sCar.getSize(), sCar.getDescribe(), sCar.getDate(), sCar.getPicture(), sCar.getAddID(), sCar.getAddress()};
+        String sql = "insert into bs_shopping_car(user_id,user_name,s_id,price,color,size,car_describe,car_date,car_picture) values(?,?,?,?,?,?,?,?,?)";
+        Object[] params = {sCar.getID(), sCar.getBsName(), sCar.getsID(), sCar.getPrice(), sCar.getColor(), sCar.getSize(), sCar.getDescribe(), DateFormat.nowTime(), sCar.getPicture()};
         run.update(sql, params);
 //        try (Connection conn = getConnection()) {
 //            PreparedStatement stmt = null;

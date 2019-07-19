@@ -29,7 +29,7 @@
 
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml">
     <link rel="icon" href="http://s16.mogucdn.com/p1/160614/idid_ifrtgzddgm3dmnjshezdambqhayde_49x48.png" type="image/x-icon">
-
+    <link>
     <script> curl = {apiName: 'require'}; var MOGU = {}; var MoGu = {};</script>
 
 
@@ -41,6 +41,7 @@
     <link href="__newtown\detail_mls\assets\mls-pc\pages\normal\index.css-449eac8d.css" rel="stylesheet" type="text/css">
 
     <script type="text/javascript" src="js\pkg-pc-base.js-beb518b8.js"></script>
+    <script type="text/javascript" src="webjars/jquery/3.4.1/jquery.js"></script>
 
 
 
@@ -75,24 +76,108 @@
             }
         })();
     </script>
-    <style type="text/css">
-        #size {
-            margin-left: 50px;
-            /*font:18px  arial, sans-serif;*/
-            /*!*设置文字大小和字体样式 *!*/
+
+
+    <script type="text/javascript">
+        $(function () {
+            $('input[name="radiobutton"]').click(function(){
+                // alert(this.value);
+                // alert($(this).val());
+                var ss = $(this).val();
+                $.post({
+                    url:"/car.do?_method=stock",
+                    data:{cID:"${requestScope.goods.cID}",size:ss},
+                    dataType:"text",
+                    // beforeSend:function(){
+                    //     alert("请求发送之前执行");
+                    // },
+                    success:function (data,status) {
+                        switch (data) {
+                            case "S":
+                                $("#sizeStockS").show();
+                                $("#sizeStock").hide();
+                                $("#sizeStockM").hide();
+                                $("#sizeStockL").hide();
+                                $("#sizeStockXL").hide();
+                                $("#sizeStockXXL").hide();
+                                break;
+                            case "M":
+                                $("#sizeStockM").show();
+                                $("#sizeStock").hide();
+                                $("#sizeStockS").hide();
+                                $("#sizeStockL").hide();
+                                $("#sizeStockXL").hide();
+                                $("#sizeStockXXL").hide();
+                                break;
+                            case "L":
+                                $("#sizeStockL").show();
+                                $("#sizeStock").hide();
+                                $("#sizeStockM").hide();
+                                $("#sizeStockS").hide();
+                                $("#sizeStockXL").hide();
+                                $("#sizeStockXXL").hide();
+                                break;
+                            case "XL":
+                                $("#sizeStockXL").show();
+                                $("#sizeStock").hide();
+                                $("#sizeStockM").hide();
+                                $("#sizeStockL").hide();
+                                $("#sizeStockS").hide();
+                                $("#sizeStockXXL").hide();
+                                break;
+                            case "XXL":
+                                $("#sizeStockXXL").show();
+                                $("#sizeStock").hide();
+                                $("#sizeStockM").hide();
+                                $("#sizeStockL").hide();
+                                $("#sizeStockXL").hide();
+                                $("#sizeStockS").hide();
+                                break;
+                            default:
+                                $("#sizeStock").show();
+                                $("#sizeStockM").hide();
+                                $("#sizeStockL").hide();
+                                $("#sizeStockXL").hide();
+                                $("#sizeStockS").hide();
+                                $("#sizeStockXXL").hide();
+                        }
+                    }
+                })
+            })
+        });
+    </script>
+    <script type="text/javascript">
+        function addCart() {
+            if(!$("#sizeStockS").is(":hidden")) {
+                
+            }
+            $('#select_modelid').is(':hidden')
         }
-        /*#size, #menu li {*/
-        /*    list-style:none; !* 将默认的列表符号去掉 *!*/
-        /*}*/
-        /*#size li {*/
-        /*    margin-left: 30px;*/
-        /*    float: left; !* 往左浮动 *!*/
-        /*}*/
-        /*#size li a:hover {*/
-        /*    background:#146C9C; !* 变换背景色 *!*/
-        /*    color:#fff; !* 变换文字颜色 *!*/
-        /*}*/
-    </style>
+    </script>
+
+<style type="text/css">
+    #sizes {
+        margin-left: 50px;
+        /*font:18px  arial, sans-serif;*/
+        /*!*设置文字大小和字体样式 *!*/
+    }
+    a.logo{
+        padding-left: 100px;
+        width: 130px;
+        height: 100px;
+    }
+    /*#size, #menu li {*/
+    /*    list-style:none; !* 将默认的列表符号去掉 *!*/
+    /*}*/
+    /*#size li {*/
+    /*    margin-left: 30px;*/
+    /*    float: left; !* 往左浮动 *!*/
+    /*}*/
+    /*#size li a:hover {*/
+    /*    background:#146C9C; !* 变换背景色 *!*/
+    /*    color:#fff; !* 变换文字颜色 *!*/
+    /*}*/
+</style>
 </head>
 <body>
 
@@ -172,7 +257,7 @@
                     <li>
                         <a href="noviceGuide.jsp">新手指南</a></li>
                     <li>
-                        <a href="serviceEnsure.jsp">服务保障</a></>
+                        <a href="serviceEnsure.jsp">服务保障</a></li>
                     <li>
                         <a href="helpCommon.jsp">常见问题</a></li>
                     <li>
@@ -196,7 +281,7 @@
             <div class="mod_cont topbanner">
                 <div id="com-search">
                     <div class="inner">
-                        <a href="index.do" class="logo">
+                        <a href="index.jsp" class="logo">
                             <img src="pic/bs-logo.png" ></a>
                         <a href="" class="sublogo"></a>
                         <div class="search">
@@ -311,7 +396,7 @@
                                 <dl class="clearfix event-box">
                                     <dd style="background: url(http://s2.mogucdn.com/p1/160329/upload_ifrtan3egaytmojzg4zdambqhayde_540x68.png) 0 0 no-repeat;">
                                         <span class="event-time-text">距品牌特卖开抢仅剩：</span>
-                                          <span class="event-time-left" id="J_CountDown" cut-time="442">
+                                        <span class="event-time-left" id="J_CountDown" cut-time="442">
                                               <span class="d">0</span>天<span class="h">0</span>小时<span class="m">0</span>分<span class="s">0</span>秒
                                           </span>
                                     </dd>
@@ -332,7 +417,7 @@
 
                                         <dt class="property-type property-type-now"> 现价 ：</dt>
                                         <dd class="property-cont property-cont-now fl">
-                                            <span id="J_NowPrice" class="price" style="color: #333333">${requestScope.goods.price}</span>
+                                            <span id="J_NowPrice" class="price" name="bsComStockPrice" style="color: #333333">${requestScope.goods.price}</span>
                                             <em class="pre-price-desc">（特卖价 <fmt:formatNumber value="${requestScope.goods.price*0.8}" type="currency" pattern="￥.00"/>）</em>
                                         </dd>
 
@@ -349,7 +434,7 @@
                                 <dl class="clearfix">
                                     <dt>客服：</dt>
                                     <dd>
-                                        <div class="mlstalk_widget_btn" data-shopid="110fni1q" style="cursor:pointer" data-style="default" data-toid="1256898643" data-tid="4170704471">联系客服</div> 
+                                        <div class="mlstalk_widget_btn" data-shopid="110fni1q" style="cursor:pointer" data-style="default" data-toid="1256898643" data-tid="4170704471">联系客服</div>
                                     </dd>
                                 </dl>
                             </div>
@@ -370,13 +455,15 @@
 
                                         <dl class="size clearfix">
                                             <dt>尺码：</dt>
-                                            <input id="size" type="radio" name="radiobutton" value="radiobutton" > X
-                                            <input type="radio" name="radiobutton" value="radiobutton" checked> M
-                                            <input type="radio" name="radiobutton" value="radiobutton"> L
-                                            <input type="radio" name="radiobutton" value="radiobutton"> XL
-                                            <input type="radio" name="radiobutton" value="radiobutton"> XXL
                                         </dl>
-
+                                        <dl class="clearfix">
+                                            <dt>尺码：</dt>
+                                            <input id="sizes" type="radio" name="radiobutton" value="S" > S
+                                            <input id="sizem" type="radio" name="radiobutton" value="M" > M
+                                            <input id="sizel" type="radio" name="radiobutton" value="L"> L
+                                            <input id="sizexl" type="radio" name="radiobutton" value="XL" > XL
+                                            <input id="sizexxl" type="radio" name="radiobutton" value="XXL"> XXL
+                                        </dl>
                                         <dl class="clearfix">
                                             <dt>数量：</dt>
                                             <dd class="num clearfix">
@@ -385,7 +472,14 @@
                                                     <input class="num-input" type="text" value="1">
                                                     <span class="num-add "></span>
                                                 </div>
-                                                <div class=" goods-stock fl">库存${requestScope.goods.stock}件</div>
+                                                <div class=" goods-stock fl">
+                                                    库存
+                                                    <span id="sizeStock" hidden="hidden">${requestScope.goods.stock}</span>
+                                                    <span id="sizeStockS" hidden="hidden">${sessionScope.bsComStockS.stock}</span>
+                                                    <span id="sizeStockM" hidden="hidden">${sessionScope.bsComStockM.stock}</span>
+                                                    <span id="sizeStockL" hidden="hidden">${sessionScope.bsComStockL.stock}</span>
+                                                    <span id="sizeStockXL" hidden="hidden">${sessionScope.bsComStockXL.stock}</span>
+                                                    <span id="sizeStockXXL" hidden="hidden">${sessionScope.bsComStockXXL.stock}</span>件</div>
                                                 <div class="J_GoodsStockTip goods-stock-tip fl">您所填写的商品数量超过库存！</div>
                                             </dd>
                                         </dl>
@@ -399,24 +493,38 @@
                                     <c:when test="${sessionScope.bsUserAccount.bsName != null}">
                                         <div class="goods-buy clearfix">
                                             <!-- <a href="javascript:;" id="J_BuyNow" class="fl mr10 buy-btn buy-now">立刻购买</a> -->
-                                            <a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}"  class="fl mr10 buy-btn buy-now">立刻购买</a>
+                                            <a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}"  class="fl mr10 buy-btn buy-now" >立刻购买</a>
                                             <input type="hidden" value="nodapei" >
 
-                                            <!-- <a href="javascript:;" id="J_BuyCart" class="fl mr10 buy-cart buy-btn">加入购物车</a> -->
-                                            <a href="/car.do?_method=addCar&id=${sessionScope.bsUserAccount.ID}" class="fl mr10 buy-cart buy-btn">加入购物车</a>
-
+                                            <c:if test="${!$('#sizeStockS').is('hidden')}">
+                                                <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockS}" class="fl mr10 buy-cart buy-btn" onclick="addCart">加入购物车</a>
+                                            </c:if>
+                                            <c:if test="${!$('#sizeStockM').is('hidden')}">
+                                                <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockM}" class="fl mr10 buy-cart buy-btn" onclick="addCart">加入购物车</a>
+                                            </c:if>
+                                            <c:if test="${!$('#sizeStockL').is('hidden')}">
+                                                <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockL}" class="fl mr10 buy-cart buy-btn" onclick="addCart">加入购物车</a>
+                                            </c:if>
+                                            <c:if test="${!$('#sizeStockXL').is('hidden')}">
+                                                <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockX}" class="fl mr10 buy-cart buy-btn" onclick="addCart">加入购物车</a>
+                                            </c:if>
+                                            <c:if test="${!$('#sizeStockXXL').is('hidden')}">
+                                                <a href="/car.do?_method=addCar&bsUserAccount=${sessionScope.bsUserAccount}&bsComStock=${sessionScope.bsComStockXXL}" class="fl mr10 buy-cart buy-btn" onclick="addCart">加入购物车</a>
+                                            </c:if>
                                         </div>
                                     </c:when>
                                 </c:choose>
-                                <div class="goods-buy clearfix">
-                                    <!-- <a href="javascript:;" id="J_BuyNow" class="fl mr10 buy-btn buy-now">立刻购买</a> -->
-									 <a href="login.jsp" id="J_BuyNow" class="fl mr10 buy-btn buy-now">立刻购买</a>
-                                    <input type="hidden" value="nodapei" id="dapeiShow">
-
-                                    <!-- <a href="javascript:;" id="J_BuyCart" class="fl mr10 buy-cart buy-btn">加入购物车</a> -->
-									<a href="login.jsp" id="J_BuyCart" class="fl mr10 buy-cart buy-btn">加入购物车</a>
-
-                                </div>
+                                <c:choose>
+                                    <c:when test="${sessionScope.bsUserAccount.bsName == null}">
+                                        <div class="goods-buy clearfix">
+                                            <!-- <a href="javascript:;" id="J_BuyNow" class="fl mr10 buy-btn buy-now">立刻购买</a> -->
+                                            <a href="login.jsp"  class="fl mr10 buy-btn buy-now">立刻购买</a>
+                                            <input type="hidden" value="nodapei" id="dapeiShow">
+                                            <!-- <a href="javascript:;" id="J_BuyCart" class="fl mr10 buy-cart buy-btn">加入购物车</a> -->
+                                            <a href="login.jsp"  class="fl mr10 buy-cart buy-btn">加入购物车</a>
+                                        </div>
+                                    </c:when>
+                                </c:choose>
                             </div>
 
                             <div class="goods-social clearfix">
@@ -623,7 +731,7 @@
                             <div class="shop-name">
                                 <a class="text text-hasim" href="shop.jsp#110fni1q">爱丽缇旗舰店
                                 </a>
-                                <div class="mlstalk_widget_btn" data-shopid="110fni1q" style="cursor:pointer; width:1px; margin-top:22px;line-height:16px;" data-style="default" data-toid="1256898643" data-tid="4170704471">&nbsp;</div> 
+                                <div class="mlstalk_widget_btn" data-shopid="110fni1q" style="cursor:pointer; width:1px; margin-top:22px;line-height:16px;" data-style="default" data-toid="1256898643" data-tid="4170704471">&nbsp;</div>
                             </div>
                         </h3>
                         <div class="shop-occupying ui-hide"></div>
@@ -808,7 +916,7 @@
         var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
         document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F3621aca6d2e2da698daf02aba80964a9' type='text/javascript'%3E%3C/script%3E"));
         window.domain = 'mogujie.com';
-	
+
     </script>
 </div>
 
@@ -820,7 +928,7 @@
 <div class="foot J_footertimer" data-ptp="_foot" data-svrtime="">
     <div class="wrap foot_wrap clearfix">
         <div class="foot_info">
-            <a rel="nofollow" class="info_logo" href="index.jsp"></a>
+
             <div class="info_text">
                 <p>营业执照注册号：<a rel="nofollow" href="http://s6.mogucdn.com/pic/140924/8qc9_ieydgn3emqztszbxmmytambqmmyde_1502x2246.jpg" target="_blank">110108013011072</a></p>
                 <p>京ICP备11031139号</p>
@@ -863,4 +971,3 @@
 </body>
 
 </html>
-

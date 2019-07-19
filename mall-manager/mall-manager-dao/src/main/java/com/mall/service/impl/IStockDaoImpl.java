@@ -193,7 +193,7 @@ public class IStockDaoImpl implements IStockDao {
                         bsComStock.setcID(rs.getString("c_id"));
                         bsComStock.setStock(rs.getInt("stock"));
                     }
-                    return null;
+                    return bsComStock;
                 }
             },c_id,size);
         } catch (SQLException e) {

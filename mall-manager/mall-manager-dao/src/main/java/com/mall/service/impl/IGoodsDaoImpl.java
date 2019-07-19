@@ -64,6 +64,8 @@ public class IGoodsDaoImpl implements IGoodsDao {
                         goods.setSize(rs.getString("size"));
                         goods.setsID(rs.getString("s_id"));
                         goods.setStock(rs.getInt("stock"));
+                        goods.setcID(rs.getString("c_id"));
+
                         orders.add(goods);
                     }
                     return null;

@@ -17,6 +17,7 @@ public class addComServlet2 extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        req.setCharacterEncoding("UTF-8");
         BScommunityService service = new BScommunityServImpl();
 
         Date date = new Date();

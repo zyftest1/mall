@@ -1,8 +1,8 @@
 package com;
 
-import com.mall.IWareHouseDao;
-import com.mall.WareHouse;
-import com.mall.impl.WareHouseDaoImpl;
+import com.mall.stock.IWareHouseDao;
+import com.mall.stock.WareHouse;
+import com.mall.impl.stock.WareHouseDaoImpl;
 import org.junit.Test;
 
 import java.util.List;

@@ -71,7 +71,7 @@ public class IndexServlet extends HttpServlet {
         IStockDao stockDao=new IStockDaoImpl();
 //        List<BsComStock> bsComStocks=stockDao.selectIndexGoods();
 //        request.setAttribute("indexGoods",bsComStocks);
-//        System.out.println("bsComStocks:-----"+bsComStocks);
+//        r.out.println("bsComStocks:-----"+bsComStocks);
         //所有的c_id
         List<String> allCId=stockDao.selectCId();
         List<BsComStock> bsComStocks=new ArrayList<>();

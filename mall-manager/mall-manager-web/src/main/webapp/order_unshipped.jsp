@@ -156,14 +156,14 @@
 					<a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
 				</li>
 				<li class="drop">
-					<a href="orderlist.jsp">我的订单</a>
+					<a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">我的订单</a>
 				</li>
 				<li class="drop">帮助中心
 					<ul class="down" style="width: 100px">
 						<li>
 							<a href="noviceGuide.jsp">新手指南</a></li>
 						<li>
-							<a href="serviceEnsure.jsp">服务保障</a></>
+							<a href="serviceEnsure.jsp">服务保障</a></li>
 						<li>
 							<a href="helpCommon.jsp">常见问题</a></li>
 						<li>
@@ -209,14 +209,13 @@
 								<ul class="mu_nav_item">
 									<li> <a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">全部订单</a> </li>
 
-									<li class="c"> <a href="/order.do?_method=orderUnreceive&id=${sessionScope.bsUserAccount.ID}"> 待收货 <i id="unReceivedOrder"
+									<li > <a href="/order.do?_method=orderUnreceive&id=${sessionScope.bsUserAccount.ID}"> 待收货 <i id="unReceivedOrder"
 											 class="mu_nav_count"><i class="mu_nav_count_arw"></i></i> </a> </li>
-									<li> <a href="/order.do?_method=waitEvaluate&id=${sessionScope.bsUserAccount.ID}"> 待评价 <i id="waitingRateOrder"
+									<li class="c"> <a href="/order.do?_method=waitEvaluate&id=${sessionScope.bsUserAccount.ID}"> 待评价 <i id="waitingRateOrder"
 											 class="mu_nav_count"><i class="mu_nav_count_arw"></i></i> </a> </li>
 									<li> <a href="order_DELETED.jsp"> 退货退款 <i class="mu_nav_count"><i
 												 class="mu_nav_count_arw"></i></i> </a> </li> <!-- 新增，stage=8 回收站订单 -->
-									<li> <a href="order_DELETED.jsp"> 订单回收站 <i id="recyleOrder"
-											 class="mu_nav_count"><i class="mu_nav_count_arw"></i></i> </a> </li>
+
 								</ul>
 							</li>
 							<li><a class="disable-a">优惠特权</a>
@@ -256,18 +255,20 @@
                             <%--							<li class="total">实付款(元)</li>--%>
                             <li class="status">交易状态</li>
                             <%--							<li class="other">操作</li>--%>
+							<li class="status">评价</li>
 						</ul>
 					</div>
 
 					<div id="orderWrap">
                         <c:forEach items="${requestScope.orders}" var="order">
                             <ul class="order-title-column clearfix">
-                                <li class="goods">${order.goodsName}</li>
+								<li class="goods"><a href="index2car.do?sID=${order.sid}">${order.goodsName}</a></li>
                                 <li class="price">${order.singlePrice}</li>
                                 <li class="quantity">${order.goodsNum}</li>
                                 <li class="aftersale">${order.totalPrice}</li>
                                 <li class="status">${order.state}</li>
-                            </ul>
+								<li class="status" ><a href="/goodsToEvaluate.do?oid=${order.oid}&id=${sessionScope.bsUserAccount.ID}" style="color: #FF3366">评价</a></li>
+							</ul>
                         </c:forEach>
 
 					</div>

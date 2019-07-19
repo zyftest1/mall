@@ -52,7 +52,8 @@ public class OrderServlet extends HttpServlet {
         IOrderDao orderService=new IOrderDaoImpl();
         String id=request.getParameter("id");
         int uid=-1;
-        if(!id.equals("")){
+        System.out.println("id----------====:"+id);
+        if(id!=null&&!id.equals("")){
             uid=Integer.parseInt(id);
         }
         List<BsOrder> orderList=orderService.selectAllOrderByUid(uid);
@@ -68,6 +69,8 @@ public class OrderServlet extends HttpServlet {
            order.setGoodsNum(bsOrder.getQuantity());
            order.setTotalPrice(bsOrder.getQuantity()*bsOrder.getPrice());
            order.setState(scheduleDao.selectDescribeBySchId(bsOrder.getSchID()));
+           order.setOid(bsOrder.getoID());
+            order.setSid(bsOrder.getsID());
            ordersDetailList.add(order);
 
         }
@@ -97,12 +100,14 @@ public class OrderServlet extends HttpServlet {
             order.setGoodsNum(bsOrder.getQuantity());
             order.setTotalPrice(bsOrder.getQuantity()*bsOrder.getPrice());
             order.setState(scheduleDao.selectDescribeBySchId(bsOrder.getSchID()));
+            order.setOid(bsOrder.getoID());
+            order.setSid(bsOrder.getsID());
             ordersDetailList.add(order);
 
         }
         request.setAttribute("orders", ordersDetailList);
         System.out.println("order-----"+ordersDetailList);
-        request.getRequestDispatcher("/order_unshipped.jsp").forward(request, response);
+        request.getRequestDispatcher("/order_received.jsp").forward(request, response);
     }
 
     //待评价订单
@@ -126,9 +131,12 @@ public class OrderServlet extends HttpServlet {
             order.setGoodsNum(bsOrder.getQuantity());
             order.setTotalPrice(bsOrder.getQuantity()*bsOrder.getPrice());
             order.setState(scheduleDao.selectDescribeBySchId(bsOrder.getSchID()));
+            order.setOid(bsOrder.getoID());
+            order.setSid(bsOrder.getsID());
             ordersDetailList.add(order);
 
         }
+//        request.setAttribute("oid",);
         request.setAttribute("orders", ordersDetailList);
         System.out.println("order-----"+ordersDetailList);
         request.getRequestDispatcher("/order_unshipped.jsp").forward(request, response);

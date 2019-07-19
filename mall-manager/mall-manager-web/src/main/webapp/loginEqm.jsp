@@ -96,7 +96,7 @@
 							<a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
 						</li>
 						<li class="drop">
-							<a href="orderlist.jsp">我的订单</a>
+							<a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">我的订单</a>
 						</li>
 						<li class="drop">帮助中心
 							<ul class="down" style="width: 100px">
@@ -162,7 +162,7 @@
 							<!-- <em class="little-triangle"></em> <em class="little-triangle-hover"></em> --></a>
 						<ul>
 							<li>
-								<a class="" href="orderlist.jsp">全部订单</a>
+								<a class="" href="/order.do?_method=orderTotal">全部订单</a>
 							</li>
 							<li>
 								<a class="" href="order_unshipped.jsp#">待付款</a>

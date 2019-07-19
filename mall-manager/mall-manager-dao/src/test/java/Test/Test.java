@@ -1,10 +1,9 @@
 package Test;
 
-import com.mall.service.BsComStock;
-import com.mall.service.IGoodsDao;
-import com.mall.service.IStockDao;
-import com.mall.service.ITypeDao;
+import com.mall.Order;
+import com.mall.service.*;
 import com.mall.service.impl.IGoodsDaoImpl;
+import com.mall.service.impl.IOrderDaoImpl;
 import com.mall.service.impl.IStockDaoImpl;
 import com.mall.service.impl.ITypeDaoImpl;
 
@@ -61,5 +60,13 @@ public class Test {
         IStockDao stockDao=new IStockDaoImpl();
         List<BsComStock> bsComStocks=stockDao.selectGoodsByCID("52152100");
         System.out.println(bsComStocks);
+    }
+
+    @org.junit.Test
+    public void selectUnEvaluateOrderByUidTest(){
+        IOrderDao orderDao=new IOrderDaoImpl();
+        List<BsOrder> orders=orderDao.selectUnEvaluateOrderByUid(100002);
+        System.out.println(orders);
+
     }
 }

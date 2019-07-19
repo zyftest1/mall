@@ -185,7 +185,7 @@
 				<a href="/car.do?_method=showList&id=${sessionScope.bsUserAccount.ID}">我的购物车</a>
 			</li>
 			<li class="drop">
-				<a href="orderlist.jsp">我的订单</a>
+				<a href="/order.do?_method=orderTotal&id=${sessionScope.bsUserAccount.ID}">我的订单</a>
 			</li>
 			<li class="drop">帮助中心
 				<ul class="down" style="width: 100px">

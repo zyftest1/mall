@@ -9,25 +9,42 @@ public class BsComComment {
     private String content;
     private Date date;
     private String sID;
+    private String oID;
 
-    public BsComComment(String comID, int ID, String bsName, String content, Date date, String sID) {
+    public BsComComment() {
+
+    }
+
+    public BsComComment(String comID, int ID, String bsName, String content, Date date, String sID, String oID) {
         this.comID = comID;
         this.ID = ID;
         this.bsName = bsName;
         this.content = content;
         this.date = date;
         this.sID = sID;
+        this.oID=oID;
+    }
+
+    public String getoID() {
+        return oID;
+    }
+
+
+
+    public void setoID(String oID) {
+        this.oID = oID;
     }
 
     @Override
     public String toString() {
         return "BsComComment{" +
                 "comID='" + comID + '\'' +
-                ", ID='" + ID + '\'' +
+                ", ID=" + ID +
                 ", bsName='" + bsName + '\'' +
                 ", content='" + content + '\'' +
                 ", date=" + date +
                 ", sID='" + sID + '\'' +
+                ", oID='" + oID + '\'' +
                 '}';
     }
 

@@ -63,12 +63,12 @@
         }
 
         .ss{
-            padding-top:50px ;
-            padding-left:215px ;
+            float: left;
+            padding-top:57px ;
+            padding-left:225px ;
         }
-        .din{
-            padding-bottom: 30px;
-        }
+
+
         .succ{
             width: 70%;
             height: 90%;
@@ -87,13 +87,17 @@
             text-align: center;
             position: absolute;
             padding-left: 120px;
+
+        }
+        form{
             color: #5CB2D0;
         }
         input{
             border: none;
-            font-size:larger;
-
+            color: red;
+            font-size:15px;
         }
+
     </style>
 </head>
 
@@ -191,13 +195,13 @@
       <div class="ss">
           <img src="/p2/160816/aa.png" >
       </div>
-      <div class="din">
-          <h1>订单支付成功！</h1>
-      </div>
+
         <div class="man">
-            <form>
-                订单号:<input type="text" class="" name="">
-                支付金额:<input type="text" class="" name="">
+            <h1 style="margin-top: 60px;margin-right: 100px">订单支付成功！</h1>
+            <form style="margin-right: 200px;margin-top: 30px">
+                订单号:<input type="text" class="" name="" value=""><br>
+                支付金额:<input type="text" class="" name="" value="${ful}"><br>
+                地   址:<input type="text" class="" name="" value="${address}" >
             </form>
         </div>
     </div>

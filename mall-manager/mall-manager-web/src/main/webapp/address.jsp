@@ -272,7 +272,7 @@
 										<th><p align="center">地址</p></th>
 										<th><p align="center">姓名</p></th>
 										<th><p align="center">电话</p></th>
-										<th colspan="2"><p align="center">操作</p></th>
+										<th colspan="3"><p align="center">操作</p></th>
 									</tr>
 									</thead>
 									<tbody>
@@ -283,6 +283,7 @@
 										<td>${BsUserAddress.tel}</td>
 										<td><a href="/bsAddress.do?_method=update&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}">修改</a></td>
 										<td><a href="/bsAddress.do?_method=delete&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}">删除</a></td>
+										<td><a href="/bsAddress.do?_method=choose&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}">选择</a></td>
 									</tr>
 									</c:forEach>
 									</tbody>

@@ -129,6 +129,7 @@ public class IStockDaoImpl implements IStockDao {
                         stock.setsID(rs.getString("s_id"));
                         stock.setDescribe(rs.getString("s_describe"));
                         stock.setPrice(rs.getDouble("s_price"));
+                        stock.setColorID(rs.getString("color_id"));
                         stock.setShowPicture(rs.getString("show_picture"));
                         stock.setSize(rs.getString("size"));
                         stock.setcID(rs.getString("c_id"));

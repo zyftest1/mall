@@ -75,8 +75,8 @@ public class ShopCarDaoImpl implements ShopCarDao {
     @Override
     public void insertShoppingCar(BsShoppingCar sCar) throws SQLException {
         QueryRunner run = new QueryRunner(JdbcUtils_C3P0.getDataSource());
-        String sql = "insert into bs_shopping_car(user_id,user_name,s_id,price,color,size,car_describe,car_date,car_picture) values(?,?,?,?,?,?,?,?,?)";
-        Object[] params = {sCar.getID(), sCar.getBsName(), sCar.getsID(), sCar.getPrice(), sCar.getColor(), sCar.getSize(), sCar.getDescribe(), DateFormat.nowTime(), sCar.getPicture()};
+        String sql = "insert into bs_shopping_car(user_id,user_name,s_id,price,size,car_describe,car_date,car_picture,quantity) values(?,?,?,?,?,?,?,?,?)";
+        Object[] params = {sCar.getID(), sCar.getBsName(), sCar.getsID(), sCar.getPrice(),  sCar.getSize(), sCar.getDescribe(), DateFormat.nowTime(), sCar.getPicture(),sCar.getQuantity()};
         run.update(sql, params);
 //        try (Connection conn = getConnection()) {
 //            PreparedStatement stmt = null;

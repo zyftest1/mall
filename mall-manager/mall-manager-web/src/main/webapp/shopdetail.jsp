@@ -96,7 +96,7 @@
                 var ss = $(this).val();
                 $.post({
                     url:"/car.do?_method=stock",
-                    data:{cID:"${sessionScope.goods.cID}",size:ss},
+                    data:{cID:"${requestScope.goods.cID}",size:ss},
                     dataType:"text",
                     // beforeSend:function(){
                     //     alert("请求发送之前执行");
@@ -492,11 +492,16 @@
 
                                         <dl class="size clearfix">
                                             <dt>尺码：</dt>
-                                            <dd>
-                                                <ol class="J_SizeList size-list clearfix"></ol>
-                                            </dd>
-                                        </dl>
 
+                                        </dl>
+                                        <dl class="clearfix">
+                                            <dt>尺码：</dt>
+                                            <input id="sizes" type="radio" name="radiobutton" value="S">S
+                                            <input id="sizem" type="radio" name="radiobutton" value="M">M
+                                            <input id="sizel" type="radio" name="radiobutton" value="L">L
+                                            <input id="sizexl" type="radio" name="radiobutton" value="XL">XL
+                                            <input id="sizexxl" type="radio" name="radiobutton" value="XXL">XXL
+                                        </dl>
                                         <dl class="clearfix">
                                             <dt>数量：</dt>
                                             <dd class="num clearfix">
@@ -505,7 +510,15 @@
                                                     <input class="num-input" type="text" value="1">
                                                     <span class="num-add "></span>
                                                 </div>
-                                                <div class="J_GoodsStock goods-stock fl">库存33件</div>
+                                                <div class="J_GoodsStock goods-stock fl">
+                                                    库存
+                                                    <span id="sizeStock" hidden="hidden">${requestScope.goods.stock}</span>
+                                                    <span id="sizeStockS" hidden="hidden">${sessionScope.bsComStockS.stock}</span>
+                                                    <span id="sizeStockM" hidden="hidden">${sessionScope.bsComStockM.stock}</span>
+                                                    <span id="sizeStockL" hidden="hidden">${sessionScope.bsComStockL.stock}</span>
+                                                    <span id="sizeStockXL" hidden="hidden">${sessionScope.bsComStockXL.stock}</span>
+                                                    <span id="sizeStockXXL" hidden="hidden">${sessionScope.bsComStockXXL.stock}</span>
+                                                    件</div>
                                                 <div class="J_GoodsStockTip goods-stock-tip fl">您所填写的商品数量超过库存！</div>
                                             </dd>
                                         </dl>
@@ -518,12 +531,17 @@
                                 <c:choose>
                                     <c:when test="${sessionScope.bsUserAccount.bsName != null}">
                                         <div class="goods-buy clearfix">
-                                            <!-- <a href="javascript:;" id="J_BuyNow" class="fl mr10 buy-btn buy-now">立刻购买</a> -->
-                                            <a href=""  class="fl mr10 buy-btn buy-now">立刻购买</a>
-                                            <input type="hidden" value="nodapei" >
+                                            <form action="/car.do?_method=tocar&cID=${requestScope.goods.cID}&userid=${sessionScope.bsUserAccount.ID}&userName=${sessionScope.bsUserAccount.bsName}" method="post">
 
-                                            <!-- <a href="javascript:;" id="J_BuyCart" class="fl mr10 buy-cart buy-btn">加入购物车</a> -->
-                                            <a href="" class="fl mr10 buy-cart buy-btn">加入购物车</a>
+                                                <button type="submit"  class="fl mr10 buy-btn buy-now">立刻购买</button>
+                                                <input type="hidden" value="nodapei" >
+                                                    <%--                                            &sid=${sessionScope.bsComStockS.sID}--%>
+                                                    <%--                                            &bsUserAccount=${sessionScope.bsUserAccount}--%>
+                                                <!-- <a href="javascript:;" id="J_BuyCart" class="fl mr10 buy-cart buy-btn">加入购物车</a> -->
+                                                <a href="/car.do?_method=addCar&cID=${requestScope.goods.cID}&userid=${sessionScope.bsUserAccount.ID}&userName=${sessionScope.bsUserAccount.bsName}" class="fl mr10 buy-cart buy-btn">加入购物车</a>
+                                            </form>
+                                            <!-- <a href="javascript:;" id="J_BuyNow" class="fl mr10 buy-btn buy-now">立刻购买</a> -->
+
 
                                         </div>
                                     </c:when>

@@ -3,6 +3,7 @@ package com.mall.controller;
 import com.mall.service.*;
 import com.mall.service.impl.IStockDaoImpl;
 import com.mall.service.impl.ShpopingCarServiceImpl;
+import com.utils.MyUTF;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -62,29 +63,36 @@ public class ShoppingCarServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         response.setCharacterEncoding("utf-8");
+        IStockDao stockDao=new IStockDaoImpl();
+        String cID = request.getParameter("cID");
+        BsComStock bsComStock = stockDao.selectGoodsByCIDAndSize(cID,"S");
 
-        if (request.getParameter("id").equals("")) {
-            request.getRequestDispatcher("/mycart.jsp").forward(request, response);
-        }
-        BsUserAccount bsUserAccount = (BsUserAccount) request.getSession().getAttribute("bsUserAccount");
-        BsComStock bsComStock = (BsComStock) request.getSession().getAttribute("bsComStock");
+//        if (request.getParameter("id").equals("")) {
+//            request.getRequestDispatcher("/mycart.jsp").forward(request, response);
+//        }
+//        BsUserAccount bsUserAccount = (BsUserAccount) request.getSession().getAttribute("bsUserAccount");
+//        BsComStock bsComStock = (BsComStock) request.getSession().getAttribute("bsComStock");
+        String name = request.getParameter("userName");
+        int id = Integer.parseInt(request.getParameter("userid"));
         BsShoppingCar bsShoppingCar = new BsShoppingCar();
-        System.out.println(bsComStock);
-        bsShoppingCar.setID(bsUserAccount.getID());
-        bsShoppingCar.setBsName(bsUserAccount.getBsName());
+        System.out.println(id+"--"+name);
+        bsShoppingCar.setID(id);
+        bsShoppingCar.setBsName(name);
         bsShoppingCar.setsID(bsComStock.getsID());
         bsShoppingCar.setPrice(bsComStock.getPrice());
         bsShoppingCar.setColor(bsComStock.getColorID());
         bsShoppingCar.setSize(bsComStock.getSize());
+        bsShoppingCar.setQuantity(1);
         bsShoppingCar.setDescribe(bsComStock.getDescribe());
         bsShoppingCar.setPicture(bsComStock.getShowPicture());
-
+        System.out.println(bsComStock);
+        System.out.println(bsShoppingCar);
         ShoppingCarService car1 = new ShpopingCarServiceImpl();
         car1.insertShopCar(bsShoppingCar);
 
 
-        int id = Integer.parseInt(request.getParameter("id").trim());
-        System.out.println(id);
+
+
         ShoppingCarService car = new ShpopingCarServiceImpl();
 
         List<BsShoppingCar> bsShoppingCarList = car.getShopCar(id);
@@ -166,21 +174,28 @@ public class ShoppingCarServlet extends HttpServlet {
             request.setCharacterEncoding("utf-8");
             response.setContentType("text/html;charset=utf-8");
             response.setCharacterEncoding("utf-8");
-            BsUserAccount bsUserAccount = (BsUserAccount) request.getSession().getAttribute("bsUserAccount");
-            BsComStock bsComStock = (BsComStock) request.getSession().getAttribute("bsComStock");
-            ShoppingCarService car = new ShpopingCarServiceImpl();
+            IStockDao stockDao=new IStockDaoImpl();
+            String cID = request.getParameter("cID");
+            BsComStock bsComStock = stockDao.selectGoodsByCIDAndSize(cID,"S");
 
+            String name = request.getParameter("userName");
+            int id = Integer.parseInt(request.getParameter("userid"));
             BsShoppingCar bsShoppingCar = new BsShoppingCar();
-            bsShoppingCar.setID(bsUserAccount.getID());
-            bsShoppingCar.setBsName(bsUserAccount.getBsName());
+            System.out.println(id+"--"+name);
+            bsShoppingCar.setID(id);
+            bsShoppingCar.setBsName(name);
+            bsShoppingCar.setQuantity(1);
             bsShoppingCar.setsID(bsComStock.getsID());
             bsShoppingCar.setPrice(bsComStock.getPrice());
             bsShoppingCar.setColor(bsComStock.getColorID());
             bsShoppingCar.setSize(bsComStock.getSize());
             bsShoppingCar.setDescribe(bsComStock.getDescribe());
             bsShoppingCar.setPicture(bsComStock.getShowPicture());
-            car.insertShopCar(bsShoppingCar);
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            System.out.println(bsComStock);
+            System.out.println(bsShoppingCar);
+            ShoppingCarService car1 = new ShpopingCarServiceImpl();
+            car1.insertShopCar(bsShoppingCar);
+            request.getRequestDispatcher("/index.do").forward(request, response);
         }
 
         private void deleteCar (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, SQLException {

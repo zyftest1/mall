@@ -38,20 +38,15 @@ public class IndexToCarServlet extends HttpServlet {
 
         System.out.println(bsComStock);
         String cID = bsComStock.getcID();
-        String size1 = "S";
-        String size2 = "M";
-        String size3 = "L";
-        String size4 = "XL";
-        String size5 = "XXL";
-
-        BsComStock bsComStockS = stockDao.selectGoodsByCIDAndSize(cID,size1);
-        BsComStock bsComStockM = stockDao.selectGoodsByCIDAndSize(cID,size2);
-        BsComStock bsComStockL = stockDao.selectGoodsByCIDAndSize(cID,size3);
-        BsComStock bsComStockXL = stockDao.selectGoodsByCIDAndSize(cID,size4);
-        BsComStock bsComStockXXL = stockDao.selectGoodsByCIDAndSize(cID,size5);
 
 
-        request.getSession().setAttribute("goods",bsComStock);
+        BsComStock bsComStockS = stockDao.selectGoodsByCIDAndSize(cID,"S");
+        BsComStock bsComStockM = stockDao.selectGoodsByCIDAndSize(cID,"M");
+        BsComStock bsComStockL = stockDao.selectGoodsByCIDAndSize(cID,"L");
+        BsComStock bsComStockXL = stockDao.selectGoodsByCIDAndSize(cID,"XL");
+        BsComStock bsComStockXXL = stockDao.selectGoodsByCIDAndSize(cID,"XXL");
+
+
         request.getSession().setAttribute("bsComStockS",bsComStockS);
         request.getSession().setAttribute("bsComStockM",bsComStockM);
         request.getSession().setAttribute("bsComStockL",bsComStockL);

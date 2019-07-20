@@ -32,6 +32,7 @@ public class orderServlet2 extends HttpServlet {
         comStock.setStock(comStock.getStock()-order.getQuantity());
         order.setSch_id(3);
 
+        System.out.println(order.toString());
 
         IOrderService service = new IOrderServicrImpl();
         service.orderCommit(order,comStock);

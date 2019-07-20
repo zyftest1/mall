@@ -34,7 +34,7 @@ public class IOrderServicrImpl implements IOrderService {
 
     public static void main(String[] args) {
 
-        BS_order order = new BS_order("1","1","1","1",1,1,"1","1",1,1,new Date());
+        BS_order order = new BS_order("1025130723","1","1","1",1,1,"1","1",1,1,new Date());
         IBsOrder_Dao dao=new BsOrder_DaoImpl();
         dao.oUpdate(order);
     }

@@ -42,7 +42,6 @@ public class orderServlet1 extends HttpServlet {
        list.add(pojo);
 
    }
-        System.out.println(list);
 
 
         req.setAttribute("orders",list);

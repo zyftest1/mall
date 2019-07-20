@@ -33,7 +33,7 @@ public class BsOrder_DaoImpl implements IBsOrder_Dao {
     @Override
     public BS_order selectByID(String o_id) {
         QueryRunner qr=new QueryRunner(C3p0Utils.getDataSourse());
-        String sql = "select* from BS_order where id = ?";
+        String sql = "select* from BS_order where o_id = ?";
         BS_order bs_order = new BS_order();
         try {
             bs_order = qr.query(sql,new BeanHandler<BS_order>(BS_order.class),o_id);

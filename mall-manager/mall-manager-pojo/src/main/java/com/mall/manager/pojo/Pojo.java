@@ -7,23 +7,33 @@ public class Pojo {
     private String o_name;
     private String o_address;
     private String o_tel;
-    private String sch_id;
+    private String sch;
     private int  user_id;
     private String user_tel;
     private String s_id;
     private int o_price;
     private int quantity;
     private Date o_date;
+    private int sch_id;
+
+
+    public int getSch_id() {
+        return sch_id;
+    }
+
+    public void setSch_id(int sch_id) {
+        this.sch_id = sch_id;
+    }
 
     public Pojo() {
     }
 
-    public Pojo(String o_id, String o_name, String o_address, String o_tel, String sch_id, int user_id, String user_tel, String s_id, int o_price, int quantity, Date o_date) {
+    public Pojo(String o_id, String o_name, String o_address, String o_tel, String sch, int user_id, String user_tel, String s_id, int o_price, int quantity, Date o_date) {
         this.o_id = o_id;
         this.o_name = o_name;
         this.o_address = o_address;
         this.o_tel = o_tel;
-        this.sch_id = sch_id;
+        this.sch = sch;
         this.user_id = user_id;
         this.user_tel = user_tel;
         this.s_id = s_id;
@@ -64,12 +74,12 @@ public class Pojo {
         this.o_tel = o_tel;
     }
 
-    public String getSch_id() {
-        return sch_id;
+    public String getSch() {
+        return sch;
     }
 
-    public void setSch_id(String sch_id) {
-        this.sch_id = sch_id;
+    public void setSch(String sch) {
+        this.sch = sch;
     }
 
     public int getUser_id() {
@@ -127,7 +137,7 @@ public class Pojo {
                 ", o_name='" + o_name + '\'' +
                 ", o_address='" + o_address + '\'' +
                 ", o_tel='" + o_tel + '\'' +
-                ", sch_id=" + sch_id +
+                ", sch=" + sch +
                 ", user_id=" + user_id +
                 ", user_tel='" + user_tel + '\'' +
                 ", s_id='" + s_id + '\'' +

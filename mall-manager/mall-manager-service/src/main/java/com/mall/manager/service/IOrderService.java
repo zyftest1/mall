@@ -6,6 +6,6 @@ import com.mall.stock.ComStock;
 import java.util.List;
 
 public interface IOrderService {
-    public void orderCommit(BS_order bs_order, String sch);
+    public void orderCommit(BS_order bs_order, ComStock stock);
     public List<BS_order> selectAllServ();
 }

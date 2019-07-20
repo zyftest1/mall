@@ -9,6 +9,7 @@ import com.mall.manager.service.IOrderService;
 import com.mall.stock.ComStock;
 import com.mall.stock.IComStockDao;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -16,10 +17,11 @@ public class IOrderServicrImpl implements IOrderService {
 
 
     @Override
-    public void orderCommit(BS_order bs_order, String sch) {
+    public void orderCommit(BS_order bs_order, ComStock stock) {
         IBsOrder_Dao dao=new BsOrder_DaoImpl();
         dao.oUpdate(bs_order);
         IComStockDao dao1=new ComStockDaoImpl();
+        dao1.updateComStock(stock);
 
     }
 
@@ -28,5 +30,12 @@ public class IOrderServicrImpl implements IOrderService {
         IBsOrder_Dao dao=new BsOrder_DaoImpl();
         List<BS_order> bs_orderList=dao.selectAll();
         return bs_orderList;
+    }
+
+    public static void main(String[] args) {
+
+        BS_order order = new BS_order("1","1","1","1",1,1,"1","1",1,1,new Date());
+        IBsOrder_Dao dao=new BsOrder_DaoImpl();
+        dao.oUpdate(order);
     }
 }

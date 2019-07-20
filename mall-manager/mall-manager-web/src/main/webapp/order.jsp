@@ -13,12 +13,13 @@
     <link href="style/adminStyle.css" style="text:css" rel="stylesheet"/>
     <title>商品信息</title>
 </head>
+
 <body>
 <div class="wrap">
     <div class="page-title">
         <span class="modular fl"><i></i><em>商品信息</em></span>
     </div>
-    <form action="selectAll.do" method="post">
+    <form name="form" action="selectAll.do" method="post">
         <table class="list-style" >
             <thead>
             <tr>
@@ -49,14 +50,17 @@
                             <td>${order.o_name}</td>
                             <td>${order.o_address}</td>
                             <td>${order.o_tel}</td>
-                            <td>${order.sch_id}</td>
+                            <td>${order.sch}</td>
                             <td>${order.user_id}</td>
                             <td>${order.user_tel}</td>
                             <td>${order.s_id}</td>
                             <td>${order.o_price}</td>
                             <td>${order.quantity}</td>
                             <td>${order.o_date}</td>
-                            <td><span ><a href="/order.do?c_id=${order.o_id}&sch=${order.sch_id}" class="pt-link-btn" >发货</a></span></td>
+                            <c:if test="${order.sch_id==1}">
+                            <td><span ><a href="/order.do?o_id=${order.o_id}&s_id=${order.s_id}" class="pt-link-btn" >发货</a></span></td>
+
+                            </c:if>
                         </tr>
                     </c:forEach>
                 </c:when>
@@ -79,4 +83,5 @@
     </div>
 </div>
 </body>
+
 </html>

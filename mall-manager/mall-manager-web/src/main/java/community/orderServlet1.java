@@ -3,7 +3,6 @@ package community;
 import com.mall.manager.dao.daoimpl.IIScheduleDao_Impl;
 import com.mall.manager.dao.IScheduleDao;
 import com.mall.manager.pojo.BS_order;
-import com.mall.manager.pojo.BS_schedule;
 import com.mall.manager.pojo.Pojo;
 import com.mall.manager.service.IOrderService;
 import com.mall.manager.service.servImpl.IOrderServicrImpl;
@@ -35,10 +34,11 @@ public class orderServlet1 extends HttpServlet {
        pojo.setUser_id(oList.get(i).getUser_id());
        pojo.setO_address(oList.get(i).getO_address());
        pojo.setO_name(oList.get(i).getO_name());
-       pojo.setSch_id(sDao.selectStateById(oList.get(i).getSch_id()).getSch_describe());
+       pojo.setSch(sDao.selectStateById(oList.get(i).getSch_id()).getSch_describe());
        pojo.setO_tel(oList.get(i).getO_tel());
        pojo.setO_id(oList.get(i).getO_id());
        pojo.setO_date(oList.get(i).getO_date());
+       pojo.setSch_id(oList.get(i).getSch_id());
        list.add(pojo);
 
    }

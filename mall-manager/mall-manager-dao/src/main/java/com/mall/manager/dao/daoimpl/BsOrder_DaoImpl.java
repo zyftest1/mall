@@ -46,9 +46,9 @@ public class BsOrder_DaoImpl implements IBsOrder_Dao {
     @Override
     public void oUpdate(BS_order order) {
         QueryRunner qr = new QueryRunner(C3p0Utils.getDataSourse());
-        String sql = "update stock set sch_id = ? where id = ?";
+        String sql = "update BS_order set sch_id = ? where o_id = ?";
         try {
-            qr.update(sql,order.getQuantity(),order.getO_id());
+            qr.update(sql,order.getSch_id(),order.getO_id());
         } catch (SQLException e) {
             e.printStackTrace();
         }

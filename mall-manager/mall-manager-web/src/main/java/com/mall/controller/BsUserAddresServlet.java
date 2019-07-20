@@ -38,11 +38,20 @@ public class BsUserAddresServlet extends HttpServlet {
                 up(request,response);
                 break;
             case "address":
+//                System.out.println("000000000000");
                 address(request,response);
-                break;        }
+                break;
+            case "choose":
+                choose(request,response);
+                break;
+            case "success":
+                success(request,response);
+                break;
+        }
     }
 
     private void address(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        System.out.println("11111111111111111");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         response.setCharacterEncoding("utf-8");
@@ -51,6 +60,7 @@ public class BsUserAddresServlet extends HttpServlet {
         IUserAddressService iUserAddressService = new IUserAddressServiceImpl();
         int id = Integer.parseInt(request.getParameter("userId").trim());
 
+        System.out.println(id);
         List<BsUserAddress> bsUserAddressList = iUserAddressService.findBsUserAddressByUserId(id);
         request.setAttribute("bsUserAddressList", bsUserAddressList);
         request.getRequestDispatcher("/address.jsp").forward(request, response);
@@ -125,7 +135,34 @@ public class BsUserAddresServlet extends HttpServlet {
         request.getRequestDispatcher("/add.jsp").forward(request,response);
     }
 
+    private void choose(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("addID",request.getParameter(  "addID"));
+        request.getRequestDispatcher("/mycart.jsp").forward(request,response);
+    }
+
+    private void success(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String ful = request.getParameter("ful");
+        String addID = request.getParameter("addID");
+        System.out.println("addID::::::"+addID);
+        int addid = -1;
+        if(addID!=null&&!addID.equals("")){
+            addid = Integer.parseInt(addID);
+        }
+        System.out.println(addid);
+        IUserAddressService iUserAddressService = new IUserAddressServiceImpl();
+        BsUserAddress bsUserAddress = new BsUserAddress();
+        bsUserAddress = iUserAddressService.findBsUserAddressByAddID(addid);
+
+
+        String address = bsUserAddress.getAddress();
+        request.setAttribute("address",address);
+
+        request.setAttribute("ful",ful);
+        request.getRequestDispatcher("/successful.jsp").forward(request,response);
+    }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }
+
 }

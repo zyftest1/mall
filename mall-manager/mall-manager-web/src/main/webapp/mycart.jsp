@@ -101,6 +101,17 @@
 			bottom:0;
 		}
 	</style>
+	<style type="text/css">
+		input.aa{
+			border: none;
+			background-color: #F4F4F4;
+			width:50px;
+			height: 30px;
+		}
+		span.bb{
+			font-size: 15px;
+		}
+	</style>
 </head>
 
 <body>
@@ -186,7 +197,7 @@
 					<li>
 						<a href="noviceGuide.jsp">新手指南</a></li>
 					<li>
-						<a href="serviceEnsure.jsp">服务保障</a></>
+						<a href="serviceEnsure.jsp">服务保障</a></li>
 					<li>
 						<a href="helpCommon.jsp">常见问题</a></li>
 					<li>
@@ -217,19 +228,18 @@
 							3                <span class="md_process_tip">支付</span>
 						</i>
 						<i class="md_process_i md_process_i4">
-							<img src="//www.mogujie.com/img/pay/right.png" width="23" height="23" alt="">
+							4
 							<span class="md_process_tip">完成</span>
 						</i>
 					</div>
 				</div>
 			</div>
-			<div class="logo logo-cart"></div>
+
 		</div>
 	</div>
-
 	<div class="mydesign">
 
-		<table class="table table-bordered">
+		<table class="table table-hover" id="tabname">
 			<thead>
 			<th class="thdesign"><p align="center">商品图片</p></th>
 			<th class="thdesign"><p align="center">商品描述</p></th>
@@ -245,20 +255,28 @@
 					<td align="center" valign="middle">${bsShoppingCar.price}</td>
 					<td align="center" valign="middle">${bsShoppingCar.quantity}</td>
 					<td align="center" valign="middle">
-						<a href="/car.do?_method=deleteCar&carID=${bsShoppingCar.carID}&id=${sessionScope.bsUserAccount.ID}">删除</a>
+						<a href="/car.do?_method=deleteCar&carID=${bsShoppingCar.carID}&id=${sessionScope.bsUserAccount.ID}&addID=${requestScope.addID}">删除</a>
 					</td>
 				</tr>
 			</c:forEach>
 			</tbody>
-
 		</table>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10" style="margin-top:150px;margin-left: 950px" >
+				<span class="bb">应付金额：</span><input type="text" value="" class="aa" id="total" >
+				<a class="btn btn-default" href="/bsAddress.do?_method=address&userId=${sessionScope.bsUserAccount.ID}&addID=${requestScope.addID}" role="button" style="margin-right: 30px">选择地址</a>
+				<a class="btn btn-default"  onclick="succ()" role="button" style="">立即支付</a>
+			</div>
+		</div>
+		</form>
+
 	</div>
 </div>
 
 
 <div class="meilili">
 	<p title="mofa015027">
-		<a href="index.jsp" target="_blank">美丽说</a>
+		<a href="index.jsp" target="_blank">Beauty Show</a>
 		© 2016 Meilishuo.com,All Rights Reserved.
 	</p>
 	<div class="icons">
@@ -274,6 +292,26 @@
 <script type="text/javascript" src="js\index.js-3052ac85.js"></script>
 
 <script type="text/javascript" src="__newtown\trade_cart_web\assets\mls-pc\pages\cartList\index.js-44a0103f.js"></script>
+
+<script type="text/javascript">
+	function succ() {
+		var s = $("#total").val();
+
+		window.location.href="/bsAddress.do?_method=success&ful="+s+"&addID=${requestScope.addID}";
+
+	}
+	function tableAdd(tab,total,d) {
+		var s = 0;
+		var tr = $(tab).find("tr");
+		for (var i = 1; i < tr.length; i++)
+			s += parseFloat(tr.eq(i).find("td").eq(d).text()) || 0;
+		$(total).val(s);
+	}
+	$(function(){
+		tableAdd("#tabname","#total",2);//这里的1是求和的列号，你每次修改或增加一行数据之后都要再次调用下这个函数
+	});
+
+</script>
 
 </body>
 

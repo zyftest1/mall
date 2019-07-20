@@ -24,8 +24,7 @@
         </li>
         <li>
             <ul class="menu-children">
-                <li><a href="#" title="商品列表" target="mainCont">订单查询列表</a></li>
-                <li><a href="#" title="商品列表" target="mainCont">订单结算</a></li>
+                <li><a href="/order" title="商品列表" target="mainCont">订单查询列表</a></li>
             </ul>
         </li>
 

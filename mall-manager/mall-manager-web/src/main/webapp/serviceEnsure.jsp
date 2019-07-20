@@ -17,7 +17,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>美丽说-白领的全球导购</title>
+		<title>Beauty Show-白领的全球导购</title>
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<link rel="dns-prefetch" href="http://s.meilishuo.net/">
@@ -134,7 +134,7 @@
 								<%--								<a href="/goods.do">--%>
 								<%--									<input type="button" value="" class="search-btn">--%>
 								<%--								</a>--%>
-								<input type="submit" class="search-btn">
+								<input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none">
 								<div class="suggest-box"></div>
 							</form>
 						</div>
@@ -177,7 +177,7 @@
 
 						<p style="font-size: 14px; line-height: 2;">一：7天无理由退货的定义</p>
 
-						<p style="font-size: 14px; line-height: 2;">买家在美丽说平台购买商品以后，若因主观原因不愿完成本次交易，且满足退货条件，可在签收后的7天内申请无理由退货。</p>
+						<p style="font-size: 14px; line-height: 2;">买家在Beauty Show平台购买商品以后，若因主观原因不愿完成本次交易，且满足退货条件，可在签收后的7天内申请无理由退货。</p>
 
 						<p style="font-size: 14px; line-height: 2;">二：7天无理由退货时间的有效期</p>
 
@@ -199,13 +199,13 @@
 
 						<p style="font-size: 14px; line-height: 2;">&middot; 您应当通过快递将所需退货的商品寄至正确地址；</p>
 
-						<p style="font-size: 14px; line-height: 2;">&middot; 您的退货申请符合相关国家法律、行政法规、地方性法规、政府规章、政策性文件、美丽说其他规则的规定。</p>
+						<p style="font-size: 14px; line-height: 2;">&middot; 您的退货申请符合相关国家法律、行政法规、地方性法规、政府规章、政策性文件、Beauty Show其他规则的规定。</p>
 
 						<p style="font-size: 14px; line-height: 2;">2. 以下情况，不符合退货条件：</p>
 
 						<p style="font-size: 14px; line-height: 2;">&middot; 超过退货有效期限的商品，不予退货；&nbsp;</p>
 
-						<p style="font-size: 14px; line-height: 2;">&middot; 未经网上申请，将商品回寄至美丽说或商家的，不予退货；</p>
+						<p style="font-size: 14px; line-height: 2;">&middot; 未经网上申请，将商品回寄至Beauty Show或商家的，不予退货；</p>
 
 						<p style="font-size: 14px; line-height: 2;">&middot;
 							任何因非正常使用、保管或个人原因造成的商品损坏（如自行修改尺寸，洗涤，皮具表面刮花、打油，刺绣，水洗、碰酸、碱、油或者触硬物，雨天穿着，长时间穿着，五金配件缺少等），不予退货；</p>
@@ -218,7 +218,7 @@
 
 						<p style="font-size: 14px; line-height: 2;">四：7天无理由退货申请流程</p>
 
-						<p style="font-size: 14px; line-height: 2;">1. 满足退货条件的前提下，您在美丽说平台线上申请退货；</p>
+						<p style="font-size: 14px; line-height: 2;">1. 满足退货条件的前提下，您在Beauty Show平台线上申请退货；</p>
 
 						<p style="font-size: 14px; line-height: 2;">2. 您须在退货申请获准后的7天内，寄出退货商品，如超过期限仍未寄出，将被取消本次的退货申请，您的寄出时间以物流公司系统记载时间为准；</p>
 
@@ -234,7 +234,7 @@
 									？</span></span>
 						</p>
 
-						<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">退货运费补贴服务是由美丽说平台提供解决消费者退货运费问题的服务，是一种消费者保障服务。符合补贴规则的买家在享受该服务保障的店铺购买商品，买家在商家发货后通过线上申请退货并填写物流单号，在商家确认收到退货后48小时内可享受运费补贴。仅退款的订单不享受此服务。&nbsp;</span></span>
+						<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">退货运费补贴服务是由Beauty Show平台提供解决消费者退货运费问题的服务，是一种消费者保障服务。符合补贴规则的买家在享受该服务保障的店铺购买商品，买家在商家发货后通过线上申请退货并填写物流单号，在商家确认收到退货后48小时内可享受运费补贴。仅退款的订单不享受此服务。&nbsp;</span></span>
 						</p>
 
 						<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">2.在哪些店铺购买可以享受退货补运费的服务？</span></span>
@@ -281,7 +281,7 @@
 						<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">场景五：其他按照规则无法获得补贴的情况。</span></span>
 						</p>
 
-						<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">美丽说对该协议中的所有条款有解释权，美丽说有权以修改、更新等方式不时调整本协议和相关规则的内容，相关内容将公布于美丽说的网站上或以其他方式通知买家。</span></span>
+						<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">Beauty Show对该协议中的所有条款有解释权，Beauty Show有权以修改、更新等方式不时调整本协议和相关规则的内容，相关内容将公布于Beauty Show的网站上或以其他方式通知买家。</span></span>
 						</p>
 					</div>
 					<div class="txt_box">
@@ -290,7 +290,7 @@
 
 						<p style="font-size: 14px; line-height: 2;">一：先行赔付的定义</p>
 
-						<p style="font-size: 14px; line-height: 2;">即，当您提交退货信息后，商家拒绝履行&ldquo;7天无理由退货&rdquo;承诺的情况下，美丽说在审核您提交的充要证据后，将按《中华人民共和国消费者权益保护法》、《产品质量法》及其他相关法律规定，依据单方面的判断决定实施先行赔付退款，或不予接受您先行赔付付款申请。</p>
+						<p style="font-size: 14px; line-height: 2;">即，当您提交退货信息后，商家拒绝履行&ldquo;7天无理由退货&rdquo;承诺的情况下，Beauty Show在审核您提交的充要证据后，将按《中华人民共和国消费者权益保护法》、《产品质量法》及其他相关法律规定，依据单方面的判断决定实施先行赔付退款，或不予接受您先行赔付付款申请。</p>
 
 						<p style="font-size: 14px; line-height: 2;">二：先行赔付的判定</p>
 
@@ -305,14 +305,14 @@
 						<p style="font-size: 14px; line-height: 2;">5. 您的赔付申请，在形式上符合相关法律法规的规定；</p>
 
 						<p style="font-size: 14px; line-height: 2;">6.
-							您应向美丽说提交投诉事项所需的证明文件，如果依美丽说独立的判断，您提供的证明文件不足以支持其先行赔付事由和请求，或者其先行赔付的事由和请求不符合法律法规的要求，则美丽说有权退回您的先行赔付申请；</p>
+							您应向Beauty Show提交投诉事项所需的证明文件，如果依Beauty Show独立的判断，您提供的证明文件不足以支持其先行赔付事由和请求，或者其先行赔付的事由和请求不符合法律法规的要求，则Beauty Show有权退回您的先行赔付申请；</p>
 
-						<p style="font-size: 14px; line-height: 2;">7、您在先行赔付投诉中应保证其投诉内容的真实性，如您存在恶意或者虚假投诉的情况，给美丽说造成任何损失，则美丽说有权要求您赔偿，并取消您的会员资格。</p>
+						<p style="font-size: 14px; line-height: 2;">7、您在先行赔付投诉中应保证其投诉内容的真实性，如您存在恶意或者虚假投诉的情况，给Beauty Show造成任何损失，则Beauty Show有权要求您赔偿，并取消您的会员资格。</p>
 					</div>
 					<div class="txt_box">
 						<h3 id="d_3"><span class="redline"></span>发货承诺服务</h3>
 						<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">1.
-									您在美丽说平台购物，买下商家出售的商品并成功付款后，商家将在72个小时内完成发货（不可抗力因素除外）。</span></span>
+									您在Beauty Show平台购物，买下商家出售的商品并成功付款后，商家将在72个小时内完成发货（不可抗力因素除外）。</span></span>
 						</p>
 
 						<p style="font-size: 14px; line-height: 2;"><span style="line-height:2"><span style="font-size:14px">2.
@@ -324,7 +324,7 @@
 						</p>
 					</div>
 					<p> <b>
-							美丽说有权随时对本服务政策进行修改并通过网站或通知商家的方式予以公布，您如果不同意本服务政策的修改，可以放弃使用或访问本网站或取消已经获得的服务；如果您选择在本服务政策变更后继续访问或使用本网站，则视为您已经接受本服务政策的修改。
+							Beauty Show有权随时对本服务政策进行修改并通过网站或通知商家的方式予以公布，您如果不同意本服务政策的修改，可以放弃使用或访问本网站或取消已经获得的服务；如果您选择在本服务政策变更后继续访问或使用本网站，则视为您已经接受本服务政策的修改。
 						</b> </p>
 				</div>
 			</div>
@@ -361,7 +361,7 @@
 				<div class="flist">
 					<h4>关于我们</h4>
 					<div>
-						<a href="aboutus.jsp" target="_blank">关于美丽说</a>
+						<a href="aboutus.jsp" target="_blank">关于Beauty Show</a>
 					</div>
 					<div>
 						<a href="contactus.jsp" target="_blank">联系我们</a>
@@ -384,11 +384,11 @@
 					</div>
 				</div>
 				<div class="flist service">
-					<h4>美丽说微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png"
-					 alt="美丽说服务号二维码">
+					<h4>Beauty Show微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png"
+					 alt="Beauty Show服务号二维码">
 				</div>
 				<div class="flist last" style="float:left;">
-					<h4>美丽说客户端下载</h4>
+					<h4>Beauty Show客户端下载</h4>
 					<p style="background:none; margin-top:0px;" class="client"> <img class="qrcode" src="p2\160802\7e_74j23d2a5f5j3bj31h70375gbeec1_100x100.png">
 					</p>
 				</div>

@@ -143,12 +143,12 @@ public class BsUserAddresServlet extends HttpServlet {
     private void success(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String ful = request.getParameter("ful");
         String addID = request.getParameter("addID");
-        System.out.println("addID::::::"+addID);
+      //  System.out.println("addID::::::"+addID);
         int addid = -1;
         if(addID!=null&&!addID.equals("")){
             addid = Integer.parseInt(addID);
         }
-        System.out.println(addid);
+      //  System.out.println(addid);
         IUserAddressService iUserAddressService = new IUserAddressServiceImpl();
         BsUserAddress bsUserAddress = new BsUserAddress();
         bsUserAddress = iUserAddressService.findBsUserAddressByAddID(addid);

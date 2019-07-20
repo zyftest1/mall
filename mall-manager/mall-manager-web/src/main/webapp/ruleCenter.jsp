@@ -17,7 +17,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>美丽说-白领的全球导购</title>
+		<title>Beauty Show-白领的全球导购</title>
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<link rel="dns-prefetch" href="http://s.meilishuo.net/">
@@ -134,7 +134,7 @@
 								<%--								<a href="/goods.do">--%>
 								<%--									<input type="button" value="" class="search-btn">--%>
 								<%--								</a>--%>
-								<input type="submit" class="search-btn">
+								<input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none">
 								<div class="suggest-box"></div>
 							</form>
 						</div>
@@ -150,16 +150,16 @@
 					<h3 class="list_head">规则公告</h3>
 					<ul class="rule_list">
 						<li>
-							<a href="/helpcenter/ruleDetail/?questionId=13d4"><i class="little_circle"></i> 美丽说售假、滥用关键词专项打击公告 </a>
+							<a href="/helpcenter/ruleDetail/?questionId=13d4"><i class="little_circle"></i> Beauty Show售假、滥用关键词专项打击公告 </a>
 						</li>
 					</ul>
 					<h3 class="list_head">热门规则</h3>
 					<ul class="rule_list">
 						<li>
-							<a href="/helpcenter/ruleDetail/?questionId=13d6"><i class="little_circle"></i> 美丽说预售商品暂行管理规范 </a>
+							<a href="/helpcenter/ruleDetail/?questionId=13d6"><i class="little_circle"></i> Beauty Show预售商品暂行管理规范 </a>
 						</li>
 						<li>
-							<a href="/helpcenter/ruleDetail/?questionId=133k"><i class="little_circle"></i> 美丽说处罚规则 </a>
+							<a href="/helpcenter/ruleDetail/?questionId=133k"><i class="little_circle"></i> Beauty Show处罚规则 </a>
 						</li>
 						<li>
 							<a href="/helpcenter/ruleDetail/?questionId=133m"><i class="little_circle"></i> 维权业务规则及处罚规则 </a>
@@ -200,7 +200,7 @@
 				<div class="flist">
 					<h4>关于我们</h4>
 					<div>
-						<a href="aboutus.jsp" target="_blank">关于美丽说</a>
+						<a href="aboutus.jsp" target="_blank">关于Beauty Show</a>
 					</div>
 					<div>
 						<a href="contactus.jsp" target="_blank">联系我们</a>
@@ -223,11 +223,11 @@
 					</div>
 				</div>
 				<div class="flist service">
-					<h4>美丽说微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png"
-					 alt="美丽说服务号二维码">
+					<h4>Beauty Show微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png"
+					 alt="Beauty Show服务号二维码">
 				</div>
 				<div class="flist last" style="float:left;">
-					<h4>美丽说客户端下载</h4>
+					<h4>Beauty Show客户端下载</h4>
 					<p style="background:none; margin-top:0px;" class="client"> <img class="qrcode" src="p2\160802\7e_74j23d2a5f5j3bj31h70375gbeec1_100x100.png">
 					</p>
 				</div>

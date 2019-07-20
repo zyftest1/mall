@@ -10,9 +10,9 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>关于我们-美丽说</title>
-		<meta name="description" content="美丽说，专注时尚新款发布。海量新款每日上新，每周五新款大促火热进行中！旗下海淘品牌“HIGO”挑选全球时尚好货，满足你全方位的时尚购物体验！">
-		<meta name="keywords" content="美丽说,higo,衣服,鞋子,包包,配饰,家居,美妆,搭配,团购,美丽说higo">
+		<title>关于我们-Beauty Show</title>
+		<meta name="description" content="Beauty Show，专注时尚新款发布。海量新款每日上新，每周五新款大促火热进行中！旗下海淘品牌“HIGO”挑选全球时尚好货，满足你全方位的时尚购物体验！">
+		<meta name="keywords" content="Beauty Show,higo,衣服,鞋子,包包,配饰,家居,美妆,搭配,团购,Beauty Showhigo">
 		<link rel="dns-prefetch" href="http://s.meilishuo.net/">
 		<link rel="dns-prefetch" href="http://i.meilishuo.net/">
 		<link rel="dns-prefetch" href="http://d01.res.meilishuo.net/">
@@ -127,7 +127,7 @@
 								<%--								<a href="/goods.do">--%>
 								<%--									<input type="button" value="" class="search-btn">--%>
 								<%--								</a>--%>
-								<input type="submit" class="search-btn">
+								<input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none">
 								<div class="suggest-box"></div>
 							</form>
 						</div>
@@ -139,7 +139,7 @@
 		</div>
 		<div class="aboutus-wrap">
 			<div class="leftNav">
-				<h3>			<a class="selected" href="/aboutus/index?sl=h3">关于美丽说</a>		</h3>
+				<h3>			<a class="selected" href="/aboutus/index?sl=h3">关于Beauty Show</a>		</h3>
 				<ul>
 					<li>
 						<a class="" href="/aboutus/index?11">公司简介</a>
@@ -159,18 +159,18 @@
 				</ul>
 			</div>
 			<div class="content">
-				<h2>关于美丽说</h2>
-				<p>美丽说是白领女性时尚消费第一品牌。目前拥有超过1亿的女性注册用户，其中58.3%的用户是年龄集中在23-30 岁的年轻白领，75%以上的用户家庭月收入在10000到20000元人民币之间。</p>
-				<p>2016年年初，美丽说与蘑菇街正式宣布融合，融合后，美丽说启动全新升级，计划通过建立超过300万规模的全球女性时尚品牌商品库，并与超过1000家全球品牌达成官方合作导购体验，更好的满足白领女性的时尚消费需求。</p>
-				<p>全新升级定位白领女性的美丽说，将Slogan变更为“美丽说，白领的全球导购”，新Logo更新为嘴唇形象，寓意着女性的美丽由自己定义。</p>
-				<p>2009年11月美丽说由徐易容创立，美丽说在成立之初即开创“内容－社区－导购”的新模式，几年间快速吸引了上千万年轻时尚爱美的女性用户，成为中国年轻女性最青睐的时尚风向标。</p>
-				<p>2010年－2012年进入美丽说高速成长期，在此期间美丽说也完成了四轮融资。</p>
-				<p>2013年11月，美丽说开始建立电子商务交易平台，精选上千家优质卖家供应商，为用户提供女装、女鞋、女包、配饰、美妆等品类的优质时尚商品，成功转型为女性时尚垂直品类电商。</p>
-				<p>2014年美丽说完成E轮融资。</p>
-				<p>2015年美丽说力邀鹿晗为品牌代言人。平台交易额接近80亿元人民币。</p>
-				<p>2016年年初，美丽说与蘑菇街正式宣布融合。融合后，美丽说启动全新升级。全新升级定位白领女性的美丽说，将Slogan变更为“美丽说，白领的全球导购”，新Logo则由花的形象更新为嘴唇，寓意着女性的美丽由自己定义。6月7日，美丽说品牌TVC首发上线，这是与蘑菇街合并后，美丽说的TVC首次亮相。转型女性白领市场的美丽说，特别邀约了日本知名演员·模特Kiko水原希子与内地个性女演员李媛担纲演绎，以两支完全不同风格的TVC传达“美丽，听自己说”的品牌宣言。</p>
-				<p>得益于在用户体验上的精雕细琢，美丽说目前已经拥有众多优质商家入驻，未来计划通过建立超过300万规模的全球女性时尚品牌商品库，并与超过1000家全球品牌达成官方合作导购体验，更好的满足白领女性的时尚消费需求。 </p>
-				<p>2016年6月15日，在美丽说、蘑菇街、淘世界合并数月之后，正式宣布新集团为美丽联合集团，陈琪任集团CEO。</p>
+				<h2>关于Beauty Show</h2>
+				<p>Beauty Show是白领女性时尚消费第一品牌。目前拥有超过1亿的女性注册用户，其中58.3%的用户是年龄集中在23-30 岁的年轻白领，75%以上的用户家庭月收入在10000到20000元人民币之间。</p>
+				<p>2016年年初，Beauty Show与蘑菇街正式宣布融合，融合后，Beauty Show启动全新升级，计划通过建立超过300万规模的全球女性时尚品牌商品库，并与超过1000家全球品牌达成官方合作导购体验，更好的满足白领女性的时尚消费需求。</p>
+				<p>全新升级定位白领女性的Beauty Show，将Slogan变更为“Beauty Show，白领的全球导购”，新Logo更新为嘴唇形象，寓意着女性的美丽由自己定义。</p>
+				<p>2009年11月Beauty Show由徐易容创立，Beauty Show在成立之初即开创“内容－社区－导购”的新模式，几年间快速吸引了上千万年轻时尚爱美的女性用户，成为中国年轻女性最青睐的时尚风向标。</p>
+				<p>2010年－2012年进入Beauty Show高速成长期，在此期间Beauty Show也完成了四轮融资。</p>
+				<p>2013年11月，Beauty Show开始建立电子商务交易平台，精选上千家优质卖家供应商，为用户提供女装、女鞋、女包、配饰、美妆等品类的优质时尚商品，成功转型为女性时尚垂直品类电商。</p>
+				<p>2014年Beauty Show完成E轮融资。</p>
+				<p>2015年Beauty Show力邀鹿晗为品牌代言人。平台交易额接近80亿元人民币。</p>
+				<p>2016年年初，Beauty Show与蘑菇街正式宣布融合。融合后，Beauty Show启动全新升级。全新升级定位白领女性的Beauty Show，将Slogan变更为“Beauty Show，白领的全球导购”，新Logo则由花的形象更新为嘴唇，寓意着女性的美丽由自己定义。6月7日，Beauty Show品牌TVC首发上线，这是与蘑菇街合并后，Beauty Show的TVC首次亮相。转型女性白领市场的Beauty Show，特别邀约了日本知名演员·模特Kiko水原希子与内地个性女演员李媛担纲演绎，以两支完全不同风格的TVC传达“美丽，听自己说”的品牌宣言。</p>
+				<p>得益于在用户体验上的精雕细琢，Beauty Show目前已经拥有众多优质商家入驻，未来计划通过建立超过300万规模的全球女性时尚品牌商品库，并与超过1000家全球品牌达成官方合作导购体验，更好的满足白领女性的时尚消费需求。 </p>
+				<p>2016年6月15日，在Beauty Show、蘑菇街、淘世界合并数月之后，正式宣布新集团为美丽联合集团，陈琪任集团CEO。</p>
 				<p>目前美丽联合集团已经获得来自腾讯、高瓴资本、平安创新、天图资本、挚信资本、GGV、红杉资本、厚朴基金、贝塔斯曼、启明创投、IDG资本、蓝驰创投、高榕资本等知名机构和公司的投资。</p>
 			</div>
 		</div>
@@ -208,7 +208,7 @@
 				<div class="flist">
 					<h4>关于我们</h4>
 					<div>
-						<a href="aboutus.jsp" target="_blank">关于美丽说</a>
+						<a href="aboutus.jsp" target="_blank">关于Beauty Show</a>
 					</div>
 					<div>
 						<a href="contactus.jsp" target="_blank">联系我们</a>
@@ -231,9 +231,9 @@
 					</div>
 				</div>
 				<div class="flist service">
-					<h4>美丽说微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png" alt="美丽说服务号二维码"> </div>
+					<h4>Beauty Show微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png" alt="Beauty Show服务号二维码"> </div>
 				<div class="flist last" style="float:left;">
-					<h4>美丽说客户端下载</h4>
+					<h4>Beauty Show客户端下载</h4>
 					<p style="background:none; margin-top:0px;" class="client"> <img class="qrcode" src="p2\160802\7e_74j23d2a5f5j3bj31h70375gbeec1_100x100.png"> </p>
 				</div>
 				<div class="record"> Copyright ©2016 Meilishuo.com &nbsp;

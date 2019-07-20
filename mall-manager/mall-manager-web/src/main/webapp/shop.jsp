@@ -79,7 +79,7 @@
 <body class="mls-wrap">
 
 <style type="text/css">
-    /********** 以下代码是兼容美丽说图片留白问题 **********/
+    /********** 以下代码是兼容Beauty Show图片留白问题 **********/
     /* 图墙商品 */
     a.logo{
         padding-left: 100px;
@@ -113,7 +113,7 @@
         height: 420px;
         display: inline !important;
     }
-    /********** 以上代码是兼容美丽说图片留白问题 **********/
+    /********** 以上代码是兼容Beauty Show图片留白问题 **********/
 </style>
 
 <script type="text/javascript">
@@ -224,7 +224,7 @@
                                     <%--								<a href="/goods.do">--%>
                                     <%--									<input type="button" value="" class="search-btn">--%>
                                     <%--								</a>--%>
-                                    <input type="submit" class="search-btn">
+                                    <input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none">
                                     <div class="suggest-box"></div>
                                 </form>
                             </div>

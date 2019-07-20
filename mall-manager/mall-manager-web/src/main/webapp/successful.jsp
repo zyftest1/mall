@@ -262,7 +262,7 @@
                 <a href="#" target="_blank"><span class="i-tencent"></span>腾讯微博</a>
             </div>
         </div>
-        <div class="flist service">
+        <div class="flist service" >
             <h4>Beauty Show微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png"
                                    alt="Beauty Show服务号二维码">
         </div>

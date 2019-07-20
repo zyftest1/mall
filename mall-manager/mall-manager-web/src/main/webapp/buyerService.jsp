@@ -10,7 +10,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>美丽说-白领的全球导购</title>
+		<title>Beauty Show-白领的全球导购</title>
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<link rel="dns-prefetch" href="http://s.meilishuo.net/">
@@ -127,7 +127,7 @@
 								<%--								<a href="/goods.do">--%>
 								<%--									<input type="button" value="" class="search-btn">--%>
 								<%--								</a>--%>
-								<input type="submit" class="search-btn">
+								<input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none">
 								<div class="suggest-box"></div>
 							</form>
 						</div>
@@ -140,7 +140,7 @@
 		<div class="page">
 			<div class="main">
 				<div class="help_list_box">
-					<div class="help_txt"> 为节约您的时间，您可以先看看以下的常见问题进行自助操作，无需等待客服处理。<br> 如果仍无法解决，您可以拨打美丽说客服电话 <span class="red_f">4000-800-577</span>或留下您的<span
+					<div class="help_txt"> 为节约您的时间，您可以先看看以下的常见问题进行自助操作，无需等待客服处理。<br> 如果仍无法解决，您可以拨打Beauty Show客服电话 <span class="red_f">4000-800-577</span>或留下您的<span
 						 class="red_f cursor_f suggest-btn">意见</span>。花小美谢谢您的理解！ </div>
 					<h3 class="list_head">自助服务<span class="list_head_sub">SELF-SERVICE</span></h3>
 					<div class="list_cont">
@@ -184,7 +184,7 @@
 									<a href="/helpcenter/detail/?questionId=12oq"><i class="red_circle"></i>购物流程</a>
 								</li>
 								<li>
-									<a href="/helpcenter/detail/?questionId=12oo"><i class="red_circle"></i>如何在美丽说购买商品？</a>
+									<a href="/helpcenter/detail/?questionId=12oo"><i class="red_circle"></i>如何在Beauty Show购买商品？</a>
 								</li>
 								<li>
 									<a href="/helpcenter/detail/?questionId=12ok"><i class="red_circle"></i>如何设置收货地址？</a>
@@ -207,7 +207,7 @@
 									<a href="/helpcenter/detail/?questionId=12ow"><i class="red_circle"></i>如何查看快递发货信息</a>
 								</li>
 								<li>
-									<a href="/helpcenter/detail/?questionId=1344"><i class="red_circle"></i>美丽说支持配送的范围</a>
+									<a href="/helpcenter/detail/?questionId=1344"><i class="red_circle"></i>Beauty Show支持配送的范围</a>
 								</li>
 							</ul>
 							<ul class="cont_area none_f">
@@ -224,7 +224,7 @@
 									<a href="/helpcenter/detail/?questionId=133u"><i class="red_circle"></i>退款多久能到账？</a>
 								</li>
 								<li>
-									<a href="/helpcenter/detail/?questionId=133s"><i class="red_circle"></i>美丽说都支持哪些支付方式？</a>
+									<a href="/helpcenter/detail/?questionId=133s"><i class="red_circle"></i>Beauty Show都支持哪些支付方式？</a>
 								</li>
 								<li>
 									<a href="/helpcenter/detail/?questionId=133y"><i class="red_circle"></i>如何申请退货退款？</a>
@@ -232,7 +232,7 @@
 							</ul>
 							<ul class="cont_area none_f">
 								<li>
-									<a href="/helpcenter/detail/?questionId=12p8"><i class="red_circle"></i>美丽说支持换货吗？</a>
+									<a href="/helpcenter/detail/?questionId=12p8"><i class="red_circle"></i>Beauty Show支持换货吗？</a>
 								</li>
 								<li>
 									<a href="/helpcenter/detail/?questionId=12p4"><i class="red_circle"></i>退货补运费服务</a>
@@ -285,7 +285,7 @@
 							<div class="error_msg none_f">意见内容不能为空哦！</div>
 						</div>
 						<div class="advice-mail-area">
-							<p class="mt8_f"> <input type="text" class="advice-mail" value="美丽说绝对不会泄露您的隐私"><br> <span class="error_msg none_f">您的邮箱填写有误，请重新填写。</span> </p>
+							<p class="mt8_f"> <input type="text" class="advice-mail" value="Beauty Show绝对不会泄露您的隐私"><br> <span class="error_msg none_f">您的邮箱填写有误，请重新填写。</span> </p>
 							<p class="tips">*请留下您的邮箱，我们会第一时间给您答复。</p>
 						</div>
 						<div> <span class="btn subAdvice-btn">确认提交</span> </div>
@@ -325,7 +325,7 @@
 				<div class="flist">
 					<h4>关于我们</h4>
 					<div>
-						<a href="aboutus.jsp" target="_blank">关于美丽说</a>
+						<a href="aboutus.jsp" target="_blank">关于Beauty Show</a>
 					</div>
 					<div>
 						<a href="contactus.jsp" target="_blank">联系我们</a>
@@ -348,11 +348,11 @@
 					</div>
 				</div>
 				<div class="flist service">
-					<h4>美丽说微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png"
-					 alt="美丽说服务号二维码">
+					<h4>Beauty Show微信服务号</h4> <img class="qrcode" src="http://s7.mogucdn.com/p2/160802/7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png"
+					 alt="Beauty Show服务号二维码">
 				</div>
 				<div class="flist last" style="float:left;">
-					<h4>美丽说客户端下载</h4>
+					<h4>Beauty Show客户端下载</h4>
 					<p style="background:none; margin-top:0px;" class="client"> <img class="qrcode" src="p2\160802\7e_74j23d2a5f5j3bj31h70375gbeec1_100x100.png">
 					</p>
 				</div>

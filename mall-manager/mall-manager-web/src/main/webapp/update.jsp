@@ -101,7 +101,7 @@
                     <%--								<a href="/goods.do">--%>
                     <%--									<input type="button" value="" class="search-btn">--%>
                     <%--								</a>--%>
-                    <input type="submit" class="search-btn">
+                    <input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none">
                     <div class="suggest-box"></div>
                 </form>
             </div>

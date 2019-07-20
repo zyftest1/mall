@@ -326,7 +326,7 @@
                                     <%--								<a href="/goods.do">--%>
                                     <%--									<input type="button" value="" class="search-btn">--%>
                                     <%--								</a>--%>
-                                    <input type="submit" class="search-btn">
+                                    <input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none">
                                     <div class="suggest-box"></div>
                                 </form>
                             </div>
@@ -894,7 +894,7 @@
 <div class="foot J_footertimer" data-ptp="_foot" data-svrtime="">
     <div class="wrap foot_wrap clearfix">
         <div class="foot_info">
-            <a rel="nofollow" class="info_logo" href="index.jsp"></a>
+
             <div class="info_text">
                 <p>营业执照注册号：<a rel="nofollow"
                               href="http://s6.mogucdn.com/pic/140924/8qc9_ieydgn3emqztszbxmmytambqmmyde_1502x2246.jpg"

@@ -9,9 +9,9 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>上衣_美丽说</title>
-	<meta name="description" content="美丽说，专注时尚新款发布。海量新款每日上新，每周五新款大促火热进行中！旗下海淘品牌“HIGO”挑选全球时尚好货，满足你全方位的时尚购物体验！">
-	<meta name="keywords" content="美丽说,higo,衣服,鞋子,包包,配饰,家居,美妆,搭配,团购,美丽说higo">
+	<title>上衣_Beauty Show</title>
+	<meta name="description" content="Beauty Show，专注时尚新款发布。海量新款每日上新，每周五新款大促火热进行中！旗下海淘品牌“HIGO”挑选全球时尚好货，满足你全方位的时尚购物体验！">
+	<meta name="keywords" content="Beauty Show,higo,衣服,鞋子,包包,配饰,家居,美妆,搭配,团购,Beauty Showhigo">
 	<meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
 	<link rel="stylesheet" type="text/css" href="pc\css\base-4.css?1607171726.25">
 	<link rel="icon" href="pic\_o\75\6e\2f6871f198c0bd7615ffbf9a2f5f_49_48.c5.png" type="image/x-icon">
@@ -113,7 +113,7 @@
 						<%--								<a href="/goods.do">--%>
 						<%--									<input type="button" value="" class="search-btn">--%>
 						<%--								</a>--%>
-						<input type="submit" class="search-btn">
+						<input type="submit" class="search-btn" value="" style="height: 28px ;width: 70px ;border: none">
 						<div class="suggest-box"></div>
 					</form>
 				</div>
@@ -1371,7 +1371,7 @@
 		</div>
 		<div class="flist">
 			<h4>关于我们</h4>
-			<div><a href="aboutus.jsp" target="_blank">关于美丽说</a></div>
+			<div><a href="aboutus.jsp" target="_blank">关于Beauty Show</a></div>
 			<div><a href="contactus.jsp" target="_blank">联系我们</a></div>
 		</div>
 		<div class="flist aboutus">
@@ -1383,10 +1383,10 @@
 			<div><a href="#" target="_blank"><span class="i-tencent"></span>腾讯微博</a></div>
 		</div>
 		<div class="flist service">
-			<h4>美丽说微信服务号</h4> <img class="qrcode" src="p2\160802\7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png" alt="美丽说服务号二维码">
+			<h4>Beauty Show微信服务号</h4> <img class="qrcode" src="p2\160802\7e_61hjl8kjfjfagkg3cdaj05fghck9c_100x100.png" alt="Beauty Show服务号二维码">
 		</div>
 		<div class="flist last" style="float:left;">
-			<h4>美丽说客户端下载</h4>
+			<h4>Beauty Show客户端下载</h4>
 			<p style="background:none; margin-top:0px;" class="client"> <img class="qrcode" src="p2\160802\7e_74j23d2a5f5j3bj31h70375gbeec1_100x100.png">
 			</p>
 		</div>

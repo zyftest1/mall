@@ -89,6 +89,7 @@
         <div class="turnPage center fr">
             <a href="${pageContext.request.contextPath }/selectAll.do?currentPage=1">首页</a>
             <a href="${pageContext.request.contextPath }/selectAll.do?currentPage=${requestScope.pageBean.currentPage - 1}">上一页</a>
+            <a>${requestScope.pageBean.currentPage}</a>
             <a href="${pageContext.request.contextPath }/selectAll.do?currentPage=${requestScope.pageBean.currentPage + 1}">下一页</a>
             <a href="${pageContext.request.contextPath }/selectAll.do?currentPage=${requestScope.pageBean.totalPage}">末页</a>
 

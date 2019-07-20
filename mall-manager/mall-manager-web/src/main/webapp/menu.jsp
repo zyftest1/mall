@@ -36,7 +36,18 @@
             <ul class="menu-children">
                 <li><a href="/selectAll.do?_method=selectAll" title="商品列表" target="mainCont">商品信息</a></li>
                 <li><a href="/select.do" title="商品分类" target="mainCont">库存信息</a></li>
-        </li>
+        </ul>
+
+      <li class="menu-list-title">
+          <span>用户管理</span>
+           <i>◢</i>
+      </li>
+           <li>
+            <ul class="menu-children">
+                <li style="color:#192118"><a href="/emp.do?_method=seleceAll" title="用户列表" target="mainCont">用户列表</a></li>
+                <li style="color:#192118"><a href="/customerRedirect.do" title="用户留言" target="mainCont">用户留言</a></li>
+      </li>
+
         <li class="menu-list-title">
             <span>服务中心</span>
             <i>◢</i>

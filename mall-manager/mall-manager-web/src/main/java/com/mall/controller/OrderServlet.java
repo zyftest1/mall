@@ -2,14 +2,9 @@ package com.mall.controller;
 
 
 import com.mall.Order;
-import com.mall.service.BsOrder;
-import com.mall.service.IOrderDao;
-import com.mall.service.IScheduleDao;
-import com.mall.service.IStockDao;
-import com.mall.service.impl.IOrderDaoImpl;
-import com.mall.service.impl.IOrderServiceImpl;
-import com.mall.service.impl.IScheduleDaoImpl;
-import com.mall.service.impl.IStockDaoImpl;
+import com.mall.service.*;
+import com.mall.service.impl.*;
+import com.utils.UUIDUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -38,8 +34,55 @@ public class OrderServlet extends HttpServlet {
             case "waitEvaluate":
                 waitEvaluateServlet(request,response);
                 break;
+            case "addOrder":
+                try {
+                    addOrder(request,response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                break;
 
         }
+    }
+
+    private void addOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+        response.setCharacterEncoding("utf-8");
+
+        if (request.getParameter("id").equals("")) {
+            request.getRequestDispatcher("/mycart.jsp").forward(request, response);
+        }
+
+        int id = Integer.parseInt(request.getParameter("id").trim());
+        String address = request.getParameter("oaddress");
+        String tel = request.getParameter("tel");
+        String usertel = request.getParameter("userTel");
+
+        System.out.println(id);
+        ShoppingCarService car = new ShpopingCarServiceImpl();
+
+        List<BsShoppingCar> bsShoppingCarList = car.getShopCar(id);
+//        List<BsOrder> bsOrderList = new ArrayList<BsOrder>();
+
+        for (BsShoppingCar bsShoppingCar:bsShoppingCarList) {
+            IOrderDao iOrderDao = new IOrderDaoImpl();
+            BsOrder bsOrder = new BsOrder();
+            bsOrder.setoID(UUIDUtils.createOrderId());
+            bsOrder.setoName(bsShoppingCar.getBsName());
+            bsOrder.setoAddress(address);
+            bsOrder.setoTel(tel);
+            bsOrder.setSchID(1);
+            bsOrder.setID(bsShoppingCar.getID());
+            bsOrder.setPrice(bsShoppingCar.getPrice());
+            bsOrder.setTel(usertel);
+            bsOrder.setsID(bsShoppingCar.getsID());
+            bsOrder.setQuantity(bsShoppingCar.getQuantity());
+            iOrderDao.addOrder(bsOrder);
+            System.out.println(bsOrder);
+            car.deletaShopCar(bsShoppingCar.getCarID());
+        }
+        orderTotalServlet(request, response);
     }
 
     @Override
@@ -70,8 +113,9 @@ public class OrderServlet extends HttpServlet {
            order.setTotalPrice(bsOrder.getQuantity()*bsOrder.getPrice());
            order.setState(scheduleDao.selectDescribeBySchId(bsOrder.getSchID()));
            order.setOid(bsOrder.getoID());
-            order.setSid(bsOrder.getsID());
+           order.setSid(bsOrder.getsID());
            ordersDetailList.add(order);
+
 
         }
         request.setAttribute("orders", ordersDetailList);

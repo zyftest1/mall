@@ -34,6 +34,7 @@ public class BsShoppingCar {
         this.picture = picture;
         this.addID = addID;
         this.address = address;
+
     }
 
     public int getCarID() {

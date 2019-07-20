@@ -298,7 +298,6 @@
 		var s = $("#total").val();
 
 		window.location.href="/bsAddress.do?_method=success&ful="+s+"&addID=${requestScope.addID}";
-
 	}
 	function tableAdd(tab,total,d) {
 		var s = 0;

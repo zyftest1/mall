@@ -10,6 +10,8 @@ public interface IOrderDao {
     public List<BsOrder> selectUnreceiveOrderByUid(int uid);
     //待评价订单
     public List<BsOrder> selectUnEvaluateOrderByUid(int uid);
+    //添加订单
+    public void addOrder(BsOrder bsOrder);
 
 
 }

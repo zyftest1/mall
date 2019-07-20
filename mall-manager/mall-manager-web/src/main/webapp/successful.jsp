@@ -199,9 +199,12 @@
         <div class="man">
             <h1 style="margin-top: 60px;margin-right: 100px">订单支付成功！</h1>
             <form style="margin-right: 200px;margin-top: 30px">
-                订单号:<input type="text" class="" name="" value=""><br>
                 支付金额:<input type="text" class="" name="" value="${ful}"><br>
-                地   址:<input type="text" class="" name="" value="${address}" >
+                地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址:<input type="text" class="" name="" value="${address}" ><br>
+                电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话:<input type="text" class="" name="" value="${tel}" ><br>
+
+
+                <a href="/order.do?_method=addOrder&id=${sessionScope.bsUserAccount.ID}&oaddress=${address}&tel=${tel}&userTel=${sessionScope.bsUserAccount.tel}" class="" name="" value="查看订单" style="align-content: center">查看订单</a><br>
             </form>
         </div>
     </div>

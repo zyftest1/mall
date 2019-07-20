@@ -27,7 +27,7 @@ public class ShopCarDaoImpl implements ShopCarDao {
         List<BsShoppingCar> sList = new ArrayList<>();
         BsShoppingCar[] bCar = new BsShoppingCar[200];
         QueryRunner run = new QueryRunner(JdbcUtils_C3P0.getDataSource());
-        String sql = "select * from bs_shopping_car where user_id ="+ID;
+        String sql = "select * from bs_shopping_car where user_id = ?";
         try {
             run.query(sql, new ResultSetHandler<List<BsShoppingCar>>() {
                 @Override
@@ -53,7 +53,7 @@ public class ShopCarDaoImpl implements ShopCarDao {
                     }
                     return sList;
                 }
-            });
+            },ID);
         } catch (SQLException e) {
             e.printStackTrace();
         }

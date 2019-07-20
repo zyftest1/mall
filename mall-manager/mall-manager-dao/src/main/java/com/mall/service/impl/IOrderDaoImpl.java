@@ -3,6 +3,7 @@ package com.mall.service.impl;
 
 import com.mall.service.BsOrder;
 import com.mall.service.IOrderDao;
+import com.utils.DateFormat;
 import com.utils.JdbcUtils_C3P0;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
@@ -119,5 +120,16 @@ public class IOrderDaoImpl implements IOrderDao {
             e.printStackTrace();
         }
         return orders;
+    }
+
+    @Override
+    public void addOrder(BsOrder bsOrder) {
+        QueryRunner qr=new QueryRunner(JdbcUtils_C3P0.getDataSource());
+        String sql="insert into bs_order(o_id,o_name,o_address,o_tel,sch_id,user_id,user_tel,s_id,o_price,quantity,o_date) values(?,?,?,?,?,?,?,?,?,?,?)";
+        try {
+            qr.update(sql,bsOrder.getoID(),bsOrder.getoName(),bsOrder.getoAddress(),bsOrder.getoTel(),bsOrder.getSchID(),bsOrder.getID(),bsOrder.getTel(),bsOrder.getsID(),bsOrder.getPrice(),bsOrder.getQuantity(),DateFormat.nowTime());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

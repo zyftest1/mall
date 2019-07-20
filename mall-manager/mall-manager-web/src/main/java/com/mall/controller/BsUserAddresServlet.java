@@ -155,9 +155,11 @@ public class BsUserAddresServlet extends HttpServlet {
 
 
         String address = bsUserAddress.getAddress();
+        String tel = bsUserAddress.getTel();
         request.setAttribute("address",address);
-
+        request.setAttribute("tel",tel);
         request.setAttribute("ful",ful);
+        request.setAttribute("addID",bsUserAddress.getAddID());
         request.getRequestDispatcher("/successful.jsp").forward(request,response);
     }
 

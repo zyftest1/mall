@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet("/do")
+
 public class RedirectServlet extends HttpServlet {
     public RedirectServlet() {
     }

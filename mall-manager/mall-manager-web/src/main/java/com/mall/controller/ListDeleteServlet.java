@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet("/delete.do")
+
 public class ListDeleteServlet extends HttpServlet {
     public ListDeleteServlet() {  //构造方法
     }

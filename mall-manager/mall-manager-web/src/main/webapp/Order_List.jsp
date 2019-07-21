@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <%@ page import="java.util.List" %>
 <%@ page import="com.mall.shitiClass.BS_order" %><%--
+=======
+<%@ page import="com.mall.BS_order" %>
+<%@ page import="java.util.List" %><%--
+>>>>>>> ab3227607e95ccabc95db2b3dcba3f695e28fd74
   Created by IntelliJ IDEA.
   User: linqin
   Date: 2019/7/18
@@ -11,9 +16,11 @@
 <head>
     <title>订单列表</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href="style/adminStyle.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery.js"></script>
-    <script src="js/public.js"></script>
+
+<%--    <link href="style/adminStyle.css" rel="stylesheet" type="text/css">--%>
+<%--    <script src="js/jquery.js"></script>--%>
+<%--    <script src="js/public.js"></script>--%>
+
 </head>
 <body>
 <%

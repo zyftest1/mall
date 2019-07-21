@@ -4,6 +4,7 @@ import com.mall.service.OrderService;
 import com.mall.service.impl.OrderService_Impl;
 import com.mall.shitiClass.BS_order;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +15,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @WebServlet("/order.do")
+
 public class OrderServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

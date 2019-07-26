@@ -267,7 +267,7 @@
                                 <li class="quantity">${order.goodsNum}</li>
                                 <li class="aftersale">${order.totalPrice}</li>
                                 <li class="status">${order.state}</li>
-								<li class="status" ><a href="/goodsToEvaluate.do?oid=${order.oid}&id=${sessionScope.bsUserAccount.ID}" style="color: #FF3366">评价</a></li>
+								<li class="status" ><a href="/goodsToEvaluate.do?oid=${order.oid}&id=${sessionScope.bsUserAccount.ID}&goodsName=${order.goodsName}" style="color: #FF3366">评价</a></li>
 							</ul>
                         </c:forEach>
 

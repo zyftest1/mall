@@ -37,15 +37,7 @@
                 <li><a href="/selectAll.do?_method=selectAll" title="商品列表" target="mainCont">商品信息</a></li>
                 <li><a href="/select.do" title="商品分类" target="mainCont">库存信息</a></li>
         </li>
-        <li class="menu-list-title">
-            <span>服务中心</span>
-            <i>◢</i>
-        </li>
-        <li>
-            <ul class="menu-children">
-                <li><a href="#" title="会话功能" target="mainCont">客服中心</a></li>
-            </ul>
-        </li>
+
 
 
     </ul>

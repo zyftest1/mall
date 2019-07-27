@@ -8,6 +8,7 @@ import com.mall.manager.pojo.BS_order;
 import com.mall.manager.service.IOrderService;
 import com.mall.stock.ComStock;
 import com.mall.stock.IComStockDao;
+import com.mall.stock.PageBean;
 
 import java.util.Date;
 import java.util.List;
@@ -30,6 +31,12 @@ public class IOrderServicrImpl implements IOrderService {
         IBsOrder_Dao dao=new BsOrder_DaoImpl();
         List<BS_order> bs_orderList=dao.selectAll();
         return bs_orderList;
+    }
+
+    @Override
+    public void getAll(PageBean<BS_order> pageBean) {
+        IBsOrder_Dao dao=new BsOrder_DaoImpl();
+        dao.selectAll(pageBean);
     }
 
     public static void main(String[] args) {

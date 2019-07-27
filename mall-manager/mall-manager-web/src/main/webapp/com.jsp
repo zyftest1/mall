@@ -65,7 +65,8 @@
                         <td>${com.c_date}</td>
                         <td>${com.c_describe}</td>
                         <td><span ><a href="/updCom?c_id=${com.c_id}" class="pt-link-btn">修改</a></span></td>
-                        <td><span ><a href="/delCom.do?c_id=${com.c_id}" class="pt-link-btn" >删除</a></span></td>
+<%--                        <td><span ><a href="/delCom.do?c_id=${com.c_id}" class="pt-link-btn" >删除</a></span></td>--%>
+                        <td><span ><a href="javascript:if(confirm('确定删除吗')) location='/delCom.do?c_id=${com.c_id}'" class="pt-link-btn" >删除</a></span></td>
                     </tr>
                 </c:forEach>
             </c:when>

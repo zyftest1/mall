@@ -91,13 +91,17 @@
         }
         form{
             color: #5CB2D0;
+            font-size: 15px;
+        }
+        .ask{
+            color: red;
+            font-size: 15px;
         }
         input{
             border: none;
             color: red;
             font-size:15px;
         }
-
     </style>
 </head>
 
@@ -198,13 +202,11 @@
 
         <div class="man">
             <h1 style="margin-top: 60px;margin-right: 100px">订单支付成功！</h1>
-            <form style="margin-right: 200px;margin-top: 30px">
+            <form style="margin-right:20px;margin-top: 30px">
                 支付金额:<input type="text" class="" name="" value="${ful}"><br>
                 地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址:<input type="text" class="" name="" value="${address}" ><br>
                 电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话:<input type="text" class="" name="" value="${tel}" ><br>
-
-
-                <a href="/order.do?_method=addOrder&id=${sessionScope.bsUserAccount.ID}&oaddress=${address}&tel=${tel}&userTel=${sessionScope.bsUserAccount.tel}" class="" name="" value="查看订单" style="align-content: center">查看订单</a><br>
+                <a href="/order.do?_method=addOrder&id=${sessionScope.bsUserAccount.ID}&oaddress=${address}&tel=${tel}&userTel=${sessionScope.bsUserAccount.tel}" class="ask" name="" value="查看订单" style="margin-right:197px ">查看订单</a><br>
             </form>
         </div>
     </div>

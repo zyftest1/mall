@@ -250,7 +250,7 @@
 			<tbody>
 			<c:forEach items="${bsShoppingCarList}" var="bsShoppingCar">
 				<tr>
-					<td align="center" valign="middle">${bsShoppingCar.picture}</td>
+					<td align="center" valign="middle"><img src="${bsShoppingCar.picture}" style="height: 80px;width: 60px"></td>
 					<td align="center" valign="middle">${bsShoppingCar.describe}</td>
 					<td align="center" valign="middle">${bsShoppingCar.price}</td>
 					<td align="center" valign="middle">${bsShoppingCar.quantity}</td>
@@ -262,7 +262,7 @@
 			</tbody>
 		</table>
 		<div class="form-group">
-			<div class="col-sm-offset-2 col-sm-10" style="margin-top:150px;margin-left: 950px" >
+			<div class="col-sm-offset-2 col-sm-10" style="margin-top:130px;margin-left: 950px" >
 				<span class="bb">应付金额：</span><input type="text" value="" class="aa" id="total" >
 				<a class="btn btn-default" href="/bsAddress.do?_method=address&userId=${sessionScope.bsUserAccount.ID}&addID=${requestScope.addID}" role="button" style="margin-right: 30px">选择地址</a>
 				<a class="btn btn-default"  onclick="succ()" role="button" style="">立即支付</a>

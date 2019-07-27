@@ -1,8 +1,14 @@
 package com.mall.controller;
 
-import com.mall.service.BsUserAddress;
-import com.mall.service.IUserAddressService;
+import com.alibaba.fastjson.JSON;
+import com.mall.Area;
+import com.mall.City;
+import com.mall.Province;
+import com.mall.service.*;
+import com.mall.service.impl.AreaServiceImpl;
+import com.mall.service.impl.CityServiceImpl;
 import com.mall.service.impl.IUserAddressServiceImpl;
+import com.mall.service.impl.ProvinceServiceImpl;
 import com.utils.MyUTF;
 
 import javax.servlet.ServletException;
@@ -11,8 +17,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
+import java.sql.SQLException;
 import java.util.List;
 
 @WebServlet("/bsAddress.do")
@@ -38,7 +46,6 @@ public class BsUserAddresServlet extends HttpServlet {
                 up(request,response);
                 break;
             case "address":
-//                System.out.println("000000000000");
                 address(request,response);
                 break;
             case "choose":
@@ -47,11 +54,19 @@ public class BsUserAddresServlet extends HttpServlet {
             case "success":
                 success(request,response);
                 break;
+            case "pro":
+                pro(request,response);
+                break;
+            case "city":
+                city(request,response);
+                break;
+            case "area":
+                area(request,response);
+                break;
         }
     }
 
     private void address(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        System.out.println("11111111111111111");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         response.setCharacterEncoding("utf-8");
@@ -75,7 +90,7 @@ public class BsUserAddresServlet extends HttpServlet {
         bsUserAddress.setName(MyUTF.getNewString(request.getParameter("name")));
         bsUserAddress.setTel(request.getParameter("tel"));
 
-        System.out.println("aaaaa"+bsUserAddress);
+
         IUserAddressService iUserAddressService = new IUserAddressServiceImpl();
         iUserAddressService.modifyBsUserAddress(bsUserAddress);
 
@@ -103,8 +118,31 @@ public class BsUserAddresServlet extends HttpServlet {
     private void save(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
         int id = Integer.parseInt(request.getParameter("userId"));
-        System.out.println(id);
-        String address = MyUTF.getNewString(request.getParameter("address"));
+
+       // String address = MyUTF.getNewString(request.getParameter("address"));
+
+        String province = request.getParameter("province");
+        String city = request.getParameter("city");
+        String area = request.getParameter("area");
+
+        IProvinceService iProvinceService = new ProvinceServiceImpl();
+        IAreaService iAreaService = new AreaServiceImpl();
+        ICityService iCityService = new CityServiceImpl();
+        Province p = null;
+        City c = null;
+        Area a = null;
+        try {
+            p = iProvinceService.findProvinceByPid(Integer.valueOf(province));
+            c = iCityService.findCityByCid(Integer.valueOf(city));
+            a = iAreaService.findAreaByAid(Integer.valueOf(area));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        String pr = p.getProvince();
+        String ci = c.getCity();
+        String ar = a.getArea();
+        String address = pr+ci+ar;
+        System.out.println(address);
         String name = MyUTF.getNewString(request.getParameter("name"));
         String tel = request.getParameter("tel");
 
@@ -143,7 +181,6 @@ public class BsUserAddresServlet extends HttpServlet {
     private void success(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String ful = request.getParameter("ful");
         String addID = request.getParameter("addID");
-      //  System.out.println("addID::::::"+addID);
         int addid = -1;
         if(addID!=null&&!addID.equals("")){
             addid = Integer.parseInt(addID);
@@ -161,6 +198,53 @@ public class BsUserAddresServlet extends HttpServlet {
         request.setAttribute("ful",ful);
         request.setAttribute("addID",bsUserAddress.getAddID());
         request.getRequestDispatcher("/successful.jsp").forward(request,response);
+    }
+
+    private void pro(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        IProvinceService iProvinceService = new ProvinceServiceImpl();
+        List<Province> list = null;
+        try {
+            list = iProvinceService.findProvinces();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        String pListJson = JSON.toJSONString(list);
+        out.print(pListJson);
+    }
+
+    private void city(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int pid = Integer.valueOf(request.getParameter("pid"));
+        ICityService iCityService = new CityServiceImpl();
+        List<City> list = null;
+        try {
+            list = iCityService.findCitiesByPid(pid);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        String pListJson = JSON.toJSONString(list);
+        out.print(pListJson);
+    }
+
+    private void area(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int cid = Integer.valueOf(request.getParameter("cid"));
+        IAreaService iAreaService = new AreaServiceImpl();
+        List<Area> list = null;
+        try {
+            list = iAreaService.findAreasByCid(cid);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        String pListJson = JSON.toJSONString(list);
+        out.print(pListJson);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -4,8 +4,6 @@ body { background-color: #f5f5f5; min-width: 1140px; }
 
 .login-header { height: 96px; line-height: 96px; }
 .login-header .logo { float: left; }
-.login-header .logo img{ width: 80px;}
-
 .login-header .zp { float: right; margin-top: 25px; font-size: 16px; line-height: 18px; text-align: center; color: #424242; }
 .login-header .zp .ico { display: block; margin: 0 auto 5px; width: 25px; height: 29px; background: url(../img/login/zp.png); }
 

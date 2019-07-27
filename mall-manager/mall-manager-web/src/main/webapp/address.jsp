@@ -283,7 +283,8 @@
 									<td>${BsUserAddress.tel}</td>
 									<td><a href="/bsAddress.do?_method=update&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}">修改</a></td>
 									<td><a href="/bsAddress.do?_method=delete&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}">删除</a></td>
-									<td><a href="/bsAddress.do?_method=choose&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}">选择</a></td>
+<%--									<input hidden="hidden" name="ful" value="${ful}">--%>
+									<td><a href="/bsAddress.do?_method=choose&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}&ful=${ful}">选择</a></td>
 								</tr>
 							</c:forEach>
 							</tbody>

@@ -483,24 +483,22 @@
                                         <b class="J_PannelClose pannel-close"></b>
                                     </div>
                                     <div class="box">
-                                        <dl class="style clearfix">
-                                            <dt>款式：</dt>
-                                            <dd>
-                                                <ol class="J_StyleList style-list clearfix"></ol>
-                                            </dd>
+                                        <dl class="clearfix">
+                                            <dt>颜色：</dt>
+                                            <input type="radio" name="radiobutton" value="S" style="color: #ffffff">S
+                                            <input type="radio" name="radiobutton" value="M" style="color: #ffffff">M
+                                            <input type="radio" name="radiobutton" value="L" style="color: #ffffff">L
+                                            <input type="radio" name="radiobutton" value="XL" style="color: #ffffff">XL
+                                            <input type="radio" name="radiobutton" value="XXL" style="color: #ffffff">XXL
                                         </dl>
 
-                                        <dl class="size clearfix">
-                                            <dt>尺码：</dt>
-
-                                        </dl>
                                         <dl class="clearfix">
                                             <dt>尺码：</dt>
-                                            <input id="sizes" type="radio" name="radiobutton" value="S">S
-                                            <input id="sizem" type="radio" name="radiobutton" value="M">M
-                                            <input id="sizel" type="radio" name="radiobutton" value="L">L
-                                            <input id="sizexl" type="radio" name="radiobutton" value="XL">XL
-                                            <input id="sizexxl" type="radio" name="radiobutton" value="XXL">XXL
+                                            <input id="sizes" type="radio" name="radiobutton" value="S" style="color: #ffffff">S
+                                            <input id="sizem" type="radio" name="radiobutton" value="M" style="color: #ffffff">M
+                                            <input id="sizel" type="radio" name="radiobutton" value="L" style="color: #ffffff">L
+                                            <input id="sizexl" type="radio" name="radiobutton" value="XL" style="color: #ffffff">XL
+                                            <input id="sizexxl" type="radio" name="radiobutton" value="XXL" style="color: #ffffff">XXL
                                         </dl>
                                         <dl class="clearfix">
                                             <dt>数量：</dt>

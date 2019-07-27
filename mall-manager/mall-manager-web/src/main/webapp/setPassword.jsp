@@ -181,12 +181,6 @@
 							<li>
 								<a class="" href="order_DELETED.jsp#" target="_blank">退款退货</a>
 							</li>
-<<<<<<< HEAD
-=======
-							<li>
-								<a class="" href="order_DELETED.jsp#" target="_blank">订单回收站</a>
-							</li>
->>>>>>> 362cfdbe3d68a8894ce2032001cc764c225d748a
 						</ul>
 					</li>
 					<li>

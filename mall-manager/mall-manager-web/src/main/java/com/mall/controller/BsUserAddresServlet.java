@@ -59,10 +59,12 @@ public class BsUserAddresServlet extends HttpServlet {
 
         IUserAddressService iUserAddressService = new IUserAddressServiceImpl();
         int id = Integer.parseInt(request.getParameter("userId").trim());
+        String ful = request.getParameter("ful").trim();
 
         System.out.println(id);
         List<BsUserAddress> bsUserAddressList = iUserAddressService.findBsUserAddressByUserId(id);
         request.setAttribute("bsUserAddressList", bsUserAddressList);
+        request.setAttribute("ful",ful);
         request.getRequestDispatcher("/address.jsp").forward(request, response);
     }
 
@@ -136,8 +138,28 @@ public class BsUserAddresServlet extends HttpServlet {
     }
 
     private void choose(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("addID",request.getParameter(  "addID"));
-        request.getRequestDispatcher("/mycart.jsp").forward(request,response);
+//        request.setAttribute("ful",request.getParameter("ful"));
+//        request.setAttribute("addID",request.getParameter(  "addID"));
+        String ful = request.getParameter("ful");
+        String addID = request.getParameter("addID");
+        int addid = -1;
+        if(addID!=null&&!addID.equals("")){
+            addid = Integer.parseInt(addID);
+        }
+        //  System.out.println(addid);
+        IUserAddressService iUserAddressService = new IUserAddressServiceImpl();
+        BsUserAddress bsUserAddress = new BsUserAddress();
+        bsUserAddress = iUserAddressService.findBsUserAddressByAddID(addid);
+
+
+        String address = bsUserAddress.getAddress();
+        String tel = bsUserAddress.getTel();
+        request.setAttribute("address",address);
+        request.setAttribute("tel",tel);
+        request.setAttribute("ful",ful);
+        request.setAttribute("addID",bsUserAddress.getAddID());
+        request.getRequestDispatcher("/successful.jsp").forward(request,response);
+//        request.getRequestDispatcher("/mycart.jsp").forward(request,response);
     }
 
     private void success(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

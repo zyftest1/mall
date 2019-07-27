@@ -19,6 +19,12 @@ public class GoodsToEvaluateServlet extends HttpServlet {
         System.out.println("goodsToEvaluate:id"+id);
         request.setAttribute("oid",oid);
         request.setAttribute("id",id);
+
+        //评价页面显示商品名称
+        String goodsName=request.getParameter("goodsName");
+        System.out.println("goodsName"+goodsName);
+        request.setAttribute("goodsName",goodsName);
+
         request.setCharacterEncoding("utf-8");
         request.getRequestDispatcher("/order_giveevaluate.jsp").forward(request,response);
     }

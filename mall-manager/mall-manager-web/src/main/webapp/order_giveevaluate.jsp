@@ -79,7 +79,14 @@
 				document.onreadystatechange = setDomOperation;
 			}
 		})();
+
 	</script>
+
+	<style>
+		#zhuSubmit{
+			/*margin-left: 140px;*/
+		}
+	</style>
 </head>
 <body>
 
@@ -166,7 +173,7 @@
 					<li>
 						<a href="noviceGuide.jsp">新手指南</a></li>
 					<li>
-						<a href="serviceEnsure.jsp">服务保障</a></>
+						<a href="serviceEnsure.jsp">服务保障</a></li>
 					<li>
 						<a href="helpCommon.jsp">常见问题</a></li>
 					<li>
@@ -253,8 +260,8 @@
 				<div class="mu_content_wrap">
 					<div class="order-title">
 						<ul class="order-title-column clearfix">
-							<li class="goods">评论</li>
-<%--							<li class="price">单价(元)</li>--%>
+							<li class="goods"></li>
+							<li class="price">商品评论</li>
 <%--							<li class="quantity">数量</li>--%>
 <%--							<li class="aftersale">总价</li>--%>
 <%--&lt;%&ndash;							<li class="total">实付款(元)</li>&ndash;%&gt;--%>
@@ -273,13 +280,15 @@
 <%--								<li class="status">${order.state}</li>--%>
 <%--							</ul>--%>
 <%--						</c:forEach>--%>
+						<div class="goods">商品：${requestScope.goodsName}</div>
+	<br/>
 						<form class="form-group" action="/confrimEvaluate.do?oid=${oid}&id=${requestScope.id}&sid=${sid}" method="post">
 <%--							<c:out value="${requestScope.oid}"></c:out>--%>
 <%--							<c:out value="${requestScope.id}"></c:out>--%>
-							<input type="text" class="form-control" name="evaluateContent"/>
+							<textarea type="text" class="form-control" name="evaluateContent" rows="5" style="max-width: 90%"></textarea>
 							<br>
-							<button type="submit" class="btn btn-success">提交</button>
-							<button type="reset" class="btn btn-primary">重置</button>
+							<button type="submit" class="btn btn-success" id="zhuSubmit">提交</button>
+							<button type="reset" class="btn btn-primary" id="zhuReset">重置</button>
 						</form>
 
 					</div>

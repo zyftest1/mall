@@ -14,12 +14,11 @@
     <link href="css\iconfont\iconfont.css" rel="stylesheet">
     <link href="css\common.css" rel="stylesheet">
     <link href="css\login.css" rel="stylesheet">
+
 </head>
 <body>
 <c:if test="${requestScope.message != null}">
-    <div>
-        <span style="color: red">用户名或密码有误,请重新输入!</span>
-    </div>
+    Response.Write("<script>alert('用户名或密码有误,请重新输入！');window.location.href='login.jsp';</script>");
 </c:if>
 
 <!--头部-->

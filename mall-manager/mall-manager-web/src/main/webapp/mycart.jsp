@@ -5,11 +5,6 @@
 <html>
 
 <head>
-	<script type="text/javascript">
-		window.__trace__headstart = +new Date;
-		window.__server__startTime = 1471487722297;
-		window.__token = "KwNcAe6R0OEM01bkBt9QueLZ1n/OJxnmxeRttnw/vr8=";
-	</script>
 	<meta charset="UTF-8">
 
 	<meta http-equiv="Cache-Control" content="no-transform ">
@@ -38,37 +33,11 @@
 
 	<link href="__newtown\trade_cart_web\assets\mls-pc\pages\cartList\index.css-005591bf.css" rel="stylesheet" type="text/css">
 
+	<link href="css\iconfont\iconfont.css" rel="stylesheet">
+	<link href="css\common.css" rel="stylesheet">
+	<link href="css\cart.css" rel="stylesheet">
 	<script type="text/javascript" src="js\pkg-pc-base.js-beb518b8.js"></script>
 
-	<script type="text/javascript">
-		var MOGU_DEV = 0;
-
-		if(window.require) {
-			require.config({
-				domain: 0
-			});
-		}
-
-		MOGUPROFILE = {};
-
-		//性能打点数据检测
-		window.__trace__headendt = +new Date;
-		(function() {
-			window.__trace__domready = null;
-			window.__trace__ladingendt = null;
-			if(document.readyState) {
-				function setDomOperation() {
-					if(document.readyState == 'interactive') {
-						window.__trace__domready = +new Date();
-					} else if(document.readyState == 'complete') {
-						window.__trace__ladingendt = +new Date();
-					}
-				}
-				setDomOperation();
-				document.onreadystatechange = setDomOperation;
-			}
-		})();
-	</script>
 	<%--		<style>--%>
 	<%--			.mydesign{--%>
 	<%--				position: absolute;--%>
@@ -116,41 +85,6 @@
 
 <body>
 
-<script type="text/javascript">
-	/**
-	 ** for layout 960
-	 **/
-	(function() {
-		var wWidth = $(window).width();
-		if(wWidth < 1212) {
-			$('body').addClass('media_screen_960');
-		} else {
-			$('body').addClass('media_screen_1200');
-		}
-		//initTime for log 判断对象是否存在
-		window.MoGu && $.isFunction(MoGu.set) && MoGu.set('initTime', (new Date()).getTime());
-
-		var ua = navigator.userAgent;
-		// 判断是否是ipad
-		var is_plat_ipad = ua.match(/(iPad).*OS\s([\d_]+)/);
-		if(is_plat_ipad) {
-			$('body').addClass('media_ipad');
-		}
-		// 判断是否是ipadApp
-		var is_plat_ipadApp = ua.indexOf('MeilishuoHD') >= 0 || location.href.indexOf('_atype=ipad') >= 0;
-		if(is_plat_ipadApp) {
-			$('body').addClass('media_ipad_app');
-			// 隐藏头尾
-			$('body').append('<style type="text/css">.header_2015,.header_nav,.foot .foot_wrap{display: none;}.foot{height: 0;background: none;}.back2top_wrap{height:0;width:0;overflow:hidden;opacity:0;}</style>');
-			// 移除购物车，返回顶部
-			setTimeout(function() {
-				$('.back2top_wrap').remove();
-			}, 1000)
-		}
-	})();
-</script>
-
-<div class="mgj_rightbar" data-ptp="_sidebar"></div>
 <div id="com-topbar">
 	<div class="inner">
 		<ul>
@@ -209,48 +143,93 @@
 		</ul>
 	</div>
 </div>
-
-
-<div id="body_wrap">
-	<div class="g-header clearfix">
-		<div class="g-header-in wrap clearfix">
-			<div class="process-bar">
-				<div class="md_process md_process_len4">
-					<div class="md_process_wrap md_process_step1_5">
-						<div class="md_process_sd"></div>
-						<i class="md_process_i md_process_i1">
-							1                <span class="md_process_tip">购物车</span>
-						</i>
-						<i class="md_process_i md_process_i2">
-							2                <span class="md_process_tip">确认订单</span>
-						</i>
-						<i class="md_process_i md_process_i3">
-							3                <span class="md_process_tip">支付</span>
-						</i>
-						<i class="md_process_i md_process_i4">
-							4
-							<span class="md_process_tip">完成</span>
-						</i>
-					</div>
-				</div>
+<div class="cart-header wrapper">
+	<div class="logo">
+		<a href="index.do"><img src="pic\bs-logo.png" alt="logo" style="width: 100px;height:100px"></a>
+	</div>
+	<div class="step-box">
+		<div class="row">
+			<div class="step first active col-3">
+				<span class="num">1</span><span class="line"></span><span class="label">我的购物车</span>
 			</div>
-
+			<div class="step col-3">
+				<span class="num">2</span><span class="line"></span><span class="label">确认订单信息</span>
+			</div>
+			<div class="step col-3">
+				<span class="num">3</span><span class="line"></span><span class="label">选择支付方式</span>
+			</div>
+			<div class="step last col-3">
+				<span class="num">4</span><span class="line"></span><span class="label">完成付款</span>
+			</div>
 		</div>
 	</div>
+</div>
+<div id="body_wrap">
+	<div class="wrapper">
+		<table class="cart-table">
+			<thead>
+			<tr class="hd">
+				<th width="30px" class="first"><label class="check"><input id="checkall" type="checkbox" name="all"><span>全选</span></label></th>
+				<th width="430px">商品名称</th>
+				<th width="180px">单价</th>
+				<th width="190px">数量</th>
+				<th width="180px">小计</th>
+				<th width="190px">操作</th>
+			</tr>
+			</thead>
+			<tbody>
+            <c:forEach items="${bsShoppingCarList}" var="bsShoppingCar">
+                <tr class="goods">
+                    <td class="first"><div class="check"><input type="checkbox" name=""></div></td>
+                    <td>
+                        <div class="info-box">
+                            <img src="${bsShoppingCar.picture}" alt="">
+                            <div class="info">
+                                <div class="name">${bsShoppingCar.describe}</div>
+                                <div class="meta"><span>黑色</span><span>S</span></div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>￥<span class="unitprice">${bsShoppingCar.price}</span></td>
+                    <td>
+                        <div class="mod-numbox cart-numbox" data-max="30">
+                            <span class="count-minus"></span>
+                            <input class="count-input" value="${bsShoppingCar.quantity}" type="text" name="num">
+                            <span class="count-plus"></span>
+                        </div>
+                    </td>
+                    <td class="txt-error">￥<span class="price">${bsShoppingCar.price*bsShoppingCar.quantity}</span></td>
+                    <td align="center" valign="middle">
+                        <a href="/car.do?_method=deleteCar&carID=${bsShoppingCar.carID}&id=${sessionScope.bsUserAccount.ID}&addID=${requestScope.addID}">删除</a>
+                    </td>
+                </tr>
+            </c:forEach>
+
+			</tbody>
+		</table>
+		<div class="cart-total-box">
+			<div class="cart-total">
+				<div class="fl">
+					<div class="back"><a href="">继续购物</a></div><div class="count">共 <span class="num" id="totalNum">1</span> 件商品， 已选择 <span class="num" id="selectedNum">1</span> 件</div>
+				</div>
+				<div class="fr">
+					<div class="price">
+                        <a class="btn btn-default" href="/bsAddress.do?_method=address&userId=${sessionScope.bsUserAccount.ID}&addID=${requestScope.addID}" role="button" style="margin-right: 30px">选择地址</a>
+                        合计（不含运费）：<span id="totalMoney"><input type="text" value="" class="aa" id="total" ></span>元
+					</div>
+					<a class="go-account ui-btn-theme"  onclick="succ()">去结算</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="mydesign">
 
 		<table class="table table-hover" id="tabname">
-			<thead>
-			<th class="thdesign"><p align="center">商品图片</p></th>
-			<th class="thdesign"><p align="center">商品描述</p></th>
-			<th class="thdesign"><p align="center">价格</p></th>
-			<th class="thdesign"><p align="center">数量</p></th>
-			<th class="thdesign"><p align="center">操作</p></th>
-			</thead>
 			<tbody>
 			<c:forEach items="${bsShoppingCarList}" var="bsShoppingCar">
 				<tr>
-					<td align="center" valign="middle">${bsShoppingCar.picture}</td>
+					<td align="center" valign="middle"><img src="${bsShoppingCar.picture}" style="width: 60px;height: 80px"></td>
 					<td align="center" valign="middle">${bsShoppingCar.describe}</td>
 					<td align="center" valign="middle">${bsShoppingCar.price}</td>
 					<td align="center" valign="middle">${bsShoppingCar.quantity}</td>
@@ -269,25 +248,27 @@
 			</div>
 		</div>
 		</form>
-
 	</div>
 </div>
+<!--脚部-->
+<%--<div class="fatfooter">--%>
+<%--    <div class="meilili">--%>
+<%--        <p title="mofa015027">--%>
+<%--            <a href="index.jsp" target="_blank">Beauty Show</a>--%>
+<%--            © 2016 Meilishuo.com,All Rights Reserved.--%>
+<%--        </p>--%>
+<%--        <div class="icons">--%>
+<%--            <a class="vs" href="javascript:;"></a>--%>
+<%--            <a class="mc" href="javascript:;"></a>--%>
+<%--            <a class="up" href="javascript:;"></a>--%>
+<%--            <a class="pa" href="http://bank.pingan.com/index.sjsp" target="_blank"></a>--%>
+<%--            <a class="kx" href="https://ss.knet.cn/verifyseal.dll?sn=e14090533010053532r3hn000000&ct=df&a=1&pa=500267&tp=1.0.20.0.28.KXYH9AB" target="_blank"></a>--%>
+<%--            <a class="pc" href="http://www.pingpinganan.gov.cn/" target="_blank"></a>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
 
 
-<div class="meilili">
-	<p title="mofa015027">
-		<a href="index.jsp" target="_blank">Beauty Show</a>
-		© 2016 Meilishuo.com,All Rights Reserved.
-	</p>
-	<div class="icons">
-		<a class="vs" href="javascript:;"></a>
-		<a class="mc" href="javascript:;"></a>
-		<a class="up" href="javascript:;"></a>
-		<a class="pa" href="http://bank.pingan.com/index.sjsp" target="_blank"></a>
-		<a class="kx" href="https://ss.knet.cn/verifyseal.dll?sn=e14090533010053532r3hn000000&ct=df&a=1&pa=500267&tp=1.0.20.0.28.KXYH9AB" target="_blank"></a>
-		<a class="pc" href="http://www.pingpinganan.gov.cn/" target="_blank"></a>
-	</div>
-</div>
 
 <script type="text/javascript" src="js\index.js-3052ac85.js"></script>
 
@@ -313,5 +294,247 @@
 </script>
 
 </body>
+<script src="js\jquery.js"></script>
+<link rel="stylesheet" href="js\icheck\style.css">
+<script src="js\icheck\icheck.min.js"></script>
+<script src="js\global.js"></script>
 
+<script>
+    /*商品数量操作*/
+    function goodsCount(o){
+        if(!(o instanceof Object)) var o={};
+        var inputCell = o.inputCell || ".count-input",
+            minusCell = o.minusCell || ".count-minus",
+            plusCell = o.plusCell || ".count-plus",
+            disClass = o.disClass || "disabled";
+        return this.each(function(){
+            var $wrap = $(this),
+                $input = $(inputCell,$wrap),
+                $minus = $(minusCell,$wrap),
+                $plus = $(plusCell,$wrap),
+                maxnum=parseInt($wrap.attr('data-max')) || false,
+                minnum=$wrap.attr('data-min') || 1,
+                initnum=$input.val() || minnum;
+            /*初始*/
+            $input.val(initnum);
+            checkIlegal();
+            function checkIlegal(){
+                var value =parseInt($input.val());
+
+                //
+                if (maxnum&&value>maxnum) {
+                    $input.val(maxnum);
+                }
+                else if (value<minnum) {
+                    $input.val(minnum);
+                }
+                if(value<=minnum){
+                    $minus.addClass(disClass);
+                }else{
+                    $minus.removeClass(disClass);
+                }
+                if (value>=maxnum) {
+                    $plus.addClass(disClass);
+                }else {
+                    $plus.removeClass(disClass);
+                }
+
+            }
+            function checknull() {
+                var value =$input.val();
+                if(value === "" || value === "0"){
+                    $input.val(minnum);
+                }
+            }
+            $input.keyup(function(evt){
+                var value = $(this).val();
+                var newvalue = value.replace(/[^\d]/g,"");
+                $(this).val(newvalue);
+                checknull();
+            });
+            $input.blur(function(){
+                checknull();
+                checkIlegal();
+            })
+
+            $minus.click(function(){
+                minus();
+                checkIlegal();
+            });
+
+            $plus.click(function(){
+                add();
+                checkIlegal();
+            });
+
+            function add () {
+                var value = $input.val();
+                var plus = parseInt(value)+1;
+                $input.val(plus);
+            }
+            function minus () {
+                var value = parseInt($input.val());
+                var minus = value-1;
+                $input.val(minus);
+            }
+        });
+    }
+    $.fn.goodsCount = goodsCount;
+</script>
+<script>
+    $(function () {
+
+        $('.mod-numbox').goodsCount(); //数量加减
+        $('.check input').iCheck({
+            checkboxClass: 'sty1-checkbox'
+        });
+
+        +function () {
+            var box=$('.cart-table');
+            function caculate () {
+                var selectNum=0,
+                    totalNum=0,
+                    totalPrice=0;
+                checkNum=0,
+                    itemlen=box.find('.goods:not(.goods-useless)').length;
+                $('.goods:not(.goods-useless)').each(function () {
+                    var $check=$(this).find('.check input'),
+                        $price=$(this).find('.price'),
+                        $count=$(this).find('.count-input'),
+                        unitp=parseFloat($(this).find('.unitprice').text()),
+                        num=parseInt($count.val());
+                    var price=unitp*num;
+                    $price.text(price.toFixed(2)); //设置单个商品总价
+                    totalNum+=num;
+                    if ($check.is(':checked')) {
+                        selectNum+=num;
+                        totalPrice+=price;
+                        checkNum+=1;
+                    }
+
+                });
+                $('#selectedNum').text(selectNum);
+                $('#totalNum').text(totalNum);
+                $('#totalMoney').text(totalPrice.toFixed(2));
+                if (itemlen==0) {return false;}
+                if (checkNum<itemlen) {
+                    $('#checkall').iCheck('uncheck');
+                }
+                else {
+                    $('#checkall').iCheck('check');
+                }
+            }
+            function shopaccess () {
+                $('.shop').each(function(index, el) {
+                    var next=$(this).parents('tbody').next('tbody');
+                    if (next.find('.goods:not(.goods-useless)').length<=0) {
+                        $(this).find('.check input').iCheck('disable');
+                        return;
+                    }
+                });
+            }
+            function shopcheck (obj) {
+                var shop=obj.prev('tbody').find('.shop'),
+                    goods=obj.find('.goods:not(.goods-useless)'),
+                    len=goods.length,
+                    cur=0;
+                goods.each(function(index, el) {
+                    if ($(this).find('.check input').is(':checked')) {
+                        cur++;
+                    }
+                });
+                if (cur==len) {
+                    shop.find('.check input').iCheck('check')
+                }
+                else {
+                    shop.find('.check input').iCheck('uncheck')
+                }
+            }
+
+            $('.count-input').on('change blur',function () {
+                caculate();
+            });
+            $('.mod-numbox span').on('click',function () {
+                caculate();
+            });
+            box.find('.goods .check input').on('ifToggled',function () {
+                caculate();
+                var gbox=$(this).parents('tbody');
+                shopcheck(gbox);
+            });
+            $('#checkall').on('ifClicked',function () {
+                //全选
+                if ($(this).is(':checked')) {
+                    $('.check input').iCheck('uncheck');
+                }
+                else {
+                    $('.check input').iCheck('check');
+                }
+                caculate();
+            })
+
+            box.find('.shop .check input').on('ifClicked',function () {
+                //店铺全选
+
+                var curItem=$(this).parents('tbody').next('tbody').find('.goods');
+
+                if ($(this).is(':checked')) {
+                    curItem.find('.check input').iCheck('uncheck');
+                }
+                else {
+                    curItem.find('.check input').iCheck('check');
+                }
+                caculate();
+            });
+            //删除
+            $('.goods .del').on('click',function () {
+                var self=$(this),
+                    shop=self.parents('tbody').prev('tbody'),
+                    gbox=self.parents('tbody');
+                self.parents('.goods').remove();
+                var len=gbox.find('.goods').length;
+                if (len<=0) {
+                    shop.remove();
+                }
+                caculate();
+                shopaccess();
+                shopcheck(gbox);
+            });
+            // $('#delall').on('click',function () {
+            //    $('.shop:not(.goods-useless) .check input').each(function () {
+            //        if ($(this).prop('checked')==true) {
+            //            $(this).parents('.cart-item').remove();
+            //        }
+            //    });
+            //    caculate();
+            //    shopaccess()
+            // });
+
+            box.find('.check input').iCheck('check',true);//初始化全选测试
+
+            caculate();
+            shopaccess();
+        }();
+
+
+        //结算固定显示
+        $(window).on('load resize scroll',function () {
+            var bar=$('.cart-total'),
+                barH=bar.outerHeight(),
+                barWrap=bar.parent(),
+                otop=barWrap.offset().top,
+                oleft=barWrap.offset().left,
+                sTop=$(this).scrollTop(),
+                wh=$(this).height();
+            if (sTop+wh-barH<otop) {
+                bar.addClass('fixed');
+                var left2=oleft-$(this).scrollLeft()
+                bar.css('left',left2);
+            }
+            else {
+                bar.removeClass('fixed');
+            }
+        });
+    });
+</script>
 </html>

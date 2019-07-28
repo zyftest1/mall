@@ -19,6 +19,7 @@
     <div class="page-title">
         <span class="modular fl"><i></i><em>订单信息</em></span>
     </div>
+    <form name="form" action="selectAll.do" method="post">
         <table class="list-style" >
             <thead>
             <tr>
@@ -37,16 +38,19 @@
 
             </tr>
             </thead>
+
+
             <tbody>
 
-
-                    <c:forEach items="${requestScope.orders.list}" var="order">
+            <c:choose>
+                <c:when test="${not empty requestScope.orders}">
+                    <c:forEach items="${requestScope.orders}" var="order">
                         <tr>
                             <td>${order.o_id}</td>
                             <td>${order.o_name}</td>
                             <td>${order.o_address}</td>
                             <td>${order.o_tel}</td>
-                            <td>${order.sch_id}</td>
+                            <td>${order.sch}</td>
                             <td>${order.user_id}</td>
                             <td>${order.user_tel}</td>
                             <td>${order.s_id}</td>
@@ -55,18 +59,44 @@
                             <td>${order.o_date}</td>
                             <c:if test="${order.sch_id==1}">
                             <td><span ><a href="/order.do?o_id=${order.o_id}&s_id=${order.s_id}" class="pt-link-btn" >发货</a></span></td>
+
                             </c:if>
                         </tr>
                     </c:forEach>
+                </c:when>
+                <c:otherwise>
+                    <tr>
+                        <td colspan="8">对不起，没有你要找的数据</td>
+                    </tr>
+                </c:otherwise>
+            </c:choose>
 
             </tbody>
         </table>
-    <div align="right">
-        第${requestScope.orders.currentPage}页，共${requestScope.orders.totalPage}页
-        <a href="${pageContext.request.contextPath }/order?currentPage=1">首页</a>
-        <a href="${pageContext.request.contextPath }/order?currentPage=${requestScope.orders.currentPage - 1}">上一页</a>
-        <a href="${pageContext.request.contextPath }/order?currentPage=${requestScope.orders.currentPage + 1}">下一页</a>
-        <a href="${pageContext.request.contextPath }/order?currentPage=${requestScope.orders.totalPage}">末页</a>
+    </form>
+    <!-- BatchOperation -->
+    <div style="overflow:hidden">
+        <!-- Operation -->
+        <div class="BatchOperation fl">
+
+        </div>
+        <!-- turn page -->
+
+
+        <div class="turnPage center fr">
+
+            <c:if test="${requestScope.pageBean.currentPage!=1}">
+                <a href="${pageContext.request.contextPath }/order?currentPage=1">首页</a>
+                <a href="${pageContext.request.contextPath }/order?currentPage=${requestScope.pageBean.currentPage - 1}">上一页</a>
+            </c:if>
+
+            <a>当前第${requestScope.pageBean.currentPage}页</a>
+
+            <c:if test="${requestScope.pageBean.currentPage!=requestScope.pageBean.totalPage}">
+            <a href="${pageContext.request.contextPath }/order?currentPage=${requestScope.pageBean.currentPage + 1}">下一页</a>
+            <a href="${pageContext.request.contextPath }/order?currentPage=${requestScope.pageBean.totalPage}">末页</a>
+        </div>
+        </c:if>
     </div>
 </div>
 </body>

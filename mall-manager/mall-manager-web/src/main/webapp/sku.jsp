@@ -76,13 +76,18 @@
 </tr>
         </tbody>
     </table>
-    <div align="right">
-       <span color="#33A6DC">第${requestScope.pageBean.currentPage}页，共${requestScope.pageBean.totalPage}页</span>
-        <a href="${pageContext.request.contextPath }/select.do?currentPage=1">首页</a>
-        <a href="${pageContext.request.contextPath }/select.do?currentPage=${requestScope.pageBean.currentPage - 1}">上一页</a>
-        <a href="${pageContext.request.contextPath }/select.do?currentPage=${requestScope.pageBean.currentPage + 1}">下一页</a>
-        <a href="${pageContext.request.contextPath }/select.do?currentPage=${requestScope.pageBean.totalPage}">末页</a>
+
+<div class="turnPage center fr">
+第${requestScope.pageBean.currentPage}页，共${requestScope.pageBean.totalPage}页
+<c:if test="${requestScope.pageBean.currentPage!=1}">
+    <a href="${pageContext.request.contextPath }/select.do?currentPage=1">首页</a>
+    <a href="${pageContext.request.contextPath }/select.do?currentPage=${requestScope.pageBean.currentPage - 1}">上一页</a>
+</c:if>
+<c:if test="${requestScope.pageBean.currentPage!=requestScope.pageBean.totalPage}">
+    <a href="${pageContext.request.contextPath }/select.do?currentPage=${requestScope.pageBean.currentPage + 1}">下一页</a>
+    <a href="${pageContext.request.contextPath }/select.do?currentPage=${requestScope.pageBean.totalPage}">末页</a>
+</c:if>
     </div>
 </div>
 </body>
-</html>
+    </html>

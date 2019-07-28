@@ -4,6 +4,8 @@ package com.mall.manager.dao.daoimpl;
 import com.mall.common.utils.C3p0Utils;
 import com.mall.manager.dao.IBsOrder_Dao;
 import com.mall.manager.pojo.BS_order;
+import com.mall.manager.pojo.BS_schedule;
+import com.mall.stock.ComStock;
 import com.mall.stock.PageBean;
 import com.utils.JdbcUtils_C3P0;
 import org.apache.commons.dbutils.QueryRunner;
@@ -33,31 +35,8 @@ public class BsOrder_DaoImpl implements IBsOrder_Dao {
     }
 
     @Override
-    public BS_order selectByID(String o_id) {
-        QueryRunner qr=new QueryRunner(C3p0Utils.getDataSourse());
-        String sql = "select * from BS_order where o_id = ?";
-        BS_order bs_order = new BS_order();
-        try {
-            bs_order = qr.query(sql,new BeanHandler<BS_order>(BS_order.class),o_id);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return bs_order;
-    }
+    public void getAll(PageBean<BS_order> pageBean) {
 
-    @Override
-    public void oUpdate(BS_order order) {
-        QueryRunner qr = new QueryRunner(C3p0Utils.getDataSourse());
-        String sql = "update BS_order set sch_id = ? where o_id = ?";
-        try {
-            qr.update(sql,order.getSch_id(),order.getO_id());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void selectAll(PageBean<BS_order> pageBean) {
         //查询总记录数，并设置保存到pageBean对象中
         int totalCount=getTotalCount();
         pageBean.setTotalCount(totalCount);
@@ -82,7 +61,6 @@ public class BsOrder_DaoImpl implements IBsOrder_Dao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
@@ -95,5 +73,31 @@ public class BsOrder_DaoImpl implements IBsOrder_Dao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
     }
+
+
+    @Override
+    public BS_order selectByID(String o_id) {
+        QueryRunner qr=new QueryRunner(C3p0Utils.getDataSourse());
+        String sql = "select* from BS_order where o_id = ?";
+        BS_order bs_order = new BS_order();
+        try {
+            bs_order = qr.query(sql,new BeanHandler<BS_order>(BS_order.class),o_id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return bs_order;
     }
+
+    @Override
+    public void oUpdate(BS_order order) {
+        QueryRunner qr = new QueryRunner(C3p0Utils.getDataSourse());
+        String sql = "update BS_order set sch_id = ? where o_id = ?";
+        try {
+            qr.update(sql,order.getSch_id(),order.getO_id());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}

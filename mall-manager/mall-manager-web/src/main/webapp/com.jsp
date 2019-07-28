@@ -84,17 +84,29 @@
     <div style="overflow:hidden">
         <!-- Operation -->
         <div class="BatchOperation fl">
-
         </div>
         <!-- turn page -->
+
+
         <div class="turnPage center fr">
-            <a href="${pageContext.request.contextPath }/selectAll.do?currentPage=1">首页</a>
-            <a href="${pageContext.request.contextPath }/selectAll.do?currentPage=${requestScope.pageBean.currentPage - 1}">上一页</a>
-            <a>${requestScope.pageBean.currentPage}</a>
+
+            <c:if test="${requestScope.pageBean.currentPage!=1}">
+                <a href="${pageContext.request.contextPath }/selectAll.do?currentPage=1">首页</a>
+                <a href="${pageContext.request.contextPath }/selectAll.do?currentPage=${requestScope.pageBean.currentPage - 1}">上一页</a>
+            </c:if>
+
+            <a>当前第${requestScope.pageBean.currentPage}页</a>
+
+            <c:if test="${requestScope.pageBean.currentPage!=requestScope.pageBean.totalPage}">
             <a href="${pageContext.request.contextPath }/selectAll.do?currentPage=${requestScope.pageBean.currentPage + 1}">下一页</a>
             <a href="${pageContext.request.contextPath }/selectAll.do?currentPage=${requestScope.pageBean.totalPage}">末页</a>
-
         </div>
+            </c:if>
+
+
+</div>
+    <div class="turnPage center fr">
+
     </div>
 </div>
 </body>

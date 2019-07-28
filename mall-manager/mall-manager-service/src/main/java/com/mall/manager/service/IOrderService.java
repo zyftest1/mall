@@ -9,5 +9,5 @@ import java.util.List;
 public interface IOrderService {
     public void orderCommit(BS_order bs_order, ComStock stock);
     public List<BS_order> selectAllServ();
-    void getAll(PageBean<BS_order> pageBean);
+
 }

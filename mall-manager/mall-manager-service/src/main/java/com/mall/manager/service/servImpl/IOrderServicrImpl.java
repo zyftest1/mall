@@ -33,11 +33,7 @@ public class IOrderServicrImpl implements IOrderService {
         return bs_orderList;
     }
 
-    @Override
-    public void getAll(PageBean<BS_order> pageBean) {
-        IBsOrder_Dao dao=new BsOrder_DaoImpl();
-        dao.selectAll(pageBean);
-    }
+
 
     public static void main(String[] args) {
 

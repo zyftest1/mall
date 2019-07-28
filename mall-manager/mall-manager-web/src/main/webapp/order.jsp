@@ -80,6 +80,23 @@
         <div class="BatchOperation fl">
 
         </div>
+        <!-- turn page -->
+
+
+        <div class="turnPage center fr">
+
+            <c:if test="${requestScope.pageBean.currentPage!=1}">
+                <a href="${pageContext.request.contextPath }/order?currentPage=1">首页</a>
+                <a href="${pageContext.request.contextPath }/order?currentPage=${requestScope.pageBean.currentPage - 1}">上一页</a>
+            </c:if>
+
+            <a>当前第${requestScope.pageBean.currentPage}页</a>
+
+            <c:if test="${requestScope.pageBean.currentPage!=requestScope.pageBean.totalPage}">
+            <a href="${pageContext.request.contextPath }/order?currentPage=${requestScope.pageBean.currentPage + 1}">下一页</a>
+            <a href="${pageContext.request.contextPath }/order?currentPage=${requestScope.pageBean.totalPage}">末页</a>
+        </div>
+        </c:if>
     </div>
 </div>
 </body>

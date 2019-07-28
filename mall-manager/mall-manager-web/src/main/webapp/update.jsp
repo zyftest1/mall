@@ -12,8 +12,8 @@
 <head>
     <title>修改</title>
     <style type="text/css">
-        form{
-            margin: 100px;
+        .form-horizontal{
+            margin-left:249px;
         }
     </style>
     <link rel="stylesheet" type="text/css" href="pc\css\base.css?1607170150.25">
@@ -120,27 +120,27 @@
 <form class="form-horizontal" method="post" action="/bsAddress.do?_method=up&id=${sessionScope.bsUserAccount.ID}">
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">地址</label>
-        <div class="col-sm-10">
+        <div class="col-sm-6">
             <input type="text" value="${bsUserAddress.address}" class="form-control" name="address" id="inputEmail3" placeholder="地址">
         </div>
     </div>
     <div class="form-group">
         <label for="inputPassword3" class="col-sm-2 control-label">姓名</label>
-        <div class="col-sm-10">
+        <div class="col-sm-6">
             <input type="text" value="${bsUserAddress.name}" class="form-control" name="name" id="inputPassword3" placeholder="姓名">
         </div>
     </div>
     <div class="form-group">
         <label for="inputPassword3" class="col-sm-2 control-label">电话</label>
-        <div class="col-sm-10">
+        <div class="col-sm-6">
             <input type="text" value="${bsUserAddress.tel}" class="form-control" name="tel" id="inputPassword" placeholder="电话">
             <input type="hidden" value="${bsUserAddress.addID}" name="addID" >
         </div>
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">保存</button>
-            <button type="reset" class="btn btn-default">重置</button>
+            <button type="submit" class="btn btn-default" style="margin-left: 150px">保存</button>
+            <button type="reset" class="btn btn-default" style="margin-left: 100px">重置</button>
         </div>
     </div>
 </form>

@@ -24,7 +24,7 @@
 <!--头部-->
     <div class="login-header">
         <div class="wrapper">
-            <a href="" class="logo">
+            <a href="index.do" class="logo">
                 <img src="img\logo3.png" alt="">
             </a>
             <div class="zp">

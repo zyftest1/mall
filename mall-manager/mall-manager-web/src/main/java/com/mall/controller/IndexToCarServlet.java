@@ -35,8 +35,6 @@ public class IndexToCarServlet extends HttpServlet {
         List<BsComComment> bsComCommentList=commentDao.selectAllCommentBySid(s_id);
         request.setAttribute("allComment",bsComCommentList);
 
-
-
         System.out.println("allComment:"+bsComCommentList);
 
         System.out.println(bsComStock);

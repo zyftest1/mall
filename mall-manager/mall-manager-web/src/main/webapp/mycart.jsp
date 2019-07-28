@@ -190,7 +190,7 @@
                             <img src="${bsShoppingCar.picture}" alt="">
                             <div class="info">
                                 <div class="name">${bsShoppingCar.describe}</div>
-                                <div class="meta"><span>黑色</span><span>S</span></div>
+                                <div class="meta"><span>黑色</span><span>${bsShoppingCar.size}</span></div>
                             </div>
                         </div>
                     </td>

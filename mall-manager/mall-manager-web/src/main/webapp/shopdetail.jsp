@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -31,8 +30,10 @@
     <link rel="canonical" href="http://shop.mogujie.com/detail/1fxighu">
 
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml">
-    <link rel="icon" href="http://s16.mogucdn.com/p1/160614/idid_ifrtgzddgm3dmnjshezdambqhayde_49x48.png"
-          type="image/x-icon">
+    <link href="css\iconfont\iconfont.css" rel="stylesheet">
+    <link href="css\common.css" rel="stylesheet">
+    <link href="css\goods-detail.css" rel="stylesheet">
+    <link rel="icon" href="http://s16.mogucdn.com/p1/160614/idid_ifrtgzddgm3dmnjshezdambqhayde_49x48.png" type="image/x-icon">
 
     <script> curl = {apiName: 'require'};
     var MOGU = {};
@@ -46,16 +47,12 @@
     <link href="css\index.css-2435ceae.css" rel="stylesheet" type="text/css">
 
 
-    <link href="__newtown\detail_mls\assets\mls-pc\pages\normal\index.css-449eac8d.css" rel="stylesheet"
-          type="text/css">
+    <link href="__newtown\detail_mls\assets\mls-pc\pages\normal\index.css-449eac8d.css" rel="stylesheet" type="text/css">
 
-    <script type="text/javascript" src="js\pkg-pc-base.js-beb518b8.js"></script>
+<%--    <script type="text/javascript" src="js\pkg-pc-base.js-beb518b8.js"></script>--%>
     <script type="text/javascript" src="webjars/jquery/3.4.1/jquery.js"></script>
 
-
-
     <script type="text/javascript">
-
         var MOGU_DEV = 0;
 
         if (window.require) {
@@ -63,9 +60,7 @@
                 domain: 0
             });
         }
-
         MOGUPROFILE = {};
-
         //性能打点数据检测
         window.__trace__headendt = +new Date;
         (function(){
@@ -80,7 +75,6 @@
                         window.__trace__ladingendt = +new Date();
                     }
                 }
-
                 setDomOperation();
                 document.onreadystatechange = setDomOperation;
             }
@@ -91,16 +85,16 @@
     <script type="text/javascript">
         $(function () {
             $('input[name="radiobutton"]').click(function(){
-                // alert(this.value);
+                alert(this.value);
                 // alert($(this).val());
                 var ss = $(this).val();
-                $.post({
+                $.ajax({
                     url:"/car.do?_method=stock",
                     data:{cID:"${requestScope.goods.cID}",size:ss},
                     dataType:"text",
-                    // beforeSend:function(){
-                    //     alert("请求发送之前执行");
-                    // },
+                    beforeSend:function(){
+                        alert("请求发送之前执行");
+                    },
                     success:function (data,status) {
                         switch (data) {
                             case "S":
@@ -193,6 +187,9 @@
 <%--    </script>--%>
 
 <style type="text/css">
+    #shopColor{
+        margin-left: 50px;
+    }
     #sizes {
         margin-left: 50px;
         /*font:18px  arial, sans-serif;*/
@@ -205,6 +202,7 @@
     }
 
 </style>
+
 </head>
 <body>
 
@@ -396,252 +394,96 @@
 </div>
 
 <div id="body_wrap">
-
-
-    <input type='hidden' id='shopid' value='110fni1q'>
-    <input type="hidden" id="J_ShopId" value="110fni1q">
-    <input type="hidden" id="J_PageType" value="item">
-    <input type='hidden' id='iteminfoid' value='1fxighu'>
-    <input type="hidden" id="J_ItemId" value="1fxighu">
-    <input type="hidden" id="J_RushId" value="">
-    <input type='hidden' id='sellerId' value='115knefy'>
-    <input type="hidden" id="J_SellerId" value="115knefy">
-    <input type='hidden' id='J_DetailRefer' value='shop.jsp110fni1q/index/total?ptp=1.CmymMoKw.0.0.Bffk4'>
-    <input type="hidden" id="J_CartLuckyDrawData" data-istimerange="true">
-
-
     <div class="shop-detail">
         <div class="detail-primary clearfix">
             <div class="primary-goods">
                 <div class="clearfix">
-
-
                     <div class="fl goods-info goods-info-tuan-pre" id="J_GoodsInfo">
                         <div class="info-box">
-                            <h1 class="goods-title"><span itemprop="name">${requestScope.goods.describe}</span></h1>
-
-                            <div class="goods-prowrap goods-main">
-
-<%--                                <dl class="clearfix event-box">--%>
-<%--                                    <dd style="background: url(http://s2.mogucdn.com/p1/160329/upload_ifrtan3egaytmojzg4zdambqhayde_540x68.png) 0 0 no-repeat;">--%>
-<%--                                        <span class="event-time-text">距品牌特卖开抢仅剩：</span>--%>
-<%--                                        <span class="event-time-left" id="J_CountDown" cut-time="442">--%>
-<%--              <span class="d">0</span>天<span class="h">0</span>小时<span class="m">0</span>分<span class="s">0</span>秒--%>
-<%--          </span>--%>
-<%--                                    </dd>--%>
-<%--                                </dl>--%>
-
-
-                                <div class="clearfix main-box">
-                                    <dl class="clearfix property-box">
-                                        <dt class="property-type property-type-origin">价格：</dt>
-                                        <dd class="property-cont property-cont-origin">
-                                            <span id="J_OriginPrice" class="price"><fmt:formatNumber value="${requestScope.goods.price*1.5}" type="currency" pattern="￥.00"/></span>
-                                        </dd>
-                                    </dl>
-
-                                    <dl class="clearfix property-box">
-
-
-                                        <dt class="property-type property-type-now"> 现价 ：</dt>
-                                        <dd class="property-cont property-cont-now fl">
-                                            <span id="J_NowPrice" class="price"
-                                                  style="color: #333333">${requestScope.goods.price}</span>
-                                            <em class="pre-price-desc">（特卖价 <fmt:formatNumber value="${requestScope.goods.price*0.8}" type="currency" pattern="￥.00"/>）</em>
-                                        </dd>
-
-                                        <dd class="property-extra fr">
-    <span class="mr10">评价：
-      <span class="num">
-          ${fn:length(requestScope.allComment)} </span>
-    </span>
-                                            <span>累计销量：
-      <span class="num J_SaleNum">
-         193       </span>
-    </span>
-                                        </dd>
-                                    </dl>
-
-                                    <div id="J_ModulePromotions"></div>
+                            <div class="detail-info">
+                                <div class="item-title">${requestScope.goods.describe}</div>
+                                <div class="item-price">
+                                    <span class="now">${requestScope.goods.price}</span><span class="dft"><fmt:formatNumber value="${requestScope.goods.price*1.5}" type="currency" pattern="￥.00"/></span>
                                 </div>
-                            </div>
-                            <div class="goods-prowrap goods-im">
-                                <dl class="clearfix">
-                                    <dt>客服：</dt>
-                                    <dd>
-                                        <div class="mlstalk_widget_btn" data-shopid="110fni1q" style="cursor:pointer"
-                                             data-style="default" data-toid="1256898643" data-tid="4170704471">联系客服
+                                <ul class="item-data clearfix">
+                                    <li class="col-4">销量<span class="txt-theme ml10">123件</span></li>
+                                    <li class="col-4">好评率<span class="txt-theme ml10">98%</span></li>
+                                    <li class="col-4">收藏<span class="txt-theme ml10">240人</span></li>
+                                </ul>
+                                <div class="sku-info">
+                                    <%--                                        <div class="prop">--%>
+                                    <%--                                            <div class="dt">颜色：</div>--%>
+                                    <%--                                            <div class="dd">--%>
+                                    <%--                                                <ul class="chose-img">--%>
+                                    <%--                                                    <li><a href=""><img src="uploads\6.jpg" alt=""></a></li>--%>
+                                    <%--                                                    <li><a class="active" href=""><img src="uploads\6.jpg" alt=""></a></li>--%>
+                                    <%--                                                </ul>--%>
+                                    <%--                                            </div>--%>
+                                    <%--                                        </div>--%>
+                                    <div class="prop">
+                                        <div class="dt">尺寸：</div>
+                                        <div class="dd" id="size">
+                                            <ul class="chose-common" >
+                                                <li><input value="S" checked="checked" type="radio" name="radiobutton">S</li>
+                                                <li><input value="M" type="radio" name="radiobutton">M</li>
+                                                <li><input value="L" type="radio" name="radiobutton">L</li>
+                                                <li><input value="XL" type="radio"  name="radiobutton">XL</li>
+                                                <li><input value="XXL" type="radio" name="radiobutton">XXL</li>
+                                            </ul>
                                         </div>
-                                    </dd>
-                                </dl>
-                            </div>
-
-                            <div class="goods-prowrap goods-sku" id="J_GoodsSku">
-                                <div class="content">
-                                    <div class="pannel-title">
-                                        <span class="choose-goods-info">选择商品信息</span>
-                                        <b class="J_PannelClose pannel-close"></b>
                                     </div>
-                                    <div class="box">
-                                        <dl class="clearfix">
-                                            <dt>颜色：</dt>
-                                            <input type="radio" name="radiobutton" value="S" style="color: #ffffff">S
-                                            <input type="radio" name="radiobutton" value="M" style="color: #ffffff">M
-                                            <input type="radio" name="radiobutton" value="L" style="color: #ffffff">L
-                                            <input type="radio" name="radiobutton" value="XL" style="color: #ffffff">XL
-                                            <input type="radio" name="radiobutton" value="XXL" style="color: #ffffff">XXL
-                                        </dl>
-
-                                        <dl class="clearfix">
-                                            <dt>尺码：</dt>
-                                            <input id="sizes" type="radio" name="radiobutton" value="S" style="color: #ffffff">S
-                                            <input id="sizem" type="radio" name="radiobutton" value="M" style="color: #ffffff">M
-                                            <input id="sizel" type="radio" name="radiobutton" value="L" style="color: #ffffff">L
-                                            <input id="sizexl" type="radio" name="radiobutton" value="XL" style="color: #ffffff">XL
-                                            <input id="sizexxl" type="radio" name="radiobutton" value="XXL" style="color: #ffffff">XXL
-                                        </dl>
-                                        <dl class="clearfix">
-                                            <dt>数量：</dt>
-                                            <dd class="num clearfix">
-                                                <div id="J_GoodsNum" class="goods-num fl">
-                                                    <span class="num-reduce num-disable"></span>
-                                                    <input class="num-input" type="text" value="1">
-                                                    <span class="num-add "></span>
-                                                </div>
-                                                <div class="J_GoodsStock goods-stock fl">
-                                                    库存
-                                                    <span id="sizeStock" hidden="hidden">${requestScope.goods.stock}</span>
-                                                    <span id="sizeStockS" hidden="hidden">${sessionScope.bsComStockS.stock}</span>
-                                                    <span id="sizeStockM" hidden="hidden">${sessionScope.bsComStockM.stock}</span>
-                                                    <span id="sizeStockL" hidden="hidden">${sessionScope.bsComStockL.stock}</span>
-                                                    <span id="sizeStockXL" hidden="hidden">${sessionScope.bsComStockXL.stock}</span>
-                                                    <span id="sizeStockXXL" hidden="hidden">${sessionScope.bsComStockXXL.stock}</span>
-                                                    件</div>
-                                                <div class="J_GoodsStockTip goods-stock-tip fl">您所填写的商品数量超过库存！</div>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                    <div class="pannel-action">
-                                        <a href="javascript:;" class="J_PannelOK pannel-ok">确认</a>
+                                    <div class="prop">
+                                        <div class="dt">数量：</div>
+                                        <div class="dd">
+                                            <div class="mod-numbox chose-num" data-max="30">
+                                                <span class="count-minus"></span>
+                                                <input class="count-input" value="1" type="text" name="num" id="totalNum">
+                                                <span class="count-plus"></span>
+                                            </div>
+                                            <div class="stock">(库存
+                                                <span id="sizeStock" hidden="hidden">${requestScope.goods.stock}</span>
+                                                <span id="sizeStockS" hidden="hidden">${sessionScope.bsComStockS.stock}</span>
+                                                <span id="sizeStockM" hidden="hidden">${sessionScope.bsComStockM.stock}</span>
+                                                <span id="sizeStockL" hidden="hidden">${sessionScope.bsComStockL.stock}</span>
+                                                <span id="sizeStockXL" hidden="hidden">${sessionScope.bsComStockXL.stock}</span>
+                                                <span id="sizeStockXXL" hidden="hidden">${sessionScope.bsComStockXXL.stock}</span>
+                                                件)</div>
+                                        </div>
                                     </div>
                                 </div>
-
                                 <c:choose>
                                     <c:when test="${sessionScope.bsUserAccount.bsName != null}">
-                                        <div class="goods-buy clearfix">
-                                            <form action="/car.do?_method=tocar&cID=${requestScope.goods.cID}&userid=${sessionScope.bsUserAccount.ID}&userName=${sessionScope.bsUserAccount.bsName}" method="post">
-
-                                                <button type="submit"  class="fl mr10 buy-btn buy-now">立刻购买</button>
-                                                <input type="hidden" value="nodapei" >
-                                                    <%--                                            &sid=${sessionScope.bsComStockS.sID}--%>
-                                                    <%--                                            &bsUserAccount=${sessionScope.bsUserAccount}--%>
-                                                <!-- <a href="javascript:;" id="J_BuyCart" class="fl mr10 buy-cart buy-btn">加入购物车</a> -->
-                                                <a href="/car.do?_method=addCar&cID=${requestScope.goods.cID}&userid=${sessionScope.bsUserAccount.ID}&userName=${sessionScope.bsUserAccount.bsName}" class="fl mr10 buy-cart buy-btn">加入购物车</a>
-                                            </form>
-                                            <!-- <a href="javascript:;" id="J_BuyNow" class="fl mr10 buy-btn buy-now">立刻购买</a> -->
-
-
-                                        </div>
+                                            <div class="item-action">
+                                                    <a class="buy-now" onclick="buyNow()">立刻购买</a>
+                                                    <a onclick="buyafter()"  class="add-cart">加入购物车</a>
+                                            </div>
                                     </c:when>
                                 </c:choose>
 
                                 <c:choose>
                                     <c:when test="${sessionScope.bsUserAccount.bsName == null}">
-                                        <div class="goods-buy clearfix">
-                                            <!-- <a href="javascript:;" id="J_BuyNow" class="fl mr10 buy-btn buy-now">立刻购买</a> -->
-                                            <a href="login.jsp" id="J_BuyNow" class="fl mr10 buy-btn buy-now">立刻购买</a>
-                                            <input type="hidden" value="nodapei" id="dapeiShow">
-
-                                            <!-- <a href="javascript:;" id="J_BuyCart" class="fl mr10 buy-cart buy-btn">加入购物车</a> -->
-                                            <a href="login.jsp" id="J_BuyCart"
-                                               class="fl mr10 buy-cart buy-btn">加入购物车</a>
-
+                                        <div class="item-action">
+                                            <a href="login.jsp" class="buy-now">立刻购买</a>
+                                            <a href="login.jsp" class="add-cart">加入购物车</a>
                                         </div>
                                     </c:when>
                                 </c:choose>
-                            </div>
-                            <div class="goods-social clearfix">
-
-                                <div class=" fav  item" goodsid="0" tradeitemid="1fxighu" tid="0"><b></b><span
-                                        class="fav-num">2081</span></div>
-
-                                <div class="share item">
-                                    <b></b>分享
-                                    <div class="share-w clearfix">
-
-                                        <a target="_blank"
-                                           href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=shopdetail.jsp#?1fxighu&title=又有一款充满仙气的裙子贡献给菇凉们了~这款裙裙是采用雪纺面料的，亲自试穿过，面料特别舒服，清清凉凉的，然后有里衬，也不会透，夏日穿特别合适！荷叶袖的设计，手臂有肉肉的菇凉也不用担心了~&pics=http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_468x468.jpg"
-                                           class="forqzone" title="关注QQ空间" rel="nofollow"></a>
-                                        <a target="_blank"
-                                           href="http://widget.renren.com/dialog/share?resourceUrl=shopdetail.jsp#?1fxighu&title=又有一款充满仙气的裙子贡献给菇凉们了~这款裙裙是采用雪纺面料的，亲自试穿过，面料特别舒服，清清凉凉的，然后有里衬，也不会透，夏日穿特别合适！荷叶袖的设计，手臂有肉肉的菇凉也不用担心了~&thumbnail_url=http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_468x468.jpg"
-                                           class="forrenren" title="关注人人" rel="nofollow"></a>
-                                        <a target="_blank"
-                                           href="http://service.weibo.com/share/share.php?url=shopdetail.jsp#?1fxighu&title=又有一款充满仙气的裙子贡献给菇凉们了~这款裙裙是采用雪纺面料的，亲自试穿过，面料特别舒服，清清凉凉的，然后有里衬，也不会透，夏日穿特别合适！荷叶袖的设计，手臂有肉肉的菇凉也不用担心了~&pic=http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_468x468.jpg"
-                                           class="forsina" title="关注sina" rel="nofollow"></a>
-                                        <a target="_blank"
-                                           href="http://v.t.qq.com/share/share.php?url=shopdetail.jsp#?1fxighu&title=又有一款充满仙气的裙子贡献给菇凉们了~这款裙裙是采用雪纺面料的，亲自试穿过，面料特别舒服，清清凉凉的，然后有里衬，也不会透，夏日穿特别合适！荷叶袖的设计，手臂有肉肉的菇凉也不用担心了~&pic=http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_468x468.jpg"
-                                           class="forweixin" title="关注腾讯微博" rel="nofollow"></a>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="goods-extra clearfix">
-
-                                <div class="extra-services">
-                                    <div class="fl clearfix label">服务承诺：</div>
-                                    <ul class="fl clearfix list">
-                                        <li class="item">
-                                                                                                                                <span class="link">
-                    <img src="http://s2.mogucdn.com/p1/150923/upload_ieztcoldmvsdmztdgmzdambqgyyde_24x24.png" width="24"
-                         height="24">
-                    退货补运费
-                </span>
-                                        </li>
-                                        <li class="item">
-                                                                                                                                <span class="link">
-                    <img src="http://s2.mogucdn.com/p1/150923/upload_ieywiobrmfsdmztdgmzdambqmeyde_24x24.png" width="24"
-                         height="24">
-                    7天无理由退货
-                </span>
-                                        </li>
-                                        <li class="item">
-                                                                                                                                <span class="link">
-                    <img src="http://s2.mogucdn.com/p1/160618/upload_ie4dqzjrmqzdoojthezdambqgiyde_24x27.png" width="24"
-                         height="24">
-                    先行赔付
-                </span>
-                                        </li>
-                                        <li class="item">
-                                                                                                                                <span class="link">
-                    <img src="http://s2.mogucdn.com/p1/150923/upload_iezgeolcmnsdmztdgmzdambqmmyde_24x24.png" width="24"
-                         height="24">
-                    72小时发货
-                </span>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="extra-pay">
-                                    <div class="fl clearfix label">支付方式：</div>
-                                    <div class="fl list list-nomaibei"></div>
+                                <div class="item-extend">
+                                    <!-- <a href="" class="fav"><i class="iconfont icon-star"></i>收藏</a> -->
+                                    <a href="" class="fav">已收藏</a>
+                                    <a href="" class="share"><i class="iconfont icon-fenxiang"></i>分享</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="fl goods-topimg" id="J_GoodsImg">
-
                         <div class="big-img">
-
-
                             <button class="middle">
                                 <img id="J_BigImg" src="${requestScope.goods.showPicture}"
                                      data-main="http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg_f1d98337_s0_468_468.jpg"
                                      alt="雪纺裙,收腰,淑女,夏季新品,系带" width="400">
                             </button>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -755,139 +597,23 @@
             </div>
 
             <!-- 侧边栏 -->
-            <div class="col-sidebar">
+        <div class="col-sidebar">
 
-                <!-- 店铺模块 -->
-                <div class="module-shop" id="J_ModuleShop">
+            <!-- 店铺模块 -->
+            <div class="module-shop" id="J_ModuleShop">
 
-                </div>
-
-                <!-- 分类模块 -->
-                <div class="module-classify" id="J_ModuleClassify">
-
-                </div>
-
-                <!-- 看了又看模块 -->
-                <div class="module-repeat" id="J_ModuleRepeat"></div>
             </div>
 
+            <!-- 分类模块 -->
+            <div class="module-classify" id="J_ModuleClassify">
 
+            </div>
+
+            <!-- 看了又看模块 -->
+            <div class="module-repeat" id="J_ModuleRepeat"></div>
         </div>
-
     </div>
-
-    <script type="text/javascript">
-        var MoGuConstant = {
-            mobileRegex: /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i,
-            userAgent: navigator.userAgent.toLowerCase(),
-        };
-
-        var MoGuDetail = {
-            data: null,
-
-            util: {
-                isMGJApp: (function () {
-                    return MoGuConstant.userAgent.indexOf('nonative') < 0 && MoGuConstant.userAgent.indexOf('mogujie') > 0;
-                }()),
-
-                isMobile: (function () {
-                    return MoGuConstant.mobileRegex.test(MoGuConstant.userAgent);
-                }()),
-
-                isWeChat: (function () {
-                    return MoGuConstant.userAgent.indexOf('micromessenger') > 0;
-                }())
-            }
-        };
-    </script>
-
-
-    <script type="text/javascript">
-        // 如果在蘑菇街APP
-        if (MoGuDetail.util.isMGJApp) {
-            // setTimeout(function(){
-            //     window.location.href = "mgj://detail?iid=1fxighu";
-            // },400)
-        } else if (navigator.userAgent.indexOf('MeilishuoHD') != -1) {
-
-        }
-        // 如果在移动设备上
-        else if (MoGuDetail.util.isMobile) {
-            setTimeout(function () {
-                var url = "http://127.0.0.1:8848/Beauty Show/login.jsp";
-                if (window.location.search) {
-                    url += window.location.search;
-                }
-                window.location.href = window.logger ? logger.generatePtpParams(url) : url;
-            }, 400)
-        }
-
-        var detailInfo = {
-            itemId: '1fxighu',
-            shopId: '110fni1q',
-            cids: '#682# #683# #704# #705#',
-            sellerId: '115knefy',
-            main: {
-                // originPrice: '¥213.00',
-                // nowPrice: '¥139.00',
-                topImages: ["http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg", "http://d01.res.meilishuo.net/pic/_o/19/02/3fc8317debdf1c029d53250857ce_640_832.c1.jpg", "http://d01.res.meilishuo.net/pic/_o/8a/7c/c56f09839371795e708cee311c54_640_832.c1.jpg", "http://d01.res.meilishuo.net/pic/_o/78/e4/a3fb01808f98c3b4c0b8f9cdbb87_640_832.c1.jpg", "http://d01.res.meilishuo.net/pic/_o/6a/2a/31914503ff77f00005bb147787f4_640_832.c1.jpg"]
-            },
-            attribute: [{
-                "styleId": 1,
-                "nowprice": 13900,
-                "xdSkuId": "1ecja84",
-                "stock": 11,
-                "price": 21300,
-                "style": "白色",
-                "stockId": "1ecja84",
-                "img": "http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg",
-                "sizeId": 100,
-                "size": "S",
-                "currency": "￥"
-            }, {
-                "styleId": 1,
-                "nowprice": 13900,
-                "xdSkuId": "1ecja88",
-                "stock": 8,
-                "price": 21300,
-                "style": "白色",
-                "stockId": "1ecja88",
-                "img": "http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg",
-                "sizeId": 101,
-                "size": "M",
-                "currency": "￥"
-            }, {
-                "styleId": 1,
-                "nowprice": 13900,
-                "xdSkuId": "1ecja8c",
-                "stock": 14,
-                "price": 21300,
-                "style": "白色",
-                "stockId": "1ecja8c",
-                "img": "http://d01.res.meilishuo.net/pic/_o/56/20/136f8f7eff1a84578d1ef245015e_640_832.c1.jpg",
-                "sizeId": 102,
-                "size": "L",
-                "currency": "￥"
-            }],
-            listBanner: {},
-            redPacketsSwitch: false,
-            loginUserId: "11cnkktq",
-            isLogin: true,
-            isMoguer: false
-        };
-    </script>
-    <script type="text/javascript">
-        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F3621aca6d2e2da698daf02aba80964a9' type='text/javascript'%3E%3C/script%3E"));
-        window.domain = 'mogujie.com';
-
-    </script>
 </div>
-
-<script type="text/javascript">
-    window.PTP_PARAMS = window.PTP_PARAMS || {};
-    window.PTP_PARAMS.ptp_cnt_b = '__item_detail';
-</script>
 
 <div class="foot J_footertimer" data-ptp="_foot" data-svrtime="">
     <div class="wrap foot_wrap clearfix">
@@ -934,11 +660,204 @@
 </div>
 
 
+
 <script type="text/javascript" src="js\index.js-8f5416c3.js"></script>
 
 <script type="text/javascript" src="__newtown\detail_mls\assets\mls-pc\pages\normal\index.js-957ad653.js"></script>
+<script type="text/javascript">
+    function buyNow() {
+        var num = $("#totalNum").val();
+        // alert(num);
+        var size = $("input[name='radiobutton']:checked").val();
+        // alert(size);
+        // var color = $("input[name='color']:checked").val();
+        window.location.href="/car.do?_method=tocar&cID=${requestScope.goods.cID}&userid=${sessionScope.bsUserAccount.ID}&userName=${sessionScope.bsUserAccount.bsName}&num="+num+"&size="+size;
+    }
+    function buyafter() {
+        var num = $("#totalNum").val();
+        // alert(num);
+        var size = $("input[name='radiobutton']:checked").val();
+        // alert(size);
+        // var color = $("input[name='color']:checked").val();
+        window.location.href="/car.do?_method=addCar&cID=${requestScope.goods.cID}&userid=${sessionScope.bsUserAccount.ID}&userName=${sessionScope.bsUserAccount.bsName}&num="+num+"&size="+size;
 
+    }
+</script>
 </body>
+<script src="js\jquery.js"></script>
+<link rel="stylesheet" href="js\slick\slick.css">
+<script src="js\slick\slick.min.js"></script>
+<script src="js\global.js"></script>
+<script>
+    /*商品数量操作*/
+    function goodsCount(o){
+        if(!(o instanceof Object)) var o={};
+        var inputCell = o.inputCell || ".count-input",
+            minusCell = o.minusCell || ".count-minus",
+            plusCell = o.plusCell || ".count-plus",
+            disClass = o.disClass || "disabled";
+        return this.each(function(){
+            var $wrap = $(this),
+                $input = $(inputCell,$wrap),
+                $minus = $(minusCell,$wrap),
+                $plus = $(plusCell,$wrap),
+                maxnum=parseInt($wrap.attr('data-max')) || false,
+                minnum=$wrap.attr('data-min') || 1,
+                initnum=$input.val() || minnum;
+            /*初始*/
+            $input.val(initnum);
+            checkIlegal();
+            function checkIlegal(){
+                var value =parseInt($input.val());
 
+                //
+                if (maxnum&&value>maxnum) {
+                    $input.val(maxnum);
+                }
+                else if (value<minnum) {
+                    $input.val(minnum);
+                }
+                if(value<=minnum){
+                    $minus.addClass(disClass);
+                }else{
+                    $minus.removeClass(disClass);
+                }
+                if (value>=maxnum) {
+                    $plus.addClass(disClass);
+                }else {
+                    $plus.removeClass(disClass);
+                }
+
+            }
+            function checknull() {
+                var value =$input.val();
+                if(value === "" || value === "0"){
+                    $input.val(minnum);
+                }
+            }
+            $input.keyup(function(evt){
+                var value = $(this).val();
+                var newvalue = value.replace(/[^\d]/g,"");
+                $(this).val(newvalue);
+                checknull();
+            });
+            $input.blur(function(){
+                checknull();
+                checkIlegal();
+            })
+
+            $minus.click(function(){
+                minus();
+                checkIlegal();
+            });
+
+            $plus.click(function(){
+                add();
+                checkIlegal();
+            });
+
+            function add () {
+                var value = $input.val();
+                var plus = parseInt(value)+1;
+                $input.val(plus);
+            }
+            function minus () {
+                var value = parseInt($input.val());
+                var minus = value-1;
+                $input.val(minus);
+            }
+        });
+    }
+    $.fn.goodsCount = goodsCount;
+</script>
+
+<script>
+    $(function () {
+
+        +function () {
+            var index=0,
+                bsrc='',
+                timer=null,
+                box=$('.detail-show'),
+                origin=$('.origin-show'),
+                bigimg=box.find('.big-pic'),
+                tumb=box.find('.thumb-show'),
+                tumbItem=tumb.find('.item'),
+                zoomup=box.find('.zoomup'),
+                zoomshow=box.find('.zoom-show');
+
+            /*图片切换*/
+            tumbItem.on('mouseenter',function () {
+                index=$(this).index();
+                clearTimeout(timer);
+                timer=setTimeout(function (){
+                    update(index);
+                }, 300)
+
+            });
+
+            function update (index) {
+                bsrc=tumbItem.eq(index).find('.s-pic').attr('bsrc');
+                bigimg.attr('src', bsrc);
+                tumbItem.find('.s-pic').removeClass('active').end().eq(index).find('.s-pic').addClass('active');
+            }
+
+            update(index);
+
+            if ($('.detail-show .thumb-show .item').length>5) {
+                $('.detail-show .thumb-show').slick({
+                    slidesToShow: 5,
+                    infinite:false
+                });
+            }
+
+            /*放大镜*/
+            origin.on('mouseover mouseout',function (e) {
+                if (e.type=="mouseover") {
+                    var oX=$(this).offset().left,
+                        oY=$(this).offset().top,
+                        zX=e.pageX,
+                        zY=e.pageY,
+                        pW=$(this).outerWidth(),
+                        pH=$(this).outerHeight(),
+                        zW=zoomup.outerWidth(),
+                        zH=zoomup.outerHeight(),
+                        scale=pW/zW,
+                        zsW=zoomshow.width()*scale,//放大后的宽度
+                        factor=zsW/pW
+
+                    zoomshow.find('img').attr('src',bigimg.attr('src')).width(zsW);
+
+                    $(document).on('mousemove.zoom',function (e) {
+                        zX=e.pageX-oX- zW/2;
+                        zY=e.pageY-oY- zH/2;
+                        move();
+                    });
+
+                    function move () {
+                        zX=zX<=0?0:zX;
+                        zX=zX>=pW-zW?pW-zW:zX;
+                        zY=zY<=0?0:zY;
+                        zY=zY>=pH-zH?pH-zH:zY;
+                        zoomup.show().css({top:zY,left:zX});
+                        zoomshow.show().find('img').css({top:-zY*factor,left:-zX*factor});
+                    }
+                }
+                else {
+                    $(document).off('mousemove.zoom');
+                    zoomup.hide()
+                    zoomshow.hide();
+                }
+            });
+        }();
+
+        $('.mod-numbox').goodsCount(); //数量加减
+
+        $('.detail-main').zTab({
+            tabnav:'.detail-tabs',
+            trigger:'click'
+        });
+    });
+</script>
 </html>
 

@@ -65,7 +65,9 @@ public class ShoppingCarServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         IStockDao stockDao=new IStockDaoImpl();
         String cID = request.getParameter("cID");
-        BsComStock bsComStock = stockDao.selectGoodsByCIDAndSize(cID,"S");
+        String size = request.getParameter("size");
+        int num = Integer.parseInt(request.getParameter("num").trim());
+        BsComStock bsComStock = stockDao.selectGoodsByCIDAndSize(cID,size);
 
 //        if (request.getParameter("id").equals("")) {
 //            request.getRequestDispatcher("/mycart.jsp").forward(request, response);
@@ -82,7 +84,7 @@ public class ShoppingCarServlet extends HttpServlet {
         bsShoppingCar.setPrice(bsComStock.getPrice());
         bsShoppingCar.setColor(bsComStock.getColorID());
         bsShoppingCar.setSize(bsComStock.getSize());
-        bsShoppingCar.setQuantity(1);
+        bsShoppingCar.setQuantity(num);
         bsShoppingCar.setDescribe(bsComStock.getDescribe());
         bsShoppingCar.setPicture(bsComStock.getShowPicture());
         System.out.println(bsComStock);
@@ -108,7 +110,6 @@ public class ShoppingCarServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         IStockDao stockDao = new IStockDaoImpl();
         String cID = request.getParameter("cID");
-
         String size = request.getParameter("size");
         System.out.println(size + "---" + cID);
         if (size.equals("S")) {
@@ -176,15 +177,18 @@ public class ShoppingCarServlet extends HttpServlet {
             response.setCharacterEncoding("utf-8");
             IStockDao stockDao=new IStockDaoImpl();
             String cID = request.getParameter("cID");
-            BsComStock bsComStock = stockDao.selectGoodsByCIDAndSize(cID,"S");
+            String size = request.getParameter("size");
+            int num = Integer.parseInt(request.getParameter("num").trim());
+            BsComStock bsComStock = stockDao.selectGoodsByCIDAndSize(cID,size);
 
             String name = request.getParameter("userName");
             int id = Integer.parseInt(request.getParameter("userid"));
+
             BsShoppingCar bsShoppingCar = new BsShoppingCar();
             System.out.println(id+"--"+name);
             bsShoppingCar.setID(id);
             bsShoppingCar.setBsName(name);
-            bsShoppingCar.setQuantity(1);
+            bsShoppingCar.setQuantity(num);
             bsShoppingCar.setsID(bsComStock.getsID());
             bsShoppingCar.setPrice(bsComStock.getPrice());
             bsShoppingCar.setColor(bsComStock.getColorID());
@@ -218,17 +222,18 @@ public class ShoppingCarServlet extends HttpServlet {
             response.setContentType("text/html;charset=utf-8");
             response.setCharacterEncoding("utf-8");
 
-            if (request.getParameter("id").equals("")) {
+            String id1 = request.getParameter("id");
+            if (id1 != null && !id1.equals("")){
+                int id = Integer.parseInt(request.getParameter("id").trim());
+                System.out.println(id);
+                ShoppingCarService car = new ShpopingCarServiceImpl();
+
+                List<BsShoppingCar> bsShoppingCarList = car.getShopCar(id);
+                request.getSession().setAttribute("bsShoppingCarList", bsShoppingCarList);
+                request.getRequestDispatcher("/mycart.jsp").forward(request, response);
+            }else {
                 request.getRequestDispatcher("/mycart.jsp").forward(request, response);
             }
-
-            int id = Integer.parseInt(request.getParameter("id").trim());
-            System.out.println(id);
-            ShoppingCarService car = new ShpopingCarServiceImpl();
-
-            List<BsShoppingCar> bsShoppingCarList = car.getShopCar(id);
-            request.getSession().setAttribute("bsShoppingCarList", bsShoppingCarList);
-            request.getRequestDispatcher("/mycart.jsp").forward(request, response);
         }
 
         protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -152,6 +152,16 @@
 		}
 	})();
 </script>
+<script type="text/javascript" language="javascript">
+	function confirmAct()
+	{
+		if(confirm('确定要删除吗?'))
+		{
+			return true;
+		}
+		return false;
+	}
+</script>
 
 <div id="com-topbar">
 	<div class="inner">
@@ -282,7 +292,7 @@
 									<td>${BsUserAddress.name}</td>
 									<td>${BsUserAddress.tel}</td>
 									<td><a href="/bsAddress.do?_method=update&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}">修改</a></td>
-									<td><a href="/bsAddress.do?_method=delete&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}">删除</a></td>
+									<td><a href="/bsAddress.do?_method=delete&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}" onclick="return confirmAct();">删除</a></td>
 <%--									<input hidden="hidden" name="ful" value="${ful}">--%>
 									<td><a href="/bsAddress.do?_method=choose&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}&ful=${ful}">选择</a></td>
 								</tr>

@@ -80,7 +80,7 @@
     <div class="login-header">
         <div class="wrapper">
             <a href="index.do" class="logo">
-                <img src="img\logo3.png" alt="">
+                <img src="img\logo3.png" alt="" height="110px" width="100px">
             </a>
             <div class="zp">
                 <span class="ico"></span>

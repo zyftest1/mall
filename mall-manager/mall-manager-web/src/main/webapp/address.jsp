@@ -272,11 +272,11 @@
 		<div class="mu_content_wrap">
 			<div class="addr_right topay" isaddress='true' topaycount="">
 				<h2 class="addr_title">地址管理</h2>
-				<a href="/bsAddress.do?_method=add" class="addr_title" role="button">添加</a>
+				<a href="/bsAddress.do?_method=add" style="margin-left: 20px" role="button" class="btn btn-default">添加</a>
 
 				<div>
 					<form method="post" action="/bsAddress.do?_method=address">
-						<table class="table table-hover" border="1px" >
+						<table class="table table-hover" style="border: none" >
 							<thead>
 							<tr>
 								<th><p align="center">地址</p></th>
@@ -291,10 +291,10 @@
 									<td>${BsUserAddress.address}</td>
 									<td>${BsUserAddress.name}</td>
 									<td>${BsUserAddress.tel}</td>
-									<td><a href="/bsAddress.do?_method=update&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}">修改</a></td>
-									<td><a href="/bsAddress.do?_method=delete&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}" onclick="return confirmAct();">删除</a></td>
+									<td><a href="/bsAddress.do?_method=update&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}" class="btn btn-default">修改</a></td>
+									<td><a href="/bsAddress.do?_method=delete&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}" onclick="return confirmAct();" class="btn btn-default">删除</a></td>
 <%--									<input hidden="hidden" name="ful" value="${ful}">--%>
-									<td><a href="/bsAddress.do?_method=choose&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}&ful=${ful}">选择</a></td>
+									<td><a href="/bsAddress.do?_method=choose&addID=${BsUserAddress.addID}&id=${sessionScope.bsUserAccount.ID}&ful=${ful}" class="btn btn-default">选择</a></td>
 								</tr>
 							</c:forEach>
 							</tbody>

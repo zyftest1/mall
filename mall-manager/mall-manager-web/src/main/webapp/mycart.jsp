@@ -213,7 +213,7 @@
 		<div class="cart-total-box">
 			<div class="cart-total">
 				<div class="fl">
-					<div class="back"><a href="">继续购物</a></div><div class="count">共 <span class="num" id="totalNum">1</span> 件商品， 已选择 <span class="num" id="selectedNum">1</span> 件</div>
+					<div class="back"><a href="/index.do">继续购物</a></div><div class="count">共 <span class="num" id="totalNum">1</span> 件商品， 已选择 <span class="num" id="selectedNum">1</span> 件</div>
 				</div>
 				<div class="fr">
 					<div class="price">
